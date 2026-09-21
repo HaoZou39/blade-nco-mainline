@@ -1,0 +1,62 @@
+[
+  {
+    "bytes": 37507,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\01_baseline_historical_vs_current.png",
+    "sha256": "74b897379e756f1f5e88dcfc4f79b4fad9f74f133f039c94a378512b83f56064"
+  },
+  {
+    "bytes": 33454,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\02_relative_baseline_drift.png",
+    "sha256": "5fed4040fdc0268abb50457db1f821683422e850bf3c7a7cbe67a9f50dbdc29e"
+  },
+  {
+    "bytes": 67816,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\03_dataset_coordinate_statistics.png",
+    "sha256": "21dde6abadb67798940dd41886dcb6d1f3661c1d05ef091ff10af5dc74225958"
+  },
+  {
+    "bytes": 87773,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\04_preprocessing_before_after_examples.png",
+    "sha256": "3ed13c6943a7e2c66b5c26d2963e5ca7c730562e42e0fd0e1cafc2066d7ed2cf"
+  },
+  {
+    "bytes": 168680,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\05_per_instance_gap_scatter_gaussian.png",
+    "sha256": "2b482188ce5589d10cb53d13730325a4a6ebc6033f59763cf496c73a35f5110f"
+  },
+  {
+    "bytes": 36278,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\06_per_instance_gap_delta_gaussian.png",
+    "sha256": "4b870ffa1b64260c0e59dd6a74d8ea107429d4ef6cf45fc0fefe64936fbc75a3"
+  },
+  {
+    "bytes": 63711,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\07_per_instance_gap_scatter_original70.png",
+    "sha256": "6ad0b8e2296df5e042d06b0701298a9af27f77321eb2dbc89a9b12dda7415642"
+  },
+  {
+    "bytes": 35634,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\08_per_instance_gap_delta_original70.png",
+    "sha256": "76e3235bb33dc392a973ffbeb67082a60fb143c1e10c7295e106f28b7508a49a"
+  },
+  {
+    "bytes": 29602,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\09_factorial_replay_gaussian.png",
+    "sha256": "17f12a4e9e944311097e4c3209c083c3191e348b9a761fc5750e7cfa28e29002"
+  },
+  {
+    "bytes": 32270,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\10_factorial_replay_original70.png",
+    "sha256": "041543ba3798ce5c99d1d308cff742e86cdf54e62e3b3b221ceff28f35a17055"
+  },
+  {
+    "bytes": 46959,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1\\13_figures\\12_root_cause_summary.png",
+    "sha256": "c5e2ff3c601d40d03d0928ce3a8feb6e19a4cf841e7d19fd5ec2fc65a021fdaa"
+  },
+  {
+    "path": "11_tour_agreement_by_benchmark.png",
+    "reason": "current formal cached outputs do not store tour hashes; GPU replay deferred while formal run owns GPU",
+    "status": "NOT_CREATED"
+  }
+]

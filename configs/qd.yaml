@@ -1,0 +1,17 @@
+features: QD4
+feature_names:
+  - spn_sum_of_lowest_edge_values
+  - spn_distance_varcoeff
+  - spn_mst_depth_mean
+  - spn_mst_dists_median
+normalization: deep_p1_p99_clip
+normalization_asset: assets/qd/normalization/normalization_A_P1P99.json
+centroid_asset: assets/qd/cvt/centroids.csv
+k: 1000
+distance_metric: euclidean
+archive:
+  type: sparse_cvt_map_elites
+  max_elites_per_niche: 1
+  maximum_total_elites: 1000
+  force_full_occupancy: false
+

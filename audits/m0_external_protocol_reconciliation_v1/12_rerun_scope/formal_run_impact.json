@@ -1,0 +1,9 @@
+{
+  "ACQUISITION_AFFECTED": "NO",
+  "EXTERNAL_EVAL_AFFECTED": "YES",
+  "HARDNESS_AFFECTED": "NO",
+  "TRAINING_AFFECTED": "NO",
+  "current_run_decision": "CONTINUE_FORMAL_RUN_BUT_REEVALUATE_EXTERNAL_RESULTS",
+  "formal_run_modified": false,
+  "reason": "Both defects are confined to evaluation_references/evaluate_checkpoint: Gaussian Oracle-result positional binding and Original70 model-input transform. Training/hardness/acquisition use separately loaded active/archive coordinates and expert tours."
+}

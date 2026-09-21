@@ -1,0 +1,374 @@
+{
+  "configured": {
+    "current_fixed_n100": 250,
+    "current_original70": 250,
+    "historical_fixed_n100": -1,
+    "historical_original70": 250
+  },
+  "fixed_n100_proof": {
+    "K": 250,
+    "classification": "NO_KNN_IMPLEMENTATION_ANOMALY_STATIC_AND_9999_OF_10000_GAUSSIAN_COST_CONTROL",
+    "closed_state_max_nodes": 101,
+    "condition_result": false,
+    "current_branch_condition": "0 < K < num_nodes",
+    "effective_candidate_set": "full at every step",
+    "historical_effective_candidate_set": "full at every step"
+  },
+  "historical_variant_B": {
+    "K": 100,
+    "M0_mean_gap": 7.157151685423,
+    "status": "separate documented variant; not source of 5.375617545"
+  },
+  "original70_dimensions": [
+    {
+      "dimension": 51,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 52
+    },
+    {
+      "dimension": 52,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 53
+    },
+    {
+      "dimension": 70,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 71
+    },
+    {
+      "dimension": 76,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 77
+    },
+    {
+      "dimension": 76,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 77
+    },
+    {
+      "dimension": 99,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 100
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 100,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 101
+    },
+    {
+      "dimension": 101,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 102
+    },
+    {
+      "dimension": 105,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 106
+    },
+    {
+      "dimension": 107,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 108
+    },
+    {
+      "dimension": 124,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 125
+    },
+    {
+      "dimension": 127,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 128
+    },
+    {
+      "dimension": 130,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 131
+    },
+    {
+      "dimension": 136,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 137
+    },
+    {
+      "dimension": 144,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 145
+    },
+    {
+      "dimension": 150,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 151
+    },
+    {
+      "dimension": 150,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 151
+    },
+    {
+      "dimension": 150,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 151
+    },
+    {
+      "dimension": 152,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 153
+    },
+    {
+      "dimension": 159,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 160
+    },
+    {
+      "dimension": 195,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 196
+    },
+    {
+      "dimension": 198,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 199
+    },
+    {
+      "dimension": 200,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 201
+    },
+    {
+      "dimension": 200,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 201
+    },
+    {
+      "dimension": 225,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 226
+    },
+    {
+      "dimension": 225,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 226
+    },
+    {
+      "dimension": 226,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 227
+    },
+    {
+      "dimension": 262,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 264,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 280,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 299,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 318,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 400,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 417,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 439,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 442,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 493,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 574,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 575,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 654,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 657,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 724,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 783,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1002,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1060,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1084,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1173,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1291,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1304,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1323,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1379,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1400,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1432,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1577,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1655,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1748,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1817,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 1889,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 2103,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 2152,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 2319,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 2392,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 3038,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 3795,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    },
+    {
+      "dimension": 4461,
+      "dynamic_rule": "250 while state_size>250 else full",
+      "initial_effective_model_input_nodes": 250
+    }
+  ]
+}

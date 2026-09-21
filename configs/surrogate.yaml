@@ -1,0 +1,21 @@
+primary:
+  name: GP4
+  features: QD4
+  population: 2000
+  generations: 60
+  fitness: Huber
+  selection: SPERF
+  seeds: [2026, 2027, 2028, 2029, 2030]
+  ensemble_score: median_of_five_final_symbolic_formulas
+  target: log1p_L_BQ
+controls:
+  HGB4:
+    features: QD4
+    acquisition_driver: false
+  HGB20:
+    features: GP20
+    acquisition_driver: false
+gp0_calibration:
+  status: FROZEN
+  probes: one_centroid_nearest_per_reached_niche
+  difficulty_blind: true

@@ -1,0 +1,391 @@
+{
+  "current": [
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best",
+      "artifact_type": "checkpoint",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 12467743,
+      "model": "M0",
+      "protocol_fields_found": "M0 bytes,state_dict",
+      "sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+      "timestamp": "2026-06-24T03:29:08.282707+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\evaluation\\datasets.py",
+      "artifact_type": "dataset_loader_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 4079,
+      "model": "M0",
+      "protocol_fields_found": "dataset call path,parser",
+      "sha256": "223e87231d67070f93542a278b5245e9e74695a924cff60d9e7a13d955239f4c",
+      "timestamp": "2026-09-09T04:07:55.166012+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\final_run\\science.py",
+      "artifact_type": "evaluator_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 23583,
+      "model": "M0",
+      "protocol_fields_found": "preprocess,Oracle binding,cost,gap",
+      "sha256": "a3a03fa330417805dee5f1ffe68aa15ad4c9320e5915e556c471fbd3413d235e",
+      "timestamp": "2026-09-12T04:36:21.522089+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\inference.py",
+      "artifact_type": "decoder_wrapper_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 11218,
+      "model": "M0",
+      "protocol_fields_found": "model input,decoder,cost",
+      "sha256": "39a2caf4badf7dab19a2e28b6e2cabcd4c5bb9580bcb6d56861c1b4993120fa7",
+      "timestamp": "2026-09-09T04:03:29.406451+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\decoding.py",
+      "artifact_type": "decoder_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 9096,
+      "model": "M0",
+      "protocol_fields_found": "KNN,mask,tie,start",
+      "sha256": "6ebda82b9b008a814cbd722b3ec01a600f82517f7bb4b4dd6f48d57b8e93a75b",
+      "timestamp": "2026-08-21T07:29:49.557482+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\protocol.py",
+      "artifact_type": "protocol_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 2612,
+      "model": "M0",
+      "protocol_fields_found": "checkpoint,architecture,KNN,start,decode",
+      "sha256": "f42ed691160241b5948cf43e412e43e2de289d9f0bcf876bc75327a7326e748b",
+      "timestamp": "2026-09-11T21:48:52.403260+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\tsp_metric.py",
+      "artifact_type": "tour_cost_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 3803,
+      "model": "M0",
+      "protocol_fields_found": "integer cost",
+      "sha256": "8e638093fb76e1eb01fc5be648e092d25cbad1f0166fb17ea24313aebd3026ae",
+      "timestamp": "2026-08-18T05:29:22.394494+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\src\\evaluation\\gap.py",
+      "artifact_type": "gap_source",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 538,
+      "model": "M0",
+      "protocol_fields_found": "gap formula",
+      "sha256": "7a84df39dbef7867e6cc19decbaefef1fd6b981ec3d6d0dad234c1694e9aeed0",
+      "timestamp": "2026-09-09T04:07:53.815443+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\external_metrics.csv",
+      "artifact_type": "machine_readable_report",
+      "authority_level": 2,
+      "benchmark": "ALL",
+      "bytes": 2179,
+      "model": "M0",
+      "protocol_fields_found": "current aggregate metrics",
+      "sha256": "831fe5c36c3ead5374d65543f2f3db40aaad705c1b7a865f616b5d608d4ed609",
+      "timestamp": "2026-09-11T22:20:59.313737+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\STAGE_DONE.json",
+      "artifact_type": "stage_integrity_record",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 3518,
+      "model": "M0",
+      "protocol_fields_found": "input/output hashes",
+      "sha256": "b54cf64e41bf00825d51c904463e78844ccd8aadaab951b00826d79bf4ac1e64",
+      "timestamp": "2026-09-11T22:20:59.342729+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\uniform100\\instances\\coordinates.npz",
+      "artifact_type": "coordinate_archive",
+      "authority_level": 1,
+      "benchmark": "Uniform100",
+      "bytes": 15088930,
+      "model": "M0",
+      "protocol_fields_found": "model input coordinates",
+      "sha256": "ebf28d497b364f905fea8d1a349a6f05f3b889fe992e08c4d387a9d2e65d93be",
+      "timestamp": "2026-07-28T09:26:05.413779+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\uniform100\\manifest.parquet",
+      "artifact_type": "dataset_manifest",
+      "authority_level": 1,
+      "benchmark": "Uniform100",
+      "bytes": 4359723,
+      "model": "M0",
+      "protocol_fields_found": "IDs,hashes,provenance",
+      "sha256": "53008ba16b5e4d21990c65fe30befb9d80429627dd24a974313ee735495c685e",
+      "timestamp": "2026-07-28T09:26:21.727491+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\uniform100\\concorde\\oracle_results.parquet",
+      "artifact_type": "oracle_costs",
+      "authority_level": 1,
+      "benchmark": "Uniform100",
+      "bytes": 3562630,
+      "model": "M0",
+      "protocol_fields_found": "optimal costs,tours",
+      "sha256": "85fa88f204c328065ddbb0c47b49885e71f78ab4453f052274242804556dd224",
+      "timestamp": "2026-07-28T09:26:21.609781+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\Uniform100.parquet",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "Uniform100",
+      "bytes": 282763,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,effective Oracle,gap",
+      "sha256": "e28882bdcb93f9727e7f1660735a32aef2b4c20616a98677636cab25e59660f4",
+      "timestamp": "2026-09-11T22:01:21.495294+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\gaussian_mixture100\\instances\\coordinates.npz",
+      "artifact_type": "coordinate_archive",
+      "authority_level": 1,
+      "benchmark": "GaussianMixture100",
+      "bytes": 14885018,
+      "model": "M0",
+      "protocol_fields_found": "model input coordinates",
+      "sha256": "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+      "timestamp": "2026-07-28T09:26:11.079604+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\gaussian_mixture100\\manifest.parquet",
+      "artifact_type": "dataset_manifest",
+      "authority_level": 1,
+      "benchmark": "GaussianMixture100",
+      "bytes": 7424285,
+      "model": "M0",
+      "protocol_fields_found": "IDs,hashes,provenance",
+      "sha256": "aef852a4209b6bfbb5e45a92aa783b5400fc0bf6cb91d1fbd93c8fc0a42a8fe7",
+      "timestamp": "2026-07-28T09:37:06.279010+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\gaussian_mixture100\\concorde\\oracle_results.parquet",
+      "artifact_type": "oracle_costs",
+      "authority_level": 1,
+      "benchmark": "GaussianMixture100",
+      "bytes": 3557593,
+      "model": "M0",
+      "protocol_fields_found": "optimal costs,tours",
+      "sha256": "3c7dcca86cc0fb805bd6f0805587cff37130f726dd76eedcc642999571fd5c4a",
+      "timestamp": "2026-07-28T09:37:06.164638+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\GaussianMixture100.parquet",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "GaussianMixture100",
+      "bytes": 300923,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,effective Oracle,gap",
+      "sha256": "c71d947911ac559dc333584603a38507c30d99c8fa42071abad161101b6cafd5",
+      "timestamp": "2026-09-11T22:04:35.870983+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\tsplib100\\instances\\coordinates.npz",
+      "artifact_type": "coordinate_archive",
+      "authority_level": 1,
+      "benchmark": "TSPLIB100",
+      "bytes": 12517214,
+      "model": "M0",
+      "protocol_fields_found": "model input coordinates",
+      "sha256": "502ac8a520653fc9181b7ace284d39ae6a0be4c35def60d161f8ab4ecc0e2521",
+      "timestamp": "2026-07-30T07:30:52.452116+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\tsplib100\\manifest.parquet",
+      "artifact_type": "dataset_manifest",
+      "authority_level": 1,
+      "benchmark": "TSPLIB100",
+      "bytes": 34308207,
+      "model": "M0",
+      "protocol_fields_found": "IDs,hashes,provenance",
+      "sha256": "3cbe2075f580e1ae7ccb32dd22add34627a08092080983e196bdff282d991b7b",
+      "timestamp": "2026-07-30T07:31:09.680244+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\tsplib100\\concorde\\concorde_results.parquet",
+      "artifact_type": "oracle_costs",
+      "authority_level": 1,
+      "benchmark": "TSPLIB100",
+      "bytes": 4962151,
+      "model": "M0",
+      "protocol_fields_found": "optimal costs,tours",
+      "sha256": "580539e23e3a072d378a88ae8e95e9471da1749841f719a870cc5fa68ddf0d7a",
+      "timestamp": "2026-07-30T07:30:58.632899+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\TSPLIB100.parquet",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "TSPLIB100",
+      "bytes": 289731,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,effective Oracle,gap",
+      "sha256": "1f98d9df94ff0b9a2600133223f7a07c3c5cb9f4ed9b0f7217b7d1f8f07f7d70",
+      "timestamp": "2026-09-11T22:07:51.754627+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\evaluation\\original_tsplib70\\source_manifest_bq83.csv",
+      "artifact_type": "dataset_manifest",
+      "authority_level": 1,
+      "benchmark": "OriginalTSPLIB70",
+      "bytes": 25449,
+      "model": "M0",
+      "protocol_fields_found": "IDs,dimensions,files,Oracle",
+      "sha256": "4cbdddabe6233fb5fdc77c713afcfe67c81cfb9fe47828dcf9305c0d6fabbc8f",
+      "timestamp": "2026-07-31T09:22:52.634921+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\OriginalTSPLIB70.parquet",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "OriginalTSPLIB70",
+      "bytes": 5073,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,Oracle,gap",
+      "sha256": "5a385c7259e5d7e82adb9951089cc68e62485d720a5945f7a9c25f89409a887d",
+      "timestamp": "2026-09-11T22:13:52.113511+00:00"
+    }
+  ],
+  "historical": [
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\reports\\benchmark_evaluation\\current_frozen_dataset_baselines.json",
+      "artifact_type": "machine_readable_report",
+      "authority_level": 2,
+      "benchmark": "ALL",
+      "bytes": 5786,
+      "model": "M0",
+      "protocol_fields_found": "aggregate metrics,dataset provenance",
+      "sha256": "934809cbaee1e922cd5c7ead66f9c61abc31852d2c5684b4e19d9bcc7bff130d",
+      "timestamp": "2026-07-31T09:23:43.287251+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\checkpoint_large_scale_generalization_audit\\benchmark_dataset_manifest.json",
+      "artifact_type": "dataset_manifest",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 7279,
+      "model": "M0",
+      "protocol_fields_found": "paths,hashes,IDs,coordinates,Oracle",
+      "sha256": "b94592761937ce0929d7582c16030d295d70a190eb42980378f438d8ee4d85c7",
+      "timestamp": "2026-08-14T10:11:38.718608+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\checkpoint_large_scale_generalization_audit\\bq_evaluator_config.json",
+      "artifact_type": "evaluator_config",
+      "authority_level": 1,
+      "benchmark": "Uniform100|GaussianMixture100|TSPLIB100",
+      "bytes": 1501,
+      "model": "M0",
+      "protocol_fields_found": "checkpoint,preprocess,KNN,decode,cost,gap,environment",
+      "sha256": "4800a1dff001da64375dc64497737b35c02c92f2411fc2c7dc8ff623a8413020",
+      "timestamp": "2026-08-14T10:11:38.720608+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\checkpoint_large_scale_generalization_audit\\_cache\\full\\FRESH_UNIFORM100\\M0\\results.csv",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "Uniform100",
+      "bytes": 4976353,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,Oracle,gap,tour hash",
+      "sha256": "3df2d8e12c397a5a382f76eb2aaacb04672e2aafc92f2c546d5b276f6ca5ee1f",
+      "timestamp": "2026-08-14T12:20:42.041725+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\checkpoint_large_scale_generalization_audit\\_cache\\full\\GAUSSIAN_MIXTURE100\\M0\\results.csv",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "GaussianMixture100",
+      "bytes": 5133332,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,Oracle,gap,tour hash",
+      "sha256": "9e498caa775568e33d885ed000c3eb5dcca534ba73ee72b2a52d39e40b85fb19",
+      "timestamp": "2026-08-14T12:20:42.354902+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\checkpoint_large_scale_generalization_audit\\_cache\\full\\TSPLIB100_BOOTSTRAP\\M0\\results.csv",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "TSPLIB100",
+      "bytes": 4945476,
+      "model": "M0",
+      "protocol_fields_found": "predicted cost,Oracle,gap,tour hash",
+      "sha256": "09da1f11f2fe3cac50f6e072f72289ffcd58f84d37595e12622246c981830add",
+      "timestamp": "2026-08-14T12:20:42.655689+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq\\tsplib95_euc2d70_m0_knn250\\per_instance_results.csv",
+      "artifact_type": "per_instance_output",
+      "authority_level": 1,
+      "benchmark": "OriginalTSPLIB70",
+      "bytes": 254061,
+      "model": "M0",
+      "protocol_fields_found": "tour,predicted cost,Oracle,gap,KNN,checkpoint",
+      "sha256": "f88bca026ed5d4aa83db45c055d0f5d88850b710631996b89a27c376ea3335c4",
+      "timestamp": "2026-08-17T03:08:24.005511+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\scripts\\bq\\bq_checkpoint_audit_gpu_worker.py",
+      "artifact_type": "evaluator_source",
+      "authority_level": 1,
+      "benchmark": "Uniform100|GaussianMixture100|TSPLIB100",
+      "bytes": 10816,
+      "model": "M0",
+      "protocol_fields_found": "resolved call path",
+      "sha256": "7efcc6e0c1eb926d0b2ad465c876be8ef0d50fcaace2bdc053360ed07d88d2d5",
+      "timestamp": "2026-08-14T10:19:20.148902+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\scripts\\bq\\evaluate_tsplib95_euc2d70_checkpoints.py",
+      "artifact_type": "evaluator_source",
+      "authority_level": 1,
+      "benchmark": "OriginalTSPLIB70",
+      "bytes": 25579,
+      "model": "M0",
+      "protocol_fields_found": "preprocess,decode,KNN,cost,gap",
+      "sha256": "86779cb7b1ba34c5ec588d7ad70435dc552c238d8c445d86cb40385d2d1c419f",
+      "timestamp": "2026-08-17T01:56:41.100305+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\src\\blade_nco\\benchmark_evaluation\\current_tsplib.py",
+      "artifact_type": "preprocessing_and_metric_source",
+      "authority_level": 1,
+      "benchmark": "OriginalTSPLIB70",
+      "bytes": 8945,
+      "model": "M0",
+      "protocol_fields_found": "parser,aspect normalization,EUC_2D",
+      "sha256": "bdd426c072026aa71dadf0592011a4c640dca5c0b7d9ad1d0aa36dd214cc3f9e",
+      "timestamp": "2026-07-31T09:15:47.832298+00:00"
+    },
+    {
+      "artifact_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq_checkpoints\\base\\tsp.best",
+      "artifact_type": "checkpoint",
+      "authority_level": 1,
+      "benchmark": "ALL",
+      "bytes": 12467743,
+      "model": "M0",
+      "protocol_fields_found": "M0 bytes,state_dict",
+      "sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+      "timestamp": "2026-06-24T03:29:08.282707+00:00"
+    }
+  ]
+}

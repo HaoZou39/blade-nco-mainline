@@ -1,0 +1,397 @@
+{
+  "audit_version": "BLADE_FINAL_QD_RESOLUTION_POPULATION_BUDGET_AUDIT_V1",
+  "check_count": 64,
+  "checks": [
+    {
+      "evidence": [
+        "spn_sum_of_lowest_edge_values",
+        "spn_distance_varcoeff",
+        "spn_mst_depth_mean",
+        "spn_mst_dists_median"
+      ],
+      "name": "QD4 exact",
+      "number": 1,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "deep normalization exact",
+      "number": 2,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "K500/K1000/K2000 centroids canonical",
+      "number": 3,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no CVT refitting",
+      "number": 4,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "representative cycles exact",
+      "number": 5,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "candidate-bank hashes verified",
+      "number": 6,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "GP4 exact frozen protocol",
+      "number": 7,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "five GP seeds exact",
+      "number": 8,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "median ensemble exact",
+      "number": 9,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "HGB4 same training archive",
+      "number": 10,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "HGB20 same training archive",
+      "number": 11,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "HGB not used for selection",
+      "number": 12,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "K audit archive nominal size fixed10k",
+      "number": 13,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "K/c mappings exact",
+      "number": 14,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "common evaluation grid K2000",
+      "number": 15,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no external test usage",
+      "number": 16,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "K1000 robustness threshold exact95%",
+      "number": 17,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "robust-cycle threshold exact5/6",
+      "number": 18,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "Audit B only after Audit A pass",
+      "number": 19,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "K1000 fixed in Audit B",
+      "number": 20,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "QD holdout exactly1/niche",
+      "number": 21,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "QD holdout excluded from training",
+      "number": 22,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "Uniform dev exactly1000",
+      "number": 23,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "Uniform dev fresh/disjoint anchor and all sealed sets",
+      "number": 24,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P0 construction purely structural",
+      "number": 25,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P0 nested across c",
+      "number": 26,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no hardness in P0 selection",
+      "number": 27,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P0_10 labels reused",
+      "number": 28,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "GP0_c trained only P0_c",
+      "number": 29,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "offspring count exact",
+      "number": 30,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "every operator once per parent",
+      "number": 31,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "shared parent/operator RNG",
+      "number": 32,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "child niche reassignment",
+      "number": 33,
+      "passed": true
+    },
+    {
+      "evidence": "all candidates assigned from normalized QD4",
+      "name": "parent niche not inherited automatically",
+      "number": 34,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P1 top-c within niche only",
+      "number": 35,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P1 exact size",
+      "number": 36,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no global fill",
+      "number": 37,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "P1 exact hardness",
+      "number": 38,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "all branches identical M0",
+      "number": 39,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "all branches exactly256E",
+      "number": 40,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no early stopping",
+      "number": 41,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no equal-step compensation",
+      "number": 42,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "hard anchor ratio1:1",
+      "number": 43,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "same fixed Uniform10k anchor",
+      "number": 44,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "fresh Adam each branch",
+      "number": 45,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "LR exact7.5e-5",
+      "number": 46,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no scheduler",
+      "number": 47,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no gradient clipping",
+      "number": 48,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "AMP off",
+      "number": 49,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "E256 only scientific checkpoint",
+      "number": 50,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "external benchmarks never selection-evaluated",
+      "number": 51,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "QD_DEV exact paired evaluation",
+      "number": 52,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "UNIFORM_DEV exact paired evaluation",
+      "number": 53,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "bootstrap resamples exact10000",
+      "number": 54,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "bootstrap seed exact2026",
+      "number": 55,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "95-percent c10 rule exact",
+      "number": 56,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no arbitrary Uniform margin",
+      "number": 57,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "smallest qualifying c selected",
+      "number": 58,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "c10 nonpositive special classification",
+      "number": 59,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "output hashes recorded",
+      "number": 60,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "source development artifacts unchanged",
+      "number": 61,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "final mainline unchanged",
+      "number": 62,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no final runner launched",
+      "number": 63,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "protocol not copied to mainline",
+      "number": 64,
+      "passed": true
+    }
+  ],
+  "mainline_unchanged": true,
+  "passed": true
+}

@@ -1,0 +1,62 @@
+{
+  "C00": {
+    "seconds": 42.653621435165405,
+    "checkpoint_sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15"
+  },
+  "C01": {
+    "seconds": 35.00640082359314,
+    "checkpoint_sha256": "e915fb0201d2f304c7dcfbda510c347a3dc6bdb2add575541996899a722eda43"
+  },
+  "C02": {
+    "seconds": 36.29972219467163,
+    "checkpoint_sha256": "d8a0925c2fe2f637ea6ce4306b2faf7cfacdbc292c7bc50e89711205148b3b9a"
+  },
+  "C03": {
+    "seconds": 32.49875831604004,
+    "checkpoint_sha256": "902e483c8acb289f1f5366ce3678487dc4bb8c666b8c8bc02f4993c0f82cf31f"
+  },
+  "C04": {
+    "seconds": 33.32679462432861,
+    "checkpoint_sha256": "d36ad0f93bc97b476c64e42a42a38a998156b78bee0def6ee1a99573962d4657"
+  },
+  "C05": {
+    "seconds": 34.54356074333191,
+    "checkpoint_sha256": "f68a60bb902ee80d247a6a26750198dcfd261a0cd6fbb1109114f545662bb60f"
+  },
+  "C06": {
+    "seconds": 33.54885244369507,
+    "checkpoint_sha256": "7b84602b9abc9cd974b9b8d95f4880f872ea6903716f80d00cc20f006daf1a93"
+  },
+  "C07": {
+    "seconds": 38.3056640625,
+    "checkpoint_sha256": "460cfae3950ef9c27927a90d825341f5db53905bfa74b7847903a9ac1960a7a3"
+  },
+  "C08": {
+    "seconds": 35.44705843925476,
+    "checkpoint_sha256": "bbda3fcb71b73fdc06c3c5111248163e01fad21d95dce11abc3646185325a85e"
+  },
+  "C09": {
+    "seconds": 37.948753356933594,
+    "checkpoint_sha256": "f64c3c798defcb03df391de50994339cbc39df0cc1f6ba6bd1c0868e3c006b34"
+  },
+  "C10": {
+    "seconds": 40.53875398635864,
+    "checkpoint_sha256": "6b6deb463c06fe9cf5fc202c976b1c05552b9486cd368030ec89680dd9296a50"
+  },
+  "C11": {
+    "seconds": 42.10478448867798,
+    "checkpoint_sha256": "adc759b0bd399cdffe1d75d7297fa823a30a7b187211d0b9c92095715b8d91c5"
+  },
+  "C12": {
+    "seconds": 38.48628497123718,
+    "checkpoint_sha256": "ecd557320458369011a30d2332292b6b3e79b8073f7dfce32ec1d8c918823f2a"
+  },
+  "C13": {
+    "seconds": 39.0768883228302,
+    "checkpoint_sha256": "41bbe3894910585c7627118115cfeb322483adce52d7ee9a7d86286ce74a6ce8"
+  },
+  "C14": {
+    "seconds": 41.13644051551819,
+    "checkpoint_sha256": "f61484776c97f31ea79dacd84547b06ce488458bfded88ba61b4b74078b56447"
+  }
+}

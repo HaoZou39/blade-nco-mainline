@@ -1,0 +1,19 @@
+{
+  "CAUTION": "A1/A2 are stable distributional submodes, not independent HDBSCAN density islands.",
+  "DATA_SUPPORTS_AT_LEAST_THREE_MAJOR_HARD_REGIONS": "YES",
+  "FINAL_ASSIGNMENT_METHOD": "GMM k=2 refinement of original Region A; original Region B and noise retained",
+  "HARD_REGION_REFINEMENT": "PARTIAL_TWO_MAJOR_PLUS_SUBMODES",
+  "LARGEST_CLUSTER_HAS_STABLE_SUBSTRUCTURE": "YES",
+  "RECOMMENDED_DISPLAY_LABELS": [
+    "A1",
+    "A2",
+    "B"
+  ],
+  "gmm_k1_aic": -50493.335762133,
+  "gmm_k1_bic": -50394.44727766739,
+  "hard_count": 9021,
+  "source_sha256": {
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/03_real_hard_region_membership.csv": "8c311ac2c6b7358a12985745aa97cf675cc668a7cfa4d5e478a9897ab76fddc0"
+  },
+  "tau_gap_percent": 1.6759665429999124
+}

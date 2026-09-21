@@ -1,0 +1,166 @@
+{
+  "FULL_ID": "blade_v2_full_seed2026",
+  "run_dir": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_full_seed2026",
+  "architecture": "OFFSPRING-ONLY",
+  "candidate_pool": "O_s (not P_{s-1} UNION O_s)",
+  "parent_replacement": "OFFSPRING-ONLY",
+  "frozen_seed": 2026,
+  "solver_family": "FOGA / BQ E256",
+  "qd_family": "QD4 frozen CVT-1000",
+  "gp_family": "GP4 five-seed median ensemble",
+  "horizon": "C00-C14 / M0-M15",
+  "M0_sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+  "M15_sha256": "82077aa03ab1c98a713bd92adc7797b7d1947c6a7ce3e62f01a33121524c6668",
+  "M0_expected": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+  "M15_expected": "82077aa03ab1c98a713bd92adc7797b7d1947c6a7ce3e62f01a33121524c6668",
+  "M0_match": true,
+  "M15_match": true,
+  "cycle_complete_C00_C14": [
+    {
+      "cycle": "C00",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C01",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C02",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C03",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C04",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C05",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C06",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C07",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C08",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C09",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C10",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C11",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C12",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C13",
+      "CYCLE_COMPLETE": true
+    },
+    {
+      "cycle": "C14",
+      "CYCLE_COMPLETE": true
+    }
+  ],
+  "C15_dir_exists_but_excluded": true,
+  "C15_CYCLE_COMPLETE": false,
+  "protocol_parent_policy": {
+    "budget": 10000,
+    "full_parent": "centroid_nearest_per_reached_niche_plus_global_GP_fill",
+    "gp_only_parent": "global_GP_Top10000",
+    "training": "global_GP_Top10000"
+  },
+  "protocol_training_selection": "global_GP_Top10000",
+  "protocol_full_parent_selection": "centroid_nearest_per_reached_niche_plus_global_GP_fill",
+  "protocol_gp": {
+    "cycle0_source": "Random500_O0",
+    "ensemble": "median",
+    "features": [
+      "spn_sum_of_lowest_edge_values",
+      "spn_distance_varcoeff",
+      "spn_mst_depth_mean",
+      "spn_mst_dists_median"
+    ],
+    "fitness": "Huber",
+    "generations": 60,
+    "later_source": "Random500_A_s",
+    "population": 2000,
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "target": "log1p_LBQ",
+    "working_set": 500
+  },
+  "protocol_horizon_amendment": {
+    "amended_utc": "2026-09-18T10:57:27.060130+00:00",
+    "new_config_sha256": "ead0f9566ef7bdcb75e3cd0a627dd9ac6b5606da05c3c73277f6d21cbccbe4ac",
+    "new_final_model": "M15",
+    "new_full_cycles": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "old_config_sha256": "4905ec8662240971d4a68e1f3eec871b594ff99049ac8ddec744004b4879e8f0",
+    "old_final_model": "M20",
+    "old_full_cycles": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "scientific_settings_other_than_horizon_unchanged": true,
+    "status": "USER_DIRECTED_HORIZON_AMENDMENT"
+  },
+  "scoring_domain": "O_s only (GP_score_own_offspring / GP0_score_all_O0)",
+  "identity_note": "T_s is global GP Top10k of O_s. P_next uses QD+GP fill of O_s. Neither uses P UNION O.",
+  "external_8set_rows": 128,
+  "identity_status": "UNAMBIGUOUS",
+  "union_cycles_in_primary": false
+}

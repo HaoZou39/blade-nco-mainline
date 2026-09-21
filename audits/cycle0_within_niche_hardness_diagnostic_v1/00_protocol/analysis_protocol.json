@@ -1,0 +1,50 @@
+{
+  "aggregation": "equal niche weight unless explicitly named candidate-weighted",
+  "analysis_only": true,
+  "audit": "BLADE_CYCLE0_WITHIN_NICHE_HARDNESS_DIAGNOSTIC_V1",
+  "bootstrap": {
+    "interval": "paired percentile 95%",
+    "replicates": 10000,
+    "seed": 2026,
+    "unit": "niche"
+  },
+  "capture_ratio": "mean(model-selected H0 - matched random H0) / mean(Oracle H0 - matched random H0); never clipped",
+  "centered_signal": "subtract the corresponding niche mean from H0 and each prediction",
+  "created_utc": "2026-09-10T04:25:11.498111+00:00",
+  "eligible_niche_rule": "at least 5 sealed dev candidates",
+  "exclusive_source_audit": "audits/cycle0_initialization_validation_v1",
+  "forbidden_actions": {
+    "bq_finetuning": true,
+    "bq_inference": true,
+    "concorde_calls": true,
+    "external_evaluation": true,
+    "final_d0": true,
+    "final_runner": true,
+    "gp_or_hgb_training": true,
+    "new_instances": true,
+    "new_oracle_labels": true,
+    "protocol_change": true
+  },
+  "hardness_for_value_analysis": "raw H0 (raw M0 L_BQ)",
+  "master_seed": 2026,
+  "models": [
+    "GP4_D1",
+    "GP4_D2",
+    "GP4_D5",
+    "HGB4_D1",
+    "HGB4_D2",
+    "HGB4_D5",
+    "HGB20_D1",
+    "HGB20_D2",
+    "HGB20_D5"
+  ],
+  "primary_diagnostic_branch": "D5",
+  "random_baseline": "single numpy PCG64 stream; group niches ascending; preserve sealed dev row order; r order 1,2,5; sample without replacement",
+  "sample_size_strata": "empirical quartile cut points of eligible-niche n; equal n values are never split",
+  "selection_tie_break": "prediction descending, then instance_hash ascending; Oracle uses H0 descending, then instance_hash ascending",
+  "sensitivity_branches": [
+    "D1",
+    "D2"
+  ],
+  "variance_decomposition": "candidate-population ddof=0 additive identity: H0-grand_mean=(niche_mean-grand_mean)+(H0-niche_mean); between is n-weighted"
+}

@@ -1,0 +1,27 @@
+{
+  "generator_internals_modified": false,
+  "pinned_commit": "919616337105e894e06463734ec1dd71f6451309",
+  "repository": "https://github.com/HenryZhu1029/EvoReal",
+  "retrieval_date": "2026-09-14",
+  "statement": "The three generator source files are byte-for-byte copies from the pinned official revision. Generator internals were not modified.",
+  "files": [
+    {
+      "git_blob_sha1": "296d937b6eea1f51cd7d4eff77272b4a9c8ffd46",
+      "local_copied_path": "third_party/evoreal/gpt_S1.py",
+      "original_relative_path": "EvoReal_Main/POMO-EvoReal-2phase_finetune/TSP/POMO_TSP_p1/evolved_gen/gpt_S1.py",
+      "sha256": "918bf7568ab4bcbe26042d0c8d02a221d4f9b2fc838e2b415992a55f31218fe0"
+    },
+    {
+      "git_blob_sha1": "66ed1063c9a8e1340dded0b1dfc855d12140fd88",
+      "local_copied_path": "third_party/evoreal/gpt_S2.py",
+      "original_relative_path": "EvoReal_Main/POMO-EvoReal-2phase_finetune/TSP/POMO_TSP_p1/evolved_gen/gpt_S2.py",
+      "sha256": "1129b5b902bc7aeee65c226e97e7180a601c2e35ed8b9810c3b8ead0a18b71f8"
+    },
+    {
+      "git_blob_sha1": "f488f19ae6f471225ea17c709253aea382ce7b57",
+      "local_copied_path": "third_party/evoreal/gpt_S3.py",
+      "original_relative_path": "EvoReal_Main/POMO-EvoReal-2phase_finetune/TSP/POMO_TSP_p1/evolved_gen/gpt_S3.py",
+      "sha256": "b9eee5d038ca999a30d7aec80be365cacf5ee332264d6fe00e1a1c454d98c364"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+cycle,model,feature,mean_native_importance,note
+C00,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C01,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C02,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C03,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C04,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C05,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C06,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C07,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C08,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C09,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C10,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C11,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C12,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C13,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run
+C14,HGB4,ALL,UNAVAILABLE,HistGradientBoostingRegressor has no native impurity importance; SHAP not run

@@ -1,0 +1,10 @@
+{
+  "K": 1000,
+  "algorithm": "MiniBatchKMeans",
+  "batch_size": 8192,
+  "fit_cloud": "DEEP_REFERENCE_ONLY",
+  "n_init": 10,
+  "normalization": "A",
+  "seed": 2026,
+  "sklearn_version": "1.7.2"
+}

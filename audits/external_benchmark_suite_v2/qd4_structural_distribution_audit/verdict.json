@@ -1,0 +1,12 @@
+{
+  "TSPLIB_STRUCTURAL_HETEROGENEITY": "TSPLIB_STRUCTURAL_HETEROGENEITY_CONFIRMED",
+  "BENCHMARK_COMPLEMENTARITY": "STRONG",
+  "evidence_flags": "[True, True, True, True]",
+  "tsp_occupied": "497.0",
+  "uni_occupied": "51.0",
+  "gm_occupied": "375.0",
+  "wider_than_uniform_count": "3",
+  "o70_occupied": "33.0",
+  "o70_effective": "20.303560295982223",
+  "het_o70_p90": "1.3551279940014456"
+}

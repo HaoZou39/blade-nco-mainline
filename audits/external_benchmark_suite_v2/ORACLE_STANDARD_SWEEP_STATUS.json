@@ -1,0 +1,81 @@
+{
+  "dataset_summaries": [
+    {
+      "dataset": "EvoReal_S1_100",
+      "exact_success": 999,
+      "exact_success_rate": 0.999,
+      "solver_error": 0,
+      "success_runtime_max_sec": 299.05878649999977,
+      "success_runtime_median_sec": 0.33945739999944635,
+      "success_runtime_p90_sec": 2.5299730799990368,
+      "success_runtime_p95_sec": 5.037012599999755,
+      "success_runtime_p99_sec": 30.425650550000604,
+      "timeout_no_candidate": 0,
+      "timeout_with_candidate": 1,
+      "total": 1000,
+      "unresolved": 1,
+      "unresolved_rate": 0.001,
+      "verification_failure": 0
+    },
+    {
+      "dataset": "EvoReal_S2_100",
+      "exact_success": 1000,
+      "exact_success_rate": 1.0,
+      "solver_error": 0,
+      "success_runtime_max_sec": 12.952778499999113,
+      "success_runtime_median_sec": 0.2760219000001598,
+      "success_runtime_p90_sec": 1.709791509999923,
+      "success_runtime_p95_sec": 3.3256538900004657,
+      "success_runtime_p99_sec": 7.210397769000262,
+      "timeout_no_candidate": 0,
+      "timeout_with_candidate": 0,
+      "total": 1000,
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "verification_failure": 0
+    },
+    {
+      "dataset": "EvoReal_S3_100",
+      "exact_success": 1000,
+      "exact_success_rate": 1.0,
+      "solver_error": 0,
+      "success_runtime_max_sec": 4.512560900000608,
+      "success_runtime_median_sec": 0.2974576000005982,
+      "success_runtime_p90_sec": 0.6203712900003666,
+      "success_runtime_p95_sec": 1.2185533449998722,
+      "success_runtime_p99_sec": 2.6588393540013007,
+      "timeout_no_candidate": 0,
+      "timeout_with_candidate": 0,
+      "total": 1000,
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "verification_failure": 0
+    },
+    {
+      "dataset": "GaussianMixture500",
+      "exact_success": 1000,
+      "exact_success_rate": 1.0,
+      "solver_error": 0,
+      "success_runtime_max_sec": 68.50989970000046,
+      "success_runtime_median_sec": 3.7045266499999343,
+      "success_runtime_p90_sec": 11.614292809999098,
+      "success_runtime_p95_sec": 17.1136526549998,
+      "success_runtime_p99_sec": 42.031181905000395,
+      "timeout_no_candidate": 0,
+      "timeout_with_candidate": 0,
+      "total": 1000,
+      "unresolved": 0,
+      "unresolved_rate": 0.0,
+      "verification_failure": 0
+    }
+  ],
+  "integrity_failures": [],
+  "solver_invocation_config_sha256": "1b837f8ea53d7524f5b7dd637def425b31d721a4b3b7098cc07057f8acb354c1",
+  "standard_sweep_complete": true,
+  "status": "EXTERNAL_BENCHMARK_SUITE_V2_PENDING_HARD_CASE_REFERENCES",
+  "total_exact": 3999,
+  "total_unresolved": 1,
+  "unresolved": [
+    "EvoReal_S1_100_0853"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "dataset_id": "uniform100_v1",
+  "frozen": true,
+  "instance_count": 10000,
+  "dimension": 100,
+  "training_allowed": false,
+  "coordinate_sha256": "ebf28d497b364f905fea8d1a349a6f05f3b889fe992e08c4d387a9d2e65d93be"
+}
+

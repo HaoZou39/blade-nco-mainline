@@ -1,0 +1,71 @@
+{
+  "current_coordinate_file_sha256": "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+  "current_manifest_sha256": "aef852a4209b6bfbb5e45a92aa783b5400fc0bf6cb91d1fbd93c8fc0a42a8fe7",
+  "generator_implementation_hash_current": "NOT_APPLICABLE_COPY_OF_FROZEN_DATASET",
+  "generator_implementation_hash_historical": "UNKNOWN",
+  "generator_regeneration_performed": false,
+  "historical_coordinate_file_sha256": "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+  "historical_manifest_sha256": "aef852a4209b6bfbb5e45a92aa783b5400fc0bf6cb91d1fbd93c8fc0a42a8fe7",
+  "instance_count": 10000,
+  "matching_instance_coordinate_hashes": 10000,
+  "relation": "EXACT_STORED_COORDINATE_MATCH",
+  "stored_metadata": {
+    "clipping_behavior": "not explicitly recoverable from frozen metadata",
+    "cluster_count_range": [
+      3,
+      7
+    ],
+    "coordinate_normalization": "generator output stored in unit square; axis minima/maxima recorded per instance",
+    "instance_order": "cdist10, cdist30, cdist50, cdist70, cdist100; 2000 each",
+    "mixture_regimes": [
+      10,
+      30,
+      50,
+      70,
+      100
+    ],
+    "rescaling_behavior": "axis normalization metadata present; generator source implementation not recovered"
+  },
+  "subgroups": [
+    {
+      "cDIST": 10,
+      "instances": 2000,
+      "k_max": 7,
+      "k_min": 3,
+      "seed_max": 74001999,
+      "seed_min": 74000000
+    },
+    {
+      "cDIST": 30,
+      "instances": 2000,
+      "k_max": 7,
+      "k_min": 3,
+      "seed_max": 74101999,
+      "seed_min": 74100000
+    },
+    {
+      "cDIST": 50,
+      "instances": 2000,
+      "k_max": 7,
+      "k_min": 3,
+      "seed_max": 74201999,
+      "seed_min": 74200000
+    },
+    {
+      "cDIST": 70,
+      "instances": 2000,
+      "k_max": 7,
+      "k_min": 3,
+      "seed_max": 74301999,
+      "seed_min": 74300000
+    },
+    {
+      "cDIST": 100,
+      "instances": 2000,
+      "k_max": 7,
+      "k_min": 3,
+      "seed_max": 74401999,
+      "seed_min": 74400000
+    }
+  ]
+}

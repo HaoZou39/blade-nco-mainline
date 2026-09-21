@@ -1,0 +1,23 @@
+{
+  "automatic_source_selection": false,
+  "offspring_only": {
+    "P90_centroid_distance": 0.07920615451804343,
+    "P95_centroid_distance": 0.08869126473508088,
+    "max_centroid_distance": 0.15676018139907746,
+    "mean_centroid_distance": 0.04287797116501196,
+    "median_centroid_distance": 0.03869929183635144,
+    "oracle_labeled": false,
+    "probe_count": 435,
+    "provisional": true
+  },
+  "union": {
+    "P90_centroid_distance": 0.07920615451804343,
+    "P95_centroid_distance": 0.08869126473508088,
+    "max_centroid_distance": 0.15676018139907746,
+    "mean_centroid_distance": 0.04287291223111327,
+    "median_centroid_distance": 0.03869929183635144,
+    "oracle_labeled": false,
+    "probe_count": 435,
+    "provisional": true
+  }
+}

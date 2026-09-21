@@ -1,0 +1,37 @@
+{
+  "first_causal_divergence": "C01 offspring generation",
+  "full": {
+    "N_eff": 95.84725737717038,
+    "P0_FULL": "789e39826b52deacc1bef0533ca3c2a176df3f84357551eea684ae9e5f0be1bd",
+    "collapse": 0.0404,
+    "entropy": 4.562755855385564,
+    "gini": 0.9244606000000002,
+    "largest_niche_share": 0.0404,
+    "normalized_entropy": 0.7510281442467783,
+    "occupied_niches": 435,
+    "top10_niche_share": 0.2955,
+    "top5_niche_share": 0.1704
+  },
+  "gp_only": {
+    "N_eff": 83.49996572570552,
+    "P0_GPONLY": "d65767eeac41d2ad4972b360b7f621548c5539d942d04afc7a98d6a4dc83a2d5",
+    "collapse": 0.0414,
+    "entropy": 4.424846221386133,
+    "equals_T0": true,
+    "gini": 0.9381478000000001,
+    "largest_niche_share": 0.0414,
+    "normalized_entropy": 0.8260571181889663,
+    "occupied_niches": 212,
+    "top10_niche_share": 0.3017,
+    "top5_niche_share": 0.1739
+  },
+  "shared": {
+    "A1": "cf3b51149f12499777da8750d7480894697363672280f9cfbe2b8094cc154a52",
+    "B0": "9246ad5b92c434b8badf5ae0f5c2b299789af84c8b03e7db3f3118aa2324fd77",
+    "GP0": "e82db4a10d545bdd903839719e2b29cae13711fe9b8017437e0f5aa121c9bb7c",
+    "M0": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+    "M1": "e915fb0201d2f304c7dcfbda510c347a3dc6bdb2add575541996899a722eda43",
+    "O0": "cbaa3a105230c2f5a046ebb11c7685bf5485f189539003ae89797f7e82e6a0ad",
+    "T0": "d65767eeac41d2ad4972b360b7f621548c5539d942d04afc7a98d6a4dc83a2d5"
+  }
+}

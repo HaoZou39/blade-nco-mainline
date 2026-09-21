@@ -1,0 +1,9 @@
+{
+  "coordinate_hash_definition": "instance_hash (canonical coordinate hash)",
+  "dev_n": 2666,
+  "exact_H0_hash_set": true,
+  "normalized_QD4_exact": true,
+  "occupied_niches": 301,
+  "shared_centroid_floor_n": 301,
+  "status": "PASS"
+}

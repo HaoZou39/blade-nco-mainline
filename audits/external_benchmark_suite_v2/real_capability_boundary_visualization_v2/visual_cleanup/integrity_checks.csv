@@ -1,0 +1,10 @@
+check,value,pass
+frozen instance count,30070,True
+fixed tau,1.6759665429999124,True
+same 200 IDs across M0/M1/M5,200,True
+same point coordinates,single subset table reused,True
+same axis limits,"x=(-1.1282992041, 0.9143546032); y=(-0.5397302287, 0.7931749593)",True
+same colormap and normalization,vmin=0; vcenter=1.6759665429999124; vmax=5.0,True
+same support mask,22969,True
+smoothing affects grid only,no source writes; exact gaps retained,True
+quantitative transition source reused,audits/external_benchmark_suite_v2/real_capability_boundary_visualization_v2/04_transition_summary_M0_M1_M5.csv,True

@@ -1,0 +1,6 @@
+{
+  "capacity_per_niche": 10,
+  "fill_fraction": 1.0,
+  "fillable_slots": 10000,
+  "theoretical_slots": 10000
+}

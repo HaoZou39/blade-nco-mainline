@@ -1,0 +1,24 @@
+﻿{
+    "dataset_name":  "GaussianMixture100",
+    "role":  "structural_shift_passive_evaluation",
+    "N":  100,
+    "instance_count":  10000,
+    "source":  "gaussian_cluster100_v1",
+    "source_hashes":  {
+                          "concorde/oracle_results.parquet":  "3c7dcca86cc0fb805bd6f0805587cff37130f726dd76eedcc642999571fd5c4a",
+                          "DATASET_FROZEN.json":  "d31ee688c40a6ce09f4f59c13b05cb26faaff2e0deaef2386ddf93768c498867",
+                          "instances/coordinates.npz":  "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+                          "manifest.csv":  "d5e14919a9cd40901b3319660b00734ac4034f528438700901dd3b1ec7638415",
+                          "manifest.parquet":  "aef852a4209b6bfbb5e45a92aa783b5400fc0bf6cb91d1fbd93c8fc0a42a8fe7"
+                      },
+    "destination_hashes":  {
+                               "concorde/oracle_results.parquet":  "3c7dcca86cc0fb805bd6f0805587cff37130f726dd76eedcc642999571fd5c4a",
+                               "DATASET_FROZEN.json":  "d31ee688c40a6ce09f4f59c13b05cb26faaff2e0deaef2386ddf93768c498867",
+                               "instances/coordinates.npz":  "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+                               "manifest.csv":  "d5e14919a9cd40901b3319660b00734ac4034f528438700901dd3b1ec7638415",
+                               "manifest.parquet":  "aef852a4209b6bfbb5e45a92aa783b5400fc0bf6cb91d1fbd93c8fc0a42a8fe7"
+                           },
+    "ground_truth_availability":  "Concorde optimal tours and integer costs available",
+    "coordinate_convention":  "unit-square float coordinates",
+    "read_only":  true
+}

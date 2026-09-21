@@ -1,0 +1,18 @@
+{
+  "classification": "A2",
+  "final_hashes_match": true,
+  "historical_consistency": true,
+  "label": "CANONICAL_REPAIR_BUT_STRUCTURAL_EFFECT_REQUIRES_REVIEW",
+  "mainline_semantics_changed": false,
+  "new_niche_contribution": {
+    "native_discovered": 372,
+    "native_only": 106,
+    "new_total": 384,
+    "reachable_by_both": 266,
+    "repaired_discovered": 278,
+    "repaired_only": 12
+  },
+  "raw_hashes_match": true,
+  "replay_failures": [],
+  "replayed_children": 110000
+}

@@ -1,0 +1,60 @@
+name: S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1
+status: HGB4_RESOLVED_RF4_DROPPED_NOT_RUN
+human_decision:
+  date: 2026-09-21
+  choice: drop_RF4
+  rf_status: NOT_RUN_RF_CONFIG_NOT_FROZEN
+  comparison: historical_GP4_vs_canonical_HGB4
+  hgb_config_modified: false
+  hyperparameter_search: false
+source_run: blade_v2_full_seed2026
+source_audits:
+  S1: audits/S1_gp4_surrogate_behavior_M0_M15_v1
+  S1_1: audits/S1_1_gp4_oracle_enrichment_ceiling_v1
+cycle_range: [0, 14]
+train_n: 500
+feature_set: GP4
+features:
+  - spn_sum_of_lowest_edge_values
+  - spn_distance_varcoeff
+  - spn_mst_depth_mean
+  - spn_mst_dists_median
+target: log1p_L_BQ
+seeds: [2026, 2027, 2028, 2029, 2030]
+ensemble: median
+p0: S1_P0_clean_s
+bootstrap:
+  seed: 2026
+  repetitions: 10000
+  unit: cycle_level_delta
+models:
+  GP4:
+    role: historical_baseline
+    refit: false
+    source: historical five-seed median ensemble joblib
+  HGB4:
+    status: RESOLVED
+    estimator: sklearn.ensemble.HistGradientBoostingRegressor
+    source_file: src/final_run/science.py
+    source_symbol: HGB_CFG
+    source_usage: train_hgb_controls (HGB4 on QD4, y=log1p(L_BQ), acquisition_driver=false)
+    hyperparameters:
+      learning_rate: 0.05
+      max_iter: 500
+      max_leaf_nodes: 31
+      max_depth: null
+      min_samples_leaf: 20
+      l2_regularization: 1.0e-4
+      early_stopping: false
+      random_state: SEED
+    scaling: none
+  RF4:
+    status: NOT_RUN_RF_CONFIG_NOT_FROZEN
+    estimator: sklearn.ensemble.RandomForestRegressor
+    source_file: null
+    trained: false
+    note: >
+      Human confirmation 2026-09-21 Option 3: drop RF4. No canonical
+      RandomForestRegressor hardness-surrogate configuration exists.
+      RF4 is not trained and does not block GP4 vs HGB4.
+    hyperparameters: UNRESOLVED

@@ -1,0 +1,61 @@
+{
+  "frozen_before_oracle_labeling": true,
+  "generated_file_inventory": {
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\generated_file_hashes.json",
+    "sha256": "072dfabd1080b1230ef88704baa563c4ee145e0c8d2d2662ca0effc7b92b0a4e"
+  },
+  "gp20_feature_manifest": {
+    "bytes": 1217,
+    "note": "LF-normalized exact semantic localization of the frozen development manifest",
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\gp20_features.json",
+    "semantic_source_sha256": "16b0a933492984bf30175697980576556a2a7944955e94756afef716a73cf51b",
+    "sha256": "6b1465910cd2f344e6063637e37525ac4bc4b9e9499e413c223ef1b2575f0be4"
+  },
+  "localized_concorde": {
+    "bytes": 3839841,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\third_party\\concorde\\concorde",
+    "sha256": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0"
+  },
+  "sources": {
+    "assets/qd/cvt/centroids.csv": {
+      "bytes": 82344,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv",
+      "sha256": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd"
+    },
+    "assets/qd/normalization/normalization_A_P1P99.json": {
+      "bytes": 898,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\normalization\\normalization_A_P1P99.json",
+      "sha256": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707"
+    },
+    "assets/qd/roots/root_hashes.txt": {
+      "bytes": 660000,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\roots\\root_hashes.txt",
+      "sha256": "c231722d1b74b7f98f8fc603ea7532f63cadc9fd0eef339bf48c684aa5c48652"
+    },
+    "assets/solver/M0/tsp.best": {
+      "bytes": 12467743,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best",
+      "sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/02_offspring_manifest.parquet": {
+      "bytes": 17239822,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet",
+      "sha256": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/04_root_qd_assignments.parquet": {
+      "bytes": 2011117,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\04_root_qd_assignments.parquet",
+      "sha256": "b9126742d8c9c5d38653cfae99545fa56b36667f5251a466cca252a76aec6f4a"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/05_offspring_qd_assignments.parquet": {
+      "bytes": 23615386,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet",
+      "sha256": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61"
+    },
+    "src/mutation/foga2019_operators.yaml": {
+      "bytes": 3024,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\src\\mutation\\foga2019_operators.yaml",
+      "sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee"
+    }
+  }
+}

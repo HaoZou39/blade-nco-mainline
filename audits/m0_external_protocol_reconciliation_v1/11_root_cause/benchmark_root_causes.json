@@ -1,0 +1,35 @@
+{
+  "CHECKPOINT_MISMATCH": "NO",
+  "DATASET_MISMATCH": "NO",
+  "DECODER_MISMATCH": "NO",
+  "GAP_FORMULA_MISMATCH": "NO",
+  "GLOBAL_CAUSE": "MULTIPLE_BENCHMARK_SPECIFIC_CAUSES",
+  "ORACLE_MISMATCH": "YES_EFFECTIVE_BINDING_ONLY_GAUSSIAN",
+  "PREPROCESSING_MISMATCH": "YES",
+  "TOUR_COST_MISMATCH": "NO_CAUSAL_MISMATCH",
+  "benchmarks": {
+    "GaussianMixture100": {
+      "classification": "R5_ORACLE_REFERENCE_MISMATCH",
+      "evidence": "same NPZ is cdist10->100 but current ORDER BY IDs is cdist100->10; cached ID-correct rebinding restores 6.088336 vs 6.088325",
+      "protocol_match": "NO"
+    },
+    "OriginalTSPLIB70": {
+      "classification": "R3_INPUT_PREPROCESSING_MISMATCH",
+      "evidence": "same 70 data and Oracle; K250/cost/gap same; aspect-preserving historical 5.375618 vs per-axis current 8.650173; predicted costs differ 61/70",
+      "protocol_match": "NO"
+    },
+    "TSPLIB100": {
+      "classification": "R10_NO_REPRODUCIBLE_DISCREPANCY",
+      "evidence": "exact checkpoint/dataset/preprocess/effective decoder/Oracle/cost/gap; aggregate exact",
+      "protocol_match": "YES"
+    },
+    "Uniform100": {
+      "classification": "R10_NO_REPRODUCIBLE_DISCREPANCY",
+      "evidence": "exact checkpoint/dataset/preprocess/effective decoder/Oracle/cost/gap; aggregate exact",
+      "protocol_match": "YES"
+    }
+  },
+  "gaussian_reconciled_M0": 6.08833559561799,
+  "minor_numerical_drift": "Gaussian predicted integer costs match historical 9999/10000; one instance differs by 4280 integer units, changing mean by ~0.000011 pp; not causal to 4.026 pp discrepancy",
+  "original70_reconciled_M0": 5.375617545006024
+}

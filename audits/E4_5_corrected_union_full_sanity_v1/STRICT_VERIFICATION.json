@@ -1,0 +1,97 @@
+{
+  "checks": {
+    "01_starts_from_frozen_M0": true,
+    "02_exactly_C00_C04": true,
+    "03_O0_reused_unchanged": true,
+    "04_B0_Random500_O0": true,
+    "05_C0_unique_U0_union_O0": true,
+    "06_later_unique_actual_P_union_O": true,
+    "07_T_selected_from_union": true,
+    "08_T_exactly_10000": true,
+    "09_T_pure_global_GP": true,
+    "10_P_selected_from_union": true,
+    "11_P_exactly_10000": true,
+    "12_P_QD_floor_GP_fill": true,
+    "13_no_persistent_exact_E": true,
+    "14_GP_calibration_exactly_500": true,
+    "15_no_full_archive_hardness_refresh": true,
+    "16_QD_map_unchanged": true,
+    "17_FOGA11_unchanged": true,
+    "18_provenance_preserved": true,
+    "19_survival_age_propagated": true,
+    "20_no_age_cap": true,
+    "21_no_forced_offspring_quota": true,
+    "22_archive_frozen_update_rule": true,
+    "23_BQ_10k_hard_10k_uniform": true,
+    "24_LR_exact": true,
+    "25_every_update_256E": true,
+    "26_every_checkpoint_E256": true,
+    "27_no_validation_early_stopping": true,
+    "28_external_passive_only": true,
+    "29_historical_run_unchanged": true,
+    "30_reproducible_resumable": true
+  },
+  "historical_fingerprint_count": 48,
+  "independent_union_replay": {
+    "checks": {
+      "C0_union_definition": true,
+      "P_QD_floor_GP_fill": true,
+      "P_selected_from_union": true,
+      "T_pure_global_GP": true,
+      "T_selected_from_union": true,
+      "age_propagation_exact": true,
+      "later_union_definition": true,
+      "provenance_preserved": true
+    },
+    "details": [
+      {
+        "P_order_exact": true,
+        "T_order_exact": true,
+        "age_ledger": true,
+        "cycle": "C00",
+        "pool_definition": true,
+        "provenance": true,
+        "union_unique": true
+      },
+      {
+        "P_order_exact": true,
+        "T_order_exact": true,
+        "age_ledger": true,
+        "cycle": "C01",
+        "pool_definition": true,
+        "provenance": true,
+        "union_unique": true
+      },
+      {
+        "P_order_exact": true,
+        "T_order_exact": true,
+        "age_ledger": true,
+        "cycle": "C02",
+        "pool_definition": true,
+        "provenance": true,
+        "union_unique": true
+      },
+      {
+        "P_order_exact": true,
+        "T_order_exact": true,
+        "age_ledger": true,
+        "cycle": "C03",
+        "pool_definition": true,
+        "provenance": true,
+        "union_unique": true
+      },
+      {
+        "P_order_exact": true,
+        "T_order_exact": true,
+        "age_ledger": true,
+        "cycle": "C04",
+        "pool_definition": true,
+        "provenance": true,
+        "union_unique": true
+      }
+    ]
+  },
+  "run_id": "blade_v2_corrected_union_sanity_seed2026_v1",
+  "status": "PASS",
+  "verdict": "CORRECTED_UNION_FULL_SANITY_PASS"
+}

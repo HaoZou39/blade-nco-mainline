@@ -1,0 +1,7 @@
+{
+  "command": "scripts\\run_blade_v2.py --config configs\\blade_v2_protocol.yaml --resume",
+  "host": "DESKTOP-V974EBE",
+  "pid": 9156,
+  "state": "COMPLETE",
+  "timestamp": "2026-09-19T03:56:17.027025+00:00"
+}

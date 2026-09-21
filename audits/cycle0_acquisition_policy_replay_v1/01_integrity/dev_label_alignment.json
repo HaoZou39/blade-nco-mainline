@@ -1,0 +1,10 @@
+{
+  "H0_finite": true,
+  "dev_n": 2666,
+  "dev_occupied_niches": 301,
+  "dev_unique": 2666,
+  "exact_hash_set_match": true,
+  "full_bank_subset": true,
+  "matched_exact_H0_n": 2666,
+  "status": "PASS"
+}

@@ -1,0 +1,135 @@
+{
+  "archive_fit_eligible": true,
+  "archive_fit_mae": 0.017566250615990358,
+  "archive_fit_spearman": 0.2782234715712497,
+  "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":-0.9325522786842253},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"add\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"add\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"sqrt_abs\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":1},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":2},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":2},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"add\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"abs\",\"value\":null}",
+  "constants": [
+    -0.9325522786842253
+  ],
+  "depth": 6,
+  "feature_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "first_generation": 53,
+  "formula": "abs(multiply(sqrt_abs(protected_divide(add(-0.932552278684, spn_sum_of_lowest_edge_values), add(spn_sum_of_lowest_edge_values, spn_mst_dists_median))), add(spn_distance_varcoeff, protected_divide(multiply(spn_mst_depth_mean, spn_mst_dists_median), protected_divide(spn_mst_depth_mean, spn_mst_dists_median)))))",
+  "hof_rank": 90,
+  "nodes": 19,
+  "seed": 2030,
+  "train_huber": 0.2558755498632518,
+  "train_total_fitness": 0.2653755498632518,
+  "tree": {
+    "args": [
+      {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "const",
+                        "value": -0.9325522786842253
+                      },
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 0
+                      }
+                    ],
+                    "op": "add",
+                    "value": null
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 0
+                      },
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 3
+                      }
+                    ],
+                    "op": "add",
+                    "value": null
+                  }
+                ],
+                "op": "protected_divide",
+                "value": null
+              }
+            ],
+            "op": "sqrt_abs",
+            "value": null
+          },
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "feature",
+                "value": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 2
+                      },
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 3
+                      }
+                    ],
+                    "op": "multiply",
+                    "value": null
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 2
+                      },
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 3
+                      }
+                    ],
+                    "op": "protected_divide",
+                    "value": null
+                  }
+                ],
+                "op": "protected_divide",
+                "value": null
+              }
+            ],
+            "op": "add",
+            "value": null
+          }
+        ],
+        "op": "multiply",
+        "value": null
+      }
+    ],
+    "op": "abs",
+    "value": null
+  },
+  "unique_features": 4,
+  "used_features": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_varcoeff",
+    "spn_mst_depth_mean",
+    "spn_mst_dists_median"
+  ]
+}

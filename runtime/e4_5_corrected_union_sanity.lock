@@ -1,0 +1,7 @@
+{
+  "command": "scripts\\run_e4_5_corrected_union_sanity.py --config configs\\e4_5_corrected_union_sanity.yaml",
+  "host": "DESKTOP-V974EBE",
+  "pid": 19604,
+  "state": "COMPLETE",
+  "timestamp": "2026-09-21T00:01:12.833754+00:00"
+}

@@ -1,0 +1,47 @@
+{
+  "constant": false,
+  "finite": true,
+  "formulas": [
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":1.4921465266039924},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":1.4921465266039924},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-0.6642352175742974}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(multiply(subtract(1.4921465266, spn_sum_of_lowest_edge_values), multiply(spn_sum_of_lowest_edge_values, spn_sum_of_lowest_edge_values)), subtract(abs(multiply(subtract(1.4921465266, spn_mst_dists_median), multiply(spn_sum_of_lowest_edge_values, -0.664235217574))), spn_sum_of_lowest_edge_values))",
+      "nodes": 18,
+      "seed": 2026
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":0.6559964611146225}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(multiply(spn_sum_of_lowest_edge_values, subtract(log1p_abs(spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values)), subtract(spn_sum_of_lowest_edge_values, multiply(multiply(spn_sum_of_lowest_edge_values, abs(spn_sum_of_lowest_edge_values)), subtract(spn_sum_of_lowest_edge_values, 0.655996461115))))",
+      "nodes": 17,
+      "seed": 2027
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":1.953771609873804}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-1.3626575994375245}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}",
+      "formula": "protected_divide(multiply(subtract(spn_sum_of_lowest_edge_values, 1.95377160987), spn_sum_of_lowest_edge_values), protected_divide(subtract(spn_sum_of_lowest_edge_values, -1.36265759944), log1p_abs(log1p_abs(spn_sum_of_lowest_edge_values))))",
+      "nodes": 13,
+      "seed": 2028
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":-0.17749910490942922}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null}],\"op\":\"subtract\",\"value\":null}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(multiply(subtract(protected_divide(log1p_abs(-0.177499104909), sqrt_abs(spn_mst_dists_median)), subtract(spn_sum_of_lowest_edge_values, abs(spn_sum_of_lowest_edge_values))), spn_sum_of_lowest_edge_values), multiply(subtract(abs(spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values))",
+      "nodes": 19,
+      "seed": 2029
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":3},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"add\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"sqrt_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(multiply(log1p_abs(spn_sum_of_lowest_edge_values), subtract(subtract(multiply(spn_sum_of_lowest_edge_values, spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values)), subtract(sqrt_abs(multiply(add(spn_mst_dists_median, spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values)), spn_sum_of_lowest_edge_values))",
+      "nodes": 19,
+      "seed": 2030
+    }
+  ],
+  "model": "GP0_D2",
+  "operational_output": "median",
+  "prediction_sd": 0.03216234482375129,
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "train_n": 822
+}

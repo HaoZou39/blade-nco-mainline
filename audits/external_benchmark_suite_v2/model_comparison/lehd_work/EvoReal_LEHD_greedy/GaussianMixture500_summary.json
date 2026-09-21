@@ -1,0 +1,23 @@
+{
+  "P75": 10.432049024881268,
+  "P90": 26.108679626385577,
+  "P95": 41.881378270318486,
+  "P99": 108.18294623666954,
+  "checkpoint_sha256": "c788ebd22a126e1eaf3f5767a127f74c078607c86bbdd0623c35911173102b0c",
+  "dataset": "GaussianMixture500",
+  "dataset_sha256": "818dc8de29128231a725d2d9e3fdfb1f439c7d9054fe8c31124ed4fc9d1accd2",
+  "evaluator_config_sha256": "3712ccee6c0f2a4868d5ae134018c67cdaef635ba0c3c813fcdff0fc08862c61",
+  "failed_tours": 0,
+  "inference_wall_clock_sec": 587.6473280999926,
+  "input_transform": "identity",
+  "instance_count": 1000,
+  "limit": null,
+  "max": 439.8230112043824,
+  "mean_exact_reference_cost": 7495963.596,
+  "mean_gap_percent": 12.467029649060281,
+  "mean_predicted_tour_cost": 8237426.702,
+  "median_gap_percent": 5.789787481249942,
+  "method": "EvoReal_LEHD_greedy",
+  "source": "lehd_official_greedy_frozen_suite",
+  "valid_tours": 1000
+}

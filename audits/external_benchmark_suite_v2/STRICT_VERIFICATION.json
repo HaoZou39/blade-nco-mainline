@@ -1,0 +1,336 @@
+{
+  "blocking_causes": [],
+  "checks": [
+    {
+      "description": "active suite contains exactly 8 datasets",
+      "number": 1,
+      "pass": true
+    },
+    {
+      "description": "LEHD absent from active scientific suite",
+      "number": 2,
+      "pass": true
+    },
+    {
+      "description": "historical LEHD retained and marked excluded",
+      "number": 3,
+      "pass": true
+    },
+    {
+      "description": "Uniform100 byte/hash unchanged",
+      "number": 4,
+      "pass": true
+    },
+    {
+      "description": "GaussianMixture100 byte/hash unchanged",
+      "number": 5,
+      "pass": true
+    },
+    {
+      "description": "TSPLIB100 byte/hash unchanged",
+      "number": 6,
+      "pass": true
+    },
+    {
+      "description": "OriginalTSPLIB70 byte/hash manifest unchanged",
+      "number": 7,
+      "pass": true
+    },
+    {
+      "description": "EvoReal S1 source pinned hash",
+      "number": 8,
+      "pass": true
+    },
+    {
+      "description": "EvoReal S2 source pinned hash",
+      "number": 9,
+      "pass": true
+    },
+    {
+      "description": "EvoReal S3 source pinned hash",
+      "number": 10,
+      "pass": true
+    },
+    {
+      "description": "each EvoReal set has 1000 instances",
+      "number": 11,
+      "pass": true
+    },
+    {
+      "description": "each EvoReal instance has 100 nodes",
+      "number": 12,
+      "pass": true
+    },
+    {
+      "description": "GaussianMixture500 has 1000 instances",
+      "number": 13,
+      "pass": true
+    },
+    {
+      "description": "every GaussianMixture500 instance has 500 nodes",
+      "number": 14,
+      "pass": true
+    },
+    {
+      "description": "GM500 matches frozen GM100 semantics except N/count/seed",
+      "number": 15,
+      "pass": true
+    },
+    {
+      "description": "new datasets replay to identical frozen hashes",
+      "number": 16,
+      "pass": true
+    },
+    {
+      "description": "no malformed/NaN/Inf coordinates",
+      "number": 17,
+      "pass": true
+    },
+    {
+      "description": "no exact duplicate whole instances",
+      "number": 18,
+      "pass": true
+    },
+    {
+      "description": "no N=100 overlap with archive/anchor/frozen tests",
+      "number": 19,
+      "pass": true
+    },
+    {
+      "description": "scientific result binding uses stable ID/hash",
+      "number": 20,
+      "pass": true
+    },
+    {
+      "description": "OriginalTSPLIB70 aspect-preserving input normalization",
+      "number": 21,
+      "pass": true
+    },
+    {
+      "description": "GaussianMixture100 corrected ID-based binding",
+      "number": 22,
+      "pass": true
+    },
+    {
+      "description": "new suite has zero influence on formal science",
+      "number": 23,
+      "pass": true
+    },
+    {
+      "description": "M0-M20 all use exactly the same frozen datasets",
+      "number": 24,
+      "pass": false
+    },
+    {
+      "description": "no automatic parameter tuning",
+      "number": 25,
+      "pass": true
+    }
+  ],
+  "full_evaluation_complete": false,
+  "hard_case_references_pending": [],
+  "model_dataset_rows": 0,
+  "oracle_hardcase_escalation": {
+    "coverage": {
+      "EvoReal_S1_100": {
+        "exact": 1000,
+        "unresolved": 0
+      },
+      "EvoReal_S2_100": {
+        "exact": 1000,
+        "unresolved": 0
+      },
+      "EvoReal_S3_100": {
+        "exact": 1000,
+        "unresolved": 0
+      },
+      "GaussianMixture500": {
+        "exact": 1000,
+        "unresolved": 0
+      },
+      "TOTAL": {
+        "exact": 4000,
+        "unresolved": 0
+      }
+    },
+    "integrity_failures": [],
+    "launched": [
+      "EvoReal_S1_100_0853"
+    ],
+    "solver_invocation_config_sha256": "2f2fc8b7ace24e74b876c725a24022adefeb9987ed729aa64cca670f61d0ec10",
+    "standard_solver_invocation_config_sha256": "1b837f8ea53d7524f5b7dd637def425b31d721a4b3b7098cc07057f8acb354c1",
+    "status": "EXTERNAL_BENCHMARK_SUITE_V2_READY_FOR_EVALUATION",
+    "timeout_sec": 3600.0,
+    "unresolved": []
+  },
+  "oracle_standard_sweep": {
+    "dataset_summaries": [
+      {
+        "dataset": "EvoReal_S1_100",
+        "exact_success": 999,
+        "exact_success_rate": 0.999,
+        "solver_error": 0,
+        "success_runtime_max_sec": 299.05878649999977,
+        "success_runtime_median_sec": 0.33945739999944635,
+        "success_runtime_p90_sec": 2.5299730799990368,
+        "success_runtime_p95_sec": 5.037012599999755,
+        "success_runtime_p99_sec": 30.425650550000604,
+        "timeout_no_candidate": 0,
+        "timeout_with_candidate": 1,
+        "total": 1000,
+        "unresolved": 1,
+        "unresolved_rate": 0.001,
+        "verification_failure": 0
+      },
+      {
+        "dataset": "EvoReal_S2_100",
+        "exact_success": 1000,
+        "exact_success_rate": 1.0,
+        "solver_error": 0,
+        "success_runtime_max_sec": 12.952778499999113,
+        "success_runtime_median_sec": 0.2760219000001598,
+        "success_runtime_p90_sec": 1.709791509999923,
+        "success_runtime_p95_sec": 3.3256538900004657,
+        "success_runtime_p99_sec": 7.210397769000262,
+        "timeout_no_candidate": 0,
+        "timeout_with_candidate": 0,
+        "total": 1000,
+        "unresolved": 0,
+        "unresolved_rate": 0.0,
+        "verification_failure": 0
+      },
+      {
+        "dataset": "EvoReal_S3_100",
+        "exact_success": 1000,
+        "exact_success_rate": 1.0,
+        "solver_error": 0,
+        "success_runtime_max_sec": 4.512560900000608,
+        "success_runtime_median_sec": 0.2974576000005982,
+        "success_runtime_p90_sec": 0.6203712900003666,
+        "success_runtime_p95_sec": 1.2185533449998722,
+        "success_runtime_p99_sec": 2.6588393540013007,
+        "timeout_no_candidate": 0,
+        "timeout_with_candidate": 0,
+        "total": 1000,
+        "unresolved": 0,
+        "unresolved_rate": 0.0,
+        "verification_failure": 0
+      },
+      {
+        "dataset": "GaussianMixture500",
+        "exact_success": 1000,
+        "exact_success_rate": 1.0,
+        "solver_error": 0,
+        "success_runtime_max_sec": 68.50989970000046,
+        "success_runtime_median_sec": 3.7045266499999343,
+        "success_runtime_p90_sec": 11.614292809999098,
+        "success_runtime_p95_sec": 17.1136526549998,
+        "success_runtime_p99_sec": 42.031181905000395,
+        "timeout_no_candidate": 0,
+        "timeout_with_candidate": 0,
+        "total": 1000,
+        "unresolved": 0,
+        "unresolved_rate": 0.0,
+        "verification_failure": 0
+      }
+    ],
+    "integrity_failures": [],
+    "solver_invocation_config_sha256": "1b837f8ea53d7524f5b7dd637def425b31d721a4b3b7098cc07057f8acb354c1",
+    "standard_sweep_complete": true,
+    "status": "EXTERNAL_BENCHMARK_SUITE_V2_PENDING_HARD_CASE_REFERENCES",
+    "total_exact": 3999,
+    "total_unresolved": 1,
+    "unresolved": [
+      "EvoReal_S1_100_0853"
+    ]
+  },
+  "oracle_status": {
+    "EvoReal_S1_100": {
+      "binary_hashes": [
+        "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0"
+      ],
+      "complete": true,
+      "coordinate_hash_unique": true,
+      "count": 1000,
+      "integrity_failure": false,
+      "ledger_sha256": "0092e8f8e671dc78b9337758424dc33b4fb27b443edb4357d031909b5968f492",
+      "path": "datasets/external_v2/EvoReal_S1_100/reference_ledger.parquet",
+      "stable_id_unique": true,
+      "verified_count": 1000
+    },
+    "EvoReal_S2_100": {
+      "binary_hashes": [
+        "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0"
+      ],
+      "complete": true,
+      "coordinate_hash_unique": true,
+      "count": 1000,
+      "ledger_sha256": "a408beeff34d6abc7a8b7a5d112727caa1084516d03e49601addb9441790b488",
+      "path": "datasets/external_v2/EvoReal_S2_100/reference_ledger.parquet",
+      "stable_id_unique": true,
+      "verified_count": 1000
+    },
+    "EvoReal_S3_100": {
+      "binary_hashes": [
+        "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0"
+      ],
+      "complete": true,
+      "coordinate_hash_unique": true,
+      "count": 1000,
+      "ledger_sha256": "9b834b46912708024360caebd2cb7972010ac74c89fc50475a8b991e248122bd",
+      "path": "datasets/external_v2/EvoReal_S3_100/reference_ledger.parquet",
+      "stable_id_unique": true,
+      "verified_count": 1000
+    },
+    "GaussianMixture500": {
+      "binary_hashes": [
+        "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0"
+      ],
+      "complete": true,
+      "coordinate_hash_unique": true,
+      "count": 1000,
+      "ledger_sha256": "0cd3bbfb16729ecc1a0ed56cf0a9267dad66d0dafe7cedaa1ae26e22566859c7",
+      "path": "datasets/external_v2/GaussianMixture500/reference_ledger.parquet",
+      "stable_id_unique": true,
+      "verified_count": 1000
+    }
+  },
+  "overlap_audit": {
+    "EvoReal_S1_100": {
+      "fixed_uniform_anchor_ordered": 0,
+      "fixed_uniform_anchor_unordered": 0,
+      "formal_archive_ordered": 0,
+      "formal_archive_unordered": 0
+    },
+    "EvoReal_S2_100": {
+      "fixed_uniform_anchor_ordered": 0,
+      "fixed_uniform_anchor_unordered": 0,
+      "formal_archive_ordered": 0,
+      "formal_archive_unordered": 0
+    },
+    "EvoReal_S3_100": {
+      "fixed_uniform_anchor_ordered": 0,
+      "fixed_uniform_anchor_unordered": 0,
+      "formal_archive_ordered": 0,
+      "formal_archive_unordered": 0
+    },
+    "GaussianMixture500": {
+      "fixed_uniform_anchor_ordered": 0,
+      "fixed_uniform_anchor_unordered": 0,
+      "formal_archive_ordered": 0,
+      "formal_archive_unordered": 0
+    }
+  },
+  "schema_version": "EXTERNAL_BENCHMARK_SUITE_V2_STRICT_VERIFICATION",
+  "source_and_config_hashes": {
+    "config_sha256": "de48ee306a5b61bfacc8e19f8f1585a70b3fcbb5830257a22c97d74101ef6858",
+    "evoreal_source_sha256": {
+      "gpt_S1.py": "918bf7568ab4bcbe26042d0c8d02a221d4f9b2fc838e2b415992a55f31218fe0",
+      "gpt_S2.py": "1129b5b902bc7aeee65c226e97e7180a601c2e35ed8b9810c3b8ead0a18b71f8",
+      "gpt_S3.py": "b9eee5d038ca999a30d7aec80be365cacf5ee332264d6fe00e1a1c454d98c364"
+    },
+    "module_sha256": "0d0a670042e45af6c260acc26146de935b8bd6a9f31564a905843e78c6fbda4c",
+    "source_manifest_sha256": "644ca2f2794eb4fc5f8997b507e6276e6bf51d25fb1f202d6263aaae07ddca2e"
+  },
+  "status": "EXTERNAL_BENCHMARK_SUITE_V2_READY_FOR_EVALUATION"
+}

@@ -1,0 +1,6 @@
+cycle,pattern,H_mean,DeltaGap_OOD5,P_N_eff,P_turnover,high_hardness_vs_median,strong_OOD_gain_vs_median,high_diversity_or_turnover_vs_median
+C00,C_moderate_hardness_high_renewal_strong_OOD_gain,0.0781790191419197,-0.41719951409326006,95.794211014796,0.9992,False,True,True
+C01,OTHER_mixed_relative_pattern,0.08979574924045139,0.29441703537015673,38.48025169554211,0.9063,False,False,True
+C02,D_weak_hardness_weak_renewal_weak_gain,0.09682245536573007,-0.20875049560248815,70.62226299402528,0.8714,False,False,False
+C03,A_high_hardness_strong_OOD_gain,0.09812448588669902,-0.5170266909264805,100.40965677725849,0.8881,True,True,True
+C04,B_high_hardness_weak_OOD_gain,0.10955283307162199,-0.38492917008067673,51.498291590610826,0.8442000000000001,True,False,False

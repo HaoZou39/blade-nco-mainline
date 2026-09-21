@@ -1,0 +1,5 @@
+benchmark,historical,current,coordinates,classification
+Uniform100,sum(np.rint(edge*1e6)),sum(np.rint(edge*1e6)),frozen model-input/raw unit-square,SAME
+GaussianMixture100,sum(np.rint(edge*1e6)),sum(np.rint(edge*1e6)),frozen model-input/raw unit-square,SAME
+TSPLIB100,sum(np.rint(edge*1e6)),sum(np.rint(edge*1e6)),frozen model-input/raw unit-square,SAME
+OriginalTSPLIB70,floor(raw_Euclidean+0.5) per edge,np.rint(raw_Euclidean) per edge,native TSPLIB raw coordinates,DIFFERENT_CODE_EFFECTIVELY_IDENTICAL_ON_ALL_99211005_PAIR_DISTANCES; mismatches=13480

@@ -1,0 +1,109 @@
+{
+  "all_predictions_finite": true,
+  "seed": 2026,
+  "selected": {
+    "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":-1.580684610943385}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+    "constants": [
+      -1.580684610943385
+    ],
+    "depth": 5,
+    "feature_indices": [
+      0
+    ],
+    "first_generation": 45,
+    "formula": "multiply(subtract(abs(-1.58068461094), spn_sum_of_lowest_edge_values), multiply(subtract(log1p_abs(spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values), multiply(spn_sum_of_lowest_edge_values, spn_sum_of_lowest_edge_values)))",
+    "hof_rank": 88,
+    "nodes": 13,
+    "seed": 2026,
+    "train_huber": 0.29540885612411133,
+    "train_total_fitness": 0.30190885612411134,
+    "tree": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "const",
+                  "value": -1.580684610943385
+                }
+              ],
+              "op": "abs",
+              "value": null
+            },
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            }
+          ],
+          "op": "subtract",
+          "value": null
+        },
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "feature",
+                      "value": 0
+                    }
+                  ],
+                  "op": "log1p_abs",
+                  "value": null
+                },
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                }
+              ],
+              "op": "subtract",
+              "value": null
+            },
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                },
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                }
+              ],
+              "op": "multiply",
+              "value": null
+            }
+          ],
+          "op": "multiply",
+          "value": null
+        }
+      ],
+      "op": "multiply",
+      "value": null
+    },
+    "unique_features": 1,
+    "used_features": [
+      "spn_sum_of_lowest_edge_values"
+    ],
+    "validation_eligible": true,
+    "validation_mae": 0.02725984391710401,
+    "validation_spearman": 0.34847015218074157
+  },
+  "selector": "SPERF",
+  "spearman_tie_epsilon": 1e-06,
+  "transform": {
+    "center_train_median_loss_log": 0.05167332784898383,
+    "fit_split": "TRAIN_ONLY",
+    "formula": "loss_log = log1p(loss_raw)",
+    "scale_method": "IQR",
+    "scale_train_loss_log": 0.04412139886499904
+  }
+}

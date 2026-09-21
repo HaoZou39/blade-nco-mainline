@@ -1,0 +1,4 @@
+comparison,feature,hypothesis,U,p_value,cliffs_delta,cliffs_magnitude,mean_left,mean_right,direction_holds,significant_0.05
+S1 vs S2,fft_energy,FFT(S1) > FFT(S2),774235.5,1.1110787497204906e-113,0.548471,large,16297.917249836077,16285.124077786566,True,True
+S1 vs S3,fft_energy,FFT(S1) > FFT(S3),740771.5,1.1790038297440774e-83,0.481543,large,16297.917249836077,16285.506922959967,True,True
+S2 vs S3,nn_ratio,NN(S2) < NN(S3),535256.0,0.9968359172574043,0.070512,negligible,0.10140535137862251,0.09583063382595079,False,False

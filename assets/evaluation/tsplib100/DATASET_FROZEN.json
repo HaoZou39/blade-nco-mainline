@@ -1,0 +1,10 @@
+{
+  "dataset_id": "tsplib100_bq72_v1",
+  "frozen": true,
+  "instance_count": 10000,
+  "dimension": 100,
+  "training_allowed": false,
+  "protocol": "TSPLIB100_COORDINATE_ELIGIBLE_72SOURCE_PROTOCOL",
+  "generation_core_hash": "9e47df396a07402137b52cc65cc52b09271f08dde7642303a6712d8411cda186"
+}
+

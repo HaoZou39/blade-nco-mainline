@@ -1,0 +1,65 @@
+{
+  "B301_role": "sanity check only; excluded from calibration decision",
+  "analysis_only": true,
+  "audit": "BLADE_GP0_FINAL_ROLE_CALIBRATION_DEPTH_AUDIT_V1",
+  "bootstrap": {
+    "interval": "95% percentile",
+    "replicates": 10000,
+    "seed": 2026,
+    "unit": "dev niche cluster"
+  },
+  "branches": [
+    "GP4_D1",
+    "GP4_D2",
+    "GP4_D5"
+  ],
+  "created_utc": "2026-09-10T07:56:47.688659+00:00",
+  "decision_excludes": [
+    "within-niche ranking",
+    "HGB",
+    "Oracle capture threshold"
+  ],
+  "forbidden": [
+    "new generation",
+    "new H0 labels",
+    "Concorde",
+    "BQ hardness inference",
+    "GP/HGB training",
+    "BQ fine-tuning",
+    "external evaluation",
+    "FINAL_D0",
+    "protocol change",
+    "archive update",
+    "Cycle-0 launch",
+    "final runner"
+  ],
+  "full_bank": {
+    "GP_fill": 9565,
+    "centroid_floor": 435,
+    "n": 109785,
+    "occupied_niches": 435,
+    "total": 10000
+  },
+  "noninferiority": {
+    "margin_fraction_of_abs_D5_gain": 0.05,
+    "primary_budget": 602,
+    "retention_threshold": 0.95
+  },
+  "operational_role": "CENTROID1 coverage floor plus global GP hard-tail fill",
+  "primary_dev_budget": 602,
+  "primary_metric": "GP-fill mean exact raw H0 and gain over shared matched random fill",
+  "random": {
+    "draws_shared_across_depths": true,
+    "master_seed": 2026,
+    "repeats": 1000
+  },
+  "secondary_budgets": [
+    1204,
+    2408
+  ],
+  "train_n": {
+    "1": 435,
+    "2": 822,
+    "5": 1819
+  }
+}

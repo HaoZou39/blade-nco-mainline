@@ -1,0 +1,133 @@
+{
+  "analysis_only": true,
+  "analysis_script": {
+    "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\scripts\\run_cycle0_acquisition_policy_replay.py",
+    "sha256": "140d18b84755633fdef7367b15985557db0aad4b32c59778fdb3981dbe2ea8c1"
+  },
+  "audit": "BLADE_CYCLE0_ACQUISITION_POLICY_REPLAY_V1",
+  "runtime_old_project_reads": false,
+  "sources": {
+    "ASSET_MANIFEST.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\ASSET_MANIFEST.json",
+      "bytes": 132997,
+      "role": "frozen mainline integrity/centroid support asset",
+      "sha256": "d4135791dd20d8a4599feb905c0edcf50ea778eadcf21f7f6a949e1b79a4e58e"
+    },
+    "assets/qd/cvt/centroids.csv": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv",
+      "bytes": 82344,
+      "role": "frozen mainline integrity/centroid support asset",
+      "sha256": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd"
+    },
+    "audits/cycle0_initialization_validation_v1/00_protocol/frozen_protocol.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\frozen_protocol.json",
+      "bytes": 1423,
+      "sha256": "a96b3c79fb2dd9f6d63d861df0df9cb01e9bcde277025a10bffb17f7a49d7fe9"
+    },
+    "audits/cycle0_initialization_validation_v1/00_protocol/source_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\source_manifest.json",
+      "bytes": 3161,
+      "sha256": "2b8c5e46d28f9feff386e4a958164461e0b7cf95abd4a256eb613f137675344e"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/cycle0_gp_dev.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev.parquet",
+      "bytes": 394879,
+      "sha256": "91482ab7ec8f8d3c5c92a7d2606309f610f6f08cfea45b66acaa0a1a147076af"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/structural_probe_order.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet",
+      "bytes": 14490669,
+      "sha256": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53"
+    },
+    "audits/cycle0_initialization_validation_v1/03_oracle_labels/exact_hardness.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet",
+      "bytes": 1763415,
+      "sha256": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6"
+    },
+    "audits/cycle0_initialization_validation_v1/03_oracle_labels/label_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\label_manifest.json",
+      "bytes": 2363,
+      "sha256": "215a9146628ff533e430c2a79c61c1bc0655f41b2feb977dfff9262789cfb69b"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2026/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2026\\formula.json",
+      "bytes": 3499,
+      "sha256": "59f0a7348c2e16dee4018519b27cd7c48a41102c8ecd25de8bcffa97c36037eb"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2027/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2027\\formula.json",
+      "bytes": 3819,
+      "sha256": "0ae768af2be9cd2e64c954763ecc9663a82b471f039b17a87dce48518e5163d3"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2028/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2028\\formula.json",
+      "bytes": 4161,
+      "sha256": "c0552e8420891a3de72153f1b55bbcd95f4fe66463d3d4ada630ac62da24ec1a"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2029/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2029\\formula.json",
+      "bytes": 4040,
+      "sha256": "ae759a9114e5008412968a32ccd4c459f3afe99a2fd4adc03d9da6d7423ad484"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2030/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2030\\formula.json",
+      "bytes": 3837,
+      "sha256": "445f2abb32f0b9e19dd617b6d89aa7c045efee376cec33f3213230beb618772c"
+    },
+    "audits/cycle0_initialization_validation_v1/08_prediction_evaluation/all_predictions.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\08_prediction_evaluation\\all_predictions.parquet",
+      "bytes": 426679,
+      "sha256": "9a86908db33dd8b4be9d3e46da600d4ed69f6bdd69a4a533f5fe21df82d88298"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/01_integrity/label_alignment.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\01_integrity\\label_alignment.json",
+      "bytes": 229,
+      "sha256": "7601858571c234e316075279ee7027ba59d749ead6e339bd8b7063113bb74162"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/01_integrity/prediction_alignment.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\01_integrity\\prediction_alignment.json",
+      "bytes": 1165,
+      "sha256": "ec6e27cf901877139ca804b5c22a5101b75a867e4e893f47fa20934a6eb7b6f8"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/11_decision/diagnostic_classification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\11_decision\\diagnostic_classification.json",
+      "bytes": 1025,
+      "sha256": "a6f91e08a5ca1a4cfdc67003a01561d4fdcf2e574baa54b0dd314cce868637c4"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/strict_verification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\strict_verification.json",
+      "bytes": 6615,
+      "sha256": "a1f84a2e814acc2e95070cbec525896fd711dd7254bf21e89b07d28a397dee8d"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/00_protocol.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\00_protocol.json",
+      "bytes": 2225,
+      "sha256": "f8c2c11834a21921e6e16794eb18b113487f4ef425726ca70f1242acc06b2d92"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/02_offspring_manifest.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet",
+      "bytes": 17239822,
+      "sha256": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/03_validation_summary.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\03_validation_summary.json",
+      "bytes": 303,
+      "sha256": "d8899a892b848b4f899c9200d3550cc2356806a4dce4f5e3ba95d2e1d1db2b12"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/05_offspring_qd_assignments.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet",
+      "bytes": 23615386,
+      "sha256": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/06_coverage_summary.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\06_coverage_summary.json",
+      "bytes": 2352,
+      "sha256": "08b3431a59f4927ebdc08eb3707da05b0b1bf835919744a473db216fa17ef39f"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/strict_verification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\strict_verification.json",
+      "bytes": 21074,
+      "sha256": "7cfadc87bea9151566633f10e57dcdd853891be6e5a8f8c425f9bac9ab0cd506"
+    }
+  }
+}

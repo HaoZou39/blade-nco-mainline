@@ -1,0 +1,7 @@
+metric,feature,value,note
+energy_distance,multivariate_qd4,1.0536453997334407,Uniform subsampled to 2000 if N>2000; Original70 full
+mmd_rbf,multivariate_qd4,0.8165989704107188,bandwidth_median_heuristic=0.256942
+wasserstein_1d,local,0.14368560011111617,full sets
+wasserstein_1d,global,0.36482820247992037,full sets
+wasserstein_1d,topology,0.4640516953794427,full sets
+wasserstein_1d,scale,0.7070749588002274,full sets

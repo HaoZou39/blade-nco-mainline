@@ -1,0 +1,96 @@
+cycle,phase,wall_seconds
+C00,Random500 hardness refresh,0.02828660001978278
+C00,GP training,0.18315860000438988
+C00,mutation including repair/validity,0.10439180000685155
+C00,repair/validity separately attributable,0.0
+C00,feature computation for offspring,0.045038299984298646
+C00,feature reuse/computation for old parents,0.32706439995672554
+C00,union construction/dedup,4.261242499924265
+C00,GP scoring offspring,0.011554500088095665
+C00,extra GP scoring old parents,0.00199559994507581
+C00,QD niche assignment,0.0
+C00,T selection,0.06463170005008578
+C00,P selection,1.27935189998243
+C00,Oracle/cache lookup and exact pre-hardness,449.906164099928
+C00,new Concorde labeling calls,0.0
+C00,BQ dataset preparation,0.27347680006641895
+C00,BQ 256E training,3170.202399999951
+C00,post-adaptation hardness,195.8662190999603
+C00,reporting/checkpoint/hash,0.05493819992989302
+C00,other,4.234905700199306
+C01,Random500 hardness refresh,9.882264000014402
+C01,GP training,91.02188000001479
+C01,mutation including repair/validity,150.43288970005233
+C01,repair/validity separately attributable,0.0
+C01,feature computation for offspring,34.05951940000523
+C01,feature reuse/computation for old parents,0.06814899994060397
+C01,union construction/dedup,4.243667200091295
+C01,GP scoring offspring,0.015056599979288876
+C01,extra GP scoring old parents,0.0021476000547409058
+C01,QD niche assignment,0.0
+C01,T selection,0.07282220001798123
+C01,P selection,1.21831399993971
+C01,Oracle/cache lookup and exact pre-hardness,369.0608541999245
+C01,new Concorde labeling calls,0.0
+C01,BQ dataset preparation,0.19501459994353354
+C01,BQ 256E training,3169.5198096999666
+C01,post-adaptation hardness,195.67625879996922
+C01,reporting/checkpoint/hash,0.04883360001258552
+C01,other,201.6764731000876
+C02,Random500 hardness refresh,9.811876500025392
+C02,GP training,60.21248490002472
+C02,mutation including repair/validity,148.3347255999688
+C02,repair/validity separately attributable,0.0
+C02,feature computation for offspring,31.46295400010422
+C02,feature reuse/computation for old parents,0.07164100010413677
+C02,union construction/dedup,4.217667300021276
+C02,GP scoring offspring,0.008302800008095801
+C02,extra GP scoring old parents,0.00148760003503412
+C02,QD niche assignment,0.0
+C02,T selection,0.06779449991881847
+C02,P selection,1.2717545999912545
+C02,Oracle/cache lookup and exact pre-hardness,623.3726103000809
+C02,new Concorde labeling calls,0.0
+C02,BQ dataset preparation,0.20610589999705553
+C02,BQ 256E training,3166.015788199962
+C02,post-adaptation hardness,195.51395120006055
+C02,reporting/checkpoint/hash,0.049756000051274896
+C02,other,203.02160939970054
+C03,Random500 hardness refresh,9.84362250007689
+C03,GP training,84.3657200000016
+C03,mutation including repair/validity,148.25830039998982
+C03,repair/validity separately attributable,0.0
+C03,feature computation for offspring,31.448035100009292
+C03,feature reuse/computation for old parents,0.06929750007111579
+C03,union construction/dedup,3.996495100087486
+C03,GP scoring offspring,0.010644100024364889
+C03,extra GP scoring old parents,0.0017782000359147787
+C03,QD niche assignment,0.0
+C03,T selection,0.073072399944067
+C03,P selection,1.1473131000529975
+C03,Oracle/cache lookup and exact pre-hardness,636.3699754000409
+C03,new Concorde labeling calls,0.0
+C03,BQ dataset preparation,0.204838200006634
+C03,BQ 256E training,3170.719808799913
+C03,post-adaptation hardness,195.86197089997586
+C03,reporting/checkpoint/hash,0.04980740009341389
+C03,other,205.1619516997598
+C04,Random500 hardness refresh,10.001390499994159
+C04,GP training,77.6741417000303
+C04,mutation including repair/validity,149.34962210000958
+C04,repair/validity separately attributable,0.0
+C04,feature computation for offspring,31.675040200003423
+C04,feature reuse/computation for old parents,0.07117119990289211
+C04,union construction/dedup,4.232212200062349
+C04,GP scoring offspring,0.017861800035461783
+C04,extra GP scoring old parents,0.002070500049740076
+C04,QD niche assignment,0.0
+C04,T selection,0.07629689993336797
+C04,P selection,1.2865184000693262
+C04,Oracle/cache lookup and exact pre-hardness,603.2348958000075
+C04,new Concorde labeling calls,0.0
+C04,BQ dataset preparation,0.21155660005751997
+C04,BQ 256E training,3172.9249857999384
+C04,post-adaptation hardness,195.65077930002008
+C04,reporting/checkpoint/hash,0.05656589998397976
+C04,other,206.99036639987025

@@ -1,0 +1,68 @@
+{
+  "audit": "BLADE_CYCLE0_INITIALIZATION_VALIDATION_V1",
+  "bootstrap": {
+    "replicates": 10000,
+    "seed": 2026,
+    "unit": "niche"
+  },
+  "calibration_depths": [
+    1,
+    2,
+    5
+  ],
+  "calibration_domain": "OFFSPRING_ONLY",
+  "created_utc": "2026-09-10T02:19:12.727446+00:00",
+  "cvt_k": 1000,
+  "cvt_refit": false,
+  "dev_quantiles": [
+    0.05,
+    0.15,
+    0.25,
+    0.35,
+    0.45,
+    0.55,
+    0.65,
+    0.75,
+    0.85,
+    0.95
+  ],
+  "forbidden": {
+    "BQ_finetune": true,
+    "external_evaluation": true,
+    "final_D0": true,
+    "final_runner": true,
+    "runs_population": true
+  },
+  "gp4": {
+    "ensemble": "median",
+    "fitness": "Huber",
+    "generations": 60,
+    "population": 2000,
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "selector": "SPERF"
+  },
+  "master_seed": 2026,
+  "normalization": "deep-reference P1/P99 + clip [0,1]",
+  "old_project_baseline": {
+    "git_head": "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+    "tracked_status_entries": 3,
+    "tracked_status_sha256": "18977703764c3481926ef206c8fc2786a29cdb20d63a0914b62c7713cc771acb"
+  },
+  "phase_b_gate": [
+    "A1",
+    "A2"
+  ],
+  "qd4": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_varcoeff",
+    "spn_mst_depth_mean",
+    "spn_mst_dists_median"
+  ],
+  "workspace": "D:\\NCO\\BLADE-NCO-mainline"
+}

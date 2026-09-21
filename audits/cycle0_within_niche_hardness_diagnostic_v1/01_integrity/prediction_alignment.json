@@ -1,0 +1,61 @@
+{
+  "all_predictions_finite": true,
+  "dev_n": 2666,
+  "exact_dev_hash_set_match": {
+    "GP4_D1": true,
+    "GP4_D2": true,
+    "GP4_D5": true,
+    "HGB20_D1": true,
+    "HGB20_D2": true,
+    "HGB20_D5": true,
+    "HGB4_D1": true,
+    "HGB4_D2": true,
+    "HGB4_D5": true
+  },
+  "expected_models": [
+    "GP4_D1",
+    "GP4_D2",
+    "GP4_D5",
+    "HGB4_D1",
+    "HGB4_D2",
+    "HGB4_D5",
+    "HGB20_D1",
+    "HGB20_D2",
+    "HGB20_D5"
+  ],
+  "found_models": [
+    "GP4_D1",
+    "GP4_D2",
+    "GP4_D5",
+    "HGB20_D1",
+    "HGB20_D2",
+    "HGB20_D5",
+    "HGB4_D1",
+    "HGB4_D2",
+    "HGB4_D5"
+  ],
+  "instance_by_instance_alignment": true,
+  "per_model_rows": {
+    "GP4_D1": 2666,
+    "GP4_D2": 2666,
+    "GP4_D5": 2666,
+    "HGB20_D1": 2666,
+    "HGB20_D2": 2666,
+    "HGB20_D5": 2666,
+    "HGB4_D1": 2666,
+    "HGB4_D2": 2666,
+    "HGB4_D5": 2666
+  },
+  "per_model_unique_instances": {
+    "GP4_D1": 2666,
+    "GP4_D2": 2666,
+    "GP4_D5": 2666,
+    "HGB20_D1": 2666,
+    "HGB20_D2": 2666,
+    "HGB20_D5": 2666,
+    "HGB4_D1": 2666,
+    "HGB4_D2": 2666,
+    "HGB4_D5": 2666
+  },
+  "status": "PASS"
+}

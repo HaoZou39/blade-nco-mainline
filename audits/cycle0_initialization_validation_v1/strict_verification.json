@@ -1,0 +1,374 @@
+{
+  "checks": [
+    {
+      "check": "correct mainline workspace",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline",
+      "id": 1,
+      "passed": true
+    },
+    {
+      "check": "old development project unchanged",
+      "evidence": "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+      "id": 2,
+      "passed": true
+    },
+    {
+      "check": "no production runtime dependency on old project",
+      "evidence": "mainline src contains no old-project absolute path",
+      "id": 3,
+      "passed": true
+    },
+    {
+      "check": "no symlinks",
+      "evidence": "",
+      "id": 4,
+      "passed": true
+    },
+    {
+      "check": "frozen mainline assets unchanged",
+      "evidence": "",
+      "id": 5,
+      "passed": true
+    },
+    {
+      "check": "exact 10k root provenance unchanged",
+      "evidence": "",
+      "id": 6,
+      "passed": true
+    },
+    {
+      "check": "exact previous Cycle-0 offspring hashes reused",
+      "evidence": "",
+      "id": 7,
+      "passed": true
+    },
+    {
+      "check": "exact 109785 unique offspring",
+      "evidence": "",
+      "id": 8,
+      "passed": true
+    },
+    {
+      "check": "exact K1000 map",
+      "evidence": "",
+      "id": 9,
+      "passed": true
+    },
+    {
+      "check": "exact QD4",
+      "evidence": "",
+      "id": 10,
+      "passed": true
+    },
+    {
+      "check": "exact normalization",
+      "evidence": "",
+      "id": 11,
+      "passed": true
+    },
+    {
+      "check": "no CVT refitting",
+      "evidence": "",
+      "id": 12,
+      "passed": true
+    },
+    {
+      "check": "repair provenance inspected",
+      "evidence": "",
+      "id": 13,
+      "passed": true
+    },
+    {
+      "check": "repair replay deterministic",
+      "evidence": "",
+      "id": 14,
+      "passed": true
+    },
+    {
+      "check": "operator-level repair summary generated",
+      "evidence": "",
+      "id": 15,
+      "passed": true
+    },
+    {
+      "check": "no operator removed",
+      "evidence": "",
+      "id": 16,
+      "passed": true
+    },
+    {
+      "check": "no operator retuned",
+      "evidence": "",
+      "id": 17,
+      "passed": true
+    },
+    {
+      "check": "Phase B gate honored",
+      "evidence": "",
+      "id": 18,
+      "passed": true
+    },
+    {
+      "check": "GP0 source offspring-only",
+      "evidence": "",
+      "id": 19,
+      "passed": true
+    },
+    {
+      "check": "435 occupied niches exact",
+      "evidence": "",
+      "id": 20,
+      "passed": true
+    },
+    {
+      "check": "calibration ordering difficulty-blind",
+      "evidence": "",
+      "id": 21,
+      "passed": true
+    },
+    {
+      "check": "calibration ordering deterministic",
+      "evidence": "",
+      "id": 22,
+      "passed": true
+    },
+    {
+      "check": "CAL_D1 nested in D2",
+      "evidence": "",
+      "id": 23,
+      "passed": true
+    },
+    {
+      "check": "CAL_D2 nested in D5",
+      "evidence": "",
+      "id": 24,
+      "passed": true
+    },
+    {
+      "check": "manifests frozen before labeling",
+      "evidence": "",
+      "id": 25,
+      "passed": true
+    },
+    {
+      "check": "dev panel fixed before labeling",
+      "evidence": "",
+      "id": 26,
+      "passed": true
+    },
+    {
+      "check": "dev panel excludes CAL_D5",
+      "evidence": "",
+      "id": 27,
+      "passed": true
+    },
+    {
+      "check": "dev panel difficulty-blind",
+      "evidence": "",
+      "id": 28,
+      "passed": true
+    },
+    {
+      "check": "no external benchmarks used",
+      "evidence": "no evaluation asset read by audit scripts",
+      "id": 29,
+      "passed": true
+    },
+    {
+      "check": "Concorde only audit calibration/dev instances",
+      "evidence": "",
+      "id": 30,
+      "passed": true
+    },
+    {
+      "check": "M0 unchanged",
+      "evidence": "",
+      "id": 31,
+      "passed": true
+    },
+    {
+      "check": "no BQ training",
+      "evidence": "",
+      "id": 32,
+      "passed": true
+    },
+    {
+      "check": "exact H0 teacher-forced protocol",
+      "evidence": "",
+      "id": 33,
+      "passed": true
+    },
+    {
+      "check": "GP4 protocol exact",
+      "evidence": "",
+      "id": 34,
+      "passed": true
+    },
+    {
+      "check": "seeds exact",
+      "evidence": "",
+      "id": 35,
+      "passed": true
+    },
+    {
+      "check": "median ensemble exact",
+      "evidence": "",
+      "id": 36,
+      "passed": true
+    },
+    {
+      "check": "HGB4 control only",
+      "evidence": "",
+      "id": 37,
+      "passed": true
+    },
+    {
+      "check": "HGB20 control only",
+      "evidence": "",
+      "id": 38,
+      "passed": true
+    },
+    {
+      "check": "matching control calibration rows",
+      "evidence": "",
+      "id": 39,
+      "passed": true
+    },
+    {
+      "check": "global metrics generated",
+      "evidence": "",
+      "id": 40,
+      "passed": true
+    },
+    {
+      "check": "within-niche metrics generated",
+      "evidence": "",
+      "id": 41,
+      "passed": true
+    },
+    {
+      "check": "niche-weighted primary summary generated",
+      "evidence": "",
+      "id": 42,
+      "passed": true
+    },
+    {
+      "check": "Top1 acquisition test generated",
+      "evidence": "",
+      "id": 43,
+      "passed": true
+    },
+    {
+      "check": "Top2 acquisition test generated",
+      "evidence": "",
+      "id": 44,
+      "passed": true
+    },
+    {
+      "check": "Top5 acquisition test generated",
+      "evidence": "",
+      "id": 45,
+      "passed": true
+    },
+    {
+      "check": "random baseline deterministic",
+      "evidence": "",
+      "id": 46,
+      "passed": true
+    },
+    {
+      "check": "niche bootstrap unit exact",
+      "evidence": "",
+      "id": 47,
+      "passed": true
+    },
+    {
+      "check": "bootstrap resamples 10000",
+      "evidence": "",
+      "id": 48,
+      "passed": true
+    },
+    {
+      "check": "bootstrap seed 2026",
+      "evidence": "",
+      "id": 49,
+      "passed": true
+    },
+    {
+      "check": "95 percent saturation rule exact",
+      "evidence": "",
+      "id": 50,
+      "passed": true
+    },
+    {
+      "check": "numerical stability gate applied",
+      "evidence": "",
+      "id": 51,
+      "passed": true
+    },
+    {
+      "check": "smallest qualifying depth selected",
+      "evidence": "",
+      "id": 52,
+      "passed": true
+    },
+    {
+      "check": "no final D0 constructed",
+      "evidence": "",
+      "id": 53,
+      "passed": true
+    },
+    {
+      "check": "no final D0 labeled",
+      "evidence": "",
+      "id": 54,
+      "passed": true
+    },
+    {
+      "check": "no M0 fine-tuning",
+      "evidence": "",
+      "id": 55,
+      "passed": true
+    },
+    {
+      "check": "no external performance evaluation",
+      "evidence": "",
+      "id": 56,
+      "passed": true
+    },
+    {
+      "check": "no final runner",
+      "evidence": "",
+      "id": 57,
+      "passed": true
+    },
+    {
+      "check": "runs remains empty",
+      "evidence": "",
+      "id": 58,
+      "passed": true
+    },
+    {
+      "check": "all generated files hashed",
+      "evidence": "generated_file_hashes.json covers every other audit artifact",
+      "id": 59,
+      "passed": true
+    },
+    {
+      "check": "all tests pass",
+      "evidence": "32/32",
+      "id": 60,
+      "passed": true
+    }
+  ],
+  "checks_passed": 60,
+  "checks_total": 60,
+  "passed": true,
+  "status": "PASS",
+  "tests": {
+    "output": "................................                                         [100%]\n32 passed in 14.07s\n",
+    "passed": 32,
+    "returncode": 0,
+    "total": 32
+  }
+}

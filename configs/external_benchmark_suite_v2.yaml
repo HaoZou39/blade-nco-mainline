@@ -1,0 +1,77 @@
+schema_version: EXTERNAL_BENCHMARK_SUITE_V2
+scientific_role: structural_OOD_generalization
+comprehensive_scale_generalization_claim: false
+passive_only: true
+master_seed: 2026
+active_suite:
+  - name: Uniform100
+    role: in-distribution reference at training size
+    n_nodes: 100
+    instance_count: 10000
+  - name: GaussianMixture100
+    role: controlled clustered structural OOD at N=100
+    n_nodes: 100
+    instance_count: 10000
+  - name: TSPLIB100
+    role: existing structured/real-derived N=100 benchmark
+    n_nodes: 100
+    instance_count: 10000
+  - name: EvoReal_S1_100
+    role: independent published-generator structural OOD at N=100
+    n_nodes: 100
+    instance_count: 1000
+  - name: EvoReal_S2_100
+    role: independent published-generator structural OOD at N=100
+    n_nodes: 100
+    instance_count: 1000
+  - name: EvoReal_S3_100
+    role: independent published-generator structural OOD at N=100
+    n_nodes: 100
+    instance_count: 1000
+  - name: GaussianMixture500
+    role: controlled structural plus moderate size shift
+    n_nodes: 500
+    instance_count: 1000
+  - name: OriginalTSPLIB70
+    role: real-world original-size variable-N benchmark
+    n_nodes: variable
+    instance_count: 70
+excluded_historical:
+  - LEHD_TSP200
+  - LEHD_TSP500
+  - LEHD_TSP1000
+evoreal:
+  repository: https://github.com/HenryZhu1029/EvoReal
+  pinned_commit: 919616337105e894e06463734ec1dd71f6451309
+  call_batch_size: 1000
+  problem_size: 100
+  augmentation: false
+  mutation: false
+  repair: false
+gaussian_mixture500:
+  source_family: gaussian_cluster100_v1
+  cDIST_values: [10, 30, 50, 70, 100]
+  instances_per_cDIST: 200
+  cluster_count_low_inclusive: 3
+  cluster_count_high_exclusive: 8
+  cluster_standard_deviation: 1.0
+  cluster_weights: assignment_iid_uniform
+  centers: uniform_0_to_cDIST
+  boundary_handling: per_axis_sample_minmax_to_unit_square
+  problem_size: 500
+  instance_count: 1000
+evaluation:
+  decoder: greedy
+  beam: 1
+  knn: 250
+  post_processing: false
+  synthetic_input_transform: identity
+  original_tsplib70_input_transform: translate_min_divide_by_single_max_axis_span
+  original_tsplib70_cost_geometry: original_TSPLIB_EUC_2D
+  reference_binding: stable_instance_id_and_coordinate_hash
+  affects_training: false
+  affects_gp: false
+  affects_qd: false
+  affects_hardness: false
+  affects_oracle_training_labels: false
+  affects_model_selection: false

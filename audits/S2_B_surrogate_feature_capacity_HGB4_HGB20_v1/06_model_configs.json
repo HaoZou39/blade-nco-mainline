@@ -1,0 +1,117 @@
+{
+  "config_path": "D:\\NCO\\BLADE-NCO-mainline\\configs\\surrogate_s2b_hgb4_hgb20.yaml",
+  "config_sha256": "d5726102efb2d7432e459f9d2186dc942f70c12a8835a4133701df1f53e347aa",
+  "parsed": {
+    "name": "S2_B_surrogate_feature_capacity_HGB4_HGB20_v1",
+    "status": "HGB20_MANIFEST_RESOLVED",
+    "source_run": "blade_v2_full_seed2026",
+    "source_audits": {
+      "S1": "audits/S1_gp4_surrogate_behavior_M0_M15_v1",
+      "S1_1": "audits/S1_1_gp4_oracle_enrichment_ceiling_v1",
+      "S2_A": "audits/S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1"
+    },
+    "cycle_range": [
+      0,
+      14
+    ],
+    "train_n": 500,
+    "target": "log1p_L_BQ",
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "ensemble": "median",
+    "hgb_config": "canonical_HGB_CFG",
+    "hgb_config_modified": false,
+    "hyperparameter_search": false,
+    "feature_sets": {
+      "HGB4": "GP4",
+      "HGB20": "configs/hgb20_features.yaml"
+    },
+    "p0": "S1_P0_clean_s",
+    "bootstrap": {
+      "seed": 2026,
+      "repetitions": 10000,
+      "unit": "cycle_level_delta"
+    },
+    "extraction": {
+      "batch": 250,
+      "workers": 10,
+      "transform": "arcsinh_frozen_scaler"
+    }
+  },
+  "hgb_canonical": {
+    "learning_rate": 0.05,
+    "max_iter": 500,
+    "max_leaf_nodes": 31,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "l2_regularization": 0.0001,
+    "early_stopping": false
+  },
+  "hgb_source": {
+    "file": "src/final_run/science.py",
+    "symbol": "HGB_CFG",
+    "usage": "train_hgb_controls: HistGradientBoostingRegressor on QD4, y=log1p(L_BQ)",
+    "also_used_in": "scripts/run_cycle0_models_and_evaluation.py"
+  },
+  "hgb_five_seed_example": {
+    "2026": {
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "early_stopping": false,
+      "random_state": 2026
+    },
+    "2027": {
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "early_stopping": false,
+      "random_state": 2027
+    },
+    "2028": {
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "early_stopping": false,
+      "random_state": 2028
+    },
+    "2029": {
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "early_stopping": false,
+      "random_state": 2029
+    },
+    "2030": {
+      "learning_rate": 0.05,
+      "max_iter": 500,
+      "max_leaf_nodes": 31,
+      "max_depth": null,
+      "min_samples_leaf": 20,
+      "l2_regularization": 0.0001,
+      "early_stopping": false,
+      "random_state": 2030
+    }
+  },
+  "hgb_config_modified": false,
+  "hyperparameter_search": false,
+  "hgb20_manifest_sha256": "780af9e84b6cecb90ec4cc348d80499faef4a701fad2fa2d7dca50f194efbbeb",
+  "hgb4_reuse": "S2-A models and P0 predictions"
+}

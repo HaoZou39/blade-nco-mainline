@@ -1,0 +1,13 @@
+{
+  "AUDIT_A": "K1000_RESOLUTION_ROBUST",
+  "AUDIT_B": "C10_REQUIRED",
+  "FINAL_K": 1000,
+  "FINAL_c": 10,
+  "FINAL_lambda": 110000,
+  "FINAL_mu": 10000,
+  "external_tests_used_for_selection": false,
+  "final_mainline_modified": false,
+  "final_runner_launched": false,
+  "human_review_required_before_mainline_copy_or_launch": true,
+  "status": "FINAL_DEVELOPMENT_RECOMMENDATION"
+}

@@ -1,0 +1,8 @@
+check,value,pass
+frozen assignment count,9021,True
+frozen A1/A2/B counts,"{""Hard region A1"": 5450, ""Hard region A2"": 3184, ""Hard region B"": 237}",True
+canonical representatives unchanged,"GM100::gaussian_mixture100_cdist70_1994, GM100::gaussian_mixture100_cdist30_0268, Uniform100::fresh_uniform100_02407",True
+PPT datasets all distinct,"GM100, TSPLIB100, Uniform100",True
+PPT distance percentile <=50,"0.000%, 0.785%, 0.000%",True
+A2 TSPLIB count >=20,790,True
+no cluster assignment write,source files read-only; outputs isolated,True

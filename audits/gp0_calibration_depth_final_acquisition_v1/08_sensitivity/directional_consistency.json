@@ -1,0 +1,18 @@
+{
+  "budgets": [
+    602,
+    1204,
+    2408
+  ],
+  "comparisons": [
+    "D1_vs_D5",
+    "D2_vs_D5"
+  ],
+  "consistent": false,
+  "metrics": [
+    "GP_FILL_H",
+    "GP_FILL_GAIN",
+    "HYBRID_H"
+  ],
+  "status": "SENSITIVITY_DIRECTION_SENSITIVE"
+}

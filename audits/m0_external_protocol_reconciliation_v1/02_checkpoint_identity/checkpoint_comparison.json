@@ -1,0 +1,1532 @@
+{
+  "architecture": {
+    "attention_heads": 12,
+    "embedding_dimension": 192,
+    "encoder_layers": 9,
+    "feed_forward_dimension": 512,
+    "identifier": "BQModel_TSP_2x192x512_L9_H12_ReLU_Softmax_ReZero",
+    "model_class": "BQModel"
+  },
+  "current_file_size": 12467743,
+  "current_full_parameter_hash": "61239a4c35dd48ce89d07064d369f2433ee03d8cddf6a334ecb425e7fb6b602f",
+  "current_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best",
+  "current_sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+  "current_state_dict_key_count": 113,
+  "historical_file_size": 12467743,
+  "historical_full_parameter_hash": "61239a4c35dd48ce89d07064d369f2433ee03d8cddf6a334ecb425e7fb6b602f",
+  "historical_path": "D:\\NCO\\BLADE-NCO\\artifacts\\bq_checkpoints\\base\\tsp.best",
+  "historical_sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+  "historical_state_dict_key_count": 113,
+  "parameter_element_count": 3107539,
+  "parameter_tensor_count_identical": 113,
+  "relation": "CHECKPOINT_BYTE_IDENTICAL",
+  "tensors": [
+    {
+      "current_shape": [
+        2,
+        192
+      ],
+      "current_tensor_sha256": "48a537318bfc4031383f37805936298e6002ecc324e793494eb347a6f3d4c8d2",
+      "historical_shape": [
+        2,
+        192
+      ],
+      "historical_tensor_sha256": "48a537318bfc4031383f37805936298e6002ecc324e793494eb347a6f3d4c8d2",
+      "identical": true,
+      "key": "begin_end_tokens.weight"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "ec80df2b8b3b5b6dae05e1cc504f02a1ea56027b9b4db80f5d554ace0fd3fd57",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "ec80df2b8b3b5b6dae05e1cc504f02a1ea56027b9b4db80f5d554ace0fd3fd57",
+      "identical": true,
+      "key": "encoder.0.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "fa68e9687702d8f1c8ad05d75171777a043a9abe5d069b5936068aadb0544555",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "fa68e9687702d8f1c8ad05d75171777a043a9abe5d069b5936068aadb0544555",
+      "identical": true,
+      "key": "encoder.0.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "249bcfff33635468fccc8ddaf8f33a52d88801a3be234079e536571016da8205",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "249bcfff33635468fccc8ddaf8f33a52d88801a3be234079e536571016da8205",
+      "identical": true,
+      "key": "encoder.0.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "57f9dbb6ab61a8086a8cdec28b992d280d90dd8c1849af57446ed6325aff5732",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "57f9dbb6ab61a8086a8cdec28b992d280d90dd8c1849af57446ed6325aff5732",
+      "identical": true,
+      "key": "encoder.0.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "2165165b5c5693188a55bbd2bd9d5d2419015c3bccad6f845e67a19c3d8d3abd",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "2165165b5c5693188a55bbd2bd9d5d2419015c3bccad6f845e67a19c3d8d3abd",
+      "identical": true,
+      "key": "encoder.0.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "e3824957a174f73639fc4acc5bb7a6da4cfc29dfa24ae9eb89ae5c21f8abbe39",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "e3824957a174f73639fc4acc5bb7a6da4cfc29dfa24ae9eb89ae5c21f8abbe39",
+      "identical": true,
+      "key": "encoder.0.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "440c430c8e608272c89cc82fce248f72c1b53194252b5af6272e1d1b6598ccd2",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "440c430c8e608272c89cc82fce248f72c1b53194252b5af6272e1d1b6598ccd2",
+      "identical": true,
+      "key": "encoder.0.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "67ff063e2e0a3c46322c75c578592c24a4c4d28452384e12a1534cf92166e5da",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "67ff063e2e0a3c46322c75c578592c24a4c4d28452384e12a1534cf92166e5da",
+      "identical": true,
+      "key": "encoder.0.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "59c68f4fc293268ba970a658ea21aa317254ddeaa0a6e3e950a54d1d57e38bb6",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "59c68f4fc293268ba970a658ea21aa317254ddeaa0a6e3e950a54d1d57e38bb6",
+      "identical": true,
+      "key": "encoder.0.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "e300f0cd47d36849449cbcf2c7ac3060dd463d4bb1d0f0a8e76bd55dbbd38ea7",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "e300f0cd47d36849449cbcf2c7ac3060dd463d4bb1d0f0a8e76bd55dbbd38ea7",
+      "identical": true,
+      "key": "encoder.0.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "a6aa07aa4499f6c335ef7801d9940df1cbb97a97bf837162ca6eb00fa71c39e0",
+      "historical_shape": [],
+      "historical_tensor_sha256": "a6aa07aa4499f6c335ef7801d9940df1cbb97a97bf837162ca6eb00fa71c39e0",
+      "identical": true,
+      "key": "encoder.0.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "626ad38bce449eaa5d900759f07949f25e370a60490cc163fae7570d1e307ff7",
+      "historical_shape": [],
+      "historical_tensor_sha256": "626ad38bce449eaa5d900759f07949f25e370a60490cc163fae7570d1e307ff7",
+      "identical": true,
+      "key": "encoder.0.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "780266456b4ca38d5869355b0929b58e2a94dd1abc6ae9da09212e6ce26d89b4",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "780266456b4ca38d5869355b0929b58e2a94dd1abc6ae9da09212e6ce26d89b4",
+      "identical": true,
+      "key": "encoder.1.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "6a3d76a95aaf5ba21e080cbe8aa5b35a43030eb1b9dec3b157b91ae3eccb3300",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "6a3d76a95aaf5ba21e080cbe8aa5b35a43030eb1b9dec3b157b91ae3eccb3300",
+      "identical": true,
+      "key": "encoder.1.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "0028cf72b47a81e7e08c22d322b0d6f06b8b28f9ed8e297f3c1dc764ec129011",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "0028cf72b47a81e7e08c22d322b0d6f06b8b28f9ed8e297f3c1dc764ec129011",
+      "identical": true,
+      "key": "encoder.1.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "fe91e01c6996c0a1a27b6d748c794e210941afadbbbc3d485238a9b31e339fad",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "fe91e01c6996c0a1a27b6d748c794e210941afadbbbc3d485238a9b31e339fad",
+      "identical": true,
+      "key": "encoder.1.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "dc69b00aafb6d1dd8646889380058a251bb9706a8501c03632d0a3b6e47ca57a",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "dc69b00aafb6d1dd8646889380058a251bb9706a8501c03632d0a3b6e47ca57a",
+      "identical": true,
+      "key": "encoder.1.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "f979221a011b554c99479df2a56f2757c5b33802e8f77b659eb09219c66c3ef0",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "f979221a011b554c99479df2a56f2757c5b33802e8f77b659eb09219c66c3ef0",
+      "identical": true,
+      "key": "encoder.1.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "58fac9059fb5f3b5241709015a045dfa054209e72a09b00c95eb9dcb874b5185",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "58fac9059fb5f3b5241709015a045dfa054209e72a09b00c95eb9dcb874b5185",
+      "identical": true,
+      "key": "encoder.1.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "067089ed7be3c75d5090ee53bd5ad87267485d7287f8f5d22e6ab8bb221d92dd",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "067089ed7be3c75d5090ee53bd5ad87267485d7287f8f5d22e6ab8bb221d92dd",
+      "identical": true,
+      "key": "encoder.1.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "7ecdc959c9220359461fb57c8c628fdad3a1addaac88e8e67b5a66078a04575e",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "7ecdc959c9220359461fb57c8c628fdad3a1addaac88e8e67b5a66078a04575e",
+      "identical": true,
+      "key": "encoder.1.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "5cc630086f73a778d83ade97081fe641d343e20a190edee3018bfe44f09b34d1",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "5cc630086f73a778d83ade97081fe641d343e20a190edee3018bfe44f09b34d1",
+      "identical": true,
+      "key": "encoder.1.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "1d848e468de93e25a2fa683dd7c037c5fc38fdab01f1dfa79318de6633dfc96d",
+      "historical_shape": [],
+      "historical_tensor_sha256": "1d848e468de93e25a2fa683dd7c037c5fc38fdab01f1dfa79318de6633dfc96d",
+      "identical": true,
+      "key": "encoder.1.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "3d7baac3e1bc9077240cad413a0369816343128a9870e06c6c88dfd6d2444681",
+      "historical_shape": [],
+      "historical_tensor_sha256": "3d7baac3e1bc9077240cad413a0369816343128a9870e06c6c88dfd6d2444681",
+      "identical": true,
+      "key": "encoder.1.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "fa173fff0b7627eb0d33d895c8229d930a9c62b1d2aa6768a2ba59e439bec809",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "fa173fff0b7627eb0d33d895c8229d930a9c62b1d2aa6768a2ba59e439bec809",
+      "identical": true,
+      "key": "encoder.2.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "25c48ca9c9d054f11c05193de290c1c2d3212421b143166cfee1c729d9e05839",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "25c48ca9c9d054f11c05193de290c1c2d3212421b143166cfee1c729d9e05839",
+      "identical": true,
+      "key": "encoder.2.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "e076620c5f14271dace3e5cec61016b563bc67269394526d6b67bfa430c41b67",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "e076620c5f14271dace3e5cec61016b563bc67269394526d6b67bfa430c41b67",
+      "identical": true,
+      "key": "encoder.2.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "f5f07fb564447592a0417800e03acd90d2cc6b143d5a808fd580cf8d70a3f09c",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "f5f07fb564447592a0417800e03acd90d2cc6b143d5a808fd580cf8d70a3f09c",
+      "identical": true,
+      "key": "encoder.2.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "9a6a3e2f98aba491d1fa238e9e39187efa45f6c7b2257796448e9f57222a8b00",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "9a6a3e2f98aba491d1fa238e9e39187efa45f6c7b2257796448e9f57222a8b00",
+      "identical": true,
+      "key": "encoder.2.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "8a33346bcc9a20a2e3243898cad900c2ac6f905ea91568435a13fee06809acdc",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "8a33346bcc9a20a2e3243898cad900c2ac6f905ea91568435a13fee06809acdc",
+      "identical": true,
+      "key": "encoder.2.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "da165fc66b63e282879f22b0db14d4bf8fe654ee7921bd2b5a6b8070a2523c15",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "da165fc66b63e282879f22b0db14d4bf8fe654ee7921bd2b5a6b8070a2523c15",
+      "identical": true,
+      "key": "encoder.2.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "23fdb41911057ee543e2c9f34447f52762ee6a068a24d3ec4e532c9bdaffc000",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "23fdb41911057ee543e2c9f34447f52762ee6a068a24d3ec4e532c9bdaffc000",
+      "identical": true,
+      "key": "encoder.2.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "90db94ccfb16aef760a0ec4024bae80d48e19401338ddb9070ba6c66ac0149c4",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "90db94ccfb16aef760a0ec4024bae80d48e19401338ddb9070ba6c66ac0149c4",
+      "identical": true,
+      "key": "encoder.2.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "81e0ee84a8881623ed624341d4214e6ce2ceb6eaddd32876f356baabd3d9fdac",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "81e0ee84a8881623ed624341d4214e6ce2ceb6eaddd32876f356baabd3d9fdac",
+      "identical": true,
+      "key": "encoder.2.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "c9b9eca3e8c704bce4fb04796c7b40633af075b7294a72f65381de8c16d95182",
+      "historical_shape": [],
+      "historical_tensor_sha256": "c9b9eca3e8c704bce4fb04796c7b40633af075b7294a72f65381de8c16d95182",
+      "identical": true,
+      "key": "encoder.2.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "b1dc4100c0e31d679f1b6d0d7dd23557536a58ccbdaf4fdd26a0705ecd620411",
+      "historical_shape": [],
+      "historical_tensor_sha256": "b1dc4100c0e31d679f1b6d0d7dd23557536a58ccbdaf4fdd26a0705ecd620411",
+      "identical": true,
+      "key": "encoder.2.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "c219944033197b024d5493ed590a9079c398069bbd9e920caa5362e7991f6c18",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "c219944033197b024d5493ed590a9079c398069bbd9e920caa5362e7991f6c18",
+      "identical": true,
+      "key": "encoder.3.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "fb4dac1a1c1ee1a3a9f13d917fd89661e8099fbcf847f2fab01439363a630f9a",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "fb4dac1a1c1ee1a3a9f13d917fd89661e8099fbcf847f2fab01439363a630f9a",
+      "identical": true,
+      "key": "encoder.3.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "e768e4e315c4c2d76cc2f9572d6e613f687e84594eb24e21515a5fe8bb68e3fc",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "e768e4e315c4c2d76cc2f9572d6e613f687e84594eb24e21515a5fe8bb68e3fc",
+      "identical": true,
+      "key": "encoder.3.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "3c8a542c702557d17d687f8b5609ed08585d28a1fb87d81f63204eed35e88b2e",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "3c8a542c702557d17d687f8b5609ed08585d28a1fb87d81f63204eed35e88b2e",
+      "identical": true,
+      "key": "encoder.3.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "31a38ad23f266d04e623d81df0996aca3179aaee58375e2701e8b85ae99c28b7",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "31a38ad23f266d04e623d81df0996aca3179aaee58375e2701e8b85ae99c28b7",
+      "identical": true,
+      "key": "encoder.3.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "3f05684f85e3e5fb9c8cb6c6937cfe8b5006ad946a40d957368dd17273897234",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "3f05684f85e3e5fb9c8cb6c6937cfe8b5006ad946a40d957368dd17273897234",
+      "identical": true,
+      "key": "encoder.3.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "756737e944ffc08a472771690743da8702e369362d021ece11cad415620fcb07",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "756737e944ffc08a472771690743da8702e369362d021ece11cad415620fcb07",
+      "identical": true,
+      "key": "encoder.3.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "4fd0e32526daf0e85723d124c296ba9a9dc5bbede71db5d77155b42e0794ed5a",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "4fd0e32526daf0e85723d124c296ba9a9dc5bbede71db5d77155b42e0794ed5a",
+      "identical": true,
+      "key": "encoder.3.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "5096c0f8ba0775f87887e467dfbf7fbd4041a486bb237ba48723c39a9ae5391b",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "5096c0f8ba0775f87887e467dfbf7fbd4041a486bb237ba48723c39a9ae5391b",
+      "identical": true,
+      "key": "encoder.3.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "64ad665f4d9569aa0fa5f120aa1677dcf889fc2ec70f21e7a9634a0c036aea99",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "64ad665f4d9569aa0fa5f120aa1677dcf889fc2ec70f21e7a9634a0c036aea99",
+      "identical": true,
+      "key": "encoder.3.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "928cc24bea15010242840deb0e661b6431cfcbe4c475f342d8e8c6b99dcfeaea",
+      "historical_shape": [],
+      "historical_tensor_sha256": "928cc24bea15010242840deb0e661b6431cfcbe4c475f342d8e8c6b99dcfeaea",
+      "identical": true,
+      "key": "encoder.3.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "3f53d3cfbfb15a05fbd191fc990bbcb5436db20f4d857883ad808404f8faeb43",
+      "historical_shape": [],
+      "historical_tensor_sha256": "3f53d3cfbfb15a05fbd191fc990bbcb5436db20f4d857883ad808404f8faeb43",
+      "identical": true,
+      "key": "encoder.3.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "3d241b7e0530c00776a04babb227195a297d20ca42c4af2219c8412c933b409d",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "3d241b7e0530c00776a04babb227195a297d20ca42c4af2219c8412c933b409d",
+      "identical": true,
+      "key": "encoder.4.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "04fb30bb891b06b44b4659a3491d74cb98a632aff9a4a91f587af851c1cfa992",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "04fb30bb891b06b44b4659a3491d74cb98a632aff9a4a91f587af851c1cfa992",
+      "identical": true,
+      "key": "encoder.4.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "a09aa00040263dd161e1a458c591c2765bf96be6cb1bece7e112e2aae20dc156",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "a09aa00040263dd161e1a458c591c2765bf96be6cb1bece7e112e2aae20dc156",
+      "identical": true,
+      "key": "encoder.4.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "10d69933d6c470e8ad804ee02ba8fa530e0d237a717e3d347ee5f09a41b965a7",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "10d69933d6c470e8ad804ee02ba8fa530e0d237a717e3d347ee5f09a41b965a7",
+      "identical": true,
+      "key": "encoder.4.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "45df661728c6f8f90a12be455590a055cb7506ed5309230a5d28af5fced20223",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "45df661728c6f8f90a12be455590a055cb7506ed5309230a5d28af5fced20223",
+      "identical": true,
+      "key": "encoder.4.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "d22ceb14602beac4b59f522d2825d8fa8e45a958545def37cb9d361440e7fec7",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "d22ceb14602beac4b59f522d2825d8fa8e45a958545def37cb9d361440e7fec7",
+      "identical": true,
+      "key": "encoder.4.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "9886407458208821b2051aa32fcba99556b069326123a4a95f675a9c4c0eb335",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "9886407458208821b2051aa32fcba99556b069326123a4a95f675a9c4c0eb335",
+      "identical": true,
+      "key": "encoder.4.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "a564ab6de146633a1b678544c62c8e048a7a38cd417867d3b3301651d0c0f19c",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "a564ab6de146633a1b678544c62c8e048a7a38cd417867d3b3301651d0c0f19c",
+      "identical": true,
+      "key": "encoder.4.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "2300f0278593ad948c42ba17c0a0d386d0795d32bb2f0a862250dc717b0244df",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "2300f0278593ad948c42ba17c0a0d386d0795d32bb2f0a862250dc717b0244df",
+      "identical": true,
+      "key": "encoder.4.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "c10a303692ed004f875ed3e367f10a86a8a81db2a56cec6e3058375aabc2d89b",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "c10a303692ed004f875ed3e367f10a86a8a81db2a56cec6e3058375aabc2d89b",
+      "identical": true,
+      "key": "encoder.4.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "3fd059e1d7e539d788a268ea3b19c93dc6c6b573f63245bb40b4d084cf19c702",
+      "historical_shape": [],
+      "historical_tensor_sha256": "3fd059e1d7e539d788a268ea3b19c93dc6c6b573f63245bb40b4d084cf19c702",
+      "identical": true,
+      "key": "encoder.4.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "f9eecec53a9e387b3b44c3aad4bea469fdc60ec15cf29859f24763c09d0f7c95",
+      "historical_shape": [],
+      "historical_tensor_sha256": "f9eecec53a9e387b3b44c3aad4bea469fdc60ec15cf29859f24763c09d0f7c95",
+      "identical": true,
+      "key": "encoder.4.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "a6da51f100c6fb2b8efb79f65c6f66c603e9c633fa36f00e29aeef42f18349a3",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "a6da51f100c6fb2b8efb79f65c6f66c603e9c633fa36f00e29aeef42f18349a3",
+      "identical": true,
+      "key": "encoder.5.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "a39db4d35e3bf37979fbcac9d7c91750a4fd2277d0f5bb78d103a778a95017a7",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "a39db4d35e3bf37979fbcac9d7c91750a4fd2277d0f5bb78d103a778a95017a7",
+      "identical": true,
+      "key": "encoder.5.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "b875ff961c8352bebc55fbe29b64305237db7519947ebdd7b52c81bcc55c16f5",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "b875ff961c8352bebc55fbe29b64305237db7519947ebdd7b52c81bcc55c16f5",
+      "identical": true,
+      "key": "encoder.5.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "3cba3067bdb0c8c601f8e7ed6c2794e113469fdbd5fbacd507177403ed2ce234",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "3cba3067bdb0c8c601f8e7ed6c2794e113469fdbd5fbacd507177403ed2ce234",
+      "identical": true,
+      "key": "encoder.5.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "9fbb15cc0e260c7373c2bdf96534693435860e89f18f47f8d4321d2e2c231ae9",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "9fbb15cc0e260c7373c2bdf96534693435860e89f18f47f8d4321d2e2c231ae9",
+      "identical": true,
+      "key": "encoder.5.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "f060bc8ebf6f0920a9abeaa138e3c0de0de06fe198681ebf5ac76034dc4618d8",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "f060bc8ebf6f0920a9abeaa138e3c0de0de06fe198681ebf5ac76034dc4618d8",
+      "identical": true,
+      "key": "encoder.5.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "90b49cd467bccb3b2fd0b1aa1763a8445b69b6c8d79abff71ee9f3c1a8c0e5c8",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "90b49cd467bccb3b2fd0b1aa1763a8445b69b6c8d79abff71ee9f3c1a8c0e5c8",
+      "identical": true,
+      "key": "encoder.5.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "13a980c8b2ce5051204fad19f4e0329c5d31137e1ec110fc7693c680cc47d371",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "13a980c8b2ce5051204fad19f4e0329c5d31137e1ec110fc7693c680cc47d371",
+      "identical": true,
+      "key": "encoder.5.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "5f73f4fa62fb74d589ff2f635e5a729079d8cd0cb099372639beb0d1d0b55e2b",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "5f73f4fa62fb74d589ff2f635e5a729079d8cd0cb099372639beb0d1d0b55e2b",
+      "identical": true,
+      "key": "encoder.5.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "a81274b28dd278c1cb224d9e818aca4db666907da25e840a07fb6f3011cf6d5c",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "a81274b28dd278c1cb224d9e818aca4db666907da25e840a07fb6f3011cf6d5c",
+      "identical": true,
+      "key": "encoder.5.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "5f76438794126305336e21e1bd184c4a6e9b1904c0973cc0c6cfb370be347e39",
+      "historical_shape": [],
+      "historical_tensor_sha256": "5f76438794126305336e21e1bd184c4a6e9b1904c0973cc0c6cfb370be347e39",
+      "identical": true,
+      "key": "encoder.5.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "ed5cf9773385c8d98001b66644d307880f261e7dd2ba85a7dd366cc76659efa5",
+      "historical_shape": [],
+      "historical_tensor_sha256": "ed5cf9773385c8d98001b66644d307880f261e7dd2ba85a7dd366cc76659efa5",
+      "identical": true,
+      "key": "encoder.5.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "8e6061a026d1961fa99afba89c5f5569579448835a257b7fe05f8fea77c138ff",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "8e6061a026d1961fa99afba89c5f5569579448835a257b7fe05f8fea77c138ff",
+      "identical": true,
+      "key": "encoder.6.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "62ce5e12fb1960714f84e255e485c1ebe7a86b4c6e6bc6865cd78bbf2c99ffe0",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "62ce5e12fb1960714f84e255e485c1ebe7a86b4c6e6bc6865cd78bbf2c99ffe0",
+      "identical": true,
+      "key": "encoder.6.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "f506e60f3d0bcf475bc09496e77087ca4be20b9ff16f3bcb76644cff435c6421",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "f506e60f3d0bcf475bc09496e77087ca4be20b9ff16f3bcb76644cff435c6421",
+      "identical": true,
+      "key": "encoder.6.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "a01639d20bc14e2faedefba691ec9e99370f5624cb150eb3ea4f099e4a825c2f",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "a01639d20bc14e2faedefba691ec9e99370f5624cb150eb3ea4f099e4a825c2f",
+      "identical": true,
+      "key": "encoder.6.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "e91373e4f8be3c3d712db3f60f687e091a71e1ee13673707ebc65bee51e6076e",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "e91373e4f8be3c3d712db3f60f687e091a71e1ee13673707ebc65bee51e6076e",
+      "identical": true,
+      "key": "encoder.6.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "77e58421ddc50abc6ab397d5cc143ad5a215835ec293d33044039e11cd64385d",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "77e58421ddc50abc6ab397d5cc143ad5a215835ec293d33044039e11cd64385d",
+      "identical": true,
+      "key": "encoder.6.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "8d1e2df26ffabd0c2ee74bf7f333b29afda1aff19be9ecb53d8a5041deaa0e58",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "8d1e2df26ffabd0c2ee74bf7f333b29afda1aff19be9ecb53d8a5041deaa0e58",
+      "identical": true,
+      "key": "encoder.6.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "c1e4b24b2c7020903eb29d73eea4cda68b173bb6f7f8981793720e0605cdc991",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "c1e4b24b2c7020903eb29d73eea4cda68b173bb6f7f8981793720e0605cdc991",
+      "identical": true,
+      "key": "encoder.6.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "05ec4e049ad464a1ce067bc388ecbd980d8a90e90f49b6eb5b9489eabf1825cc",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "05ec4e049ad464a1ce067bc388ecbd980d8a90e90f49b6eb5b9489eabf1825cc",
+      "identical": true,
+      "key": "encoder.6.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "bedc3f00df0132089a66130769c5fb97485f97f069a4147a1630626a4d66a328",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "bedc3f00df0132089a66130769c5fb97485f97f069a4147a1630626a4d66a328",
+      "identical": true,
+      "key": "encoder.6.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "bab6887cd51a961a163e7e1f7afd4f40562c4d82cd29ca3f152897f62ce4667d",
+      "historical_shape": [],
+      "historical_tensor_sha256": "bab6887cd51a961a163e7e1f7afd4f40562c4d82cd29ca3f152897f62ce4667d",
+      "identical": true,
+      "key": "encoder.6.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "5ea8dfe3986ce352153a193113c8ee0290b97c2e87f3678190a3c62ebbd44c1d",
+      "historical_shape": [],
+      "historical_tensor_sha256": "5ea8dfe3986ce352153a193113c8ee0290b97c2e87f3678190a3c62ebbd44c1d",
+      "identical": true,
+      "key": "encoder.6.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "d07c8a0dcae0864017c825ff0f88e195e9414b69f6f6534a14a33f0871d596b5",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "d07c8a0dcae0864017c825ff0f88e195e9414b69f6f6534a14a33f0871d596b5",
+      "identical": true,
+      "key": "encoder.7.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "d8e5bfe8cdf37f8410ae225c86ae68da96e64675aa0b79c21c4cfb3fccb45bf0",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "d8e5bfe8cdf37f8410ae225c86ae68da96e64675aa0b79c21c4cfb3fccb45bf0",
+      "identical": true,
+      "key": "encoder.7.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "86eb5aa3496c28938081487e52869f711fb4c208497b94e4c641c3ba8f9b3f56",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "86eb5aa3496c28938081487e52869f711fb4c208497b94e4c641c3ba8f9b3f56",
+      "identical": true,
+      "key": "encoder.7.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "0c13d181a80980f70e2de01047beb16967ca5085883c3f6b2913603fca0e6e0f",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "0c13d181a80980f70e2de01047beb16967ca5085883c3f6b2913603fca0e6e0f",
+      "identical": true,
+      "key": "encoder.7.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "059e9e8b1e0d7615430c52f7fb871065903d29ce749307fc581e01434275bb24",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "059e9e8b1e0d7615430c52f7fb871065903d29ce749307fc581e01434275bb24",
+      "identical": true,
+      "key": "encoder.7.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "fb557f78c830486803910c0e0a3f65a1a04207f4f7a4fdf4aa5633c2c6250192",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "fb557f78c830486803910c0e0a3f65a1a04207f4f7a4fdf4aa5633c2c6250192",
+      "identical": true,
+      "key": "encoder.7.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "5436bfc80199b66d2197a8193d740ddae2d8a3e2bc84b98d6dcff51881b73ee0",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "5436bfc80199b66d2197a8193d740ddae2d8a3e2bc84b98d6dcff51881b73ee0",
+      "identical": true,
+      "key": "encoder.7.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "41a5527423220785063fcedd3fae522f16fa5f47c3bc5409e173bc29ad2d746a",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "41a5527423220785063fcedd3fae522f16fa5f47c3bc5409e173bc29ad2d746a",
+      "identical": true,
+      "key": "encoder.7.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "0b4b98168f409c03d74170fd4679fa83ae4b854f3a74250209e2576b957defc1",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "0b4b98168f409c03d74170fd4679fa83ae4b854f3a74250209e2576b957defc1",
+      "identical": true,
+      "key": "encoder.7.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "7e7447adb1b4181bcccfc910ac0188c52c033a55dcbf43ea73fff6b59eaf7f2a",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "7e7447adb1b4181bcccfc910ac0188c52c033a55dcbf43ea73fff6b59eaf7f2a",
+      "identical": true,
+      "key": "encoder.7.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "b521389a8c92c0aa58dd1f3849265620227e99fc2250d47d927b6e09da905c96",
+      "historical_shape": [],
+      "historical_tensor_sha256": "b521389a8c92c0aa58dd1f3849265620227e99fc2250d47d927b6e09da905c96",
+      "identical": true,
+      "key": "encoder.7.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "e8bf335196aee749ab84db8357f9f575fdccbe8906d4ae701b632f195c4386d6",
+      "historical_shape": [],
+      "historical_tensor_sha256": "e8bf335196aee749ab84db8357f9f575fdccbe8906d4ae701b632f195c4386d6",
+      "identical": true,
+      "key": "encoder.7.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "6a8a73ef875928dbe1ecdc93a553d5b10c12fc77c140d3dc751431a37290433c",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "6a8a73ef875928dbe1ecdc93a553d5b10c12fc77c140d3dc751431a37290433c",
+      "identical": true,
+      "key": "encoder.8.attn.bias_lambda"
+    },
+    {
+      "current_shape": [
+        12,
+        16
+      ],
+      "current_tensor_sha256": "bb5924e83d7c824ad52bb5aa1dc6ebab1edbb7cc752bf358a07b33e6df0c2dd8",
+      "historical_shape": [
+        12,
+        16
+      ],
+      "historical_tensor_sha256": "bb5924e83d7c824ad52bb5aa1dc6ebab1edbb7cc752bf358a07b33e6df0c2dd8",
+      "identical": true,
+      "key": "encoder.8.attn.bias_theta"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "9abd694abdb2c0121e394a8ee1563b0217e49e3a0a03b74e44c91c415904d8e3",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "9abd694abdb2c0121e394a8ee1563b0217e49e3a0a03b74e44c91c415904d8e3",
+      "identical": true,
+      "key": "encoder.8.attn.lambda1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "74f5599f053a5d251e8290bff60b4764729a61453e458cb9702483b211783670",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "74f5599f053a5d251e8290bff60b4764729a61453e458cb9702483b211783670",
+      "identical": true,
+      "key": "encoder.8.attn.lambda2"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "2b1834a1942da6870e60bcea41c7bc394af3e3995026a0692c9cc7b5d4b28658",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "2b1834a1942da6870e60bcea41c7bc394af3e3995026a0692c9cc7b5d4b28658",
+      "identical": true,
+      "key": "encoder.8.attn.theta1"
+    },
+    {
+      "current_shape": [
+        12,
+        192,
+        16
+      ],
+      "current_tensor_sha256": "db530a3b9a06795e9a82c4084928237339c09eef0cddc76459089a46430483b7",
+      "historical_shape": [
+        12,
+        192,
+        16
+      ],
+      "historical_tensor_sha256": "db530a3b9a06795e9a82c4084928237339c09eef0cddc76459089a46430483b7",
+      "identical": true,
+      "key": "encoder.8.attn.theta2"
+    },
+    {
+      "current_shape": [
+        512
+      ],
+      "current_tensor_sha256": "9b8124d0c2f5ecfcf65389a4f31331dc658129ec1b94f9dcb839f556ccba9263",
+      "historical_shape": [
+        512
+      ],
+      "historical_tensor_sha256": "9b8124d0c2f5ecfcf65389a4f31331dc658129ec1b94f9dcb839f556ccba9263",
+      "identical": true,
+      "key": "encoder.8.linear1.bias"
+    },
+    {
+      "current_shape": [
+        512,
+        192
+      ],
+      "current_tensor_sha256": "345616ded6d7e557e8f0d4a55e694f708617c50ed7083b8cc938e6c2d0ae7df5",
+      "historical_shape": [
+        512,
+        192
+      ],
+      "historical_tensor_sha256": "345616ded6d7e557e8f0d4a55e694f708617c50ed7083b8cc938e6c2d0ae7df5",
+      "identical": true,
+      "key": "encoder.8.linear1.weight"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "106a33dfbb9b14e10e0ca24c94002e0de745933ab521493d0faa9465555410f7",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "106a33dfbb9b14e10e0ca24c94002e0de745933ab521493d0faa9465555410f7",
+      "identical": true,
+      "key": "encoder.8.linear2.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        512
+      ],
+      "current_tensor_sha256": "f7db9cc4dfb00895a08e16980e7bde758b06a0304f5a1d5de82d311cd4bdf85f",
+      "historical_shape": [
+        192,
+        512
+      ],
+      "historical_tensor_sha256": "f7db9cc4dfb00895a08e16980e7bde758b06a0304f5a1d5de82d311cd4bdf85f",
+      "identical": true,
+      "key": "encoder.8.linear2.weight"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "c4fd35b81c7a283054df130f1c402387d9534d18951a3b9047e34591853e11f4",
+      "historical_shape": [],
+      "historical_tensor_sha256": "c4fd35b81c7a283054df130f1c402387d9534d18951a3b9047e34591853e11f4",
+      "identical": true,
+      "key": "encoder.8.res_norm1.alpha"
+    },
+    {
+      "current_shape": [],
+      "current_tensor_sha256": "0155e8f90bd2b216edac4bf601163d975ae7e4e5ec6305125181c999cea78a1c",
+      "historical_shape": [],
+      "historical_tensor_sha256": "0155e8f90bd2b216edac4bf601163d975ae7e4e5ec6305125181c999cea78a1c",
+      "identical": true,
+      "key": "encoder.8.res_norm2.alpha"
+    },
+    {
+      "current_shape": [
+        192
+      ],
+      "current_tensor_sha256": "fb59fbb8e954ce722fbbfc51bfaae4cb388991941f20b8d8b44d34dc446a52a7",
+      "historical_shape": [
+        192
+      ],
+      "historical_tensor_sha256": "fb59fbb8e954ce722fbbfc51bfaae4cb388991941f20b8d8b44d34dc446a52a7",
+      "identical": true,
+      "key": "input_emb.bias"
+    },
+    {
+      "current_shape": [
+        192,
+        2
+      ],
+      "current_tensor_sha256": "1bd6fad8af778d88feea454440978cf96c55b69ae66745eb4f3a06c83f891a37",
+      "historical_shape": [
+        192,
+        2
+      ],
+      "historical_tensor_sha256": "1bd6fad8af778d88feea454440978cf96c55b69ae66745eb4f3a06c83f891a37",
+      "identical": true,
+      "key": "input_emb.weight"
+    },
+    {
+      "current_shape": [
+        1
+      ],
+      "current_tensor_sha256": "7156f28ef57bb50075aba41cd1af10d28c661783237626c816e9d7e84a11cfa4",
+      "historical_shape": [
+        1
+      ],
+      "historical_tensor_sha256": "7156f28ef57bb50075aba41cd1af10d28c661783237626c816e9d7e84a11cfa4",
+      "identical": true,
+      "key": "scores_projection.bias"
+    },
+    {
+      "current_shape": [
+        1,
+        192
+      ],
+      "current_tensor_sha256": "0e3d5ff3c496fa6f524d848d638c56212fe74460518cf29db0d265160380c007",
+      "historical_shape": [
+        1,
+        192
+      ],
+      "historical_tensor_sha256": "0e3d5ff3c496fa6f524d848d638c56212fe74460518cf29db0d265160380c007",
+      "identical": true,
+      "key": "scores_projection.weight"
+    }
+  ],
+  "total_tensor_keys": 113
+}

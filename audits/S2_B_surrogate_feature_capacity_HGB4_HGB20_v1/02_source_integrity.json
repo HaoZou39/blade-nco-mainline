@@ -1,0 +1,12 @@
+{
+  "FULL_ID": "blade_v2_full_seed2026",
+  "architecture": "OFFSPRING-ONLY",
+  "s1_identity_status": "UNAMBIGUOUS",
+  "hgb20_manifest_unambiguous": true,
+  "hgb20_n": 20,
+  "b_s_all_n500": true,
+  "p0_clean_matches_s1": true,
+  "p0_leakage_empty": true,
+  "issues": [],
+  "status": "OK"
+}

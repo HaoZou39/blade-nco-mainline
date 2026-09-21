@@ -1,0 +1,30 @@
+﻿{
+    "dataset_name":  "LEHD_CrossSize",
+    "role":  "cross_size_passive_generalization",
+    "size_range":  [
+                       200,
+                       500,
+                       1000
+                   ],
+    "instance_count":  {
+                           "LEHD_TSP200":  128,
+                           "LEHD_TSP500":  128,
+                           "LEHD_TSP1000":  128
+                       },
+    "source":  "official LEHD TSP data files already present locally",
+    "source_hashes":  {
+                          "lehd_data_inventory.json":  "d775d364085eda8b86fbbc3bfcdb8e9bcaccd413cb3532aa7e5e4f2f89ce8638",
+                          "test_TSP1000_n128.txt":  "f814486247935b15b15737babb184361da34d64b1824920a39da9c2ae8546069",
+                          "test_TSP200_n128.txt":  "ae5b086207238bbf20faa5957761032f16031ba07e483ceb23417974b9d80433",
+                          "test_TSP500_n128.txt":  "5eca0bc4e2bd87a8a8db72fcc72cecaa5f11f0cee3ab6bfe5b3f2bed6a0b86a7"
+                      },
+    "destination_hashes":  {
+                               "lehd_data_inventory.json":  "d775d364085eda8b86fbbc3bfcdb8e9bcaccd413cb3532aa7e5e4f2f89ce8638",
+                               "test_TSP1000_n128.txt":  "f814486247935b15b15737babb184361da34d64b1824920a39da9c2ae8546069",
+                               "test_TSP200_n128.txt":  "ae5b086207238bbf20faa5957761032f16031ba07e483ceb23417974b9d80433",
+                               "test_TSP500_n128.txt":  "5eca0bc4e2bd87a8a8db72fcc72cecaa5f11f0cee3ab6bfe5b3f2bed6a0b86a7"
+                           },
+    "ground_truth_availability":  "reference tours included in each line",
+    "coordinate_convention":  "unit-square float coordinates; each output tour contains N+1 indices",
+    "read_only":  true
+}

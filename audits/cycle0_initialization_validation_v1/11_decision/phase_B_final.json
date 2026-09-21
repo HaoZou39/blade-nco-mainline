@@ -1,0 +1,41 @@
+{
+  "classification": "B4",
+  "final_protocol_modified": false,
+  "label": "GP0_ACQUISITION_SIGNAL_INSUFFICIENT",
+  "minimum_saturated_probes_per_niche": "NONE",
+  "saturation": [
+    {
+      "bootstrap_gate": false,
+      "condition_C": false,
+      "depth": 1,
+      "qualifies": false,
+      "saturated": false,
+      "stable": true,
+      "top1_ratio_to_D5": 1.016555057739394,
+      "top2_ratio_to_D5": 0.9978418256170717,
+      "top5_ratio_to_D5": 1.0042637197469406
+    },
+    {
+      "bootstrap_gate": false,
+      "condition_C": false,
+      "depth": 2,
+      "qualifies": false,
+      "saturated": false,
+      "stable": true,
+      "top1_ratio_to_D5": 0.9576272578267533,
+      "top2_ratio_to_D5": 1.0212648555651522,
+      "top5_ratio_to_D5": 1.0094497613769353
+    },
+    {
+      "bootstrap_gate": true,
+      "condition_C": false,
+      "depth": 5,
+      "qualifies": false,
+      "saturated": true,
+      "stable": true,
+      "top1_ratio_to_D5": 1.0,
+      "top2_ratio_to_D5": 1.0,
+      "top5_ratio_to_D5": 1.0
+    }
+  ]
+}

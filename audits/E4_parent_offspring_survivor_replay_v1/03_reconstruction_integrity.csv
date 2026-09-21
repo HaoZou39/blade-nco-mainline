@@ -1,0 +1,16 @@
+cycle,cycle_index,historical_parent_source,historical_parent_source_exact,offspring_score_alignment,offspring_score_max_abs_diff,T_membership_exact,T_order_exact,P_membership_exact,P_order_exact,status
+C00,0,frozen Uniform roots U0,True,True,0.0,True,True,True,True,PASS
+C01,1,actual historical FULL P_0,True,True,0.0,True,True,True,True,PASS
+C02,2,actual historical FULL P_1,True,True,0.0,True,True,True,True,PASS
+C03,3,actual historical FULL P_2,True,True,0.0,True,True,True,True,PASS
+C04,4,actual historical FULL P_3,True,True,0.0,True,True,True,True,PASS
+C05,5,actual historical FULL P_4,True,True,0.0,True,True,True,True,PASS
+C06,6,actual historical FULL P_5,True,True,0.0,True,True,True,True,PASS
+C07,7,actual historical FULL P_6,True,True,0.0,True,True,True,True,PASS
+C08,8,actual historical FULL P_7,True,True,0.0,True,True,True,True,PASS
+C09,9,actual historical FULL P_8,True,True,0.0,True,True,True,True,PASS
+C10,10,actual historical FULL P_9,True,True,0.0,True,True,True,True,PASS
+C11,11,actual historical FULL P_10,True,True,0.0,True,True,True,True,PASS
+C12,12,actual historical FULL P_11,True,True,0.0,True,True,True,True,PASS
+C13,13,actual historical FULL P_12,True,True,0.0,True,True,True,True,PASS
+C14,14,actual historical FULL P_13,True,True,0.0,True,True,True,True,PASS

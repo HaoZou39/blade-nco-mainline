@@ -1,0 +1,349 @@
+{
+  "checks": [
+    {
+      "check": "correct mainline workspace",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline",
+      "id": 1,
+      "passed": true
+    },
+    {
+      "check": "old project unchanged",
+      "evidence": "no runtime read; writes confined to mainline",
+      "id": 2,
+      "passed": true
+    },
+    {
+      "check": "no old-project runtime references",
+      "evidence": "",
+      "id": 3,
+      "passed": true
+    },
+    {
+      "check": "no symlinks",
+      "evidence": "",
+      "id": 4,
+      "passed": true
+    },
+    {
+      "check": "frozen assets unchanged",
+      "evidence": "verified=114;bad=[]",
+      "id": 5,
+      "passed": true
+    },
+    {
+      "check": "existing Cycle-0 offspring reused",
+      "evidence": "source hashes unchanged",
+      "id": 6,
+      "passed": true
+    },
+    {
+      "check": "exact full bank n=109785",
+      "evidence": "109785",
+      "id": 7,
+      "passed": true
+    },
+    {
+      "check": "exact full-bank occupied niches=435",
+      "evidence": "435",
+      "id": 8,
+      "passed": true
+    },
+    {
+      "check": "exact sealed dev reused",
+      "evidence": "2666",
+      "id": 9,
+      "passed": true
+    },
+    {
+      "check": "exact dev labels reused",
+      "evidence": "",
+      "id": 10,
+      "passed": true
+    },
+    {
+      "check": "no new labels",
+      "evidence": "",
+      "id": 11,
+      "passed": true
+    },
+    {
+      "check": "no new Concorde",
+      "evidence": "no solver code",
+      "id": 12,
+      "passed": true
+    },
+    {
+      "check": "no new BQ inference for hardness",
+      "evidence": "sealed H0 only",
+      "id": 13,
+      "passed": true
+    },
+    {
+      "check": "no GP retraining",
+      "evidence": "stored-tree evaluation only",
+      "id": 14,
+      "passed": true
+    },
+    {
+      "check": "no HGB training",
+      "evidence": "HGB unused",
+      "id": 15,
+      "passed": true
+    },
+    {
+      "check": "GP_D1 exact existing formulas",
+      "evidence": "bitwise dev prediction match",
+      "id": 16,
+      "passed": true
+    },
+    {
+      "check": "GP_D2 exact existing formulas",
+      "evidence": "bitwise dev prediction match",
+      "id": 17,
+      "passed": true
+    },
+    {
+      "check": "GP_D5 exact existing formulas",
+      "evidence": "bitwise dev prediction match",
+      "id": 18,
+      "passed": true
+    },
+    {
+      "check": "five seeds present each",
+      "evidence": "",
+      "id": 19,
+      "passed": true
+    },
+    {
+      "check": "median ensemble exact",
+      "evidence": "",
+      "id": 20,
+      "passed": true
+    },
+    {
+      "check": "D1 train n=435",
+      "evidence": "435",
+      "id": 21,
+      "passed": true
+    },
+    {
+      "check": "D2 train n=822",
+      "evidence": "822",
+      "id": 22,
+      "passed": true
+    },
+    {
+      "check": "D5 train n=1819",
+      "evidence": "1819",
+      "id": 23,
+      "passed": true
+    },
+    {
+      "check": "shared centroid dev floor exact",
+      "evidence": "301",
+      "id": 24,
+      "passed": true
+    },
+    {
+      "check": "shared centroid full-bank floor exact",
+      "evidence": "435",
+      "id": 25,
+      "passed": true
+    },
+    {
+      "check": "centroid selection difficulty-blind",
+      "evidence": "normalized QD4, centroid distance, hash only",
+      "id": 26,
+      "passed": true
+    },
+    {
+      "check": "primary dev budget exactly602",
+      "evidence": "602",
+      "id": 27,
+      "passed": true
+    },
+    {
+      "check": "secondary budgets exactly1204 and2408",
+      "evidence": "(1204, 2408)",
+      "id": 28,
+      "passed": true
+    },
+    {
+      "check": "B301 excluded from calibration decision",
+      "evidence": "sanity only",
+      "id": 29,
+      "passed": true
+    },
+    {
+      "check": "GP fill evaluated separately from centroid floor",
+      "evidence": "",
+      "id": 30,
+      "passed": true
+    },
+    {
+      "check": "random fill after identical centroid floor",
+      "evidence": "sampled only from panel minus Q_DEV",
+      "id": 31,
+      "passed": true
+    },
+    {
+      "check": "random seed2026",
+      "evidence": "2026",
+      "id": 32,
+      "passed": true
+    },
+    {
+      "check": "random repeats1000",
+      "evidence": "1000",
+      "id": 33,
+      "passed": true
+    },
+    {
+      "check": "Oracle fill dev-only",
+      "evidence": "no full-bank H0",
+      "id": 34,
+      "passed": true
+    },
+    {
+      "check": "niche-cluster bootstrap",
+      "evidence": "",
+      "id": 35,
+      "passed": true
+    },
+    {
+      "check": "bootstrap count10000",
+      "evidence": "10000",
+      "id": 36,
+      "passed": true
+    },
+    {
+      "check": "bootstrap seed2026",
+      "evidence": "2026",
+      "id": 37,
+      "passed": true
+    },
+    {
+      "check": "95% retention threshold exact",
+      "evidence": "0.95",
+      "id": 38,
+      "passed": true
+    },
+    {
+      "check": "5% noninferiority margin exact",
+      "evidence": "0.05",
+      "id": 39,
+      "passed": true
+    },
+    {
+      "check": "smallest qualifying branch selected",
+      "evidence": "1",
+      "id": 40,
+      "passed": true
+    },
+    {
+      "check": "full-bank selection exactly10000 each",
+      "evidence": "{'D1': 10000, 'D2': 10000, 'D5': 10000}",
+      "id": 41,
+      "passed": true
+    },
+    {
+      "check": "full-bank centroid floor exactly435 each",
+      "evidence": "",
+      "id": 42,
+      "passed": true
+    },
+    {
+      "check": "full-bank GP fill exactly9565 each",
+      "evidence": "",
+      "id": 43,
+      "passed": true
+    },
+    {
+      "check": "no exact hardness claimed on full bank",
+      "evidence": "predicted scores only",
+      "id": 44,
+      "passed": true
+    },
+    {
+      "check": "selection overlap generated",
+      "evidence": "3",
+      "id": 45,
+      "passed": true
+    },
+    {
+      "check": "rank agreement generated",
+      "evidence": "3",
+      "id": 46,
+      "passed": true
+    },
+    {
+      "check": "cross-scoring matrix diagnostic only",
+      "evidence": "",
+      "id": 47,
+      "passed": true
+    },
+    {
+      "check": "no within-niche-ranking gate",
+      "evidence": "",
+      "id": 48,
+      "passed": true
+    },
+    {
+      "check": "no HGB-based decision",
+      "evidence": "",
+      "id": 49,
+      "passed": true
+    },
+    {
+      "check": "no final D0 designation",
+      "evidence": "",
+      "id": 50,
+      "passed": true
+    },
+    {
+      "check": "no protocol automatic modification",
+      "evidence": "",
+      "id": 51,
+      "passed": true
+    },
+    {
+      "check": "no BQ fine-tuning",
+      "evidence": "",
+      "id": 52,
+      "passed": true
+    },
+    {
+      "check": "no external benchmark evaluation",
+      "evidence": "",
+      "id": 53,
+      "passed": true
+    },
+    {
+      "check": "no final runner",
+      "evidence": "",
+      "id": 54,
+      "passed": true
+    },
+    {
+      "check": "runs/ remains empty",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline\\runs",
+      "id": 55,
+      "passed": true
+    },
+    {
+      "check": "all outputs hashed",
+      "evidence": "00_protocol/generated_file_hashes.json",
+      "id": 56,
+      "passed": true
+    },
+    {
+      "check": "all tests pass",
+      "evidence": "68/68",
+      "id": 57,
+      "passed": true
+    }
+  ],
+  "passed": 57,
+  "status": "PASS",
+  "total": 57
+}

@@ -1,0 +1,8 @@
+{
+  "all_predictions_finite": true,
+  "centroid_floor_matches_prior_replay": true,
+  "full_bank_n": 109785,
+  "occupied_niches": 435,
+  "shared_centroid_floor_n": 435,
+  "status": "PASS"
+}

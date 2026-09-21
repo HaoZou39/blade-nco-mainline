@@ -1,0 +1,54 @@
+{
+  "M0": {
+    "full_parameter": true,
+    "load_protocol": "direct_strict_load_of_checkpoint['net']",
+    "parameter_count": 3107539,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best",
+    "sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15"
+  },
+  "M0_hardness_pending": false,
+  "artifacts": {
+    "concorde_ledger": {
+      "bytes": 1493657,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\concorde_ledger.parquet",
+      "sha256": "2bc12ba8cf3c38615a8dda4385559b3e6c2b138c6bff884a2aa0f682fab42fbd"
+    },
+    "coordinates": {
+      "bytes": 6976895,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\selected_coordinates.npz",
+      "sha256": "ad268903f1e9747aeca47ba61d70c20bc6d792aca16e36b59f5bd9f8b5f243f8"
+    },
+    "exact_hardness": {
+      "bytes": 1763415,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet",
+      "sha256": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6"
+    },
+    "expert_tours": {
+      "bytes": 1494221,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\expert_tours.parquet",
+      "sha256": "29940cdb8a08363838f8d1ad894c5585b64ae515d6af2956b0d41028618f7ff3"
+    }
+  },
+  "concorde": {
+    "backend": "concorde_cli",
+    "binary": "D:\\NCO\\BLADE-NCO-mainline\\third_party\\concorde\\concorde",
+    "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+    "invoke_mode": "wsl",
+    "wsl_distro": "Ubuntu"
+  },
+  "deduplicated_union_n": 4485,
+  "membership_sha256": "387844bb48823b0fddab5a6e9689a853dff470790f430c728089acf4368c3915",
+  "parameter_updates": 0,
+  "rows": 4485,
+  "status": "EXACT_LABELING_COMPLETE",
+  "teacher_forced_protocol": {
+    "conditioning": "teacher_forcing_ground_truth_previous_actions",
+    "formula": "-(1/T) * sum_t log p_theta(a_t^* | s_t^*)",
+    "greedy_rollout_used": false,
+    "minimum_suffix_length": 3,
+    "parameter_updates": 0,
+    "representation": "expert_ordered_closed_tour_suffix",
+    "target": "mean negative log probability of expert next action",
+    "target_index": 1
+  }
+}

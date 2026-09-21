@@ -1,0 +1,390 @@
+{
+  "GPU_REPLAY_DEFERRED_DUE_TO_ACTIVE_FORMAL_RUN": "YES",
+  "checks": [
+    {
+      "check": "correct audit workspace",
+      "evidence": "verified",
+      "id": 1,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "historical archive read-only",
+      "evidence": "verified",
+      "id": 2,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "formal run read-only",
+      "evidence": "verified",
+      "id": 3,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no formal-run file modified",
+      "evidence": "immutable audited hashes equal pre/post",
+      "id": 4,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no M0 checkpoint modified",
+      "evidence": "verified",
+      "id": 5,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no training",
+      "evidence": "verified",
+      "id": 6,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no GP training",
+      "evidence": "verified",
+      "id": 7,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no mutation generation",
+      "evidence": "verified",
+      "id": 8,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no Concorde call",
+      "evidence": "verified",
+      "id": 9,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no Oracle regeneration",
+      "evidence": "verified",
+      "id": 10,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no QD modification",
+      "evidence": "verified",
+      "id": 11,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "historical reference source provenance recorded",
+      "evidence": "verified",
+      "id": 12,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "current source provenance recorded",
+      "evidence": "verified",
+      "id": 13,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "checkpoint SHA-256 compared",
+      "evidence": "verified",
+      "id": 14,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "parameter hashes compared",
+      "evidence": "verified",
+      "id": 15,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Uniform dataset identity checked",
+      "evidence": "verified",
+      "id": 16,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Gaussian dataset identity checked",
+      "evidence": "verified",
+      "id": 17,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "TSPLIB100 dataset identity checked",
+      "evidence": "verified",
+      "id": 18,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Original70 manifest checked",
+      "evidence": "verified",
+      "id": 19,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "raw coordinate hashes compared",
+      "evidence": "verified",
+      "id": 20,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "preprocessing call paths resolved",
+      "evidence": "verified",
+      "id": 21,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "preprocessed tensor hashes compared where available",
+      "evidence": "all deterministic trace instances; current/historical Original transforms both hashed",
+      "id": 22,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "decoder call paths resolved",
+      "evidence": "verified",
+      "id": 23,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "KNN configured values resolved",
+      "evidence": "verified",
+      "id": 24,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "effective K semantics resolved",
+      "evidence": "verified",
+      "id": 25,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "beam semantics resolved",
+      "evidence": "verified",
+      "id": 26,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "start-node semantics resolved",
+      "evidence": "verified",
+      "id": 27,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "augmentation semantics resolved",
+      "evidence": "verified",
+      "id": 28,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "post-processing semantics resolved",
+      "evidence": "verified",
+      "id": 29,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "predicted-tour-cost implementation compared",
+      "evidence": "verified",
+      "id": 30,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Oracle source compared",
+      "evidence": "verified",
+      "id": 31,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Oracle values compared",
+      "evidence": "verified",
+      "id": 32,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "gap formula compared",
+      "evidence": "verified",
+      "id": 33,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "cached per-instance outputs reused before new replay",
+      "evidence": "verified",
+      "id": 34,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "tour hashes compared when available",
+      "evidence": "historical tour hashes recorded; current formal cache omits tours; GPU trace deferred by active-run rule",
+      "id": 35,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "predicted costs compared",
+      "evidence": "verified",
+      "id": 36,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Oracle costs compared",
+      "evidence": "verified",
+      "id": 37,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Gaussian instance-level trace produced",
+      "evidence": "verified",
+      "id": 38,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Original70 instance-level trace produced",
+      "evidence": "verified",
+      "id": 39,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "Uniform/TSPLIB controls included",
+      "evidence": "verified",
+      "id": 40,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no cherry-picked trace instances",
+      "evidence": "verified",
+      "id": 41,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "factorial replay diagnostic-only",
+      "evidence": "verified",
+      "id": 42,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no arbitrary search for numeric agreement",
+      "evidence": "verified",
+      "id": 43,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no protocol selected based on lower gap",
+      "evidence": "verified",
+      "id": 44,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "formal-run impact assessed",
+      "evidence": "verified",
+      "id": 45,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "training impact assessed",
+      "evidence": "verified",
+      "id": 46,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "hardness impact assessed",
+      "evidence": "verified",
+      "id": 47,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "acquisition impact assessed",
+      "evidence": "verified",
+      "id": 48,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "external-eval impact assessed",
+      "evidence": "verified",
+      "id": 49,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "rerun scope generated",
+      "evidence": "verified",
+      "id": 50,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no automatic final-run protocol modification",
+      "evidence": "verified",
+      "id": 51,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "no formal benchmark outputs overwritten",
+      "evidence": "verified",
+      "id": 52,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "all audit outputs hashed",
+      "evidence": "verified",
+      "id": 53,
+      "passed": true,
+      "status": "PASS"
+    },
+    {
+      "check": "all tests pass",
+      "evidence": "verified",
+      "id": 54,
+      "passed": true,
+      "status": "PASS"
+    }
+  ],
+  "deferred_not_failure": [
+    "current tour hashes/first divergence",
+    "full GPU factorial inference"
+  ],
+  "passed": 54,
+  "status": "PASS",
+  "total": 54
+}

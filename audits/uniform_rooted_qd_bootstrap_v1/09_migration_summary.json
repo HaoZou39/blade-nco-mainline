@@ -1,0 +1,13 @@
+{
+  "NEW_NICHES_DISCOVERED": 384,
+  "fraction_niche_absent_from_roots": 0.19248531220112036,
+  "fraction_other_root_occupied_niche": 0.6686250398506172,
+  "fraction_same_parent_niche": 0.1388896479482625,
+  "niche_absent_from_roots_count": 21132,
+  "offspring_occupied_niches": 435,
+  "other_root_occupied_niche_count": 73405,
+  "root_occupied_niches": 51,
+  "same_parent_niche_count": 15248,
+  "union_occupied_niches": 435,
+  "valid_unique_offspring_denominator": 109785
+}

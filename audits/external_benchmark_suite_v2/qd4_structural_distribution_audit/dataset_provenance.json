@@ -1,0 +1,44 @@
+{
+  "Uniform100": {
+    "source": "assets/evaluation/uniform100/instances/coordinates.npz",
+    "preprocess": "identity (frozen unit-square coordinates)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 10000
+  },
+  "GM100": {
+    "source": "assets/evaluation/gaussian_mixture100/instances/coordinates.npz",
+    "preprocess": "identity (frozen unit-square coordinates)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 10000
+  },
+  "TSPLIB100": {
+    "source": "assets/evaluation/tsplib100/instances/coordinates.npz::model_input_coordinates",
+    "preprocess": "frozen model_input_coordinates (unit square)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 10000
+  },
+  "Original70": {
+    "source": "assets/evaluation/original_tsplib70 (EUC_2D gzip + source_manifest_bq83.csv)",
+    "preprocess": "lehd_aspect_ratio_preserving_normalize (global minmax over all xy)",
+    "extractor": "extract_qd4 (variable N)",
+    "n_instances": 70
+  },
+  "EvoReal-S1 Gen.": {
+    "source": "datasets/external_v2/EvoReal_S1_100/coordinates.npy",
+    "preprocess": "identity (frozen [0,1] generator output)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 1000
+  },
+  "EvoReal-S2 Gen.": {
+    "source": "datasets/external_v2/EvoReal_S2_100/coordinates.npy",
+    "preprocess": "identity (frozen [0,1] generator output)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 1000
+  },
+  "EvoReal-S3 Gen.": {
+    "source": "datasets/external_v2/EvoReal_S3_100/coordinates.npy",
+    "preprocess": "identity (frozen [0,1] generator output)",
+    "extractor": "extract_qd4_exact",
+    "n_instances": 1000
+  }
+}

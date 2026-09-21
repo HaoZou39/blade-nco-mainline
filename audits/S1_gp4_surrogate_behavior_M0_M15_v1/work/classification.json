@@ -1,0 +1,16 @@
+{
+  "localization": "REGION_LOCALIZATION_INTERMITTENT",
+  "fine_tail": "FINE_TAIL_RANKING_WEAK",
+  "concentration": "SELECTION_CONCENTRATION_SEVERE",
+  "future": "COARSE_GP_PLUS_LOCAL_RERANKER_WORTH_TESTING",
+  "n_enr_gt1": 12,
+  "occ0": 212.0,
+  "occ14": 5.0,
+  "n0": 83.49996572570552,
+  "n14": 3.2150354654005793,
+  "s0": 0.0414,
+  "s14": 0.4051,
+  "med_tail": 0.02114970003749531,
+  "med_within": 0.17860232374706864,
+  "med_sel_tail": 0.12216816853467305
+}

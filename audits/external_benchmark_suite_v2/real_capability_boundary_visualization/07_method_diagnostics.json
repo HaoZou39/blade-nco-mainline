@@ -1,0 +1,62 @@
+{
+  "cluster_diagnostics": {
+    "hard_count": 9021,
+    "hard_definition": "M0_gap > fixed M0 pooled P70 tau",
+    "method": "sklearn.cluster.HDBSCAN",
+    "min_cluster_size": 91,
+    "min_samples": 19,
+    "noise_count": 150,
+    "retained_cluster_count": 2,
+    "silhouette_nonnoise": 0.7201302567131712,
+    "stability_ari_mcs_0p8": 0.07672603539703272,
+    "stability_ari_mcs_1p2": 1.0,
+    "stability_ari_mean": 0.5383630176985164
+  },
+  "feature_codes": {
+    "global": "spn_distance_varcoeff",
+    "local": "spn_sum_of_lowest_edge_values",
+    "scale": "spn_mst_dists_median",
+    "topology": "spn_mst_depth_mean"
+  },
+  "feature_order": [
+    "local",
+    "global",
+    "topology",
+    "scale"
+  ],
+  "pca_components": [
+    [
+      0.5522886320709298,
+      -0.5742692482277004,
+      -0.10151668588590551,
+      0.5957234760456861
+    ],
+    [
+      -0.014904048980295546,
+      -0.22061785290514863,
+      0.9746961253413022,
+      -0.03275813712908786
+    ]
+  ],
+  "pca_explained_variance_ratio": [
+    0.8556607219014875,
+    0.10863017347712599
+  ],
+  "pca_mean": [
+    0.5905989807347563,
+    0.44042812558197275,
+    0.36067114398765276,
+    0.514404357819046
+  ],
+  "source_sha256": {
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M0/GaussianMixture100.parquet": "196ad540c648834f8c6ece6d25fdad122a3863cf2a6d22f46a9e9f5049b873b1",
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M0/OriginalTSPLIB70.parquet": "1ac55b7842e5f2dd0e4c65cb6c2affad196ccff281fd04486759789459ecc472",
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M1/GaussianMixture100.parquet": "48e92095e960644feabdcbc79c605d9c3455c8cf3287aa504f0e0ecec7456e30",
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M1/OriginalTSPLIB70.parquet": "2d4faf5207a8be5a15149901f2a4340de1d2daf622c3a3ee0603b2813289bdaf",
+    "audits/external_benchmark_suite_v2/qd4_structural_distribution_audit/_cache/all_features.parquet": "03bfc189d8f7dada2c92721dc7036b12fd065fe26f4d6ad7155e9dbc7764bdb3",
+    "runs/blade_final_20cycle_seed2026_v1/01_baseline_M0/TSPLIB100.parquet": "1f98d9df94ff0b9a2600133223f7a07c3c5cb9f4ed9b0f7217b7d1f8f07f7d70",
+    "runs/blade_final_20cycle_seed2026_v1/01_baseline_M0/Uniform100.parquet": "e28882bdcb93f9727e7f1660735a32aef2b4c20616a98677636cab25e59660f4",
+    "runs/blade_final_20cycle_seed2026_v1/cycles/C00/11_external_eval/TSPLIB100.parquet": "274b794bc9f3b675f99ad88b273f18cba8f2ab7830fd50011676bda3019004ca",
+    "runs/blade_final_20cycle_seed2026_v1/cycles/C00/11_external_eval/Uniform100.parquet": "56c9e219d33bd2d4031757a7df86b654304ab79ef97a40d3467b7365d96a5c22"
+  }
+}

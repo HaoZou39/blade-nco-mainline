@@ -1,0 +1,12 @@
+{
+  "arm": "COMPLETE",
+  "cycle": null,
+  "elapsed_seconds": 30474.764458417892,
+  "last_valid_artifact": "D:\\NCO\\BLADE-NCO-mainline\\E4_5_CORRECTED_UNION_FULL_SANITY_COMPLETE",
+  "latest_checkpoint": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_corrected_union_sanity_seed2026_v1\\C04\\09_bq_training\\M5_E256.tsp.best",
+  "latest_error": null,
+  "phase": "E4_5_CORRECTED_UNION_FULL_SANITY_COMPLETE",
+  "pid": 19604,
+  "recovery_state": "NONE",
+  "timestamp": "2026-09-21T00:01:12.837964+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "P75": 2.050837333055613,
+  "P90": 3.8697391714588303,
+  "P95": 5.552814483214238,
+  "P99": 10.0249899201943,
+  "checkpoint_sha256": "a0e431ed9013a4ea74a58edd59b071d363b1b69740d93aee40bc902ebc52399c",
+  "dataset": "EvoReal_S1_100",
+  "dataset_sha256": "28c8e4c0b8f57f840e6b444e45a21c795993205faae4e27ffc9dcae1df55448f",
+  "evaluator_config_sha256": "44a43be253b9079b15b9c1bb48c4056cb9ffefd13bc4af1ae4d3d4700777497d",
+  "failed_tours": 0,
+  "inference_wall_clock_sec": 19.469426899995597,
+  "instance_count": 1000,
+  "max": 14.73931037204726,
+  "mean_exact_reference_cost": 4472462.311,
+  "mean_gap_percent": 1.5797987422732138,
+  "mean_predicted_tour_cost": 4542963.653,
+  "median_gap_percent": 0.9247615066440782,
+  "model": "M16",
+  "source": "passive_eval_canonical",
+  "valid_tours": 1000
+}

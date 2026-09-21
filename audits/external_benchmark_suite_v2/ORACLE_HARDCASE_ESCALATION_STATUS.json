@@ -1,0 +1,33 @@
+{
+  "coverage": {
+    "EvoReal_S1_100": {
+      "exact": 1000,
+      "unresolved": 0
+    },
+    "EvoReal_S2_100": {
+      "exact": 1000,
+      "unresolved": 0
+    },
+    "EvoReal_S3_100": {
+      "exact": 1000,
+      "unresolved": 0
+    },
+    "GaussianMixture500": {
+      "exact": 1000,
+      "unresolved": 0
+    },
+    "TOTAL": {
+      "exact": 4000,
+      "unresolved": 0
+    }
+  },
+  "integrity_failures": [],
+  "launched": [
+    "EvoReal_S1_100_0853"
+  ],
+  "solver_invocation_config_sha256": "2f2fc8b7ace24e74b876c725a24022adefeb9987ed729aa64cca670f61d0ec10",
+  "standard_solver_invocation_config_sha256": "1b837f8ea53d7524f5b7dd637def425b31d721a4b3b7098cc07057f8acb354c1",
+  "status": "EXTERNAL_BENCHMARK_SUITE_V2_READY_FOR_EVALUATION",
+  "timeout_sec": 3600.0,
+  "unresolved": []
+}

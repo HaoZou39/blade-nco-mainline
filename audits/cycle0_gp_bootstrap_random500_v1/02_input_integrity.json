@@ -1,0 +1,36 @@
+{
+  "arm_integrity": {
+    "o0_n": 109785,
+    "o0_unique_hashes": 109785,
+    "old_exact": true,
+    "old_membership_sha256": "bc811436a9ba9cbfec92e0b6adcec870d18993ce32500ae5d8397e361c04c755",
+    "old_n": 435,
+    "old_niches": 435,
+    "random_algorithm": "instance_hash ascending + default_rng(2026).permutation[:500]",
+    "random_draw_count": 1,
+    "random_membership_sha256": "06f97ca0a3520e653f22c30881077aa1d6e472bec0fe9e0bb70a53479b133875",
+    "random_n": 500,
+    "random_seed": 2026,
+    "random_unique": 500,
+    "reached_niches": 435,
+    "stable_pool_sha256": "5fcd94b92355575621e782e1f9840540f2e27390aa84674e556f68d6fff8b3cc"
+  },
+  "source_hashes": {
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\normalization\\normalization_A_P1P99.json": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\expert_tours.parquet": "29940cdb8a08363838f8d1ad894c5585b64ae515d6af2956b0d41028618f7ff3",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\P0_MEMBERSHIP_AND_FEATURES.csv": "57131b0083ab6691793373804b875ff9c56165d4c6582663b11284fc2d125cdd",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\run_audit.py": "e424ff30581effb50d9dda73df6ba4dc623aa12bb91823095cb860cd15874f5f",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\STAGE_DONE.json": "0156be302fd374e85b6136f1bdf465447b3dff7b0906068638b5e85de0856608",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\offspring_coordinates.npz": "d4a2c80ff8be2116c6449da2601e3ab8ad226c5457f42b9a4e10982e3a2c36cb",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\audit\\gp_modeling.py": "001d2b241f8db20c585b09714cdfe2599b46c273f4c9f53e2b9d83b7d36dbebc",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\final_run\\science.py": "a3a03fa330417805dee5f1ffe68aa15ad4c9320e5915e556c471fbd3413d235e"
+  },
+  "status": "PASS"
+}

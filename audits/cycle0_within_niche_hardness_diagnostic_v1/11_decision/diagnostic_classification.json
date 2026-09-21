@@ -1,0 +1,27 @@
+{
+  "calibration_depth_robust": true,
+  "classification": "D4",
+  "classification_rule_note": "paired effect directions, percentile intervals, raw Top1/2/5 capture values, and D1/D2 sensitivity were synthesized descriptively; no percentage gate was used",
+  "evidence": {
+    "HGB20_over_HGB4_acquisition_evidence": false,
+    "HGB20_over_HGB4_rank_evidence": true,
+    "HGB4_over_GP4_acquisition_evidence": false,
+    "HGB4_over_GP4_rank_evidence": false,
+    "best_D5_capture_by_r": {
+      "1": 0.13342008867907632,
+      "2": 0.20289756442771134,
+      "5": 0.1953470734179333
+    },
+    "between_variance_fraction": 0.4593847108265743,
+    "oracle_headroom_positive_all_r": true,
+    "within_variance_fraction": 0.5406152891734257
+  },
+  "integrity_status": "PASS",
+  "interpretive_scope": "descriptive diagnosis only; no automatic method or protocol change",
+  "label": "STATIC_FEATURE_WITHIN_NICHE_SIGNAL_WEAK",
+  "primary_branch": "D5",
+  "sensitivity_branches": [
+    "D1",
+    "D2"
+  ]
+}

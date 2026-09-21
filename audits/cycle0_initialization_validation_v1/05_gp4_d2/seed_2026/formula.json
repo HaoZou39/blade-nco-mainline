@@ -1,0 +1,140 @@
+{
+  "all_predictions_finite": true,
+  "seed": 2026,
+  "selected": {
+    "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":1.4921465266039924},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":1.4921465266039924},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-0.6642352175742974}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+    "constants": [
+      1.4921465266039924,
+      1.4921465266039924,
+      -0.6642352175742974
+    ],
+    "depth": 6,
+    "feature_indices": [
+      0,
+      3
+    ],
+    "first_generation": 52,
+    "formula": "multiply(multiply(subtract(1.4921465266, spn_sum_of_lowest_edge_values), multiply(spn_sum_of_lowest_edge_values, spn_sum_of_lowest_edge_values)), subtract(abs(multiply(subtract(1.4921465266, spn_mst_dists_median), multiply(spn_sum_of_lowest_edge_values, -0.664235217574))), spn_sum_of_lowest_edge_values))",
+    "hof_rank": 77,
+    "nodes": 18,
+    "seed": 2026,
+    "train_huber": 0.31018070552923976,
+    "train_total_fitness": 0.31918070552923977,
+    "tree": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "const",
+                  "value": 1.4921465266039924
+                },
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                }
+              ],
+              "op": "subtract",
+              "value": null
+            },
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                },
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                }
+              ],
+              "op": "multiply",
+              "value": null
+            }
+          ],
+          "op": "multiply",
+          "value": null
+        },
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "const",
+                          "value": 1.4921465266039924
+                        },
+                        {
+                          "args": [],
+                          "op": "feature",
+                          "value": 3
+                        }
+                      ],
+                      "op": "subtract",
+                      "value": null
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "feature",
+                          "value": 0
+                        },
+                        {
+                          "args": [],
+                          "op": "const",
+                          "value": -0.6642352175742974
+                        }
+                      ],
+                      "op": "multiply",
+                      "value": null
+                    }
+                  ],
+                  "op": "multiply",
+                  "value": null
+                }
+              ],
+              "op": "abs",
+              "value": null
+            },
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            }
+          ],
+          "op": "subtract",
+          "value": null
+        }
+      ],
+      "op": "multiply",
+      "value": null
+    },
+    "unique_features": 2,
+    "used_features": [
+      "spn_sum_of_lowest_edge_values",
+      "spn_mst_dists_median"
+    ],
+    "validation_eligible": true,
+    "validation_mae": 0.027658235393698837,
+    "validation_spearman": 0.356714386354738
+  },
+  "selector": "SPERF",
+  "spearman_tie_epsilon": 1e-06,
+  "transform": {
+    "center_train_median_loss_log": 0.05303550696384541,
+    "fit_split": "TRAIN_ONLY",
+    "formula": "loss_log = log1p(loss_raw)",
+    "scale_method": "IQR",
+    "scale_train_loss_log": 0.043468391133631115
+  }
+}

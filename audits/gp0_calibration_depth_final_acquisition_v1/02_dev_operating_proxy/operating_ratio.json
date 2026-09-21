@@ -1,0 +1,18 @@
+{
+  "dev_n": 2666,
+  "dev_occupied_niches": 301,
+  "full_GP_fill": 9565,
+  "full_GP_fill_fraction": 0.08747142203932327,
+  "full_bank_n": 109785,
+  "full_bank_occupied_niches": 435,
+  "full_centroid_floor": 435,
+  "primary_GP_fill": 301,
+  "primary_GP_fill_fraction": 0.12727272727272726,
+  "primary_budget": 602,
+  "primary_centroid_floor": 301,
+  "sanity_budget_no_fill": 301,
+  "secondary_budgets": [
+    1204,
+    2408
+  ]
+}

@@ -1,0 +1,331 @@
+{
+  "checks": [
+    {
+      "check": "correct mainline workspace",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline",
+      "id": 1,
+      "passed": true
+    },
+    {
+      "check": "old project unchanged",
+      "evidence": "no runtime access; prior sealed audits PASS and writes confined to mainline",
+      "id": 2,
+      "passed": true
+    },
+    {
+      "check": "no old-project runtime dependency",
+      "evidence": "source manifest",
+      "id": 3,
+      "passed": true
+    },
+    {
+      "check": "no symlinks",
+      "evidence": "",
+      "id": 4,
+      "passed": true
+    },
+    {
+      "check": "frozen assets unchanged",
+      "evidence": "verified=114;bad=[]",
+      "id": 5,
+      "passed": true
+    },
+    {
+      "check": "exact 109,785 offspring reused",
+      "evidence": "109785",
+      "id": 6,
+      "passed": true
+    },
+    {
+      "check": "no candidate regeneration",
+      "evidence": "source hashes unchanged",
+      "id": 7,
+      "passed": true
+    },
+    {
+      "check": "K1000 exact",
+      "evidence": "nearest-centroid replay",
+      "id": 8,
+      "passed": true
+    },
+    {
+      "check": "normalized QD4 exact",
+      "evidence": "",
+      "id": 9,
+      "passed": true
+    },
+    {
+      "check": "435 full-bank occupied niches exact",
+      "evidence": "435",
+      "id": 10,
+      "passed": true
+    },
+    {
+      "check": "GP4_D5 existing formulas reused",
+      "evidence": "five formulas; bitwise dev replay",
+      "id": 11,
+      "passed": true
+    },
+    {
+      "check": "GP4 not retrained",
+      "evidence": "formula evaluation only",
+      "id": 12,
+      "passed": true
+    },
+    {
+      "check": "HGB not retrained",
+      "evidence": "HGB unused",
+      "id": 13,
+      "passed": true
+    },
+    {
+      "check": "no new Oracle labels",
+      "evidence": "sealed H0 read only",
+      "id": 14,
+      "passed": true
+    },
+    {
+      "check": "no Concorde call",
+      "evidence": "no solver import/call",
+      "id": 15,
+      "passed": true
+    },
+    {
+      "check": "no BQ fine-tuning",
+      "evidence": "analysis only",
+      "id": 16,
+      "passed": true
+    },
+    {
+      "check": "no external benchmark evaluation",
+      "evidence": "full bank plus sealed dev only",
+      "id": 17,
+      "passed": true
+    },
+    {
+      "check": "centroid-nearest rule exact",
+      "evidence": "matches frozen structural rank1",
+      "id": 18,
+      "passed": true
+    },
+    {
+      "check": "centroid selection difficulty-blind",
+      "evidence": "QD4, centroid, hash only",
+      "id": 19,
+      "passed": true
+    },
+    {
+      "check": "coordinate-hash tie-break exact",
+      "evidence": "coordinate_hash=instance_hash ascending",
+      "id": 20,
+      "passed": true
+    },
+    {
+      "check": "GLOBAL_GP exact",
+      "evidence": "deterministic replay",
+      "id": 21,
+      "passed": true
+    },
+    {
+      "check": "ROUND_ROBIN_GP exact",
+      "evidence": "deterministic replay",
+      "id": 22,
+      "passed": true
+    },
+    {
+      "check": "CENTROID1_GLOBAL_GP exact",
+      "evidence": "deterministic replay",
+      "id": 23,
+      "passed": true
+    },
+    {
+      "check": "CENTROID1_RANDOM_FILL exact",
+      "evidence": "deterministic replay",
+      "id": 24,
+      "passed": true
+    },
+    {
+      "check": "GLOBAL_RANDOM exact",
+      "evidence": "deterministic replay",
+      "id": 25,
+      "passed": true
+    },
+    {
+      "check": "full-bank budget exactly10000",
+      "evidence": "10000",
+      "id": 26,
+      "passed": true
+    },
+    {
+      "check": "every full-bank selection unique",
+      "evidence": "",
+      "id": 27,
+      "passed": true
+    },
+    {
+      "check": "hybrid contains exactly one mandated centroid candidate per niche",
+      "evidence": "435",
+      "id": 28,
+      "passed": true
+    },
+    {
+      "check": "hybrid GP fill excludes already selected centroid candidates",
+      "evidence": "9565",
+      "id": 29,
+      "passed": true
+    },
+    {
+      "check": "dev set exactly existing sealed panel",
+      "evidence": "2666",
+      "id": 30,
+      "passed": true
+    },
+    {
+      "check": "dev exact H0 unchanged",
+      "evidence": "sealed raw H0",
+      "id": 31,
+      "passed": true
+    },
+    {
+      "check": "dev budgets derived only from m_dev",
+      "evidence": "[301, 602, 1204, 2408]",
+      "id": 32,
+      "passed": true
+    },
+    {
+      "check": "GLOBAL_ORACLE dev-only",
+      "evidence": "dev selections only",
+      "id": 33,
+      "passed": true
+    },
+    {
+      "check": "CENTROID1_GLOBAL_ORACLE dev-only",
+      "evidence": "dev selections only",
+      "id": 34,
+      "passed": true
+    },
+    {
+      "check": "no Oracle full-bank selection",
+      "evidence": "",
+      "id": 35,
+      "passed": true
+    },
+    {
+      "check": "coverage-cost decomposition exact",
+      "evidence": "",
+      "id": 36,
+      "passed": true
+    },
+    {
+      "check": "surrogate-loss decomposition exact",
+      "evidence": "",
+      "id": 37,
+      "passed": true
+    },
+    {
+      "check": "total-regret identity verified",
+      "evidence": "0.0",
+      "id": 38,
+      "passed": true
+    },
+    {
+      "check": "random seed exact2026",
+      "evidence": "2026",
+      "id": 39,
+      "passed": true
+    },
+    {
+      "check": "random-repeat count exact1000",
+      "evidence": "1000",
+      "id": 40,
+      "passed": true
+    },
+    {
+      "check": "bootstrap count exact10000",
+      "evidence": "10000",
+      "id": 41,
+      "passed": true
+    },
+    {
+      "check": "bootstrap seed exact2026",
+      "evidence": "2026",
+      "id": 42,
+      "passed": true
+    },
+    {
+      "check": "no hardness-diversity scalarization",
+      "evidence": "",
+      "id": 43,
+      "passed": true
+    },
+    {
+      "check": "no lambda diversity coefficient",
+      "evidence": "",
+      "id": 44,
+      "passed": true
+    },
+    {
+      "check": "Pareto analysis generated",
+      "evidence": "28",
+      "id": 45,
+      "passed": true
+    },
+    {
+      "check": "root diversity generated",
+      "evidence": "5",
+      "id": 46,
+      "passed": true
+    },
+    {
+      "check": "operator diversity generated",
+      "evidence": "per-policy counts plus all-11 indicator retained",
+      "id": 47,
+      "passed": true
+    },
+    {
+      "check": "dev-density limitation explicitly reported",
+      "evidence": "report.md",
+      "id": 48,
+      "passed": true
+    },
+    {
+      "check": "no output called FINAL_D0",
+      "evidence": "",
+      "id": 49,
+      "passed": true
+    },
+    {
+      "check": "no acquisition protocol automatically frozen",
+      "evidence": "",
+      "id": 50,
+      "passed": true
+    },
+    {
+      "check": "no final runner",
+      "evidence": "analysis only",
+      "id": 51,
+      "passed": true
+    },
+    {
+      "check": "runs/ remains empty",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline\\runs",
+      "id": 52,
+      "passed": true
+    },
+    {
+      "check": "all generated outputs hashed",
+      "evidence": "00_protocol/generated_file_hashes.json",
+      "id": 53,
+      "passed": true
+    },
+    {
+      "check": "all tests pass",
+      "evidence": "56/56",
+      "id": 54,
+      "passed": true
+    }
+  ],
+  "passed": 54,
+  "status": "PASS",
+  "total": 54
+}

@@ -1,0 +1,170 @@
+{
+  "files": {
+    "00_protocol/protocol.json": {
+      "bytes": 1535,
+      "sha256": "baf6015f1c1142151c003009bd5954c4e8f53fbe163ea6f8c8dde0b7f868d404"
+    },
+    "00_protocol/source_manifest.json": {
+      "bytes": 11525,
+      "sha256": "d1572bb64b74208bb9d97e5e982f648b14fbe486fb0ff2e443cbd99d0c69fab4"
+    },
+    "01_integrity/dev_alignment.json": {
+      "bytes": 247,
+      "sha256": "67de0e67393a5d1bc12bd21ababec5d12004cf1668ec00e1ecf348e5d7285ab0"
+    },
+    "01_integrity/full_bank_alignment.json": {
+      "bytes": 197,
+      "sha256": "8605943fb058772201b56f13070a8da763281c137b34a253fd6ae4e8a6ce264b"
+    },
+    "01_integrity/model_manifest_alignment.json": {
+      "bytes": 3998,
+      "sha256": "c2c3db517c9e13df2fc865a8fc0517aff6f54d5a8a3982677391594dd7575f61"
+    },
+    "02_dev_operating_proxy/operating_ratio.json": {
+      "bytes": 447,
+      "sha256": "80368c179279c03f5a8b95f97131b72087438b9c9e9e7226523f17eb76239d49"
+    },
+    "03_dev_policy_replay/hybrid_summary.csv": {
+      "bytes": 636,
+      "sha256": "94686ea8cbd975ed65748d73589722c6f033a73851dc987b3a4d7f7c3a734ccb"
+    },
+    "03_dev_policy_replay/selections.parquet": {
+      "bytes": 524486,
+      "sha256": "6794f5b9382adb5ecf924df5036838285d86925e277538462bcef6cf0e2287aa"
+    },
+    "04_gp_fill_value/bootstrap.csv": {
+      "bytes": 4016,
+      "sha256": "52493bbb5b7030c0a7258b73c9033ed104511d79e8da50dd884189babc2d66af"
+    },
+    "04_gp_fill_value/fill_summary.csv": {
+      "bytes": 1181,
+      "sha256": "1a1af41c2b4c566d72fc6ac9e13aa08e4997d6783c88fb14530ce22289bb4156"
+    },
+    "04_gp_fill_value/oracle_fill_summary.csv": {
+      "bytes": 929,
+      "sha256": "727d011a4649568335f6968156e19712f4197c451339a38c4d8e960abd08365d"
+    },
+    "04_gp_fill_value/random_baseline.csv": {
+      "bytes": 163202,
+      "sha256": "83a291196bf1feca9119082a9dac52f4e948076c98783568763b69b9b7d17c6b"
+    },
+    "05_calibration_noninferiority/d1_vs_d2.csv": {
+      "bytes": 1028,
+      "sha256": "336cd844a6b9d66e1d1a173027e61db02ef38fb6626aacc787297d2b0843380a"
+    },
+    "05_calibration_noninferiority/d1_vs_d5.csv": {
+      "bytes": 1032,
+      "sha256": "29c498826fb06791cb4e239beec21483c716552319db3a8e51ab78eab8080100"
+    },
+    "05_calibration_noninferiority/d2_vs_d5.csv": {
+      "bytes": 1028,
+      "sha256": "dd5209fe4f4cc61b1f6254e75d7d3a9b78bf963d4c68deea27bb65504ecdc74b"
+    },
+    "05_calibration_noninferiority/noninferiority_summary.csv": {
+      "bytes": 1049,
+      "sha256": "0fd531afb5acd8e422e7b6f8eb146febc6994d0f831b28e155cba59000ebefb0"
+    },
+    "06_full_bank_replay/all_branch_scores.parquet": {
+      "bytes": 10707838,
+      "sha256": "0624a414afba76e10cd7c08e141aaa78084fc5b7bce1199b99ba4b5b8b234582"
+    },
+    "06_full_bank_replay/centroid1_global_gp_d1.parquet": {
+      "bytes": 2314333,
+      "sha256": "505946b692ae3af6f7d576728882d93b20444e608cd3d75a72e5d9eac486b097"
+    },
+    "06_full_bank_replay/centroid1_global_gp_d2.parquet": {
+      "bytes": 2295089,
+      "sha256": "ac40c6001754d04f9c8bd20ce2f98dcca8e39392171a524cd9d80d48867cbc0d"
+    },
+    "06_full_bank_replay/centroid1_global_gp_d5.parquet": {
+      "bytes": 2322278,
+      "sha256": "17a0569ed43146879996da4716f0ba10a1802ea1e7fccfa261bfeb7acbe13981"
+    },
+    "07_full_bank_selection_stability/cross_scoring_matrix.csv": {
+      "bytes": 333,
+      "sha256": "3be2303851e130f27104bcdc10ecc552ef52e8827baa196db6e56fed8d9056da"
+    },
+    "07_full_bank_selection_stability/overlap_summary.csv": {
+      "bytes": 384,
+      "sha256": "854021fdb3ccfd55456736d0eba1b32128705def21f27e235a234353ab100d77"
+    },
+    "07_full_bank_selection_stability/rank_agreement.csv": {
+      "bytes": 467,
+      "sha256": "711d982f67c1189acd16574cd125c39ed36de95341dd8184d6ab53300e96dab4"
+    },
+    "07_full_bank_selection_stability/structural_summary.csv": {
+      "bytes": 490,
+      "sha256": "f37002e3b88eae2048c857c9380c6edf2ef28ea4e309c1fe4ff8c4bf6d96a649"
+    },
+    "08_sensitivity/budget_summary.csv": {
+      "bytes": 574,
+      "sha256": "aff2ffcdc5d7af62ff74970c4ed9f77fb6a1d45aa91bf8b2b6bfd0e286ee045d"
+    },
+    "08_sensitivity/directional_consistency.json": {
+      "bytes": 266,
+      "sha256": "93678e5aeff1d5df89686118be6db40755420469df09b6ebff52dcb70afc6fb9"
+    },
+    "09_decision/final_classification.json": {
+      "bytes": 550,
+      "sha256": "a8740763fb50244382ca4a7d5f8e0689f1584111db87c4b8dd23752a35913fea"
+    },
+    "09_decision/human_review_recommendation.md": {
+      "bytes": 418,
+      "sha256": "c0cad1d6aa14e39ed767cd131e93c27e5438048201e1ad03186df7280690968e"
+    },
+    "10_figures/01_gp_fill_hardness_primary_B602.png": {
+      "bytes": 27306,
+      "sha256": "4421aabb922f700c4f4698d4ff012c14c74bd27cf2dc995f5b1ab2b0cf2c34c7"
+    },
+    "10_figures/02_gp_fill_gain_over_random.png": {
+      "bytes": 59652,
+      "sha256": "90c1d0c745f082bdb59bc2408e811326c4876ef3f4221766e363f7273c3527b7"
+    },
+    "10_figures/03_gain_retention_vs_D5.png": {
+      "bytes": 69333,
+      "sha256": "ee368bca13560e2c909acd9093563f91b8e46a3efb35745590d0dc35bb8aacbf"
+    },
+    "10_figures/04_delta_vs_D5_bootstrap.png": {
+      "bytes": 26684,
+      "sha256": "69897cf738bec6cc1741902dbf1cac3aeb720bc7eb3e4a5528cfa5d296511292"
+    },
+    "10_figures/05_hybrid_hardness_by_calibration_depth.png": {
+      "bytes": 75877,
+      "sha256": "863a5056aff2970d2e88a7d6e1a63fbda05a83961342d30d67decafcbd38c64c"
+    },
+    "10_figures/06_oracle_fill_headroom_capture.png": {
+      "bytes": 75831,
+      "sha256": "9717f79c4cd080b71e438067b67fecfeac38c00eb1743f297da4c2798f0943c0"
+    },
+    "10_figures/07_sensitivity_B602_B1204_B2408.png": {
+      "bytes": 70713,
+      "sha256": "3baa154b36098889b584ab321a83576c52fc5cd0c77f9d37627ac0432a058948"
+    },
+    "10_figures/08_full_bank_fill_overlap.png": {
+      "bytes": 27021,
+      "sha256": "f11a8f499aa72d82a640c405b2c61782aaf956be106f43c070ce332f2c83ecbb"
+    },
+    "10_figures/09_full_bank_rank_agreement.png": {
+      "bytes": 24015,
+      "sha256": "05ecdfb3247cbd2a7343ded49d15e32f71efabb3f799fb04358b32812583ce02"
+    },
+    "10_figures/10_calibration_labels_vs_acquisition_value.png": {
+      "bytes": 55495,
+      "sha256": "cb61da716ca4baf423290789c02f2bd57ea2ded1226aaa2f431257228b5e489d"
+    },
+    "report.md": {
+      "bytes": 11153,
+      "sha256": "4e0dc1a12597f200e20985c516c5bea7cceb6f039cc26274b143f473c384896c"
+    },
+    "strict_verification.json": {
+      "bytes": 7654,
+      "sha256": "1e37555ac409716d1092b75b28f228f5ff656873573941a78a1b8fd3cbf6bc99"
+    },
+    "terminal_output.txt": {
+      "bytes": 1314,
+      "sha256": "13f906c15fa3076100373735165909ea489b341296ba93580d4ee76955090504"
+    }
+  },
+  "hash_policy": "SHA-256",
+  "self_excluded": true
+}

@@ -1,0 +1,95 @@
+{
+  "all_predictions_finite": true,
+  "seed": 2027,
+  "selected": {
+    "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":1}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":-1.1760063849044058},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}",
+    "constants": [
+      -1.1760063849044058
+    ],
+    "depth": 6,
+    "feature_indices": [
+      0,
+      1
+    ],
+    "first_generation": 28,
+    "formula": "protected_divide(multiply(spn_sum_of_lowest_edge_values, sqrt_abs(log1p_abs(sqrt_abs(spn_distance_varcoeff)))), subtract(-1.1760063849, spn_sum_of_lowest_edge_values))",
+    "hof_rank": 1,
+    "nodes": 10,
+    "seed": 2027,
+    "train_huber": 0.2931632399687478,
+    "train_total_fitness": 0.29816323996874783,
+    "tree": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "feature",
+                          "value": 1
+                        }
+                      ],
+                      "op": "sqrt_abs",
+                      "value": null
+                    }
+                  ],
+                  "op": "log1p_abs",
+                  "value": null
+                }
+              ],
+              "op": "sqrt_abs",
+              "value": null
+            }
+          ],
+          "op": "multiply",
+          "value": null
+        },
+        {
+          "args": [
+            {
+              "args": [],
+              "op": "const",
+              "value": -1.1760063849044058
+            },
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            }
+          ],
+          "op": "subtract",
+          "value": null
+        }
+      ],
+      "op": "protected_divide",
+      "value": null
+    },
+    "unique_features": 2,
+    "used_features": [
+      "spn_sum_of_lowest_edge_values",
+      "spn_distance_varcoeff"
+    ],
+    "validation_eligible": true,
+    "validation_mae": 0.02687076436480991,
+    "validation_spearman": 0.39419378164466995
+  },
+  "selector": "SPERF",
+  "spearman_tie_epsilon": 1e-06,
+  "transform": {
+    "center_train_median_loss_log": 0.054876412701037255,
+    "fit_split": "TRAIN_ONLY",
+    "formula": "loss_log = log1p(loss_raw)",
+    "scale_method": "IQR",
+    "scale_train_loss_log": 0.04446622183439085
+  }
+}

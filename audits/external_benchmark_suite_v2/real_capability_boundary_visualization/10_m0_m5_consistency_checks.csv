@@ -1,0 +1,11 @@
+check,value,pass
+PCA coordinate equality M0/M5,max_abs=0.0,True
+instance IDs identical M0/M5,True,True
+same frozen visualization subset,160,True
+same structural features,read from primary frozen coordinate table,True
+same tau as primary figures,1.6759665429999124,True
+same color scale as primary figures,P5=0; P95=10.026652024423681,True
+same axis limits,"x=(-1.1282992041443103, 0.9143546031535303); y=(-0.5397302287017989, 0.793174959341967)",True
+same point size / dimensions,"size=29.0; figsize=(7.2, 6.2)",True
+M5 smoothing disagreement <=10%,0.086465%,True
+M5 results complete and finite,30070,True

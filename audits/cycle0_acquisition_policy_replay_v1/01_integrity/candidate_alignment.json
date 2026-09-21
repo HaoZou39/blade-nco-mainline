@@ -1,0 +1,12 @@
+{
+  "K": 1000,
+  "accepted_manifest_unique_hashes": 109785,
+  "assigned_niche_is_exact_nearest_centroid": true,
+  "exact_hash_set_alignment": true,
+  "full_bank_n": 109785,
+  "normalized_qd4_exact_against_structural_order": true,
+  "occupied_niches": 435,
+  "status": "PASS",
+  "structural_order_n": 109785,
+  "unique_instance_hashes": 109785
+}

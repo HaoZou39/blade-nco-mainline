@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "256E": true,
+    "BQ=10k+10k": true,
+    "E256 valid": true,
+    "GP calibration valid": true,
+    "LR=3.75e-5": true,
+    "P_s_FULL=10k": true,
+    "T_s=10k": true,
+    "checkpoint hashes valid": true,
+    "no NaN/Inf": true,
+    "repair finite": true,
+    "timing complete": true
+  },
+  "status": "PASS"
+}

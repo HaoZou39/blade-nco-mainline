@@ -1,0 +1,8 @@
+dataset,occupied_niches,unique_contribution,unique_fraction_of_own,marginal_coverage_given_others,union_all
+Uniform100,51,0,0.0,0,620
+GM100,375,24,0.064,24,620
+TSPLIB100,497,83,0.16700201207243462,83,620
+Original70,33,1,0.030303030303030304,1,620
+EvoReal-S1 Gen.,176,1,0.005681818181818182,1,620
+EvoReal-S2 Gen.,189,5,0.026455026455026454,5,620
+EvoReal-S3 Gen.,362,47,0.1298342541436464,47,620

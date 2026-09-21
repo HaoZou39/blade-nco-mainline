@@ -1,0 +1,194 @@
+{
+  "files": {
+    "00_protocol/replay_protocol.json": {
+      "bytes": 1604,
+      "sha256": "25a6b8940915ce46573236b2e1abbe24dc9f5c98dbd3cb30b0fe39bf370b30f7"
+    },
+    "00_protocol/source_manifest.json": {
+      "bytes": 8415,
+      "sha256": "785eb4a08d63a72c91e5da1e8f8b5178d0d3dade16042d8715759af81944fc73"
+    },
+    "01_integrity/candidate_alignment.json": {
+      "bytes": 357,
+      "sha256": "e04c63db1653dcd33f7cbec5368760df863ef13746cea34d57a68a4746cf1e09"
+    },
+    "01_integrity/dev_label_alignment.json": {
+      "bytes": 213,
+      "sha256": "aa6806c4659c7338520ee397f1db2ed5014a9f268c0e5b1d27e779f63dcba220"
+    },
+    "01_integrity/prediction_alignment.json": {
+      "bytes": 737,
+      "sha256": "700833fc0a49f72feb3ef8e0b1c3ee1508b1dc3cf336766ff85130fe8b1ad39e"
+    },
+    "02_full_bank_scores/gp4_d5_scores.parquet": {
+      "bytes": 22397124,
+      "sha256": "1dd4ba9476ca8afa29b530e46e2b433c05c8a91bb51b1f8dff82bea79c92a82d"
+    },
+    "03_full_bank_policy_replay/centroid1_global_gp.parquet": {
+      "bytes": 2977142,
+      "sha256": "af159b728de824cd3dceb64e730d2e98f0365f393685792707e4b86b48c007e2"
+    },
+    "03_full_bank_policy_replay/centroid1_random_fill.parquet": {
+      "bytes": 2870688,
+      "sha256": "333276d4aaba0c2c6182799b8707acaaf4cdf8fdf5702131a6e47d91c5f11058"
+    },
+    "03_full_bank_policy_replay/global_gp.parquet": {
+      "bytes": 2973331,
+      "sha256": "302f1fadd45955b4abc29981037babaeb488cb5bdbd869c344420b0477fb5358"
+    },
+    "03_full_bank_policy_replay/global_random.parquet": {
+      "bytes": 2836581,
+      "sha256": "f8f7b0ffdc18e6ad84d3fb65fe6f9b542707b42d49f48c30b41a732f4f85e4d5"
+    },
+    "03_full_bank_policy_replay/round_robin_gp.parquet": {
+      "bytes": 2888612,
+      "sha256": "0d33436977ef21d9c06e62cc278431663734cd9b4ab69f5ffa697d8b1ab8abb8"
+    },
+    "04_full_bank_structural_metrics/centroid1_characteristics.csv": {
+      "bytes": 902,
+      "sha256": "383ccdd8b3831c605c809dda0afbc3db3b1e0d101221c7b6705cdb4b8ef4fdc8"
+    },
+    "04_full_bank_structural_metrics/diversity_summary.csv": {
+      "bytes": 994,
+      "sha256": "a95764d357a4d50f79f4c047dcb198ba4a02a18d287652eff0e54e1d7b911ba1"
+    },
+    "04_full_bank_structural_metrics/niche_counts.parquet": {
+      "bytes": 9931,
+      "sha256": "8ab538fa9816abcc6a2d3812f842cb0ccdd8eae52aeb7bb50772b8c57010574c"
+    },
+    "04_full_bank_structural_metrics/policy_summary.csv": {
+      "bytes": 2338,
+      "sha256": "cef75f8c8b9eea072e82795ce8109574f8c3c17c3ff65b0caa73ee9863f89cc6"
+    },
+    "05_dev_policy_replay/policy_budget_summary.csv": {
+      "bytes": 11197,
+      "sha256": "1c1f519e0265a8d8fd62b0a1c8ecd356252c687f7fd4df5a974f92429341fa7c"
+    },
+    "05_dev_policy_replay/random_repeat_metrics.parquet": {
+      "bytes": 102096,
+      "sha256": "9945867abef4cea835098742a840fd5480fcef1859f7b5dcc385e69b13c49869"
+    },
+    "05_dev_policy_replay/selections.parquet": {
+      "bytes": 650750,
+      "sha256": "11c9b82950564cc2daa4c9261fc62c217d88448077d8dcbe488cced340e554ca"
+    },
+    "06_dev_true_hardness/bootstrap.csv": {
+      "bytes": 5443,
+      "sha256": "3c3aa2a1e2771b02a3942be55035dc853759025a33b009310244de8788155693"
+    },
+    "06_dev_true_hardness/exact_hardness_summary.csv": {
+      "bytes": 11197,
+      "sha256": "1c1f519e0265a8d8fd62b0a1c8ecd356252c687f7fd4df5a974f92429341fa7c"
+    },
+    "07_oracle_decomposition/oracle_policy_summary.csv": {
+      "bytes": 351,
+      "sha256": "a96355122c024a71973966d3ff60f7e21ca866a737460300935ec3184b9dc07a"
+    },
+    "07_oracle_decomposition/regret_decomposition.csv": {
+      "bytes": 460,
+      "sha256": "4b5160ee6a84d145897c4fc0a225bce964a4fe9e27fdab3424f87bf3b545ce45"
+    },
+    "08_policy_tradeoff/hardness_coverage_pareto.csv": {
+      "bytes": 11378,
+      "sha256": "bc4faee7dbe899083223372b403adecba7fa746f4f4ff10704a64d8a606f9391"
+    },
+    "08_policy_tradeoff/hybrid_vs_global.csv": {
+      "bytes": 1303,
+      "sha256": "82e3fffde2058d6dfa67ba2322e4510d4913df9db6149b4171399a55137fdaf2"
+    },
+    "08_policy_tradeoff/hybrid_vs_random_fill.csv": {
+      "bytes": 901,
+      "sha256": "b2d4b7701be5811b15913b9e0b96d80ff5202dee99f267ca308257c72a5d4095"
+    },
+    "08_policy_tradeoff/hybrid_vs_round_robin.csv": {
+      "bytes": 947,
+      "sha256": "e569094dbbcf71413e8c3c7bbd93548253fa4dbe795e9cacf29772d180a6197a"
+    },
+    "09_lineage_operator_diversity/lineage_summary.csv": {
+      "bytes": 624,
+      "sha256": "52e6ad55c39c58b4fd553d20177ce699dc95aa62a85106a23764842437e8c66b"
+    },
+    "09_lineage_operator_diversity/operator_summary.csv": {
+      "bytes": 3104,
+      "sha256": "233513d077811866b1f3723fc235de592dc91fc762d6c1f16e12e5b54e9ec04b"
+    },
+    "10_sensitivity/budget_consistency.csv": {
+      "bytes": 828,
+      "sha256": "de489f302f51a8c2f566f85650b9ed10fc8dae8a40e52fd55160bccd569b263d"
+    },
+    "11_decision/diagnostic_classification.json": {
+      "bytes": 1400,
+      "sha256": "83be4cf6b37c142e37540918961308c4cf2c7eeb91cefb13f17fbd0a95a2f11f"
+    },
+    "11_decision/human_review_recommendation.md": {
+      "bytes": 505,
+      "sha256": "6ad8aae92bf650f307680e325478e93176c8c73eb9b2091a78bc96e027dd8639"
+    },
+    "12_figures/01_full_bank_policy_coverage.png": {
+      "bytes": 74063,
+      "sha256": "293eecd7251156318dde0f5a74581d33d4df3196e6c76bcad76507d08541422d"
+    },
+    "12_figures/02_full_bank_niche_distribution.png": {
+      "bytes": 72938,
+      "sha256": "84b135114ec9a6f3f9a873af8d82497921b35b174a9cd6ed0afa6d1a29fb1c5a"
+    },
+    "12_figures/03_full_bank_predicted_hardness.png": {
+      "bytes": 81404,
+      "sha256": "bbe82fd8ad8dfd1464503845567774d5670adaa4e0931d5819ed0e8cd187b61f"
+    },
+    "12_figures/04_dev_hardness_vs_budget.png": {
+      "bytes": 124943,
+      "sha256": "753c4c974dd1788729b753b806755a7d77a3b3becfc5bca8037acca633ebf7f2"
+    },
+    "12_figures/05_dev_coverage_vs_budget.png": {
+      "bytes": 83521,
+      "sha256": "17153c90d504adbcc66a46b9082cad20c9ff87e72003a1c43db268444c39667c"
+    },
+    "12_figures/06_hardness_coverage_pareto.png": {
+      "bytes": 61075,
+      "sha256": "e8b4be96354c1f989762a6e4b4762eca27fa15986eb689228762b5516f987344"
+    },
+    "12_figures/07_hybrid_vs_global_gp.png": {
+      "bytes": 40467,
+      "sha256": "3c7ca6acd3ee10ebc1c62ee95a10734a3360b8d1f6cc880125085d09fff312a7"
+    },
+    "12_figures/08_hybrid_vs_round_robin.png": {
+      "bytes": 49673,
+      "sha256": "5cfe23c44a2e3d52dbca90876e32983b799f45756af9f416fb62abd8cbc3a6ce"
+    },
+    "12_figures/09_gp_value_after_centroid_coverage.png": {
+      "bytes": 53728,
+      "sha256": "b1d3726474d5123178d9d1d827edfb86e9413735d109f454c1e374af1f0705eb"
+    },
+    "12_figures/10_oracle_coverage_constraint_cost.png": {
+      "bytes": 34254,
+      "sha256": "423d77f5784834d808f57aab89d94ffda71b85407629d8bc77c362aee6703b17"
+    },
+    "12_figures/11_oracle_surrogate_regret_decomposition.png": {
+      "bytes": 36181,
+      "sha256": "08cf350fe93cfb2ff98d4c45b1087046cdbfbe2029e7c19664173fdb720d3015"
+    },
+    "12_figures/12_root_diversity_by_policy.png": {
+      "bytes": 82360,
+      "sha256": "894069952d67d2012e69ddb5a62ce8c8a785598b8164e0b885951e6b675b96e0"
+    },
+    "12_figures/13_operator_diversity_by_policy.png": {
+      "bytes": 94934,
+      "sha256": "9c68a01c2cfcff02929fd404dc276aedc6f30f4a6d3420ef654e8c2660f1d993"
+    },
+    "report.md": {
+      "bytes": 22947,
+      "sha256": "3cc416dd4dfffe234c020f4e67e3f015a953f3dfec9265b6ad51b6801e476847"
+    },
+    "strict_verification.json": {
+      "bytes": 7574,
+      "sha256": "298f80efc3dec597f41926359d9200970d03bb24762f221be65e2e36e597dc39"
+    },
+    "terminal_output.txt": {
+      "bytes": 1559,
+      "sha256": "628bcbd045062eb321575441e467548613a8c1756b853459ee93597d2481580d"
+    }
+  },
+  "hash_policy": "SHA-256",
+  "self_excluded": true
+}

@@ -1,0 +1,3 @@
+model,zoom_xlim,zoom_ylim,foreground_count_shared,input_gaussian_sigma_grid_cells,additional_gaussian_sigma_grid_cells,effective_gaussian_sigma_grid_cells,raw_full_field_component_count,zoom_intersecting_component_count,retained_component_count,minimum_component_length_pc_units,filtering_rule
+M0,"(-1.05, 0.1)","(-0.48, 0.72)",104,2,1.5,2.5,9,9,1,0.080500000000000016,intersects zoom and length >= 7% of zoom width
+M5,"(-1.05, 0.1)","(-0.48, 0.72)",104,2,1.5,2.5,6,6,2,0.080500000000000016,intersects zoom and length >= 7% of zoom width

@@ -1,0 +1,5 @@
+EXCLUDED_FROM_FINAL_BENCHMARK_SUITE
+
+These historical LEHD_TSP200/500/1000 artifacts are retained for provenance only.
+They are not members of external_benchmark_suite_v2 and must not contribute to
+any v2 aggregate, rank, figure, headline result, or final-paper table.

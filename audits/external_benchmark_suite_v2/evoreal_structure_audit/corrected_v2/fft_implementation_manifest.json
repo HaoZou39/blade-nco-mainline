@@ -1,0 +1,70 @@
+{
+  "fft_source": "PAPER_DEFINITION_REIMPLEMENTATION",
+  "official_fft_code_found": false,
+  "official_repo": "https://github.com/HenryZhu1029/EvoReal",
+  "official_commit": "919616337105e894e06463734ec1dd71f6451309",
+  "official_search_result": "Recursive listing of HenryZhu1029/EvoReal at the pinned commit contains no FFT/histogram/NN-ratio feature implementation. Author S1/S2/S3 TSPLIB validation coordinates exist as tsplib_typeS{1,2,3}.txt and were used for calibration.",
+  "normalization": {
+    "algorithm": "EvoReal Algorithm 1",
+    "shared_max_diff": true,
+    "independent_axis_minmax": false
+  },
+  "grid_resolution": 32,
+  "histogram_range": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "histogram_normalization": "raw_counts",
+  "fft_shift": true,
+  "energy_definition": "mean_abs_fft_in_main_frequency_region",
+  "energy_note": "Paper says 'mean energy of the main frequency region (excluding the DC component)'. Official code is unpublished. Mean |FFT| of the lowest non-DC frequency annulus is the statistic whose numerical scale is comparable to the published threshold FFT=35 on the author's labeled validation instances. Total/Parseval spectral energy is rejected.",
+  "dc_removal": "zero_dc_bin_after_fftshift",
+  "main_frequency_region_definition": "fftshifted polar annulus 1 < r <= 4 pixels from DC",
+  "aggregation_method": "mean",
+  "nn_ratio_definition": "std(d_NN)/mean(d_NN)",
+  "nn_self_exclusion": true,
+  "nn_knn_k": 2,
+  "nn_std_ddof": 0,
+  "nn_std_note": "No official NN-ratio code is published. numpy.std default ddof=0 is used because d_NN is the complete finite set of N nearest-neighbor distances of one instance, not a sample from a super-population. ddof=0 and ddof=1 both recover the author's S2<0.5 / S3>=0.5 split exactly on the 48 validation instances.",
+  "thresholds": {
+    "fft": 35.0,
+    "nn_ratio": 0.5
+  },
+  "legacy_incorrect_implementation": {
+    "path": "audits\\external_benchmark_suite_v2\\evoreal_structure_audit",
+    "fft": "Parseval-style total spectral energy after independent-axis min-max; saturates near 16284",
+    "nn_ratio": "mean(nearest-neighbor distance)/mean(all-pair distance)",
+    "status": "retained_not_overwritten"
+  },
+  "algorithm1_unit_test": {
+    "n_tested": 12,
+    "all_passed": true
+  },
+  "calibration": {
+    "status": "CALIBRATED_ON_AUTHOR_TSPLIB_VALIDATION",
+    "author_validation_n": 48,
+    "author_S1_gt35": 0.7894736842105263,
+    "author_nonS1_le35": 1.0,
+    "author_S2_lt05": 1.0,
+    "author_S3_ge05": 1.0,
+    "author_S1_fft_median": 63.60879817246343,
+    "author_nonS1_fft_median": 13.680596166450734,
+    "scale_compatible_with_35": true,
+    "direction_matches_figure4": true,
+    "uniform_tsp100_sample": {
+      "n": 500,
+      "FFT_mean": 8.888737726688808,
+      "FFT_median": 8.865582150536671,
+      "FFT_gt35_fraction": 0.0,
+      "NN_ratio_mean": 0.5545934810690119,
+      "NN_ratio_median": 0.5532891874454469,
+      "NN_gt05_fraction": 0.84
+    }
+  }
+}

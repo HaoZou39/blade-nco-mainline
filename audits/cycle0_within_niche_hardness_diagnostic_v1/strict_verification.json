@@ -1,0 +1,271 @@
+{
+  "checks": [
+    {
+      "check": "analysis uses existing Cycle-0 audit only",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1",
+      "id": 1,
+      "passed": true
+    },
+    {
+      "check": "no new instances generated",
+      "evidence": "analysis-only source readers",
+      "id": 2,
+      "passed": true
+    },
+    {
+      "check": "no Concorde calls",
+      "evidence": "no solver code imported or invoked",
+      "id": 3,
+      "passed": true
+    },
+    {
+      "check": "no new Oracle labels",
+      "evidence": "sealed exact_hardness.parquet read-only",
+      "id": 4,
+      "passed": true
+    },
+    {
+      "check": "no BQ inference beyond already stored exact labels",
+      "evidence": "H0 loaded from sealed parquet",
+      "id": 5,
+      "passed": true
+    },
+    {
+      "check": "no GP retraining",
+      "evidence": "stored predictions only",
+      "id": 6,
+      "passed": true
+    },
+    {
+      "check": "no HGB retraining",
+      "evidence": "stored predictions only",
+      "id": 7,
+      "passed": true
+    },
+    {
+      "check": "GP4/HGB4/HGB20 predictions aligned instance-by-instance",
+      "evidence": "9 x 2666",
+      "id": 8,
+      "passed": true
+    },
+    {
+      "check": "exact same dev set used",
+      "evidence": "2666",
+      "id": 9,
+      "passed": true
+    },
+    {
+      "check": "exact same H0 labels used",
+      "evidence": "raw H0",
+      "id": 10,
+      "passed": true
+    },
+    {
+      "check": "exact same K1000 niche assignments used",
+      "evidence": "301 sealed-dev niches",
+      "id": 11,
+      "passed": true
+    },
+    {
+      "check": "D5 is primary diagnostic branch",
+      "evidence": "protocol primary_diagnostic_branch=D5",
+      "id": 12,
+      "passed": true
+    },
+    {
+      "check": "D1/D2 sensitivity only",
+      "evidence": "protocol sensitivity_branches",
+      "id": 13,
+      "passed": true
+    },
+    {
+      "check": "raw L_BQ used for acquisition-value analysis",
+      "evidence": "raw H0",
+      "id": 14,
+      "passed": true
+    },
+    {
+      "check": "centered prediction calculated correctly",
+      "evidence": "max_abs_niche_mean=3.053113317719181e-17",
+      "id": 15,
+      "passed": true
+    },
+    {
+      "check": "centered true hardness calculated correctly",
+      "evidence": "max_abs_niche_mean=2.914335439641036e-17",
+      "id": 16,
+      "passed": true
+    },
+    {
+      "check": "between-niche metrics calculated correctly",
+      "evidence": "nine models, 301 niche means",
+      "id": 17,
+      "passed": true
+    },
+    {
+      "check": "Oracle Top1 exact",
+      "evidence": "H0-desc/hash-asc",
+      "id": 18,
+      "passed": true
+    },
+    {
+      "check": "Oracle Top2 exact",
+      "evidence": "H0-desc/hash-asc",
+      "id": 19,
+      "passed": true
+    },
+    {
+      "check": "Oracle Top5 exact",
+      "evidence": "H0-desc/hash-asc",
+      "id": 20,
+      "passed": true
+    },
+    {
+      "check": "random baseline matched by niche",
+      "evidence": "exact match to existing GP acquisition random baseline",
+      "id": 21,
+      "passed": true
+    },
+    {
+      "check": "random seed 2026",
+      "evidence": "2026",
+      "id": 22,
+      "passed": true
+    },
+    {
+      "check": "headroom calculated correctly",
+      "evidence": "Oracle minus random",
+      "id": 23,
+      "passed": true
+    },
+    {
+      "check": "headroom capture calculated correctly",
+      "evidence": "gain/headroom",
+      "id": 24,
+      "passed": true
+    },
+    {
+      "check": "no silent clipping of capture ratios",
+      "evidence": "range=-4239.41666666257,1.0000000000000056",
+      "id": 25,
+      "passed": true
+    },
+    {
+      "check": "niche is bootstrap unit",
+      "evidence": "paired cluster resampling",
+      "id": 26,
+      "passed": true
+    },
+    {
+      "check": "bootstrap count 10000",
+      "evidence": "10000",
+      "id": 27,
+      "passed": true
+    },
+    {
+      "check": "bootstrap seed 2026",
+      "evidence": "2026",
+      "id": 28,
+      "passed": true
+    },
+    {
+      "check": "HGB20-HGB4 paired comparison generated",
+      "evidence": "3 depths x 9 metrics",
+      "id": 29,
+      "passed": true
+    },
+    {
+      "check": "HGB4-GP4 paired comparison generated",
+      "evidence": "3 depths x 9 metrics",
+      "id": 30,
+      "passed": true
+    },
+    {
+      "check": "HGB20-GP4 secondary comparison generated",
+      "evidence": "3 depths x 9 metrics",
+      "id": 31,
+      "passed": true
+    },
+    {
+      "check": "niche geometry analysis generated",
+      "evidence": "262 niches",
+      "id": 32,
+      "passed": true
+    },
+    {
+      "check": "niche sample-size analysis generated",
+      "evidence": "boundaries=[10.0, 10.0, 10.0]",
+      "id": 33,
+      "passed": true
+    },
+    {
+      "check": "model agreement generated",
+      "evidence": "3 model pairs x 3 r",
+      "id": 34,
+      "passed": true
+    },
+    {
+      "check": "no external benchmark evaluation",
+      "evidence": "sealed dev only",
+      "id": 35,
+      "passed": true
+    },
+    {
+      "check": "no final D0 construction",
+      "evidence": "analysis only",
+      "id": 36,
+      "passed": true
+    },
+    {
+      "check": "no BQ fine-tuning",
+      "evidence": "analysis only",
+      "id": 37,
+      "passed": true
+    },
+    {
+      "check": "no protocol modification",
+      "evidence": "diagnostic classification descriptive",
+      "id": 38,
+      "passed": true
+    },
+    {
+      "check": "no final runner",
+      "evidence": "analysis only",
+      "id": 39,
+      "passed": true
+    },
+    {
+      "check": "runs/ remains empty",
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline\\runs",
+      "id": 40,
+      "passed": true
+    },
+    {
+      "check": "existing frozen assets unchanged",
+      "evidence": "verified=114; bad=[]",
+      "id": 41,
+      "passed": true
+    },
+    {
+      "check": "old development project unchanged",
+      "evidence": "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+      "id": 42,
+      "passed": true
+    },
+    {
+      "check": "all outputs hashed",
+      "evidence": "00_protocol/generated_file_hashes.json",
+      "id": 43,
+      "passed": true
+    },
+    {
+      "check": "all tests pass",
+      "evidence": "44/44",
+      "id": 44,
+      "passed": true
+    }
+  ],
+  "passed": 44,
+  "status": "PASS",
+  "total": 44
+}

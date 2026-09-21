@@ -1,0 +1,13 @@
+check,value,pass
+M0/M1/M5 point coordinates identical,max_abs=0.0,True
+M0/M1/M5 instance IDs identical,280,True
+structural features identical,single frozen table reused,True
+same fixed tau,1.6759665429999124,True
+same diverging color normalization,P5=0; tau=1.6759665429999124; P95=8.3625999754092408,True
+same axis range,"x=(-1.1282992041, 0.9143546032); y=(-0.5397302287, 0.7931749593)",True
+same 280-point subset,"{""GM100"": 70, ""Original70"": 70, ""TSPLIB100"": 70, ""Uniform100"": 70}",True
+same point sizes and figure dimensions,"handled=24.0; hard=31.0; figsize=(7.2, 6.2)",True
+M0 field identical in both comparisons,True,True
+support mask identical,True,True
+M1/M5 final field disagreement <=10%,M1=0.039907%; M5=0.086465%,True
+hard-region membership unchanged,9021,True

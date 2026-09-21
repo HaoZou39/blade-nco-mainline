@@ -1,0 +1,663 @@
+{
+  "checks": [
+    {
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline",
+      "id": 1,
+      "passed": true,
+      "requirement": "workspace is exact mainline root"
+    },
+    {
+      "evidence": {
+        "baseline": [
+          "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+          3,
+          "3372016e4f2d536b62e20aaf7a0ab4cdb99c38b17620bb72bb89e1b47510b8f2"
+        ],
+        "current": [
+          "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+          3,
+          "3372016e4f2d536b62e20aaf7a0ab4cdb99c38b17620bb72bb89e1b47510b8f2"
+        ]
+      },
+      "id": 2,
+      "passed": true,
+      "requirement": "old project not modified"
+    },
+    {
+      "evidence": 0,
+      "id": 3,
+      "passed": true,
+      "requirement": "no runtime old-project references"
+    },
+    {
+      "evidence": 0,
+      "id": 4,
+      "passed": true,
+      "requirement": "no symlinks or junctions"
+    },
+    {
+      "evidence": 114,
+      "id": 5,
+      "passed": true,
+      "requirement": "frozen assets hash-valid"
+    },
+    {
+      "evidence": "MAINLINE_PROTOCOL_STRUCTURE=PASS\nASSET_COUNT=114\nQD_ARCHIVE_POLICY=SPARSE_ONE_ELITE_PER_NICHE\nACTIVE_POPULATION_BUDGET=10000\nOFFSPRING_BUDGET=110000\nOLD_RUNTIME_REFERENCES=0\nSYMLINKS=0\nFINAL_RUNNER=IMPLEMENTED",
+      "id": 6,
+      "passed": true,
+      "requirement": "all pre-existing asset hashes unchanged"
+    },
+    {
+      "evidence": [
+        1000,
+        4
+      ],
+      "id": 7,
+      "passed": true,
+      "requirement": "K=1000 exact"
+    },
+    {
+      "evidence": [
+        "spn_sum_of_lowest_edge_values",
+        "spn_distance_varcoeff",
+        "spn_mst_depth_mean",
+        "spn_mst_dists_median"
+      ],
+      "id": 8,
+      "passed": true,
+      "requirement": "QD4 exact"
+    },
+    {
+      "evidence": {
+        "lower": [
+          -1.0102801999400897,
+          -0.8574109112786122,
+          -0.9944574938177666,
+          -1.2296298158012857
+        ],
+        "upper": [
+          1.294120797813006,
+          1.9309004155811764,
+          1.6137030078994739,
+          1.1142622159726396
+        ]
+      },
+      "id": 9,
+      "passed": true,
+      "requirement": "normalization exact"
+    },
+    {
+      "evidence": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+      "id": 10,
+      "passed": true,
+      "requirement": "frozen centroids exact"
+    },
+    {
+      "evidence": 1,
+      "id": 11,
+      "passed": true,
+      "requirement": "persistent archive maximum one elite per niche"
+    },
+    {
+      "evidence": {
+        "force_full_occupancy": false,
+        "max_elites_per_niche": 1,
+        "maximum_total_elites": 1000,
+        "type": "sparse_cvt_map_elites"
+      },
+      "id": 12,
+      "passed": true,
+      "requirement": "sparse occupancy allowed"
+    },
+    {
+      "evidence": "development_evidence_only",
+      "id": 13,
+      "passed": true,
+      "requirement": "no current c=10 persistent archive interpretation"
+    },
+    {
+      "evidence": 10000,
+      "id": 14,
+      "passed": true,
+      "requirement": "active population budget exactly 10000"
+    },
+    {
+      "evidence": 10000,
+      "id": 15,
+      "passed": true,
+      "requirement": "training hard budget exactly 10000"
+    },
+    {
+      "evidence": {
+        "applications_per_operator_per_parent": 1,
+        "budget_derivation": "10000_active_parents_x_11_operators",
+        "nominal_offspring_per_cycle": 110000,
+        "operators": "FOGA11"
+      },
+      "id": 16,
+      "passed": true,
+      "requirement": "offspring budget derived 110000"
+    },
+    {
+      "evidence": {
+        "ensemble_score": "median_of_five_final_symbolic_formulas",
+        "features": "QD4",
+        "fitness": "Huber",
+        "generations": 60,
+        "name": "GP4",
+        "population": 2000,
+        "seeds": [
+          2026,
+          2027,
+          2028,
+          2029,
+          2030
+        ],
+        "selection": "SPERF",
+        "target": "log1p_L_BQ"
+      },
+      "id": 17,
+      "passed": true,
+      "requirement": "GP4 frozen"
+    },
+    {
+      "evidence": {
+        "acquisition_driver": false,
+        "features": "QD4"
+      },
+      "id": 18,
+      "passed": true,
+      "requirement": "HGB4 control only"
+    },
+    {
+      "evidence": {
+        "acquisition_driver": false,
+        "features": "GP20"
+      },
+      "id": 19,
+      "passed": true,
+      "requirement": "HGB20 control only"
+    },
+    {
+      "evidence": 10000,
+      "id": 20,
+      "passed": true,
+      "requirement": "exact root count 10000"
+    },
+    {
+      "evidence": "saved_depth == 0 AND canonical root-hash membership",
+      "id": 21,
+      "passed": true,
+      "requirement": "roots require depth0 plus canonical membership"
+    },
+    {
+      "evidence": false,
+      "id": 22,
+      "passed": true,
+      "requirement": "no regenerated Uniform roots"
+    },
+    {
+      "evidence": {
+        "11": 10000
+      },
+      "id": 23,
+      "passed": true,
+      "requirement": "exactly 11 operator applications requested per root"
+    },
+    {
+      "evidence": 1,
+      "id": 24,
+      "passed": true,
+      "requirement": "no depth relay"
+    },
+    {
+      "evidence": 1,
+      "id": 25,
+      "passed": true,
+      "requirement": "no repeated operator trials"
+    },
+    {
+      "evidence": 110000,
+      "id": 26,
+      "passed": true,
+      "requirement": "nominal child count 110000"
+    },
+    {
+      "evidence": "BLADE_UNIFORM_ROOTED_QD_BOOTSTRAP_V1",
+      "id": 27,
+      "passed": true,
+      "requirement": "deterministic child RNG"
+    },
+    {
+      "evidence": 0,
+      "id": 28,
+      "passed": true,
+      "requirement": "no hardness evaluated"
+    },
+    {
+      "evidence": false,
+      "id": 29,
+      "passed": true,
+      "requirement": "no GP trained"
+    },
+    {
+      "evidence": false,
+      "id": 30,
+      "passed": true,
+      "requirement": "no Concorde run"
+    },
+    {
+      "evidence": false,
+      "id": 31,
+      "passed": true,
+      "requirement": "no BQ fine-tuning run"
+    },
+    {
+      "evidence": false,
+      "id": 32,
+      "passed": true,
+      "requirement": "no external performance benchmark run"
+    },
+    {
+      "evidence": {
+        "centroids": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+        "deep_states": "763875a4d33323622c3c54f44f8df89f76666df74f1b7e0bbeb0344be4d38e88",
+        "normalization": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707",
+        "operator_config": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+        "root_hashes": "c231722d1b74b7f98f8fc603ea7532f63cadc9fd0eef339bf48c684aa5c48652"
+      },
+      "id": 33,
+      "passed": true,
+      "requirement": "QD mapping uses only frozen assets"
+    },
+    {
+      "evidence": {
+        "candidate_count": 10000,
+        "candidate_count_per_niche": {
+          "P01": 0.0,
+          "P05": 0.0,
+          "P10": 0.0,
+          "P25": 0.0,
+          "P75": 0.0,
+          "P90": 0.0,
+          "P95": 1.0,
+          "P99": 383.03,
+          "max": 552,
+          "median": 0.0,
+          "min": 0
+        },
+        "empty_niches": 949,
+        "entropy": 3.4310181645904576,
+        "gini_concentration": 0.9756158000000001,
+        "largest_niche_share": 0.0552,
+        "niches_with_at_least": {
+          "1": 51,
+          "10": 37,
+          "100": 30,
+          "2": 47,
+          "20": 36,
+          "5": 44,
+          "50": 34
+        },
+        "normalized_entropy": 0.8726272436992931,
+        "occupancy_fraction": 0.051,
+        "occupied_niches": 51
+      },
+      "id": 34,
+      "passed": true,
+      "requirement": "root coverage report generated"
+    },
+    {
+      "evidence": {
+        "candidate_count": 109785,
+        "candidate_count_per_niche": {
+          "P01": 0.0,
+          "P05": 0.0,
+          "P10": 0.0,
+          "P25": 0.0,
+          "P75": 13.0,
+          "P90": 125.40000000000009,
+          "P95": 448.4499999999996,
+          "P99": 2616.3099999999986,
+          "max": 3745,
+          "median": 0.0,
+          "min": 0
+        },
+        "empty_niches": 565,
+        "entropy": 4.487579518712429,
+        "gini_concentration": 0.9310460900851665,
+        "largest_niche_share": 0.03411212825067177,
+        "niches_with_at_least": {
+          "1": 435,
+          "10": 262,
+          "100": 116,
+          "2": 387,
+          "20": 225,
+          "5": 314,
+          "50": 167
+        },
+        "normalized_entropy": 0.7386541434428003,
+        "occupancy_fraction": 0.435,
+        "occupied_niches": 435
+      },
+      "id": 35,
+      "passed": true,
+      "requirement": "offspring coverage report generated"
+    },
+    {
+      "evidence": {
+        "candidate_count": 119781,
+        "candidate_count_per_niche": {
+          "P01": 0.0,
+          "P05": 0.0,
+          "P10": 0.0,
+          "P25": 0.0,
+          "P75": 13.0,
+          "P90": 125.40000000000009,
+          "P95": 448.4499999999996,
+          "P99": 2998.949999999999,
+          "max": 4292,
+          "median": 0.0,
+          "min": 0
+        },
+        "empty_niches": 565,
+        "entropy": 4.42785830495183,
+        "gini_concentration": 0.9346476736711167,
+        "largest_niche_share": 0.03583206017648876,
+        "niches_with_at_least": {
+          "1": 435,
+          "10": 262,
+          "100": 116,
+          "2": 387,
+          "20": 225,
+          "5": 314,
+          "50": 167
+        },
+        "normalized_entropy": 0.7288240508925169,
+        "occupancy_fraction": 0.435,
+        "occupied_niches": 435
+      },
+      "id": 36,
+      "passed": true,
+      "requirement": "union coverage report generated"
+    },
+    {
+      "evidence": {
+        "NEW_NICHES_DISCOVERED": 384,
+        "fraction_niche_absent_from_roots": 0.19248531220112036,
+        "fraction_other_root_occupied_niche": 0.6686250398506172,
+        "fraction_same_parent_niche": 0.1388896479482625,
+        "niche_absent_from_roots_count": 21132,
+        "offspring_occupied_niches": 435,
+        "other_root_occupied_niche_count": 73405,
+        "root_occupied_niches": 51,
+        "same_parent_niche_count": 15248,
+        "union_occupied_niches": 435,
+        "valid_unique_offspring_denominator": 109785
+      },
+      "id": 37,
+      "passed": true,
+      "requirement": "migration statistics generated"
+    },
+    {
+      "evidence": [
+        {
+          "P90_normalized_qd_displacement": 0.2983908769177425,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.1345053263012698,
+          "median_normalized_qd_displacement": 0.0969241291151877,
+          "new_niches_beyond_roots": 4,
+          "occupied_niches": 52,
+          "operator_id": "uniform_mutation",
+          "same_niche_rate": 0.2126,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.2254898607844227,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.0940522543141604,
+          "median_normalized_qd_displacement": 0.0598097866637558,
+          "new_niches_beyond_roots": 7,
+          "occupied_niches": 56,
+          "operator_id": "normal_mutation",
+          "same_niche_rate": 0.3581,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.4016938326550511,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.1895946175800336,
+          "median_normalized_qd_displacement": 0.148759786437062,
+          "new_niches_beyond_roots": 6,
+          "occupied_niches": 55,
+          "operator_id": "rotation_mutation",
+          "same_niche_rate": 0.1252,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.4048760078685874,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.167730365453937,
+          "median_normalized_qd_displacement": 0.115761560106477,
+          "new_niches_beyond_roots": 165,
+          "occupied_niches": 216,
+          "operator_id": "implosion_mutation",
+          "same_niche_rate": 0.2573,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.2893214205988028,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.1346659085208242,
+          "median_normalized_qd_displacement": 0.1030593241404727,
+          "new_niches_beyond_roots": 21,
+          "occupied_niches": 72,
+          "operator_id": "explosion_mutation",
+          "same_niche_rate": 0.2188,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.9963899965488244,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.5407671616961902,
+          "median_normalized_qd_displacement": 0.4986601831495812,
+          "new_niches_beyond_roots": 218,
+          "occupied_niches": 268,
+          "operator_id": "cluster_mutation",
+          "same_niche_rate": 0.0219,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.5640949705965425,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.330247282575374,
+          "median_normalized_qd_displacement": 0.3132227093979372,
+          "new_niches_beyond_roots": 135,
+          "occupied_niches": 186,
+          "operator_id": "expansion_mutation",
+          "same_niche_rate": 0.0237118559279639,
+          "valid_unique_children": 9995
+        },
+        {
+          "P90_normalized_qd_displacement": 0.4419775729458683,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.2156376870631422,
+          "median_normalized_qd_displacement": 0.1753164250554986,
+          "new_niches_beyond_roots": 99,
+          "occupied_niches": 150,
+          "operator_id": "compression_mutation",
+          "same_niche_rate": 0.1145,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.6705935942173804,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.3826438749668829,
+          "median_normalized_qd_displacement": 0.35935862164328,
+          "new_niches_beyond_roots": 272,
+          "occupied_niches": 323,
+          "operator_id": "axis_projection_mutation",
+          "same_niche_rate": 0.0215,
+          "valid_unique_children": 10000
+        },
+        {
+          "P90_normalized_qd_displacement": 0.6448767591271284,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.3632400886421627,
+          "median_normalized_qd_displacement": 0.3371664648395559,
+          "new_niches_beyond_roots": 230,
+          "occupied_niches": 281,
+          "operator_id": "linear_projection_mutation",
+          "same_niche_rate": 0.0247191011235955,
+          "valid_unique_children": 9790
+        },
+        {
+          "P90_normalized_qd_displacement": 0.3185848501334884,
+          "children_generated": 10000,
+          "mean_normalized_qd_displacement": 0.1545129338060635,
+          "median_normalized_qd_displacement": 0.1224554997479741,
+          "new_niches_beyond_roots": 1,
+          "occupied_niches": 44,
+          "operator_id": "grid_mutation",
+          "same_niche_rate": 0.147,
+          "valid_unique_children": 10000
+        }
+      ],
+      "id": 38,
+      "passed": true,
+      "requirement": "operator diagnostics generated"
+    },
+    {
+      "evidence": 435,
+      "id": 39,
+      "passed": true,
+      "requirement": "provisional offspring-only probes generated"
+    },
+    {
+      "evidence": 435,
+      "id": 40,
+      "passed": true,
+      "requirement": "provisional union probes generated"
+    },
+    {
+      "evidence": false,
+      "id": 41,
+      "passed": true,
+      "requirement": "probes not Oracle-labeled"
+    },
+    {
+      "evidence": false,
+      "id": 42,
+      "passed": true,
+      "requirement": "no final GP0 source automatically selected"
+    },
+    {
+      "evidence": false,
+      "id": 43,
+      "passed": true,
+      "requirement": "no final runner executed by bootstrap audit"
+    },
+    {
+      "evidence": 0,
+      "id": 44,
+      "passed": true,
+      "requirement": "runs directory remains empty"
+    },
+    {
+      "evidence": "maximum depth one",
+      "id": 45,
+      "passed": true,
+      "requirement": "METHOD_FROZEN consistent"
+    },
+    {
+      "evidence": {
+        "final_runner_status": "READY_TO_LAUNCH",
+        "frozen": {
+          "acquisition": "FROZEN_CENTROID1_PLUS_GLOBAL_GP",
+          "active_budget": "FROZEN_10000",
+          "bq_training": "FROZEN_256E_LR_7_5E_5_FRESH_ADAM",
+          "controls": "FROZEN_HGB4_HGB20_DIAGNOSTIC_ONLY",
+          "cumulative_formal_oracle_archive": "FROZEN",
+          "current_solver_hardness_refresh": "FROZEN_FULL_ARCHIVE",
+          "cvt_k1000": "FROZEN",
+          "deep_reference_normalization": "FROZEN_MAP_GEOMETRY_ONLY",
+          "exact_archive": "FROZEN_SPARSE_ONE_PER_NICHE",
+          "gp0_calibration": "FROZEN_ONE_CENTROID_PROBE_PER_REACHED_NICHE",
+          "horizon": "FROZEN_20_CYCLES_M0_TO_M20",
+          "mutation": "FROZEN_FOGA11_ONCE_PER_OPERATOR_PARENT",
+          "nominal_offspring": "DERIVED_FROZEN_110000",
+          "passive_benchmarks": "FROZEN_SEVEN_FAMILIES_EVERY_CHECKPOINT",
+          "qd4": "FROZEN",
+          "surrogate": "FROZEN_GP4_SPERF_SEEDS_2026_2030",
+          "timing_and_reporting": "FROZEN_MANDATORY",
+          "uniform_anchor": "FROZEN_10000",
+          "uniform_rooted_initialization": "FROZEN_EXACT_10000"
+        },
+        "method_status": "FROZEN",
+        "pending": {},
+        "retired": {
+          "M21": "forbidden",
+          "layered_round_robin_acquisition": "development_audit_only",
+          "performance_early_stopping": "forbidden",
+          "persistent_archive_depth_c10": "development_evidence_only",
+          "prediverse_solver_initialization": "disabled"
+        },
+        "run_id": "blade_final_20cycle_seed2026_v1"
+      },
+      "id": 46,
+      "passed": true,
+      "requirement": "PROTOCOL_STATUS consistent"
+    },
+    {
+      "evidence": "at most one elite per niche",
+      "id": 47,
+      "passed": true,
+      "requirement": "README consistent"
+    },
+    {
+      "evidence": {
+        "files": {
+          "final_recommendation.json": {
+            "bytes": 383,
+            "sha256": "0967d996ddd6d0e818f49112a57c30f97d15183fe94d2975a44755855bd776e7"
+          },
+          "report.md": {
+            "bytes": 2868,
+            "sha256": "bcc1ee05eb1ed0d0e75cf8f0771c586221222cdd1ac8a551d19715f8ead37793"
+          },
+          "strict_verification.json": {
+            "bytes": 8001,
+            "sha256": "c36b6055ac29a8163c29e32dc0ee38d1ef214738199b8b100e1fad7615c09d05"
+          }
+        },
+        "role": "development_provenance_only",
+        "runtime_dependency": false
+      },
+      "id": 48,
+      "passed": true,
+      "requirement": "development provenance copied and runtime-independent"
+    },
+    {
+      "evidence": [],
+      "id": 49,
+      "passed": true,
+      "requirement": "all required audit outputs and figures generated"
+    },
+    {
+      "evidence": "......................................................................   [100%]\n70 passed in 19.32s",
+      "id": 50,
+      "passed": true,
+      "requirement": "all tests pass"
+    }
+  ],
+  "passed": true,
+  "passed_checks": 50,
+  "tests": {
+    "output": "......................................................................   [100%]\n70 passed in 19.32s",
+    "passed": 70,
+    "total": 70
+  },
+  "total_checks": 50,
+  "verification": "BLADE mainline protocol refactor and Uniform bootstrap audit",
+  "verified_utc": "2026-09-10T09:20:38.596529+00:00"
+}

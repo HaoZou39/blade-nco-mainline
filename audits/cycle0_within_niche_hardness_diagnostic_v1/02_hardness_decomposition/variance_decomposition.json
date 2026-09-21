@@ -1,0 +1,18 @@
+{
+  "additive_reconstruction_error": 2.5498678250127955e-20,
+  "between_niche_component_variance_n_weighted": 0.0013809904538414411,
+  "between_niche_variance_fraction": 0.4593847108265743,
+  "candidate_n": 2666,
+  "component_fraction_sum": 1.0,
+  "ddof": 0,
+  "definition": "exact descriptive candidate-population decomposition, not a causal or random-effects ICC",
+  "grand_mean_H0": 0.06140825151832577,
+  "mean_niche_sample_variance_ddof1": 0.0018660380524344326,
+  "median_niche_sample_variance_ddof1": 0.0007728283158253297,
+  "niche_n": 301,
+  "total_population_variance": 0.003006174174487903,
+  "twice_component_covariance": -2.5498678250127955e-20,
+  "unweighted_variance_of_niche_means_ddof0": 0.0021545637023535668,
+  "within_niche_residual_variance_n_weighted": 0.001625183720646462,
+  "within_niche_variance_fraction": 0.5406152891734257
+}

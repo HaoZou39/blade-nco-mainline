@@ -1,0 +1,9 @@
+﻿{
+    "checkpoint":  "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_full_seed2026\\cycles\\C14\\09_bq_training\\M15_E256.tsp.best",
+    "stopped_pid":  47584,
+    "resumed_pid":  9156,
+    "stderr":  "D:\\NCO\\BLADE-NCO-mainline\\runtime\\blade_v2_m15_resume_20260918_185715_stderr.log",
+    "timestamp":  "2026-09-18T10:57:15.5617393Z",
+    "status":  "M15_SAVED_GP_ONLY_RESUMED",
+    "stdout":  "D:\\NCO\\BLADE-NCO-mainline\\runtime\\blade_v2_m15_resume_20260918_185715_stdout.log"
+}

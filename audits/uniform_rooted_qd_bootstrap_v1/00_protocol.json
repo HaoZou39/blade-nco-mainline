@@ -1,0 +1,62 @@
+{
+  "applications_per_operator_per_root": 1,
+  "audit": "uniform_rooted_qd_bootstrap_v1",
+  "created_utc": "2026-09-09T17:09:58.512497+00:00",
+  "cvt_k": 1000,
+  "environment": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "python": "3.13.5"
+  },
+  "forbidden_operations_executed": {
+    "bq_finetuning": false,
+    "bq_inference": false,
+    "concorde": false,
+    "external_performance_evaluation": false,
+    "final_runner": false,
+    "gp_training": false,
+    "hgb_training": false,
+    "teacher_forced_hardness": false
+  },
+  "frozen_inputs": {
+    "centroids": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+    "deep_states": "763875a4d33323622c3c54f44f8df89f76666df74f1b7e0bbeb0344be4d38e88",
+    "normalization": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707",
+    "operator_config": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+    "root_hashes": "c231722d1b74b7f98f8fc603ea7532f63cadc9fd0eef339bf48c684aa5c48652"
+  },
+  "master_seed": 2026,
+  "nominal_offspring": 110000,
+  "normalization": "frozen deep-reference P1/P99 then clip [0,1]",
+  "old_project_baseline": {
+    "git_head": "c1b0f57bc69c952f9092ca704f0f169f6f97322f",
+    "tracked_status_entries": 3,
+    "tracked_status_sha256": "3372016e4f2d536b62e20aaf7a0ab4cdb99c38b17620bb72bb89e1b47510b8f2"
+  },
+  "operator_ids": [
+    "uniform_mutation",
+    "normal_mutation",
+    "rotation_mutation",
+    "implosion_mutation",
+    "explosion_mutation",
+    "cluster_mutation",
+    "expansion_mutation",
+    "compression_mutation",
+    "axis_projection_mutation",
+    "linear_projection_mutation",
+    "grid_mutation"
+  ],
+  "qd4": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_varcoeff",
+    "spn_mst_depth_mean",
+    "spn_mst_dists_median"
+  ],
+  "relay_depth": 1,
+  "rng_derivation": "SHA256(namespace|master_seed|root_coordinate_hash|operator_id), first 64 little-endian bits",
+  "rng_namespace": "BLADE_UNIFORM_ROOTED_QD_BOOTSTRAP_V1",
+  "root_count": 10000,
+  "root_rule": "saved_depth == 0 AND ordered canonical root-hash membership",
+  "status": "STRUCTURAL_ONLY",
+  "workspace": "D:\\NCO\\BLADE-NCO-mainline"
+}

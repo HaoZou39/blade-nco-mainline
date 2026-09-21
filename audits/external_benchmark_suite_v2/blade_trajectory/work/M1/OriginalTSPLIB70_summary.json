@@ -1,0 +1,21 @@
+{
+  "P75": 4.419099376763059,
+  "P90": 8.185903189902467,
+  "P95": 8.840209790020419,
+  "P99": 18.423446983336614,
+  "checkpoint_sha256": "fbef3a46cadf6ba6d015ca02425d211c30b6f9d46f25eed749b3ebab180b7987",
+  "dataset": "OriginalTSPLIB70",
+  "dataset_sha256": "4d6752d3aee6a91b6a65186a1058790f13b00d91de31729a5781dfb5d360cbd7",
+  "evaluator_config_sha256": "44a43be253b9079b15b9c1bb48c4056cb9ffefd13bc4af1ae4d3d4700777497d",
+  "failed_tours": 0,
+  "inference_wall_clock_sec": 334.63617030000023,
+  "instance_count": 70,
+  "max": 19.063943955880163,
+  "mean_exact_reference_cost": 73156.0142857143,
+  "mean_gap_percent": 3.1876893106416935,
+  "mean_predicted_tour_cost": 76253.68571428572,
+  "median_gap_percent": 1.5082039998035193,
+  "model": "M1",
+  "source": "passive_reeval_aspect_preserving",
+  "valid_tours": 70
+}

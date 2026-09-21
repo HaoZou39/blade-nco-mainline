@@ -1,0 +1,13 @@
+{
+  "pattern": "PATTERN C",
+  "headroom": "large unused surrogate headroom",
+  "panel": "large available hard-tail separation",
+  "med_cap": 0.04529768277331109,
+  "med_ora": 2.4415133216732148,
+  "med_gp_gain": 0.06974032109040817,
+  "med_avail": 1.4414586947332142,
+  "n_gp_gt_rand": 12,
+  "better_than_random": "mixed",
+  "close_to_ceiling": "no",
+  "unused_signal": "yes"
+}

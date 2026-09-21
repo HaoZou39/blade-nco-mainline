@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-09-21T03:05:07.381149+00:00",
+  "cycles": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "e45_config_sha256": "6d10021be0f10be93117cc51ff42c7472a3edab1d955fe11e0de2a4a7b1494c7",
+  "e45_runner_sha256": "4999fa75def64eedea8baff3c405e77b81e158307273e588542faf4a71dbd8a4",
+  "e46_runner_sha256": "d617e315d8f10b11abcd5e7fc002c6c22491e1b3e424fc8442fc9b044a83ebd4",
+  "final_model": "M15",
+  "run_id": "blade_v2_corrected_union_sanity_seed2026_v1",
+  "schema_version": "E4_6_CORRECTED_UNION_LONGRUN_M15_V1",
+  "source_fingerprint_digest": "1d1fe96b1579c477a87c52cd2e3a7179cf4726400738a25fee412d65769e89ed"
+}

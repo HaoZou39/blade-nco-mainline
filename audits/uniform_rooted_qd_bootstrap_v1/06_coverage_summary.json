@@ -1,0 +1,99 @@
+{
+  "OFFSPRING_ONLY": {
+    "candidate_count": 109785,
+    "candidate_count_per_niche": {
+      "P01": 0.0,
+      "P05": 0.0,
+      "P10": 0.0,
+      "P25": 0.0,
+      "P75": 13.0,
+      "P90": 125.40000000000009,
+      "P95": 448.4499999999996,
+      "P99": 2616.3099999999986,
+      "max": 3745,
+      "median": 0.0,
+      "min": 0
+    },
+    "empty_niches": 565,
+    "entropy": 4.487579518712429,
+    "gini_concentration": 0.9310460900851665,
+    "largest_niche_share": 0.03411212825067177,
+    "niches_with_at_least": {
+      "1": 435,
+      "10": 262,
+      "100": 116,
+      "2": 387,
+      "20": 225,
+      "5": 314,
+      "50": 167
+    },
+    "normalized_entropy": 0.7386541434428003,
+    "occupancy_fraction": 0.435,
+    "occupied_niches": 435
+  },
+  "ROOTS_ONLY": {
+    "candidate_count": 10000,
+    "candidate_count_per_niche": {
+      "P01": 0.0,
+      "P05": 0.0,
+      "P10": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P90": 0.0,
+      "P95": 1.0,
+      "P99": 383.03,
+      "max": 552,
+      "median": 0.0,
+      "min": 0
+    },
+    "empty_niches": 949,
+    "entropy": 3.4310181645904576,
+    "gini_concentration": 0.9756158000000001,
+    "largest_niche_share": 0.0552,
+    "niches_with_at_least": {
+      "1": 51,
+      "10": 37,
+      "100": 30,
+      "2": 47,
+      "20": 36,
+      "5": 44,
+      "50": 34
+    },
+    "normalized_entropy": 0.8726272436992931,
+    "occupancy_fraction": 0.051,
+    "occupied_niches": 51
+  },
+  "ROOTS_PLUS_OFFSPRING": {
+    "candidate_count": 119781,
+    "candidate_count_per_niche": {
+      "P01": 0.0,
+      "P05": 0.0,
+      "P10": 0.0,
+      "P25": 0.0,
+      "P75": 13.0,
+      "P90": 125.40000000000009,
+      "P95": 448.4499999999996,
+      "P99": 2998.949999999999,
+      "max": 4292,
+      "median": 0.0,
+      "min": 0
+    },
+    "empty_niches": 565,
+    "entropy": 4.42785830495183,
+    "gini_concentration": 0.9346476736711167,
+    "largest_niche_share": 0.03583206017648876,
+    "niches_with_at_least": {
+      "1": 435,
+      "10": 262,
+      "100": 116,
+      "2": 387,
+      "20": 225,
+      "5": 314,
+      "50": 167
+    },
+    "normalized_entropy": 0.7288240508925169,
+    "occupancy_fraction": 0.435,
+    "occupied_niches": 435
+  },
+  "descriptive_only_no_pass_threshold": true
+}

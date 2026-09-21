@@ -1,0 +1,19 @@
+{
+  "role": "development_provenance_only",
+  "runtime_dependency": false,
+  "files": {
+    "report.md": {
+      "bytes": 2868,
+      "sha256": "bcc1ee05eb1ed0d0e75cf8f0771c586221222cdd1ac8a551d19715f8ead37793"
+    },
+    "strict_verification.json": {
+      "bytes": 8001,
+      "sha256": "c36b6055ac29a8163c29e32dc0ee38d1ef214738199b8b100e1fad7615c09d05"
+    },
+    "final_recommendation.json": {
+      "bytes": 383,
+      "sha256": "0967d996ddd6d0e818f49112a57c30f97d15183fe94d2975a44755855bd776e7"
+    }
+  }
+}
+

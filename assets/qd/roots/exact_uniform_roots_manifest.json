@@ -1,0 +1,16 @@
+﻿{
+    "N":  100,
+    "new_uniform_roots_generated":  false,
+    "root_count":  10000,
+    "root_hashes_sha256":  "c231722d1b74b7f98f8fc603ea7532f63cadc9fd0eef339bf48c684aa5c48652",
+    "root_membership_hash":  "edf1719ecc114261ba26b21f7bb8ff113b8247958679abb3d177a858cd7c2c5b",
+    "root_order":  "ascending canonical root_index",
+    "source":  {
+                   "bytes":  364524420,
+                   "path":  "assets/qd/reference_cloud/valid_unique_saved_states.parquet",
+                   "sha256":  "763875a4d33323622c3c54f44f8df89f76666df74f1b7e0bbeb0344be4d38e88"
+               },
+    "root_selection":  "saved_depth == 0",
+    "root_state_storage":  "depth-0 rows of the frozen deep reference state artifact",
+    "unique_coordinate_hashes":  10000
+}

@@ -1,0 +1,14 @@
+{
+  "FULL_ID": "blade_v2_full_seed2026",
+  "architecture": "OFFSPRING-ONLY",
+  "horizon": "C00-C14 / M0-M15",
+  "s1_identity_status": "UNAMBIGUOUS",
+  "s1_1_status": "OK",
+  "p0_n_raw": 1267,
+  "b_s_all_n500": true,
+  "p0_clean_matches_s1": true,
+  "p0_leakage_empty": true,
+  "rf_policy": "drop_RF4",
+  "issues": [],
+  "status": "OK"
+}

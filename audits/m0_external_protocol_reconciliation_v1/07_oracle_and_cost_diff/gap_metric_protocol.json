@@ -1,0 +1,10 @@
+{
+  "NaN_filtering": "none; finite complete arrays required",
+  "aggregation": "arithmetic mean of per-instance gaps",
+  "classification": "SAME",
+  "current_formula": "100 * (predicted_cost - reference_cost) / reference_cost per instance",
+  "historical_formula": "100 * (predicted_cost - reference_cost) / reference_cost per instance",
+  "negative_gap_handling": "historical rejects; current retains but none under correct binding",
+  "percentage_multiplier": 100,
+  "sign": "predicted minus reference"
+}

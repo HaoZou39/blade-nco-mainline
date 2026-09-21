@@ -1,0 +1,24 @@
+﻿{
+    "dataset_name":  "TSPLIB100",
+    "role":  "real_coordinate_source_passive_evaluation",
+    "N":  100,
+    "instance_count":  10000,
+    "source":  "tsplib100_bq72_v1",
+    "source_hashes":  {
+                          "concorde/concorde_results.parquet":  "580539e23e3a072d378a88ae8e95e9471da1749841f719a870cc5fa68ddf0d7a",
+                          "DATASET_FROZEN.json":  "34543205a6795d2e8ce817acf3802bfdecd01745d0daa025be93d18d2c61d7d0",
+                          "instances/coordinates.npz":  "502ac8a520653fc9181b7ace284d39ae6a0be4c35def60d161f8ab4ecc0e2521",
+                          "manifest.parquet":  "3cbe2075f580e1ae7ccb32dd22add34627a08092080983e196bdff282d991b7b",
+                          "source_quota.csv":  "cc6ec0ca23b7d6e0186842a41847c240278170b662de1a53b48aa654934b4bdb"
+                      },
+    "destination_hashes":  {
+                               "concorde/concorde_results.parquet":  "580539e23e3a072d378a88ae8e95e9471da1749841f719a870cc5fa68ddf0d7a",
+                               "DATASET_FROZEN.json":  "34543205a6795d2e8ce817acf3802bfdecd01745d0daa025be93d18d2c61d7d0",
+                               "instances/coordinates.npz":  "502ac8a520653fc9181b7ace284d39ae6a0be4c35def60d161f8ab4ecc0e2521",
+                               "manifest.parquet":  "3cbe2075f580e1ae7ccb32dd22add34627a08092080983e196bdff282d991b7b",
+                               "source_quota.csv":  "cc6ec0ca23b7d6e0186842a41847c240278170b662de1a53b48aa654934b4bdb"
+                           },
+    "ground_truth_availability":  "Concorde optimal tours and costs available",
+    "coordinate_convention":  "model input unit-square coordinates with raw source coordinates preserved",
+    "read_only":  true
+}

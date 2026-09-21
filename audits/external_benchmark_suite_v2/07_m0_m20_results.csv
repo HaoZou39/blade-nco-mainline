@@ -1,0 +1,1 @@
+model,dataset,n_instances,mean_gap,median_gap,p75_gap,p90_gap,p95_gap,max_gap,mean_predicted_tour_cost,mean_reference_cost,inference_wall_clock_sec,failures_invalid_outputs,dataset_sha256,evaluator_config_sha256

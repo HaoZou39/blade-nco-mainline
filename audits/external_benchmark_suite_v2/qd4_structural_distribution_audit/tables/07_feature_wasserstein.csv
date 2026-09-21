@@ -1,0 +1,197 @@
+feature,feature_code,dataset_a,dataset_b,wasserstein_1d
+local,spn_sum_of_lowest_edge_values,Uniform100,Uniform100,0.0
+local,spn_sum_of_lowest_edge_values,Uniform100,GM100,0.7345741940208631
+local,spn_sum_of_lowest_edge_values,Uniform100,TSPLIB100,0.37160513972793424
+local,spn_sum_of_lowest_edge_values,Uniform100,Original70,0.14368560011111617
+local,spn_sum_of_lowest_edge_values,Uniform100,EvoReal-S1 Gen.,0.6775270953982389
+local,spn_sum_of_lowest_edge_values,Uniform100,EvoReal-S2 Gen.,0.18069004627121482
+local,spn_sum_of_lowest_edge_values,Uniform100,EvoReal-S3 Gen.,0.31887081685500146
+local,spn_sum_of_lowest_edge_values,GM100,Uniform100,0.7345741940208631
+local,spn_sum_of_lowest_edge_values,GM100,GM100,0.0
+local,spn_sum_of_lowest_edge_values,GM100,TSPLIB100,0.3629690542929287
+local,spn_sum_of_lowest_edge_values,GM100,Original70,0.6062678555939469
+local,spn_sum_of_lowest_edge_values,GM100,EvoReal-S1 Gen.,0.05976130462075191
+local,spn_sum_of_lowest_edge_values,GM100,EvoReal-S2 Gen.,0.5539454759502567
+local,spn_sum_of_lowest_edge_values,GM100,EvoReal-S3 Gen.,0.41570337716586153
+local,spn_sum_of_lowest_edge_values,TSPLIB100,Uniform100,0.37160513972793424
+local,spn_sum_of_lowest_edge_values,TSPLIB100,GM100,0.3629690542929287
+local,spn_sum_of_lowest_edge_values,TSPLIB100,TSPLIB100,0.0
+local,spn_sum_of_lowest_edge_values,TSPLIB100,Original70,0.2432988013010181
+local,spn_sum_of_lowest_edge_values,TSPLIB100,EvoReal-S1 Gen.,0.30592195567030467
+local,spn_sum_of_lowest_edge_values,TSPLIB100,EvoReal-S2 Gen.,0.1909764216573279
+local,spn_sum_of_lowest_edge_values,TSPLIB100,EvoReal-S3 Gen.,0.06241052935776467
+local,spn_sum_of_lowest_edge_values,Original70,Uniform100,0.14368560011111617
+local,spn_sum_of_lowest_edge_values,Original70,GM100,0.6062678555939469
+local,spn_sum_of_lowest_edge_values,Original70,TSPLIB100,0.2432988013010181
+local,spn_sum_of_lowest_edge_values,Original70,Original70,0.0
+local,spn_sum_of_lowest_edge_values,Original70,EvoReal-S1 Gen.,0.5492207569713228
+local,spn_sum_of_lowest_edge_values,Original70,EvoReal-S2 Gen.,0.11360018924064064
+local,spn_sum_of_lowest_edge_values,Original70,EvoReal-S3 Gen.,0.19062367895321125
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,Uniform100,0.6775270953982389
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,GM100,0.05976130462075191
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,TSPLIB100,0.30592195567030467
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,Original70,0.5492207569713228
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,EvoReal-S1 Gen.,0.0
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,EvoReal-S2 Gen.,0.49689837732763265
+local,spn_sum_of_lowest_edge_values,EvoReal-S1 Gen.,EvoReal-S3 Gen.,0.3586562785432375
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,Uniform100,0.18069004627121482
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,GM100,0.5539454759502567
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,TSPLIB100,0.1909764216573279
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,Original70,0.11360018924064064
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,EvoReal-S1 Gen.,0.49689837732763265
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,EvoReal-S2 Gen.,0.0
+local,spn_sum_of_lowest_edge_values,EvoReal-S2 Gen.,EvoReal-S3 Gen.,0.13824209878439508
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,Uniform100,0.31887081685500146
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,GM100,0.41570337716586153
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,TSPLIB100,0.06241052935776467
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,Original70,0.19062367895321125
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,EvoReal-S1 Gen.,0.3586562785432375
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,EvoReal-S2 Gen.,0.13824209878439508
+local,spn_sum_of_lowest_edge_values,EvoReal-S3 Gen.,EvoReal-S3 Gen.,0.0
+global,spn_distance_varcoeff,Uniform100,Uniform100,0.0
+global,spn_distance_varcoeff,Uniform100,GM100,0.7935788710980065
+global,spn_distance_varcoeff,Uniform100,TSPLIB100,0.4231191584011171
+global,spn_distance_varcoeff,Uniform100,Original70,0.36482820247992037
+global,spn_distance_varcoeff,Uniform100,EvoReal-S1 Gen.,0.7948073231672055
+global,spn_distance_varcoeff,Uniform100,EvoReal-S2 Gen.,0.15189639307660843
+global,spn_distance_varcoeff,Uniform100,EvoReal-S3 Gen.,0.2424304477377896
+global,spn_distance_varcoeff,GM100,Uniform100,0.7935788710980065
+global,spn_distance_varcoeff,GM100,GM100,0.0
+global,spn_distance_varcoeff,GM100,TSPLIB100,0.3704597126968895
+global,spn_distance_varcoeff,GM100,Original70,0.428750668618086
+global,spn_distance_varcoeff,GM100,EvoReal-S1 Gen.,0.011840380423045577
+global,spn_distance_varcoeff,GM100,EvoReal-S2 Gen.,0.6423376587055118
+global,spn_distance_varcoeff,GM100,EvoReal-S3 Gen.,0.5511484233602169
+global,spn_distance_varcoeff,TSPLIB100,Uniform100,0.4231191584011171
+global,spn_distance_varcoeff,TSPLIB100,GM100,0.3704597126968895
+global,spn_distance_varcoeff,TSPLIB100,TSPLIB100,0.0
+global,spn_distance_varcoeff,TSPLIB100,Original70,0.058301372493858195
+global,spn_distance_varcoeff,TSPLIB100,EvoReal-S1 Gen.,0.37168816476608835
+global,spn_distance_varcoeff,TSPLIB100,EvoReal-S2 Gen.,0.27187794600862236
+global,spn_distance_varcoeff,TSPLIB100,EvoReal-S3 Gen.,0.18068871066332742
+global,spn_distance_varcoeff,Original70,Uniform100,0.36482820247992037
+global,spn_distance_varcoeff,Original70,GM100,0.428750668618086
+global,spn_distance_varcoeff,Original70,TSPLIB100,0.058301372493858195
+global,spn_distance_varcoeff,Original70,Original70,0.0
+global,spn_distance_varcoeff,Original70,EvoReal-S1 Gen.,0.42997912068728505
+global,spn_distance_varcoeff,Original70,EvoReal-S2 Gen.,0.21369089992631748
+global,spn_distance_varcoeff,Original70,EvoReal-S3 Gen.,0.12240495668202281
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,Uniform100,0.7948073231672055
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,GM100,0.011840380423045577
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,TSPLIB100,0.37168816476608835
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,Original70,0.42997912068728505
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,EvoReal-S1 Gen.,0.0
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,EvoReal-S2 Gen.,0.6435661107747108
+global,spn_distance_varcoeff,EvoReal-S1 Gen.,EvoReal-S3 Gen.,0.5523768754294157
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,Uniform100,0.15189639307660843
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,GM100,0.6423376587055118
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,TSPLIB100,0.27187794600862236
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,Original70,0.21369089992631748
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,EvoReal-S1 Gen.,0.6435661107747108
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,EvoReal-S2 Gen.,0.0
+global,spn_distance_varcoeff,EvoReal-S2 Gen.,EvoReal-S3 Gen.,0.09357127983224087
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,Uniform100,0.2424304477377896
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,GM100,0.5511484233602169
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,TSPLIB100,0.18068871066332742
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,Original70,0.12240495668202281
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,EvoReal-S1 Gen.,0.5523768754294157
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,EvoReal-S2 Gen.,0.09357127983224087
+global,spn_distance_varcoeff,EvoReal-S3 Gen.,EvoReal-S3 Gen.,0.0
+topology,spn_mst_depth_mean,Uniform100,Uniform100,0.0
+topology,spn_mst_depth_mean,Uniform100,GM100,0.08648656240080466
+topology,spn_mst_depth_mean,Uniform100,TSPLIB100,0.11711182926093683
+topology,spn_mst_depth_mean,Uniform100,Original70,0.4640516953794427
+topology,spn_mst_depth_mean,Uniform100,EvoReal-S1 Gen.,0.36029284782216153
+topology,spn_mst_depth_mean,Uniform100,EvoReal-S2 Gen.,0.2260223632062579
+topology,spn_mst_depth_mean,Uniform100,EvoReal-S3 Gen.,0.025288841075085073
+topology,spn_mst_depth_mean,GM100,Uniform100,0.08648656240080466
+topology,spn_mst_depth_mean,GM100,GM100,0.0
+topology,spn_mst_depth_mean,GM100,TSPLIB100,0.038316111444920184
+topology,spn_mst_depth_mean,GM100,Original70,0.3804414629074774
+topology,spn_mst_depth_mean,GM100,EvoReal-S1 Gen.,0.2738062854213568
+topology,spn_mst_depth_mean,GM100,EvoReal-S2 Gen.,0.14157028188855217
+topology,spn_mst_depth_mean,GM100,EvoReal-S3 Gen.,0.06984009572187265
+topology,spn_mst_depth_mean,TSPLIB100,Uniform100,0.11711182926093683
+topology,spn_mst_depth_mean,TSPLIB100,GM100,0.038316111444920184
+topology,spn_mst_depth_mean,TSPLIB100,TSPLIB100,0.0
+topology,spn_mst_depth_mean,TSPLIB100,Original70,0.34813880460428903
+topology,spn_mst_depth_mean,TSPLIB100,EvoReal-S1 Gen.,0.24318101856122465
+topology,spn_mst_depth_mean,TSPLIB100,EvoReal-S2 Gen.,0.1089110953401379
+topology,spn_mst_depth_mean,TSPLIB100,EvoReal-S3 Gen.,0.09771168637924241
+topology,spn_mst_depth_mean,Original70,Uniform100,0.4640516953794427
+topology,spn_mst_depth_mean,Original70,GM100,0.3804414629074774
+topology,spn_mst_depth_mean,Original70,TSPLIB100,0.34813880460428903
+topology,spn_mst_depth_mean,Original70,Original70,0.0
+topology,spn_mst_depth_mean,Original70,EvoReal-S1 Gen.,0.12193739629101724
+topology,spn_mst_depth_mean,Original70,EvoReal-S2 Gen.,0.23962208236042182
+topology,spn_mst_depth_mean,Original70,EvoReal-S3 Gen.,0.444360894906897
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,Uniform100,0.36029284782216153
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,GM100,0.2738062854213568
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,TSPLIB100,0.24318101856122465
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,Original70,0.12193739629101724
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,EvoReal-S1 Gen.,0.0
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,EvoReal-S2 Gen.,0.13427048461590357
+topology,spn_mst_depth_mean,EvoReal-S1 Gen.,EvoReal-S3 Gen.,0.3408927049404671
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,Uniform100,0.2260223632062579
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,GM100,0.14157028188855217
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,TSPLIB100,0.1089110953401379
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,Original70,0.23962208236042182
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,EvoReal-S1 Gen.,0.13427048461590357
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,EvoReal-S2 Gen.,0.0
+topology,spn_mst_depth_mean,EvoReal-S2 Gen.,EvoReal-S3 Gen.,0.20662222032456348
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,Uniform100,0.025288841075085073
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,GM100,0.06984009572187265
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,TSPLIB100,0.09771168637924241
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,Original70,0.444360894906897
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,EvoReal-S1 Gen.,0.3408927049404671
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,EvoReal-S2 Gen.,0.20662222032456348
+topology,spn_mst_depth_mean,EvoReal-S3 Gen.,EvoReal-S3 Gen.,0.0
+scale,spn_mst_dists_median,Uniform100,Uniform100,0.0
+scale,spn_mst_dists_median,Uniform100,GM100,0.8102604326466091
+scale,spn_mst_dists_median,Uniform100,TSPLIB100,0.4692640022286541
+scale,spn_mst_dists_median,Uniform100,Original70,0.7070749588002274
+scale,spn_mst_dists_median,Uniform100,EvoReal-S1 Gen.,0.7913660818245875
+scale,spn_mst_dists_median,Uniform100,EvoReal-S2 Gen.,0.2457735145272483
+scale,spn_mst_dists_median,Uniform100,EvoReal-S3 Gen.,0.37135285961607606
+scale,spn_mst_dists_median,GM100,Uniform100,0.8102604326466091
+scale,spn_mst_dists_median,GM100,GM100,0.0
+scale,spn_mst_dists_median,GM100,TSPLIB100,0.340996430417955
+scale,spn_mst_dists_median,GM100,Original70,0.10318547384638166
+scale,spn_mst_dists_median,GM100,EvoReal-S1 Gen.,0.02502733828900198
+scale,spn_mst_dists_median,GM100,EvoReal-S2 Gen.,0.5653665203015463
+scale,spn_mst_dists_median,GM100,EvoReal-S3 Gen.,0.43890757303053307
+scale,spn_mst_dists_median,TSPLIB100,Uniform100,0.4692640022286541
+scale,spn_mst_dists_median,TSPLIB100,GM100,0.340996430417955
+scale,spn_mst_dists_median,TSPLIB100,TSPLIB100,0.0
+scale,spn_mst_dists_median,TSPLIB100,Original70,0.24336153834770421
+scale,spn_mst_dists_median,TSPLIB100,EvoReal-S1 Gen.,0.32210207959593323
+scale,spn_mst_dists_median,TSPLIB100,EvoReal-S2 Gen.,0.22437008988359142
+scale,spn_mst_dists_median,TSPLIB100,EvoReal-S3 Gen.,0.09791114261257806
+scale,spn_mst_dists_median,Original70,Uniform100,0.7070749588002274
+scale,spn_mst_dists_median,Original70,GM100,0.10318547384638166
+scale,spn_mst_dists_median,Original70,TSPLIB100,0.24336153834770421
+scale,spn_mst_dists_median,Original70,Original70,0.0
+scale,spn_mst_dists_median,Original70,EvoReal-S1 Gen.,0.08433082897677781
+scale,spn_mst_dists_median,Original70,EvoReal-S2 Gen.,0.4621810464551647
+scale,spn_mst_dists_median,Original70,EvoReal-S3 Gen.,0.3367700452847111
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,Uniform100,0.7913660818245875
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,GM100,0.02502733828900198
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,TSPLIB100,0.32210207959593323
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,Original70,0.08433082897677781
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,EvoReal-S1 Gen.,0.0
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,EvoReal-S2 Gen.,0.5464721694795247
+scale,spn_mst_dists_median,EvoReal-S1 Gen.,EvoReal-S3 Gen.,0.42001322220851134
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,Uniform100,0.2457735145272483
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,GM100,0.5653665203015463
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,TSPLIB100,0.22437008988359142
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,Original70,0.4621810464551647
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,EvoReal-S1 Gen.,0.5464721694795247
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,EvoReal-S2 Gen.,0.0
+scale,spn_mst_dists_median,EvoReal-S2 Gen.,EvoReal-S3 Gen.,0.12645894727101337
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,Uniform100,0.37135285961607606
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,GM100,0.43890757303053307
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,TSPLIB100,0.09791114261257806
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,Original70,0.3367700452847111
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,EvoReal-S1 Gen.,0.42001322220851134
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,EvoReal-S2 Gen.,0.12645894727101337
+scale,spn_mst_dists_median,EvoReal-S3 Gen.,EvoReal-S3 Gen.,0.0

@@ -1,0 +1,16 @@
+{
+  "analysis_only": true,
+  "classification": "C1",
+  "decision_rule": "positive B602 gain, nonnegative gain CI, >=95% D5 gain retention, paired lower delta >= -5% abs(D5 gain), finite nonconstant five-formula ensemble",
+  "label": "ONE_PROBE_PER_REACHED_NICHE_SUFFICIENT",
+  "minimum_operationally_sufficient_depth": 1,
+  "primary_budget": 602,
+  "protocol_automatically_modified": false,
+  "qualifying_depths": [
+    1,
+    2,
+    5
+  ],
+  "sensitivity_direction_consistent": false,
+  "smallest_qualifying_branch_selected": true
+}

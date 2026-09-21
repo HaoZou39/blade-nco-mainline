@@ -1,0 +1,105 @@
+{
+  "archive_fit_eligible": true,
+  "archive_fit_mae": 0.01761428178998972,
+  "archive_fit_spearman": 0.24620647873487048,
+  "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":1.0289524984862322}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":1}],\"op\":\"subtract\",\"value\":null}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"abs\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-1.0035923986736153}],\"op\":\"add\",\"value\":null}],\"op\":\"abs\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+  "constants": [
+    1.0289524984862322,
+    -1.0035923986736153
+  ],
+  "depth": 6,
+  "feature_indices": [
+    0,
+    1
+  ],
+  "first_generation": 48,
+  "formula": "multiply(abs(multiply(subtract(spn_sum_of_lowest_edge_values, 1.02895249849), sqrt_abs(subtract(spn_sum_of_lowest_edge_values, spn_distance_varcoeff)))), abs(add(spn_sum_of_lowest_edge_values, -1.00359239867)))",
+  "hof_rank": 67,
+  "nodes": 14,
+  "seed": 2029,
+  "train_huber": 0.25665483039116577,
+  "train_total_fitness": 0.2636548303911658,
+  "tree": {
+    "args": [
+      {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [],
+                    "op": "feature",
+                    "value": 0
+                  },
+                  {
+                    "args": [],
+                    "op": "const",
+                    "value": 1.0289524984862322
+                  }
+                ],
+                "op": "subtract",
+                "value": null
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 0
+                      },
+                      {
+                        "args": [],
+                        "op": "feature",
+                        "value": 1
+                      }
+                    ],
+                    "op": "subtract",
+                    "value": null
+                  }
+                ],
+                "op": "sqrt_abs",
+                "value": null
+              }
+            ],
+            "op": "multiply",
+            "value": null
+          }
+        ],
+        "op": "abs",
+        "value": null
+      },
+      {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [],
+                "op": "feature",
+                "value": 0
+              },
+              {
+                "args": [],
+                "op": "const",
+                "value": -1.0035923986736153
+              }
+            ],
+            "op": "add",
+            "value": null
+          }
+        ],
+        "op": "abs",
+        "value": null
+      }
+    ],
+    "op": "multiply",
+    "value": null
+  },
+  "unique_features": 2,
+  "used_features": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_varcoeff"
+  ]
+}

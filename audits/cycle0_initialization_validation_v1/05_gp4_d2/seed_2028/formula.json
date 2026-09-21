@@ -1,0 +1,110 @@
+{
+  "all_predictions_finite": true,
+  "seed": 2028,
+  "selected": {
+    "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":1.953771609873804}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-1.3626575994375245}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}",
+    "constants": [
+      1.953771609873804,
+      -1.3626575994375245
+    ],
+    "depth": 5,
+    "feature_indices": [
+      0
+    ],
+    "first_generation": 45,
+    "formula": "protected_divide(multiply(subtract(spn_sum_of_lowest_edge_values, 1.95377160987), spn_sum_of_lowest_edge_values), protected_divide(subtract(spn_sum_of_lowest_edge_values, -1.36265759944), log1p_abs(log1p_abs(spn_sum_of_lowest_edge_values))))",
+    "hof_rank": 76,
+    "nodes": 13,
+    "seed": 2028,
+    "train_huber": 0.30976059605987477,
+    "train_total_fitness": 0.3162605960598748,
+    "tree": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                },
+                {
+                  "args": [],
+                  "op": "const",
+                  "value": 1.953771609873804
+                }
+              ],
+              "op": "subtract",
+              "value": null
+            },
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            }
+          ],
+          "op": "multiply",
+          "value": null
+        },
+        {
+          "args": [
+            {
+              "args": [
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                },
+                {
+                  "args": [],
+                  "op": "const",
+                  "value": -1.3626575994375245
+                }
+              ],
+              "op": "subtract",
+              "value": null
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "feature",
+                      "value": 0
+                    }
+                  ],
+                  "op": "log1p_abs",
+                  "value": null
+                }
+              ],
+              "op": "log1p_abs",
+              "value": null
+            }
+          ],
+          "op": "protected_divide",
+          "value": null
+        }
+      ],
+      "op": "protected_divide",
+      "value": null
+    },
+    "unique_features": 1,
+    "used_features": [
+      "spn_sum_of_lowest_edge_values"
+    ],
+    "validation_eligible": true,
+    "validation_mae": 0.02747991242252235,
+    "validation_spearman": 0.3371448501673424
+  },
+  "selector": "SPERF",
+  "spearman_tie_epsilon": 1e-06,
+  "transform": {
+    "center_train_median_loss_log": 0.05303550696384541,
+    "fit_split": "TRAIN_ONLY",
+    "formula": "loss_log = log1p(loss_raw)",
+    "scale_method": "IQR",
+    "scale_train_loss_log": 0.043468391133631115
+  }
+}

@@ -1,0 +1,3 @@
+model,checkpoint_sha256,instance_count,mean_gap_percent,median_gap_percent,P75,P90,P95,max_gap_percent,total_inference_sec,freshly_evaluated,reused,cache_path
+M0,6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15,70,5.3885230208620625,2.2848102821417884,9.087308677248112,15.478015931894443,18.701480095587613,31.016265813985818,377.9127237997018,70,0,D:\NCO\BLADE-NCO-mainline\audits\original70_canonical_trajectory_v1\per_checkpoint\M0.parquet
+M1,fbef3a46cadf6ba6d015ca02425d211c30b6f9d46f25eed749b3ebab180b7987,70,3.2061491990506186,1.7330237464816953,4.419322222292481,8.185903189902467,8.840209790020419,19.063943955880163,385.528446799377,70,0,D:\NCO\BLADE-NCO-mainline\audits\original70_canonical_trajectory_v1\per_checkpoint\M1.parquet

@@ -1,0 +1,42 @@
+{
+  "blade_evaluated_checkpoints": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16"
+  ],
+  "blade_latest": "M16",
+  "evaluator_config_sha256": "3712ccee6c0f2a4868d5ae134018c67cdaef635ba0c3c813fcdff0fc08862c61",
+  "evoreal_lehd_checkpoint": "C:\\Users\\Hao Zou\\Downloads\\EvoReal-main\\EvoReal_Main\\EXP_checkpoints\\LEHD_TSP_EvoReal_checkpoints\\p2-checkpoint-3.pt",
+  "evoreal_lehd_sha256": "c788ebd22a126e1eaf3f5767a127f74c078607c86bbdd0623c35911173102b0c",
+  "evoreal_pinned_commit": "919616337105e894e06463734ec1dd71f6451309",
+  "evoreal_repo": "local author bundle C:\\Users\\Hao Zou\\Downloads\\EvoReal-main",
+  "frozen_dataset_sha256": {
+    "EvoReal_S1_100": "28c8e4c0b8f57f840e6b444e45a21c795993205faae4e27ffc9dcae1df55448f",
+    "EvoReal_S2_100": "f393b1be940e09ff3f27c5818fb8b721dd240891d0cda22fedefc10e28c7256c",
+    "EvoReal_S3_100": "d1f74c229e6efc609845f3570e58fa199158b5feaafc526792c2b3ee9dbab48f",
+    "GaussianMixture100": "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02",
+    "GaussianMixture500": "818dc8de29128231a725d2d9e3fdfb1f439c7d9054fe8c31124ed4fc9d1accd2",
+    "OriginalTSPLIB70": "4d6752d3aee6a91b6a65186a1058790f13b00d91de31729a5781dfb5d360cbd7",
+    "TSPLIB100": "502ac8a520653fc9181b7ace284d39ae6a0be4c35def60d161f8ab4ecc0e2521",
+    "Uniform100": "ebf28d497b364f905fea8d1a349a6f05f3b889fe992e08c4d387a9d2e65d93be"
+  },
+  "primary_inference_mode": "greedy",
+  "rrc50_status": "not_run_secondary_only",
+  "status": "EVOREAL_LEHD_GREEDY_EVALUATION_COMPLETE",
+  "vanilla_lehd_checkpoint": "D:\\NCO\\LEHD\\TSP\\result\\20230509_153705_train\\checkpoint-150.pt",
+  "vanilla_lehd_sha256": "ead8dc462d9b1f6a09fa77025ac8a0c594660f3f1f02fb0d104eeffe48fffa8c"
+}

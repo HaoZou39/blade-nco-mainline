@@ -1,0 +1,22 @@
+evaluation_sets:
+  - name: Uniform100
+    passive_only: true
+    selection_use: false
+  - name: GaussianMixture100
+    passive_only: true
+    selection_use: false
+  - name: TSPLIB100
+    passive_only: true
+    selection_use: false
+  - name: OriginalTSPLIB70
+    passive_only: true
+    selection_use: false
+  - name: LEHD_TSP200
+    passive_only: true
+    selection_use: false
+  - name: LEHD_TSP500
+    passive_only: true
+    selection_use: false
+  - name: LEHD_TSP1000
+    passive_only: true
+    selection_use: false

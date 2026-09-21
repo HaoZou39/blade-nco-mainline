@@ -1,0 +1,5 @@
+stage,name,question,evidence,status,detail
+1,QD lineage preservation,Did QD preserve future-value lineages?,A1 QD_RESCUED delayed T/P/new-niche descendant rates,SUPPORTED,QD_DELAYED_LINEAGE_VALUE_OBSERVED; A0 does not rewrite A1
+2,true solver-hard opportunity,Did those lineages contain true solver-hard opportunities?,"A0 QD-descendant exact-H, TIER1 primary",NOT_ESTIMABLE,TIER1 unique-descendant observations across C00-C04 horizons = 0. TIER2 (selection-conditioned) n = 1900. TIER1 and TIER2 are never pooled.
+3,GP recognition,Did GP recognize those hard opportunities?,ETA_QD / oracle-tail capture on TIER1; independent-probe ETA10 for general GP,NOT_ESTIMABLE,ETA_QD10=NOT_ESTIMABLE; QD oracle-hard capture=NOT_ESTIMABLE; general ETA10 eligible=[-0.010732432562830383]
+4,downstream training value,Did selected hard instances produce downstream training value?,A3 trajectory decomposition; future causal ablations not launched,PARTIAL,A3 TRAINING_VALUE_NOT_EXPLAINED_BY_HARDNESS_ALONE; hardness-acquisition headroom is not downstream performance headroom

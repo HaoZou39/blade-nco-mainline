@@ -1,0 +1,5 @@
+feature,n_formulas_using,n_cycles_any_formula_uses,n_cycles_majority_formulas_use
+spn_sum_of_lowest_edge_values,46,10,10
+spn_distance_varcoeff,35,8,7
+spn_mst_depth_mean,34,11,6
+spn_mst_dists_median,33,10,9

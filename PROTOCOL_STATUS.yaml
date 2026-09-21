@@ -1,0 +1,30 @@
+method_status: FROZEN
+final_runner_status: READY_TO_LAUNCH
+run_id: blade_final_20cycle_seed2026_v1
+frozen:
+  qd4: FROZEN
+  deep_reference_normalization: FROZEN_MAP_GEOMETRY_ONLY
+  cvt_k1000: FROZEN
+  uniform_rooted_initialization: FROZEN_EXACT_10000
+  gp0_calibration: FROZEN_ONE_CENTROID_PROBE_PER_REACHED_NICHE
+  surrogate: FROZEN_GP4_SPERF_SEEDS_2026_2030
+  controls: FROZEN_HGB4_HGB20_DIAGNOSTIC_ONLY
+  exact_archive: FROZEN_SPARSE_ONE_PER_NICHE
+  acquisition: FROZEN_CENTROID1_PLUS_GLOBAL_GP
+  active_budget: FROZEN_10000
+  mutation: FROZEN_FOGA11_ONCE_PER_OPERATOR_PARENT
+  nominal_offspring: DERIVED_FROZEN_110000
+  cumulative_formal_oracle_archive: FROZEN
+  current_solver_hardness_refresh: FROZEN_FULL_ARCHIVE
+  uniform_anchor: FROZEN_10000
+  bq_training: FROZEN_256E_LR_7_5E_5_FRESH_ADAM
+  horizon: FROZEN_20_CYCLES_M0_TO_M20
+  passive_benchmarks: FROZEN_SEVEN_FAMILIES_EVERY_CHECKPOINT
+  timing_and_reporting: FROZEN_MANDATORY
+pending: {}
+retired:
+  layered_round_robin_acquisition: development_audit_only
+  persistent_archive_depth_c10: development_evidence_only
+  prediverse_solver_initialization: disabled
+  performance_early_stopping: forbidden
+  M21: forbidden

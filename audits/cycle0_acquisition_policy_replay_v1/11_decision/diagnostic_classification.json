@@ -1,0 +1,40 @@
+{
+  "analysis_only": true,
+  "classification": "A1",
+  "criteria": {
+    "A_full_coverage": true,
+    "B_gp_gain_after_floor": true,
+    "C_coverage_gain_over_global_gp": true,
+    "D_tradeoff_vs_round_robin": true,
+    "E_oracle_cost_values": [
+      {
+        "budget": 301,
+        "coverage_constraint_cost": 0.11464228288107796,
+        "surrogate_loss_hybrid": 0.0
+      },
+      {
+        "budget": 602,
+        "coverage_constraint_cost": 0.01739271629848367,
+        "surrogate_loss_hybrid": 0.018773866110213824
+      },
+      {
+        "budget": 1204,
+        "coverage_constraint_cost": 0.0028794683975326696,
+        "surrogate_loss_hybrid": 0.018295809808099514
+      },
+      {
+        "budget": 2408,
+        "coverage_constraint_cost": 5.1723206146048195e-05,
+        "surrogate_loss_hybrid": 0.002954067689923859
+      }
+    ],
+    "E_oracle_coverage_cost_not_primary_at_largest_feasible_budget": true
+  },
+  "decision_basis": "effect magnitudes, paired intervals, cross-budget consistency, Pareto status, and Oracle decomposition; no weighted objective or post-hoc percentage threshold",
+  "hybrid_non_dominated_budgets": [
+    602
+  ],
+  "label": "CENTROID_COVERAGE_PLUS_GLOBAL_GP_SUPPORTED",
+  "limitation": "2666-label dev replay cannot establish full-bank B=10000 true-hardness performance",
+  "protocol_automatically_modified": false
+}

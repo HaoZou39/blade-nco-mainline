@@ -1,0 +1,23 @@
+﻿{
+    "status":  "ACTIVE",
+    "started_utc":  "2026-09-19T04:55:51.9988943Z",
+    "runner_pid":  44376,
+    "watchdog_pid":  28548,
+    "resume_from":  "GP_ONLY_C06",
+    "target":  "GP_ONLY_M15",
+    "expected_new_cycles":  [
+                                "C06",
+                                "C07",
+                                "C08",
+                                "C09",
+                                "C10",
+                                "C11",
+                                "C12",
+                                "C13",
+                                "C14"
+                            ],
+    "expected_evaluation_summaries":  240,
+    "final_excel":  "summary\\BLADE_V2_M15_matched_results.xlsx",
+    "stdout":  "runtime\\blade_v2_gp_m15_resume_20260919_125551_stdout.log",
+    "stderr":  "runtime\\blade_v2_gp_m15_resume_20260919_125551_stderr.log"
+}

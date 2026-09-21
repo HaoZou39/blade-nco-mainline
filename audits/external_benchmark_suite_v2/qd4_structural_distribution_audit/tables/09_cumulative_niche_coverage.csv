@@ -1,0 +1,8 @@
+step,added_niches,cumulative_occupied_niches,cumulative_occupancy_rate,delta_from_previous
+Uniform100,51,51,0.051,51
+GM100,353,404,0.404,353
+EvoReal-S1 Gen.,9,413,0.413,9
+EvoReal-S2 Gen.,38,451,0.451,38
+EvoReal-S3 Gen.,83,534,0.534,83
+TSPLIB100,85,619,0.619,85
+Original70,1,620,0.62,1

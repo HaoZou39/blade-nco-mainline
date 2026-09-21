@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "ead8dc462d9b1f6a09fa77025ac8a0c594660f3f1f02fb0d104eeffe48fffa8c",
+  "dataset": "OriginalTSPLIB70",
+  "evaluator_config_sha256": "cc3ad81c08533447ca27ba1c530afa72e0673eaeebe50561a02cc7ca1b3a10d2",
+  "input_transform": "lehd_official_global_minmax_over_all_xy",
+  "instance_count": 22,
+  "mean_accepted_repairs": 8.954545454545455,
+  "mean_gap_percent": 5.146300636281229,
+  "mean_greedy_gap_percent": 9.351911186666838,
+  "median_gap_percent": 4.227593219748638,
+  "method": "LEHD_vanilla_rrc50",
+  "rrc_budget": 50,
+  "rrc_seed": 2026,
+  "valid_tours": 22
+}

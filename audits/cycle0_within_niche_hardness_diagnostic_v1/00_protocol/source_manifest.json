@@ -1,0 +1,76 @@
+{
+  "analysis_only": true,
+  "analysis_script": {
+    "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\scripts\\run_cycle0_within_niche_diagnostic.py",
+    "sha256": "e1ed48eb29bb88a2fa09faec1d0b828083ba7b91bec200775f66c2bfa769783c"
+  },
+  "audit": "BLADE_CYCLE0_WITHIN_NICHE_HARDNESS_DIAGNOSTIC_V1",
+  "exclusive_source_audit": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1",
+  "sources": {
+    "00_protocol/frozen_protocol.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\frozen_protocol.json",
+      "bytes": 1423,
+      "sha256": "a96b3c79fb2dd9f6d63d861df0df9cb01e9bcde277025a10bffb17f7a49d7fe9"
+    },
+    "00_protocol/source_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\00_protocol\\source_manifest.json",
+      "bytes": 3161,
+      "sha256": "2b8c5e46d28f9feff386e4a958164461e0b7cf95abd4a256eb613f137675344e"
+    },
+    "02_gp0_calibration_design/PRE_ORACLE_SEAL.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\PRE_ORACLE_SEAL.json",
+      "bytes": 1835,
+      "sha256": "a2780aa3dfbe3d857037f1865fdf7c609f8083cb65f44434eaa446e7a5b3c302"
+    },
+    "02_gp0_calibration_design/cal_d1_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json",
+      "bytes": 69549,
+      "sha256": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd"
+    },
+    "02_gp0_calibration_design/cal_d2_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d2_manifest.json",
+      "bytes": 131040,
+      "sha256": "549c016a04c2db89c5ab4b4ed8f52e770af2ce0471126ecc3b7d14ae3c418055"
+    },
+    "02_gp0_calibration_design/cal_d5_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d5_manifest.json",
+      "bytes": 289449,
+      "sha256": "1389dda2031309b93a6a18b7c684bf79ac964dda1b2d512f7b5eb3e8a8f88cef"
+    },
+    "02_gp0_calibration_design/cycle0_gp_dev.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev.parquet",
+      "bytes": 394879,
+      "sha256": "91482ab7ec8f8d3c5c92a7d2606309f610f6f08cfea45b66acaa0a1a147076af"
+    },
+    "03_oracle_labels/exact_hardness.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet",
+      "bytes": 1763415,
+      "sha256": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6"
+    },
+    "03_oracle_labels/label_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\label_manifest.json",
+      "bytes": 2363,
+      "sha256": "215a9146628ff533e430c2a79c61c1bc0655f41b2feb977dfff9262789cfb69b"
+    },
+    "08_prediction_evaluation/all_predictions.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\08_prediction_evaluation\\all_predictions.parquet",
+      "bytes": 426679,
+      "sha256": "9a86908db33dd8b4be9d3e46da600d4ed69f6bdd69a4a533f5fe21df82d88298"
+    },
+    "08_prediction_evaluation/global_metrics.csv": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\08_prediction_evaluation\\global_metrics.csv",
+      "bytes": 1664,
+      "sha256": "3811c7d3f808dcb84ba5a2ca10416294723b09a8cfcfa84b8fa2e192dda1f86d"
+    },
+    "09_within_niche_ranking/per_niche_metrics.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\09_within_niche_ranking\\per_niche_metrics.parquet",
+      "bytes": 15638,
+      "sha256": "8696fb0535efcf6d42a1cad12b5b6b78fb772f8b0f786fe7e242f36b2d064de7"
+    },
+    "10_acquisition_evaluation/per_niche_acquisition.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\10_acquisition_evaluation\\per_niche_acquisition.parquet",
+      "bytes": 26969,
+      "sha256": "39fca03adf6cbfea51534967df2482de2de1bf81e255cbfb5a2c19f4dd35782d"
+    }
+  }
+}

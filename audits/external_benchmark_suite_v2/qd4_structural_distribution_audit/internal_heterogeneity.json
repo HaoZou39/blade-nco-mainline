@@ -1,0 +1,110 @@
+{
+  "TSPLIB100": {
+    "dataset": "TSPLIB100",
+    "N": 10000,
+    "occupied_niches": 497,
+    "effective_niches": 221.74244903484828,
+    "pairwise_qd4_distance_mean": 0.7371032895979175,
+    "pairwise_qd4_distance_std": 0.3700463974190535,
+    "pairwise_qd4_distance_median": 0.6819046002739377,
+    "pairwise_qd4_distance_p90": 1.2624156556636923,
+    "feature_stats": {
+      "local": {
+        "CV": 0.4905880882135763,
+        "IQR": 0.4190650464343376,
+        "range": 1.0
+      },
+      "global": {
+        "CV": 0.6978248874173375,
+        "IQR": 0.5708797269336537,
+        "range": 1.0
+      },
+      "topology": {
+        "CV": 0.6430441865541104,
+        "IQR": 0.3933475776846744,
+        "range": 1.0
+      },
+      "scale": {
+        "CV": 0.6371727743428609,
+        "IQR": 0.48610909487518356,
+        "range": 1.0
+      }
+    },
+    "kmeans_exploratory": [
+      {
+        "k": 2,
+        "silhouette": 0.4796618738750345,
+        "inertia": 1541.766572741594
+      },
+      {
+        "k": 3,
+        "silhouette": 0.32881123217432395,
+        "inertia": 1233.375689714153
+      },
+      {
+        "k": 4,
+        "silhouette": 0.33382854507864695,
+        "inertia": 954.0276626047169
+      },
+      {
+        "k": 5,
+        "silhouette": 0.3328583909320685,
+        "inertia": 796.3916018439463
+      }
+    ]
+  },
+  "Original70": {
+    "dataset": "Original70",
+    "N": 70,
+    "occupied_niches": 33,
+    "effective_niches": 20.303560295982223,
+    "pairwise_qd4_distance_mean": 0.7591766049181559,
+    "pairwise_qd4_distance_std": 0.4010277544294527,
+    "pairwise_qd4_distance_median": 0.7399068591923528,
+    "pairwise_qd4_distance_p90": 1.3551279940014456,
+    "feature_stats": {
+      "local": {
+        "CV": 0.32145089013195854,
+        "IQR": 0.2826146031591231,
+        "range": 0.8176716377440423
+      },
+      "global": {
+        "CV": 0.706138175465896,
+        "IQR": 0.44156206893087735,
+        "range": 1.0
+      },
+      "topology": {
+        "CV": 0.4440099290906836,
+        "IQR": 0.42218574539309717,
+        "range": 1.0
+      },
+      "scale": {
+        "CV": 1.3823432339761974,
+        "IQR": 0.4002379691742104,
+        "range": 1.0
+      }
+    },
+    "kmeans_exploratory": [
+      {
+        "k": 2,
+        "silhouette": 0.4801586910379377,
+        "inertia": 14.08621752791571
+      },
+      {
+        "k": 3,
+        "silhouette": 0.4641502210265027,
+        "inertia": 9.201897125388149
+      },
+      {
+        "k": 4,
+        "silhouette": 0.4632421760175465,
+        "inertia": 7.240286282970079
+      },
+      {
+        "k": 5,
+        "silhouette": 0.388599646492571,
+        "inertia": 5.766801207889719
+      }
+    ]
+  }
+}

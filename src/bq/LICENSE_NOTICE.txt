@@ -1,0 +1,9 @@
+BQ-NCO
+Copyright (c) 2023-present NAVER Corp.
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 license
+
+The files model.py, encoder.py, attention.py, and decoding.py in this directory
+are a minimized TSP-only migration of the official BQ-NCO implementation used
+by the already-validated BLADE-NCO supervised fine-tuning protocol.
+
+Upstream project: https://github.com/naver/bq-nco

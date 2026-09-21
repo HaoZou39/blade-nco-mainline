@@ -1,0 +1,54 @@
+{
+  "analysis_only": true,
+  "audit": "BLADE_CYCLE0_ACQUISITION_POLICY_REPLAY_V1",
+  "bootstrap": {
+    "interval": "percentile 95%",
+    "replicates": 10000,
+    "seed": 2026,
+    "unit": "dev niche cluster"
+  },
+  "centroid1": "minimum Euclidean normalized-QD4 distance to assigned fixed K1000 centroid; coordinate/instance hash ascending tie-break",
+  "created_utc": "2026-09-10T06:54:00.107102+00:00",
+  "dev_oracle_policies": [
+    "GLOBAL_ORACLE",
+    "CENTROID1_GLOBAL_ORACLE"
+  ],
+  "expected_full_bank_niches": 435,
+  "forbidden": [
+    "new instances",
+    "new exact labels",
+    "Concorde",
+    "model training",
+    "BQ fine-tuning",
+    "external evaluation",
+    "FINAL_D0",
+    "protocol mutation",
+    "archive mutation",
+    "final runner"
+  ],
+  "full_bank_budget": 10000,
+  "full_bank_n": 109785,
+  "full_pairwise_subsample": {
+    "deterministic": true,
+    "n": 2000,
+    "seed_root": 2026
+  },
+  "lambda_diversity": null,
+  "master_seed": 2026,
+  "operational_surrogate": "median of five existing GP4_D5 symbolic formulas",
+  "pareto_objectives": [
+    "maximize occupied-niche coverage",
+    "maximize exact mean raw H0"
+  ],
+  "policies": [
+    "GLOBAL_GP",
+    "ROUND_ROBIN_GP",
+    "CENTROID1_GLOBAL_GP",
+    "CENTROID1_RANDOM_FILL",
+    "GLOBAL_RANDOM"
+  ],
+  "random_repeats": 1000,
+  "random_streams": "SeedSequence([2026,panel_code,policy_code,budget,repeat]); candidates hash-sorted before sampling",
+  "scalarization": null,
+  "surrogate_scope": "diagnostic scoring only; D5 is not declared the final GP0 protocol"
+}

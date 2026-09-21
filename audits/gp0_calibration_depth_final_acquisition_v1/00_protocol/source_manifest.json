@@ -1,0 +1,176 @@
+{
+  "analysis_only": true,
+  "analysis_script": {
+    "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\scripts\\run_gp0_calibration_depth_final_acquisition.py",
+    "sha256": "b28a44d99f99214da7251e0076082976cc38f4c0458c7bc8eaadcc75f31665aa"
+  },
+  "audit": "BLADE_GP0_FINAL_ROLE_CALIBRATION_DEPTH_AUDIT_V1",
+  "runtime_old_project_reads": false,
+  "sources": {
+    "ASSET_MANIFEST.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\ASSET_MANIFEST.json",
+      "bytes": 132997,
+      "sha256": "d4135791dd20d8a4599feb905c0edcf50ea778eadcf21f7f6a949e1b79a4e58e"
+    },
+    "assets/qd/cvt/centroids.csv": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv",
+      "bytes": 82344,
+      "sha256": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd"
+    },
+    "audits/cycle0_acquisition_policy_replay_v1/02_full_bank_scores/gp4_d5_scores.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_acquisition_policy_replay_v1\\02_full_bank_scores\\gp4_d5_scores.parquet",
+      "bytes": 22397124,
+      "sha256": "1dd4ba9476ca8afa29b530e46e2b433c05c8a91bb51b1f8dff82bea79c92a82d"
+    },
+    "audits/cycle0_acquisition_policy_replay_v1/03_full_bank_policy_replay/centroid1_global_gp.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_acquisition_policy_replay_v1\\03_full_bank_policy_replay\\centroid1_global_gp.parquet",
+      "bytes": 2977142,
+      "sha256": "af159b728de824cd3dceb64e730d2e98f0365f393685792707e4b86b48c007e2"
+    },
+    "audits/cycle0_acquisition_policy_replay_v1/11_decision/diagnostic_classification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_acquisition_policy_replay_v1\\11_decision\\diagnostic_classification.json",
+      "bytes": 1400,
+      "sha256": "83be4cf6b37c142e37540918961308c4cf2c7eeb91cefb13f17fbd0a95a2f11f"
+    },
+    "audits/cycle0_acquisition_policy_replay_v1/strict_verification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_acquisition_policy_replay_v1\\strict_verification.json",
+      "bytes": 7574,
+      "sha256": "298f80efc3dec597f41926359d9200970d03bb24762f221be65e2e36e597dc39"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/cal_d1_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json",
+      "bytes": 69549,
+      "sha256": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/cal_d2_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d2_manifest.json",
+      "bytes": 131040,
+      "sha256": "549c016a04c2db89c5ab4b4ed8f52e770af2ce0471126ecc3b7d14ae3c418055"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/cal_d5_manifest.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d5_manifest.json",
+      "bytes": 289449,
+      "sha256": "1389dda2031309b93a6a18b7c684bf79ac964dda1b2d512f7b5eb3e8a8f88cef"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/cycle0_gp_dev.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev.parquet",
+      "bytes": 394879,
+      "sha256": "91482ab7ec8f8d3c5c92a7d2606309f610f6f08cfea45b66acaa0a1a147076af"
+    },
+    "audits/cycle0_initialization_validation_v1/02_gp0_calibration_design/structural_probe_order.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet",
+      "bytes": 14490669,
+      "sha256": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53"
+    },
+    "audits/cycle0_initialization_validation_v1/03_oracle_labels/exact_hardness.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet",
+      "bytes": 1763415,
+      "sha256": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6"
+    },
+    "audits/cycle0_initialization_validation_v1/04_gp4_d1/seed_2026/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\04_gp4_d1\\seed_2026\\formula.json",
+      "bytes": 2798,
+      "sha256": "d0d148f9cf56aed9ac2001892805b289f1a91a8194680601829b7d85b0b618ad"
+    },
+    "audits/cycle0_initialization_validation_v1/04_gp4_d1/seed_2027/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\04_gp4_d1\\seed_2027\\formula.json",
+      "bytes": 2984,
+      "sha256": "52abbf30e60f1b1d46bd1e08cc0581f1f219cbb7b9bf3a78c6f7497b0858dce3"
+    },
+    "audits/cycle0_initialization_validation_v1/04_gp4_d1/seed_2028/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\04_gp4_d1\\seed_2028\\formula.json",
+      "bytes": 5332,
+      "sha256": "8d6d559970f5650ba6aff62a7d6d99fae87a0e31753ea009369721e7334a49d0"
+    },
+    "audits/cycle0_initialization_validation_v1/04_gp4_d1/seed_2029/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\04_gp4_d1\\seed_2029\\formula.json",
+      "bytes": 2798,
+      "sha256": "cf9481489759e8211f9f4e823107f7b2e22dd7de7b8eeb743b2f4f6efd0e1373"
+    },
+    "audits/cycle0_initialization_validation_v1/04_gp4_d1/seed_2030/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\04_gp4_d1\\seed_2030\\formula.json",
+      "bytes": 3834,
+      "sha256": "ed11ca06fc7e94fc8f782487057f45262de50c098ae74cea66c755309e454e82"
+    },
+    "audits/cycle0_initialization_validation_v1/05_gp4_d2/seed_2026/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\05_gp4_d2\\seed_2026\\formula.json",
+      "bytes": 4870,
+      "sha256": "c3fe1d012d8b95cbec4b10b767f0837fe502b67ec42deaa284ea1ff5a751043d"
+    },
+    "audits/cycle0_initialization_validation_v1/05_gp4_d2/seed_2027/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\05_gp4_d2\\seed_2027\\formula.json",
+      "bytes": 4485,
+      "sha256": "4ae65b1dabc6e12711b7756e9183c30292236dc3d08822d2d0f1037f3d0d23f9"
+    },
+    "audits/cycle0_initialization_validation_v1/05_gp4_d2/seed_2028/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\05_gp4_d2\\seed_2028\\formula.json",
+      "bytes": 3605,
+      "sha256": "595c1da0ac8c28a7b2eec25e3e7baa1ca7c469192695d9badea82f97cfec3710"
+    },
+    "audits/cycle0_initialization_validation_v1/05_gp4_d2/seed_2029/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\05_gp4_d2\\seed_2029\\formula.json",
+      "bytes": 5054,
+      "sha256": "3a8c260619426075faa0d1ad6192085f4e0d1111ea287383e9f672f196889153"
+    },
+    "audits/cycle0_initialization_validation_v1/05_gp4_d2/seed_2030/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\05_gp4_d2\\seed_2030\\formula.json",
+      "bytes": 5000,
+      "sha256": "93ccaffd10f0c3d7bcc16750d4f119ba1882f3495fcd7ab7ce13d7da0f477a81"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2026/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2026\\formula.json",
+      "bytes": 3499,
+      "sha256": "59f0a7348c2e16dee4018519b27cd7c48a41102c8ecd25de8bcffa97c36037eb"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2027/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2027\\formula.json",
+      "bytes": 3819,
+      "sha256": "0ae768af2be9cd2e64c954763ecc9663a82b471f039b17a87dce48518e5163d3"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2028/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2028\\formula.json",
+      "bytes": 4161,
+      "sha256": "c0552e8420891a3de72153f1b55bbcd95f4fe66463d3d4ada630ac62da24ec1a"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2029/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2029\\formula.json",
+      "bytes": 4040,
+      "sha256": "ae759a9114e5008412968a32ccd4c459f3afe99a2fd4adc03d9da6d7423ad484"
+    },
+    "audits/cycle0_initialization_validation_v1/06_gp4_d5/seed_2030/formula.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\06_gp4_d5\\seed_2030\\formula.json",
+      "bytes": 3837,
+      "sha256": "445f2abb32f0b9e19dd617b6d89aa7c045efee376cec33f3213230beb618772c"
+    },
+    "audits/cycle0_initialization_validation_v1/08_prediction_evaluation/all_predictions.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\08_prediction_evaluation\\all_predictions.parquet",
+      "bytes": 426679,
+      "sha256": "9a86908db33dd8b4be9d3e46da600d4ed69f6bdd69a4a533f5fe21df82d88298"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/11_decision/diagnostic_classification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\11_decision\\diagnostic_classification.json",
+      "bytes": 1025,
+      "sha256": "a6f91e08a5ca1a4cfdc67003a01561d4fdcf2e574baa54b0dd314cce868637c4"
+    },
+    "audits/cycle0_within_niche_hardness_diagnostic_v1/strict_verification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_within_niche_hardness_diagnostic_v1\\strict_verification.json",
+      "bytes": 6615,
+      "sha256": "a1f84a2e814acc2e95070cbec525896fd711dd7254bf21e89b07d28a397dee8d"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/02_offspring_manifest.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet",
+      "bytes": 17239822,
+      "sha256": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/05_offspring_qd_assignments.parquet": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet",
+      "bytes": 23615386,
+      "sha256": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61"
+    },
+    "audits/uniform_rooted_qd_bootstrap_v1/strict_verification.json": {
+      "absolute_path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\strict_verification.json",
+      "bytes": 21074,
+      "sha256": "ddcdb9ec77192f00ce4a1eccc6e367b5dfcfc33a8ec6de10b94059a9eaa9e6d8"
+    }
+  }
+}

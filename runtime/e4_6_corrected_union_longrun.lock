@@ -1,0 +1,5 @@
+{
+  "command": "scripts\\run_e4_6_corrected_union_longrun.py --resume",
+  "error": "ValueError('generated checkpoints must be written under runs/')",
+  "host": "DESKTOP-V974EBE",
+  "pid": 45952

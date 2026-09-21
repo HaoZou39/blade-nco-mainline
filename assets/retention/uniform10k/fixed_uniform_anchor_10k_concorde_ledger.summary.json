@@ -1,0 +1,19 @@
+﻿{
+  "all_verified": true,
+  "backend": {
+    "backend": "concorde_cli",
+    "binary": "historical_concorde_binary_not_a_runtime_dependency",
+    "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+    "invoke_mode": "wsl",
+    "wsl_distro": "Ubuntu"
+  },
+  "cumulative_verified_unique_executions": 10000,
+  "ledger_sha256": "0b25358d313f609cd886aa04ba96b662881008599d0c4593093ca53cba482a30",
+  "max_runtime_sec": 19.036125600003288,
+  "mean_runtime_sec": 0.4527411181399919,
+  "new_executions_this_call": 0,
+  "reused_rows": 10000,
+  "row_count": 10000,
+  "status": "CONCORDE_LABELING_COMPLETE"
+}
+

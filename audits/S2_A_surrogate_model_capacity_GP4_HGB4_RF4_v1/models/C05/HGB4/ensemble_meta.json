@@ -1,0 +1,134 @@
+{
+  "cycle": "C05",
+  "model": "HGB4",
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "ensemble": "median",
+  "params_canonical": {
+    "learning_rate": 0.05,
+    "max_iter": 500,
+    "max_leaf_nodes": 31,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "l2_regularization": 0.0001,
+    "early_stopping": false
+  },
+  "source": {
+    "file": "src/final_run/science.py",
+    "symbol": "HGB_CFG",
+    "usage": "train_hgb_controls: HistGradientBoostingRegressor on QD4, y=log1p(L_BQ)",
+    "also_used_in": "scripts/run_cycle0_models_and_evaluation.py"
+  },
+  "seeds_meta": [
+    {
+      "seed": 2026,
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 500,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "early_stopping": false,
+        "random_state": 2026
+      },
+      "fit_s": 3.021913000033237,
+      "peak_rss_bytes": null,
+      "n_train": 500,
+      "target": "log1p_L_BQ",
+      "features": 4,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1\\models\\C05\\HGB4\\seed_2026.joblib",
+      "serialized_bytes": 422503,
+      "resumed": true
+    },
+    {
+      "seed": 2027,
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 500,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "early_stopping": false,
+        "random_state": 2027
+      },
+      "fit_s": 3.390602400060743,
+      "peak_rss_bytes": null,
+      "n_train": 500,
+      "target": "log1p_L_BQ",
+      "features": 4,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1\\models\\C05\\HGB4\\seed_2027.joblib",
+      "serialized_bytes": 422501,
+      "resumed": true
+    },
+    {
+      "seed": 2028,
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 500,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "early_stopping": false,
+        "random_state": 2028
+      },
+      "fit_s": 3.2630217999685556,
+      "peak_rss_bytes": null,
+      "n_train": 500,
+      "target": "log1p_L_BQ",
+      "features": 4,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1\\models\\C05\\HGB4\\seed_2028.joblib",
+      "serialized_bytes": 422505,
+      "resumed": true
+    },
+    {
+      "seed": 2029,
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 500,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "early_stopping": false,
+        "random_state": 2029
+      },
+      "fit_s": 3.0982591999927536,
+      "peak_rss_bytes": null,
+      "n_train": 500,
+      "target": "log1p_L_BQ",
+      "features": 4,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1\\models\\C05\\HGB4\\seed_2029.joblib",
+      "serialized_bytes": 422501,
+      "resumed": true
+    },
+    {
+      "seed": 2030,
+      "params": {
+        "learning_rate": 0.05,
+        "max_iter": 500,
+        "max_leaf_nodes": 31,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "l2_regularization": 0.0001,
+        "early_stopping": false,
+        "random_state": 2030
+      },
+      "fit_s": 2.9088272999506444,
+      "peak_rss_bytes": null,
+      "n_train": 500,
+      "target": "log1p_L_BQ",
+      "features": 4,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S2_A_surrogate_model_capacity_GP4_HGB4_RF4_v1\\models\\C05\\HGB4\\seed_2030.joblib",
+      "serialized_bytes": 422503,
+      "resumed": true
+    }
+  ]
+}

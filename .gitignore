@@ -1,0 +1,46 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest_tmp/
+.venv/
+.coverage
+htmlcov/
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+~$*
+
+# Huge local run outputs and datasets (do not upload to GitHub)
+runs/
+datasets/
+logs/
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Model weights and large binary arrays
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+*.joblib
+*.parquet
+
+# Spreadsheet dumps
+*.xlsx
+
+# Nested failed-attempt workdirs (Windows path-length failures; not source)
+audits/**/failed_attempts/

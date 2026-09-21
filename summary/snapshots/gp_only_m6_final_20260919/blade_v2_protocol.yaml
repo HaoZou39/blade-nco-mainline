@@ -1,0 +1,59 @@
+schema_version: BLADE_V2_CORRECTED_C00_BRANCH_V1
+method_status: FROZEN
+run:
+  master_seed: 2026
+  full_cycles: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+  gp_only_cycles: [1, 2, 3, 4, 5]
+  full_final_model: M15
+  gp_only_final_model: M6
+branch:
+  shared_through: [M0, O0, B0, GP0, T0, A1, M1]
+  branch_objects: [P0_FULL, P0_GPONLY]
+  first_divergent_generation: C01
+  gp_only_delayed_branch_forbidden: true
+problem:
+  name: TSP
+  nodes: 100
+gp:
+  working_set: 500
+  cycle0_source: Random500_O0
+  later_source: Random500_A_s
+  features: [spn_sum_of_lowest_edge_values, spn_distance_varcoeff, spn_mst_depth_mean, spn_mst_dists_median]
+  target: log1p_LBQ
+  population: 2000
+  generations: 60
+  fitness: Huber
+  seeds: [2026, 2027, 2028, 2029, 2030]
+  ensemble: median
+qd:
+  features: QD4
+  k: 1000
+  normalization: deep_p1_p99_clip
+  centroids_frozen: true
+mutation:
+  family: FOGA11
+  nominal_offspring: 110000
+selection:
+  training: global_GP_Top10000
+  full_parent: centroid_nearest_per_reached_niche_plus_global_GP_fill
+  gp_only_parent: global_GP_Top10000
+  budget: 10000
+archive:
+  cumulative_unique_formally_labelled: true
+  persistent_exact_elite_archive: false
+training:
+  hard_count: 10000
+  uniform_anchor_count: 10000
+  learning_rate: 0.0000375
+  epochs: 256
+  scientific_checkpoint: E256
+  early_stopping: false
+  scheduler: none
+evaluation:
+  passive_only: true
+  datasets: [Uniform100, GaussianMixture100, TSPLIB100, EvoReal_S1_100, EvoReal_S2_100, EvoReal_S3_100, GaussianMixture500, OriginalTSPLIB70]
+  n100_ood_aggregate: [GaussianMixture100, TSPLIB100, EvoReal_S1_100, EvoReal_S2_100, EvoReal_S3_100]
+resume:
+  atomic_cycle_complete: true
+  verify_hashes_before_skip: true
+  completed_cycle_rerun_forbidden: true

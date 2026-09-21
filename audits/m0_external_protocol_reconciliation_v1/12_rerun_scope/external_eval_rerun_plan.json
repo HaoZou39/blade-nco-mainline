@@ -1,0 +1,47 @@
+{
+  "benchmarks": [
+    {
+      "action": "rebind cached predicted_cost_int by manifest instance_index/instance_id and recompute per-instance gap plus aggregate; optional inference only for tour-hash trace",
+      "benchmark": "GaussianMixture100",
+      "metrics": [
+        "predicted_cost_int",
+        "optimal_cost_int",
+        "gap_percent",
+        "mean_gap_percent",
+        "median_gap_percent",
+        "P75",
+        "P90",
+        "P95",
+        "max_gap_percent"
+      ]
+    },
+    {
+      "action": "passively reevaluate each checkpoint using aspect-preserving model-input normalization; score on native raw TSPLIB EUC_2D coordinates with same known optima",
+      "benchmark": "OriginalTSPLIB70",
+      "metrics": [
+        "predicted_cost_int",
+        "optimal_cost_int",
+        "gap_percent",
+        "mean_gap_percent",
+        "median_gap_percent",
+        "P75",
+        "P90",
+        "P95",
+        "max_gap_percent"
+      ]
+    }
+  ],
+  "checkpoints": [
+    "M0",
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6"
+  ],
+  "future_checkpoints": "M_next through M20 after human-approved evaluator correction; do not retrain",
+  "overwrite_formal_outputs": false,
+  "scope_type": "passive_external_evaluation_only",
+  "training_rerun": false
+}

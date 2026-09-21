@@ -1,0 +1,24 @@
+﻿{
+    "dataset_name":  "Uniform100",
+    "role":  "in_distribution_passive_evaluation",
+    "N":  100,
+    "instance_count":  10000,
+    "source":  "uniform100_v1",
+    "source_hashes":  {
+                          "concorde/oracle_results.parquet":  "85fa88f204c328065ddbb0c47b49885e71f78ab4453f052274242804556dd224",
+                          "DATASET_FROZEN.json":  "db987c4d220f6635f3929df27d062980c288ad754b100614acff4da7622b7fd4",
+                          "instances/coordinates.npz":  "ebf28d497b364f905fea8d1a349a6f05f3b889fe992e08c4d387a9d2e65d93be",
+                          "manifest.csv":  "498eb29b9d16bda0efe2032b01ece1358b00098c9a058c4d539cfae99fc0c681",
+                          "manifest.parquet":  "53008ba16b5e4d21990c65fe30befb9d80429627dd24a974313ee735495c685e"
+                      },
+    "destination_hashes":  {
+                               "concorde/oracle_results.parquet":  "85fa88f204c328065ddbb0c47b49885e71f78ab4453f052274242804556dd224",
+                               "DATASET_FROZEN.json":  "db987c4d220f6635f3929df27d062980c288ad754b100614acff4da7622b7fd4",
+                               "instances/coordinates.npz":  "ebf28d497b364f905fea8d1a349a6f05f3b889fe992e08c4d387a9d2e65d93be",
+                               "manifest.csv":  "498eb29b9d16bda0efe2032b01ece1358b00098c9a058c4d539cfae99fc0c681",
+                               "manifest.parquet":  "53008ba16b5e4d21990c65fe30befb9d80429627dd24a974313ee735495c685e"
+                           },
+    "ground_truth_availability":  "Concorde optimal tours and integer costs available",
+    "coordinate_convention":  "unit-square float coordinates",
+    "read_only":  true
+}

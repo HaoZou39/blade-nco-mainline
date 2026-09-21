@@ -1,0 +1,47 @@
+{
+  "constant": false,
+  "finite": true,
+  "formulas": [
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":-1.580684610943385}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(subtract(abs(-1.58068461094), spn_sum_of_lowest_edge_values), multiply(subtract(log1p_abs(spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values), multiply(spn_sum_of_lowest_edge_values, spn_sum_of_lowest_edge_values)))",
+      "nodes": 13,
+      "seed": 2026
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":3},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"subtract\",\"value\":null}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":1.2005528717216505},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"add\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(subtract(abs(subtract(spn_mst_dists_median, sqrt_abs(spn_sum_of_lowest_edge_values))), spn_sum_of_lowest_edge_values), protected_divide(log1p_abs(spn_sum_of_lowest_edge_values), add(1.20055287172, spn_sum_of_lowest_edge_values)))",
+      "nodes": 14,
+      "seed": 2027
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"const\",\"value\":0.9203425144769439},{\"args\":[],\"op\":\"feature\",\"value\":3}],\"op\":\"add\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":-1.416236016534111}],\"op\":\"subtract\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}],\"op\":\"protected_divide\",\"value\":null}",
+      "formula": "protected_divide(subtract(log1p_abs(protected_divide(spn_sum_of_lowest_edge_values, add(0.920342514477, spn_mst_dists_median))), spn_sum_of_lowest_edge_values), protected_divide(subtract(spn_sum_of_lowest_edge_values, -1.41623601653), abs(spn_sum_of_lowest_edge_values)))",
+      "nodes": 15,
+      "seed": 2028
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"sqrt_abs\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null}],\"op\":\"subtract\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":1}],\"op\":\"add\",\"value\":null}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(multiply(subtract(spn_sum_of_lowest_edge_values, log1p_abs(sqrt_abs(spn_sum_of_lowest_edge_values))), spn_sum_of_lowest_edge_values), subtract(log1p_abs(add(abs(spn_sum_of_lowest_edge_values), spn_distance_varcoeff)), spn_sum_of_lowest_edge_values))",
+      "nodes": 15,
+      "seed": 2029
+    },
+    {
+      "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":0.45527800362761095}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"abs\",\"value\":null},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":0.45527800362761095}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+      "formula": "multiply(abs(multiply(spn_sum_of_lowest_edge_values, subtract(spn_sum_of_lowest_edge_values, 0.455278003628))), subtract(multiply(spn_sum_of_lowest_edge_values, subtract(spn_sum_of_lowest_edge_values, 0.455278003628)), spn_sum_of_lowest_edge_values))",
+      "nodes": 14,
+      "seed": 2030
+    }
+  ],
+  "model": "GP0_D5",
+  "operational_output": "median",
+  "prediction_sd": 0.02917677399484326,
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "train_n": 1819
+}

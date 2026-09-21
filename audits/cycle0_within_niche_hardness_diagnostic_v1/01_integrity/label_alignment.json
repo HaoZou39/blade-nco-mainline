@@ -1,0 +1,10 @@
+{
+  "H0_finite": true,
+  "dev_n": 2666,
+  "exact_dev_hash_set_match": true,
+  "matched_label_n": 2666,
+  "niche_assignments_from_sealed_dev": true,
+  "niche_count": 301,
+  "raw_value_column": "H0",
+  "status": "PASS"
+}

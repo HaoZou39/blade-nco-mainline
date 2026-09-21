@@ -1,0 +1,12 @@
+{
+  "N": 100,
+  "count": 10000,
+  "finite_coordinates": true,
+  "regenerated": false,
+  "root_hash_manifest": "assets/qd/roots/root_hashes.txt",
+  "root_membership_hash": "edf1719ecc114261ba26b21f7bb8ff113b8247958679abb3d177a858cd7c2c5b",
+  "selection": "saved_depth == 0 AND canonical root-hash membership",
+  "source": "assets/qd/reference_cloud/valid_unique_saved_states.parquet",
+  "unique_coordinate_hashes": 10000,
+  "unit_square_coordinates": true
+}

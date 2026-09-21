@@ -1,0 +1,101 @@
+schema_version: BLADE_FINAL_20CYCLE_PROTOCOL_V1
+method_status: FROZEN
+run:
+  cycles: 20
+  cycle_indices: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  model_start: M0
+  model_final: M20
+  master_seed: 2026
+  scientific_early_stop: false
+qd:
+  features: QD4
+  feature_names: [spn_sum_of_lowest_edge_values, spn_distance_varcoeff, spn_mst_depth_mean, spn_mst_dists_median]
+  normalization: deep_p1_p99_clip
+  k: 1000
+  fixed_map: true
+  reference_cloud_role: MAP_GEOMETRY_ONLY
+  persistent_archive:
+    type: exact_sparse
+    max_per_niche: 1
+  coverage:
+    type: centroid_nearest
+    min_per_occupied_niche: 1
+initialization:
+  roots:
+    type: frozen_uniform
+    count: 10000
+    selection: saved_depth_eq_0_and_canonical_hash_manifest
+    regenerate: false
+  gp0:
+    probes:
+      type: one_centroid_nearest_per_reached_niche
+      difficulty_blind: true
+active_population:
+  size: 10000
+  use_as_next_cycle_parents: true
+mutation:
+  family: FOGA11
+  each_operator_once_per_parent: true
+  nominal_offspring: 110000
+  relay_depth: 1
+  adaptive_operator_weighting: false
+acquisition:
+  pool:
+    cycle0: offspring_only
+    later_cycles: offspring_plus_current_exact_elites
+  coverage_first: true
+  fill:
+    type: global_gp_topk
+  round_robin: false
+  diversity_scalarization: false
+surrogate:
+  primary: GP4
+  features: QD4
+  target: log1p_LBQ
+  population: 2000
+  generations: 60
+  fitness: Huber
+  formula_selection: SPERF
+  seeds: [2026, 2027, 2028, 2029, 2030]
+  aggregate: median
+  cumulative_archive: true
+  equal_weight: true
+  refresh_under_current_solver: true
+  controls:
+    HGB4: true
+    HGB20: true
+    acquisition_driver: false
+training:
+  hard_budget: 10000
+  fixed_uniform_anchor: 10000
+  hard_anchor_ratio: "1:1"
+  epochs: 256
+  lr: 0.000075
+  optimizer: Adam
+  fresh_optimizer_each_cycle: true
+  scheduler: none
+  weight_decay: 0
+  grad_clip: none
+  amp: false
+  early_stop: false
+  scientific_checkpoint: E256
+evaluation:
+  every_checkpoint: true
+  decoding: greedy
+  datasets: [Uniform100, GaussianMixture100, TSPLIB100, OriginalTSPLIB70, LEHD_TSP200, LEHD_TSP500, LEHD_TSP1000]
+  passive_only: true
+reporting:
+  per_cycle_report: true
+  per_cycle_figures: 18
+  global_figures: 22
+  timing_breakdown: true
+  bq_internal_timing: true
+  bootstrap_replicates: 10000
+resume:
+  atomic_stage_records: true
+  verify_hashes_before_skip: true
+  invalid_hash_action: STOP
+  crash_checkpoints_scientific: false
+development_data:
+  exclude_unless_formally_selected: true
+  formal_selection_marker: FORMAL_SELECTION_OCCURRED

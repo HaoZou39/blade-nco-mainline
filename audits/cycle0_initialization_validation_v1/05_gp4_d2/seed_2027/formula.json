@@ -1,0 +1,131 @@
+{
+  "all_predictions_finite": true,
+  "seed": 2027,
+  "selected": {
+    "canonical_formula": "{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"log1p_abs\",\"value\":null},{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0}],\"op\":\"abs\",\"value\":null}],\"op\":\"multiply\",\"value\":null},{\"args\":[{\"args\":[],\"op\":\"feature\",\"value\":0},{\"args\":[],\"op\":\"const\",\"value\":0.6559964611146225}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}],\"op\":\"subtract\",\"value\":null}],\"op\":\"multiply\",\"value\":null}",
+    "constants": [
+      0.6559964611146225
+    ],
+    "depth": 6,
+    "feature_indices": [
+      0
+    ],
+    "first_generation": 21,
+    "formula": "multiply(multiply(spn_sum_of_lowest_edge_values, subtract(log1p_abs(spn_sum_of_lowest_edge_values), spn_sum_of_lowest_edge_values)), subtract(spn_sum_of_lowest_edge_values, multiply(multiply(spn_sum_of_lowest_edge_values, abs(spn_sum_of_lowest_edge_values)), subtract(spn_sum_of_lowest_edge_values, 0.655996461115))))",
+    "hof_rank": 99,
+    "nodes": 17,
+    "seed": 2027,
+    "train_huber": 0.31176605861045864,
+    "train_total_fitness": 0.32026605861045865,
+    "tree": {
+      "args": [
+        {
+          "args": [
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "feature",
+                      "value": 0
+                    }
+                  ],
+                  "op": "log1p_abs",
+                  "value": null
+                },
+                {
+                  "args": [],
+                  "op": "feature",
+                  "value": 0
+                }
+              ],
+              "op": "subtract",
+              "value": null
+            }
+          ],
+          "op": "multiply",
+          "value": null
+        },
+        {
+          "args": [
+            {
+              "args": [],
+              "op": "feature",
+              "value": 0
+            },
+            {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "feature",
+                      "value": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "args": [],
+                          "op": "feature",
+                          "value": 0
+                        }
+                      ],
+                      "op": "abs",
+                      "value": null
+                    }
+                  ],
+                  "op": "multiply",
+                  "value": null
+                },
+                {
+                  "args": [
+                    {
+                      "args": [],
+                      "op": "feature",
+                      "value": 0
+                    },
+                    {
+                      "args": [],
+                      "op": "const",
+                      "value": 0.6559964611146225
+                    }
+                  ],
+                  "op": "subtract",
+                  "value": null
+                }
+              ],
+              "op": "multiply",
+              "value": null
+            }
+          ],
+          "op": "subtract",
+          "value": null
+        }
+      ],
+      "op": "multiply",
+      "value": null
+    },
+    "unique_features": 1,
+    "used_features": [
+      "spn_sum_of_lowest_edge_values"
+    ],
+    "validation_eligible": true,
+    "validation_mae": 0.02771430141857991,
+    "validation_spearman": 0.3376321213816728
+  },
+  "selector": "SPERF",
+  "spearman_tie_epsilon": 1e-06,
+  "transform": {
+    "center_train_median_loss_log": 0.05303550696384541,
+    "fit_split": "TRAIN_ONLY",
+    "formula": "loss_log = log1p(loss_raw)",
+    "scale_method": "IQR",
+    "scale_train_loss_log": 0.043468391133631115
+  }
+}

@@ -1,0 +1,5 @@
+benchmark,historical_decode,current_decode,historical_beam,current_beam,historical_knn,current_knn,effective_candidate_relation,start_semantics,visited_filter,augmentation,postprocessing,tie_breaking,classification
+Uniform100,greedy,greedy,1,1,-1,250,EXACT_FULL_SET,node0,remove_selected; preserve destination copy,none,none,historical numpy stable argsort; current torch sort; no aggregate causal evidence,SAME_EFFECTIVE_PROTOCOL
+GaussianMixture100,greedy,greedy,1,1,-1,250,EXACT_FULL_SET,node0,remove_selected; preserve destination copy,none,none,historical numpy stable argsort; current torch sort; no aggregate causal evidence,SAME_EFFECTIVE_PROTOCOL
+TSPLIB100,greedy,greedy,1,1,-1,250,EXACT_FULL_SET,node0,remove_selected; preserve destination copy,none,none,historical numpy stable argsort; current torch sort; no aggregate causal evidence,SAME_EFFECTIVE_PROTOCOL
+OriginalTSPLIB70,greedy,greedy,1,1,250,250,SAME_DYNAMIC_MIN_250,node0,remove_selected; preserve destination copy,none,none,historical numpy stable argsort; current torch sort; no aggregate causal evidence,SAME_EFFECTIVE_PROTOCOL

@@ -1,0 +1,14 @@
+﻿{
+    "status":  "COMPLETE",
+    "attempt":  2,
+    "started_utc":  "2026-09-20T15:33:13.8936952Z",
+    "runner_pid":  19604,
+    "watchdog_pid":  34512,
+    "run_id":  "blade_v2_corrected_union_sanity_seed2026_v1",
+    "target":  "C00-C04_M5_plus_8set",
+    "scientific_recovery":  "frozen B0 labels/tours and GP0 reused",
+    "stdout":  "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_corrected_union_sanity_seed2026_v1\\logs\\runner_stdout.log",
+    "stderr":  "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_corrected_union_sanity_seed2026_v1\\logs\\runner_stderr.log",
+    "ended_utc":  "2026-09-21T00:01:12Z",
+    "result":  "CORRECTED_UNION_FULL_SANITY_PASS"
+}

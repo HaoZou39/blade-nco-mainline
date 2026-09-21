@@ -1,0 +1,104 @@
+{
+  "absolute_difference_percentage_points": {
+    "GaussianMixture100": 4.025794358674476,
+    "OriginalTSPLIB70": 3.2745555815479985,
+    "TSPLIB100": 2.220446049250313e-16,
+    "Uniform100": 0.0
+  },
+  "created_utc": "2026-09-12T13:20:06.887075+00:00",
+  "current_reference": {
+    "GaussianMixture100": 10.114118980811371,
+    "OriginalTSPLIB70": 8.650173126554023,
+    "TSPLIB100": 1.2296356447283343,
+    "Uniform100": 0.34526190201706
+  },
+  "forbidden_actions": [
+    "training",
+    "GP training",
+    "mutation",
+    "QD changes",
+    "Concorde",
+    "Oracle generation",
+    "formal run modification",
+    "protocol patch"
+  ],
+  "formal_run": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1",
+  "formal_run_access": "READ_ONLY",
+  "formal_run_snapshot_pre": {
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best": {
+      "bytes": 12467743,
+      "mtime_ns": 1782271748282707000,
+      "sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\GaussianMixture100.parquet": {
+      "bytes": 300923,
+      "mtime_ns": 1789164275870983200,
+      "sha256": "c71d947911ac559dc333584603a38507c30d99c8fa42071abad161101b6cafd5"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\OriginalTSPLIB70.parquet": {
+      "bytes": 5073,
+      "mtime_ns": 1789164832113510600,
+      "sha256": "5a385c7259e5d7e82adb9951089cc68e62485d720a5945f7a9c25f89409a887d"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\STAGE_DONE.json": {
+      "bytes": 3518,
+      "mtime_ns": 1789165259342729300,
+      "sha256": "b54cf64e41bf00825d51c904463e78844ccd8aadaab951b00826d79bf4ac1e64"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\TSPLIB100.parquet": {
+      "bytes": 289731,
+      "mtime_ns": 1789164471754627400,
+      "sha256": "1f98d9df94ff0b9a2600133223f7a07c3c5cb9f4ed9b0f7217b7d1f8f07f7d70"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\Uniform100.parquet": {
+      "bytes": 282763,
+      "mtime_ns": 1789164081495294400,
+      "sha256": "e28882bdcb93f9727e7f1660735a32aef2b4c20616a98677636cab25e59660f4"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\01_baseline_M0\\external_metrics.csv": {
+      "bytes": 2179,
+      "mtime_ns": 1789165259313737300,
+      "sha256": "831fe5c36c3ead5374d65543f2f3db40aaad705c1b7a865f616b5d608d4ed609"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\decoding.py": {
+      "bytes": 9096,
+      "mtime_ns": 1787297389557482500,
+      "sha256": "6ebda82b9b008a814cbd722b3ec01a600f82517f7bb4b4dd6f48d57b8e93a75b"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\bq\\inference.py": {
+      "bytes": 11218,
+      "mtime_ns": 1788926609406450600,
+      "sha256": "39a2caf4badf7dab19a2e28b6e2cabcd4c5bb9580bcb6d56861c1b4993120fa7"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\evaluation\\datasets.py": {
+      "bytes": 4079,
+      "mtime_ns": 1788926875166012300,
+      "sha256": "223e87231d67070f93542a278b5245e9e74695a924cff60d9e7a13d955239f4c"
+    },
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\final_run\\science.py": {
+      "bytes": 23583,
+      "mtime_ns": 1789187781522088500,
+      "sha256": "a3a03fa330417805dee5f1ffe68aa15ad4c9320e5915e556c471fbd3413d235e"
+    }
+  },
+  "gpu_replay_deferred_due_to_active_formal_run": true,
+  "gpu_replay_performed": false,
+  "historical_archive": "D:\\NCO\\BLADE-NCO",
+  "historical_archive_access": "READ_ONLY",
+  "historical_reference": {
+    "GaussianMixture100": 6.088324622136895,
+    "OriginalTSPLIB70": 5.375617545006024,
+    "TSPLIB100": 1.229635644728334,
+    "Uniform100": 0.34526190201706
+  },
+  "output": "D:\\NCO\\BLADE-NCO-mainline\\audits\\m0_external_protocol_reconciliation_v1",
+  "relative_difference_percent": {
+    "GaussianMixture100": 66.12318837331465,
+    "OriginalTSPLIB70": 60.91496565990036,
+    "TSPLIB100": 1.8057756041553924e-14,
+    "Uniform100": 0.0
+  },
+  "static_first": true,
+  "task": "BLADE-NCO M0 External Benchmark Protocol Reconciliation Audit",
+  "workspace": "D:\\NCO\\BLADE-NCO-mainline"
+}

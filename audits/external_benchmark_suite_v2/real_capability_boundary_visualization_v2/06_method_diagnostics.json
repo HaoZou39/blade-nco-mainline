@@ -1,0 +1,30 @@
+{
+  "color_normalization": {
+    "kind": "TwoSlopeNorm",
+    "vcenter_tau": 1.6759665429999124,
+    "vmax_pooled_p95": 8.36259997540924,
+    "vmin_pooled_p5": 0.0
+  },
+  "feature_order": [
+    "local",
+    "global",
+    "topology",
+    "scale"
+  ],
+  "field_k": 75,
+  "field_model": "distance-weighted kNN regression",
+  "hard_region_outline": "Gaussian-smoothed 2D histogram; 70% density mass contour",
+  "source_sha256": {
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/01_instance_capability_coordinates.csv": "1ed3d57a9a9253a11a6bd0f8c77647611f8a9ff19fd6fe5bf1dca98662408634",
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/03_real_hard_region_membership.csv": "8c311ac2c6b7358a12985745aa97cf675cc668a7cfa4d5e478a9897ab76fddc0",
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/05_hard_region_summary.csv": "defc310f1f971361b21a4223e968e96f2931daf9e68f9fe9c1053679dc459e9f",
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/06_consistency_checks.csv": "737c43035c497dccd14c5db588e97085ffe669bfea4150d5e84be0ef977587ac",
+    "audits/external_benchmark_suite_v2/real_capability_boundary_visualization/09_m5_instance_capability.csv": "e3095b56bc43001a9239e580fecc3301b94c1dda85e64acf7b7ad8ccdda389f3"
+  },
+  "subset_quota": {
+    "GM100": 70,
+    "Original70": 70,
+    "TSPLIB100": 70,
+    "Uniform100": 70
+  }
+}

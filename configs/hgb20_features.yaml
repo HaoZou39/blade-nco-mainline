@@ -1,0 +1,24 @@
+name: HGB20
+status: FROZEN_CONTROL
+features:
+  - spn_sum_of_lowest_edge_values
+  - spn_distance_varcoeff
+  - spn_mst_depth_mean
+  - spn_mst_depth_median
+  - spn_mst_dists_median
+  - spn_nearest_neighbour_mean
+  - spn_mst_dists_sum
+  - spn_mst_dists_span
+  - spn_mst_dists_mean
+  - spn_hull_dists_max
+  - spn_mst_dists_skew
+  - spn_nearest_neighbour_median
+  - spn_mst_dists_sd
+  - spn_mst_depth_skew
+  - spn_distance_min
+  - spn_angles_varcoeff
+  - spn_hull_dists_mean
+  - spn_nng_3_strong_components_varcoeff
+  - spn_centroid_skew
+  - spn_mode_mean
+acquisition_driver: false

@@ -1,0 +1,184 @@
+{
+  "checks": [
+    {
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline",
+      "name": "mainline workspace exact",
+      "number": 1,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no symlinks",
+      "number": 2,
+      "passed": true
+    },
+    {
+      "evidence": [],
+      "name": "no runtime old-project reference",
+      "number": 3,
+      "passed": true
+    },
+    {
+      "evidence": 114,
+      "name": "all frozen asset hashes valid",
+      "number": 4,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "M0 hash valid",
+      "number": 5,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "Uniform10k roots exact",
+      "number": 6,
+      "passed": true
+    },
+    {
+      "evidence": "verified by asset validator",
+      "name": "Uniform anchor exact",
+      "number": 7,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "QD4 exact",
+      "number": 8,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "normalization exact",
+      "number": 9,
+      "passed": true
+    },
+    {
+      "evidence": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+      "name": "K1000 centroid hash exact",
+      "number": 10,
+      "passed": true
+    },
+    {
+      "evidence": 11,
+      "name": "FOGA11 exact",
+      "number": 11,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "canonical repair exact",
+      "number": 12,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "GP4 exact",
+      "number": 13,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "HGB controls exact",
+      "number": 14,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "256E BQ training exact",
+      "number": 15,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "external evaluator exact",
+      "number": 16,
+      "passed": true
+    },
+    {
+      "evidence": {
+        "GaussianMixture100": 10000,
+        "LEHD_TSP1000": 128,
+        "LEHD_TSP200": 128,
+        "LEHD_TSP500": 128,
+        "OriginalTSPLIB70": 70,
+        "TSPLIB100": 10000,
+        "Uniform100": 10000,
+        "asset_count": 114
+      },
+      "name": "seven benchmark assets resolve",
+      "number": 17,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "cycle numbering C00-C19 exact",
+      "number": 18,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "final model M20",
+      "number": 19,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "no scientific early stopping",
+      "number": 20,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "reporting schema complete",
+      "number": 21,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "timing schema complete",
+      "number": 22,
+      "passed": true
+    },
+    {
+      "evidence": 0,
+      "name": "resume/idempotence tests pass",
+      "number": 23,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "atomic stage handling passes",
+      "number": 24,
+      "passed": true
+    },
+    {
+      "evidence": "",
+      "name": "crash-checkpoint semantics correct",
+      "number": 25,
+      "passed": true
+    },
+    {
+      "evidence": "independent selection lookup only",
+      "name": "development labels excluded",
+      "number": 26,
+      "passed": true
+    },
+    {
+      "evidence": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1",
+      "name": "formal run target absent",
+      "number": 27,
+      "passed": true
+    },
+    {
+      "evidence": 0,
+      "name": "all unit/integration tests pass",
+      "number": 28,
+      "passed": true
+    }
+  ],
+  "config_sha256": "738d59695041057d091d5772d41108e8aab3c2358997a7c1019afcb4e1e81d89",
+  "count": 28,
+  "status": "PASS"
+}

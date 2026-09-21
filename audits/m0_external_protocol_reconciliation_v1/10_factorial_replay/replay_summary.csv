@@ -1,0 +1,7 @@
+benchmark,replay,mean_gap,source
+GaussianMixture100,R0_CURRENT_ALL,10.114118980811371,current cached output
+GaussianMixture100,R6_CURRENT_PLUS_CORRECT_ID_ORACLE_BINDING,6.08833559561799,same cached predicted costs; no inference
+GaussianMixture100,R1_HISTORICAL_ALL,6.088324622136895,historical per-instance cache
+OriginalTSPLIB70,R0_CURRENT_ALL_PER_AXIS_PREPROCESS,8.650173126554023,current cached output
+OriginalTSPLIB70,R3_CURRENT_PLUS_HISTORICAL_ASPECT_PREPROCESS,5.375617545006024,"historical cache; D,K,C,O,G same/effectively same"
+OriginalTSPLIB70,R1_HISTORICAL_ALL,5.375617545006024,historical per-instance cache

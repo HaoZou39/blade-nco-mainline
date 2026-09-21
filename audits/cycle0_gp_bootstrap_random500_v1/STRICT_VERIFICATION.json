@@ -1,0 +1,217 @@
+{
+  "all_seed_predictions_valid": true,
+  "arm_integrity": {
+    "o0_n": 109785,
+    "o0_unique_hashes": 109785,
+    "old_exact": true,
+    "old_membership_sha256": "bc811436a9ba9cbfec92e0b6adcec870d18993ce32500ae5d8397e361c04c755",
+    "old_n": 435,
+    "old_niches": 435,
+    "random_algorithm": "instance_hash ascending + default_rng(2026).permutation[:500]",
+    "random_draw_count": 1,
+    "random_membership_sha256": "06f97ca0a3520e653f22c30881077aa1d6e472bec0fe9e0bb70a53479b133875",
+    "random_n": 500,
+    "random_seed": 2026,
+    "random_unique": 500,
+    "reached_niches": 435,
+    "stable_pool_sha256": "5fcd94b92355575621e782e1f9840540f2e27390aa84674e556f68d6fff8b3cc"
+  },
+  "catastrophic_failure": false,
+  "checks": [
+    {
+      "check": "M0 is unchanged",
+      "id": 1,
+      "passed": true
+    },
+    {
+      "check": "O0 coordinate hashes are unchanged",
+      "id": 2,
+      "passed": true
+    },
+    {
+      "check": "O0 count remains 109785",
+      "id": 3,
+      "passed": true
+    },
+    {
+      "check": "QD map and centroids unchanged",
+      "id": 4,
+      "passed": true
+    },
+    {
+      "check": "Old-Centroid435 reconstructs exactly",
+      "id": 5,
+      "passed": true
+    },
+    {
+      "check": "Old count is 435",
+      "id": 6,
+      "passed": true
+    },
+    {
+      "check": "Random count is 500",
+      "id": 7,
+      "passed": true
+    },
+    {
+      "check": "Random has 500 unique hashes",
+      "id": 8,
+      "passed": true
+    },
+    {
+      "check": "Random generated once with seed 2026",
+      "id": 9,
+      "passed": true
+    },
+    {
+      "check": "No reroll or subset search",
+      "id": 10,
+      "passed": true
+    },
+    {
+      "check": "Same GP4 implementation",
+      "id": 11,
+      "passed": true
+    },
+    {
+      "check": "Same five GP seeds",
+      "id": 12,
+      "passed": true
+    },
+    {
+      "check": "Same independent P0",
+      "id": 13,
+      "passed": true
+    },
+    {
+      "check": "No calibration evaluation overlap",
+      "id": 14,
+      "passed": true
+    },
+    {
+      "check": "Same M0 for all H0",
+      "id": 15,
+      "passed": true
+    },
+    {
+      "check": "No external benchmark",
+      "id": 16,
+      "passed": true
+    },
+    {
+      "check": "No BQ retraining",
+      "id": 17,
+      "passed": true
+    },
+    {
+      "check": "No formal artifact modified",
+      "id": 18,
+      "passed": true
+    },
+    {
+      "check": "Archive-fit Spearman diagnostic only",
+      "id": 19,
+      "passed": true
+    },
+    {
+      "check": "Only ENR10 noninferiority determines decision",
+      "id": 20,
+      "passed": true
+    }
+  ],
+  "completed_utc": "2026-09-16T07:27:07.384955+00:00",
+  "label_cost": {
+    "backend": {
+      "backend": "concorde_cli",
+      "binary": "D:\\NCO\\BLADE-NCO-mainline\\third_party\\concorde\\concorde",
+      "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+      "invoke_mode": "wsl",
+      "wsl_distro": "Ubuntu"
+    },
+    "cache_hits": 49,
+    "cache_source_counts": {
+      "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\expert_tours.parquet": 16,
+      "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\07_oracle\\selected\\ledger.parquet": 33
+    },
+    "concorde_wall_seconds": 30.61407660000259,
+    "failures": 0,
+    "hardness_cache_reused": false,
+    "hardness_refreshes": 500,
+    "hardness_wall_seconds": 190.21127709999564,
+    "historical_h0_max_abs_difference": 3.0825836490333547e-07,
+    "historical_h0_overlap_n": 16,
+    "new_concorde_calls": 451
+  },
+  "leakage": {
+    "excluded_old_overlap_n": 0,
+    "excluded_random_overlap_n": 5,
+    "excluded_union_n": 5,
+    "final_shared_p0_membership_sha256": "723bd10f2dae20a3ae1946ece4b5bc9eb47ce72736cf0aa8a7bc961242d32b86",
+    "final_shared_p0_n": 1262,
+    "raw_p0_membership_sha256": "5ac913183f59f30d39f4f36b21bea1fc62ccc06b2d7fce4a98c75af87a5003a4",
+    "raw_p0_n": 1267,
+    "remaining_overlap_n": 0,
+    "same_panel_for_both_arms": true
+  },
+  "optional_full_o0_replay": {
+    "OLD_CENTROID435_exact_labeled_top10k_n": 2712,
+    "OLD_CENTROID435_prediction_mean": 0.04071887538817633,
+    "OLD_CENTROID435_prediction_std": 0.013298239602149372,
+    "OLD_CENTROID435_realized_mean_H0_cached_subset": 0.07301752725213997,
+    "OLD_CENTROID435_top10k_niche_coverage": 363,
+    "RANDOM500_exact_labeled_top10k_n": 2176,
+    "RANDOM500_prediction_mean": 0.04382953156439642,
+    "RANDOM500_prediction_std": 0.017737322857242964,
+    "RANDOM500_realized_mean_H0_cached_subset": 0.07851318273952301,
+    "RANDOM500_top10k_niche_coverage": 360,
+    "new_concorde_calls_for_optional_replay": 0,
+    "top10k_jaccard": 0.5784073869465709,
+    "top10k_overlap_n": 7329
+  },
+  "primary": {
+    "Delta_ENR10": -0.07004089165315341,
+    "ENR10_OLD_CENTROID435": 1.1725747125046837,
+    "ENR10_RANDOM500": 1.1025338208515303,
+    "R_ENR": 0.9402674380521628,
+    "gate_pass": true,
+    "threshold": 0.9
+  },
+  "resume_flag": true,
+  "source_hashes_after": {
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\normalization\\normalization_A_P1P99.json": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\expert_tours.parquet": "29940cdb8a08363838f8d1ad894c5585b64ae515d6af2956b0d41028618f7ff3",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\P0_MEMBERSHIP_AND_FEATURES.csv": "57131b0083ab6691793373804b875ff9c56165d4c6582663b11284fc2d125cdd",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\run_audit.py": "e424ff30581effb50d9dda73df6ba4dc623aa12bb91823095cb860cd15874f5f",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\STAGE_DONE.json": "0156be302fd374e85b6136f1bdf465447b3dff7b0906068638b5e85de0856608",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\offspring_coordinates.npz": "d4a2c80ff8be2116c6449da2601e3ab8ad226c5457f42b9a4e10982e3a2c36cb",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\audit\\gp_modeling.py": "001d2b241f8db20c585b09714cdfe2599b46c273f4c9f53e2b9d83b7d36dbebc",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\final_run\\science.py": "a3a03fa330417805dee5f1ffe68aa15ad4c9320e5915e556c471fbd3413d235e"
+  },
+  "source_hashes_before": {
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\cvt\\centroids.csv": "0b1cccaded7c81f8e4466b05cb31b81c82e27d8a113d0cc7569a4b9bf6cef9fd",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\qd\\normalization\\normalization_A_P1P99.json": "874027c8849c4a370eaa949b3a3ebdf15546770b23bd0bf73dc5661b3f323707",
+    "D:\\NCO\\BLADE-NCO-mainline\\assets\\solver\\M0\\tsp.best": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\exact_hardness.parquet": "ab05afe718d766e41a3c7716bdb9db2408807e697079630c0d91a97002c62cb6",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\03_oracle_labels\\expert_tours.parquet": "29940cdb8a08363838f8d1ad894c5585b64ae515d6af2956b0d41028618f7ff3",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\02_offspring_manifest.parquet": "e6d2f0e3863705035708de3e25d8857bc2ccf7887b3bd04dbfd23ef2cdfa7715",
+    "D:\\NCO\\BLADE-NCO-mainline\\audits\\uniform_rooted_qd_bootstrap_v1\\05_offspring_qd_assignments.parquet": "74116ad79d38a7b5257373380606170b995da90d67af72ea4c09626388b2cc61",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\P0_MEMBERSHIP_AND_FEATURES.csv": "57131b0083ab6691793373804b875ff9c56165d4c6582663b11284fc2d125cdd",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\audits\\gp4_calibration_sample_size_v1\\run_audit.py": "e424ff30581effb50d9dda73df6ba4dc623aa12bb91823095cb860cd15874f5f",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\STAGE_DONE.json": "0156be302fd374e85b6136f1bdf465447b3dff7b0906068638b5e85de0856608",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_final_20cycle_seed2026_v1\\cycles\\C00\\04_mutation\\offspring_coordinates.npz": "d4a2c80ff8be2116c6449da2601e3ab8ad226c5457f42b9a4e10982e3a2c36cb",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\audit\\gp_modeling.py": "001d2b241f8db20c585b09714cdfe2599b46c273f4c9f53e2b9d83b7d36dbebc",
+    "D:\\NCO\\BLADE-NCO-mainline\\src\\final_run\\science.py": "a3a03fa330417805dee5f1ffe68aa15ad4c9320e5915e556c471fbd3413d235e"
+  },
+  "status": "PASS",
+  "task": "CYCLE-0 GP BOOTSTRAP AUDIT - OLD CENTROID435 VS RANDOM500",
+  "verdict": "C0_RANDOM500_BOOTSTRAP_SUPPORTED"
+}

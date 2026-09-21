@@ -1,0 +1,10 @@
+{
+  "arm": "OLD_CENTROID435",
+  "completed_utc": "2026-09-16T07:24:19.944579+00:00",
+  "formula_sha256": "be01fc1181a59fb48908defec2405ef359500163b7bac3007d3655c6d4351c2c",
+  "gp_config_sha256": "8b2221d89ce5d47c510c9b938b8e389e4635996831b9e573ccc0d393500988f6",
+  "m0_sha256": "6826d7a71b30d882e4673a26ced162b7391157795931efe230f4d019292bba15",
+  "membership_sha256": "bc811436a9ba9cbfec92e0b6adcec870d18993ce32500ae5d8397e361c04c755",
+  "seed": 2028,
+  "training_wall_seconds": 27.40587299998151
+}

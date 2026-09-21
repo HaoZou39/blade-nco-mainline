@@ -1,0 +1,36 @@
+{
+  "files": {
+    "cal_d1_manifest.json": {
+      "bytes": 69549,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d1_manifest.json",
+      "sha256": "05c37f342418505fe0e13365239112fb9608a98ff334c00246d75f23e268cffd"
+    },
+    "cal_d2_manifest.json": {
+      "bytes": 131040,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d2_manifest.json",
+      "sha256": "549c016a04c2db89c5ab4b4ed8f52e770af2ce0471126ecc3b7d14ae3c418055"
+    },
+    "cal_d5_manifest.json": {
+      "bytes": 289449,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cal_d5_manifest.json",
+      "sha256": "1389dda2031309b93a6a18b7c684bf79ac964dda1b2d512f7b5eb3e8a8f88cef"
+    },
+    "cycle0_gp_dev.parquet": {
+      "bytes": 394879,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev.parquet",
+      "sha256": "91482ab7ec8f8d3c5c92a7d2606309f610f6f08cfea45b66acaa0a1a147076af"
+    },
+    "cycle0_gp_dev_manifest.json": {
+      "bytes": 639,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev_manifest.json",
+      "sha256": "e6d3fdc3b52b31fca18f8de66d556e79e78680bec2cb020d5a281fe5659b6bbd"
+    },
+    "structural_probe_order.parquet": {
+      "bytes": 14490669,
+      "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\structural_probe_order.parquet",
+      "sha256": "df682846b875bd998ebe23137575b59c6212eebc80af7e022e8ede176ae92c53"
+    }
+  },
+  "oracle_labels_observed": false,
+  "sealed": true
+}

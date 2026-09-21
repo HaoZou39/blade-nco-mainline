@@ -1,0 +1,28 @@
+﻿{
+  "all_concorde_verified": true,
+  "coordinates_sha256": "2f6b0d2a1b8e775b291f401b565e2f9a0cc576f622775c995e37db4c11b82ab2",
+  "fixed_for_all_future_cycles": true,
+  "hard_anchor_ratio_future": "1:1",
+  "labels_sha256": "0a658e40c3ae10df65bdf1f397230c7522c508571fa9b9fbd07c7bc3e8753245",
+  "oracle_summary": {
+    "all_verified": true,
+    "backend": {
+      "backend": "concorde_cli",
+      "binary": "historical_concorde_binary_not_a_runtime_dependency",
+      "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+      "invoke_mode": "wsl",
+      "wsl_distro": "Ubuntu"
+    },
+    "cumulative_verified_unique_executions": 10000,
+    "ledger_sha256": "0b25358d313f609cd886aa04ba96b662881008599d0c4593093ca53cba482a30",
+    "max_runtime_sec": 19.036125600003288,
+    "mean_runtime_sec": 0.4527411181399919,
+    "new_executions_this_call": 0,
+    "reused_rows": 10000,
+    "row_count": 10000,
+    "status": "CONCORDE_LABELING_COMPLETE"
+  },
+  "row_count": 10000,
+  "status": "FIXED_UNIFORM_ANCHOR_10K_READY"
+}
+

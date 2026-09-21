@@ -1,0 +1,7 @@
+﻿{
+    "script":  "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_gp_bootstrap_random500_v1\\run_audit.py",
+    "pid":  27796,
+    "python":  "D:\\conda_envs\\bq-nco\\python.exe",
+    "resume":  true,
+    "started":  "2026-09-16T15:19:06.3343708+08:00"
+}

@@ -1,0 +1,14 @@
+{
+  "frozen_coordinate_table_sha256": "1ed3d57a9a9253a11a6bd0f8c77647611f8a9ff19fd6fe5bf1dca98662408634",
+  "frozen_subset_sha256": "55af4478986eaa3c594709fc6619ca4f0a4c1671e0d7aa79d1b9848a78ffefc1",
+  "primary_consistency_checks_sha256": "737c43035c497dccd14c5db588e97085ffe669bfea4150d5e84be0ef977587ac",
+  "primary_transition_summary_sha256": "594191c33d519c291c8ab2c56d6b7a1ff2cb6328f27639cee42a5ad3d1cc16e9",
+  "smoothing_k": 75,
+  "source_sha256": {
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M5/GaussianMixture100.parquet": "e2228a3e3647a6c9491f74ec7c360d4a76fb9879040187e5dd93e96b24809c0e",
+    "audits/external_benchmark_suite_v2/blade_trajectory/work/M5/OriginalTSPLIB70.parquet": "0859515605fb134a69ee4d4771ba7296b38e308cb23c8754d852e49d1e76a455",
+    "runs/blade_final_20cycle_seed2026_v1/cycles/C04/11_external_eval/TSPLIB100.parquet": "99c46d88a880af26ce4ddcd42cc61c160a7d4e67848b72e649f2853c1c76839a",
+    "runs/blade_final_20cycle_seed2026_v1/cycles/C04/11_external_eval/Uniform100.parquet": "578c424fc5591ce29dd3563084aa40429ef2b59c9e62589b89fb650819ec6ccc"
+  },
+  "support_radius": 0.03547921736543547
+}

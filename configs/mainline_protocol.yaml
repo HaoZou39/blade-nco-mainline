@@ -1,0 +1,41 @@
+qd:
+  features: QD4
+  normalization: deep_p1_p99_clip
+  k: 1000
+  archive:
+    type: sparse_cvt_map_elites
+    max_elites_per_niche: 1
+    force_full_occupancy: false
+active_population:
+  size: 10000
+  roles:
+    - bq_hard_training
+    - next_cycle_parent_pool
+mutation:
+  operators: FOGA11
+  applications_per_operator_per_parent: 1
+  nominal_offspring_per_cycle: 110000
+  budget_derivation: 10000_active_parents_x_11_operators
+surrogate:
+  primary: GP4
+  controls:
+    - HGB4
+    - HGB20
+initialization:
+  roots:
+    distribution: frozen_uniform
+    count: 10000
+    source: canonical_saved_depth_0_roots_and_hash_manifest
+  prediverse_training_set:
+    enabled: false
+  prefilled_qd_archive:
+    enabled: false
+  gp0_calibration:
+    status: FROZEN
+    probes: one_centroid_nearest_per_reached_niche
+    acquisition_eligibility: offspring_only
+    acquisition_fill: global_gp_topk
+training:
+  hard_unique_budget: 10000
+  uniform_anchor_budget: 10000
+  epochs: 256

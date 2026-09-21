@@ -1,0 +1,10 @@
+{
+  "backend": "concorde_cli",
+  "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+  "canonical_input": "EXPLICIT/FULL_MATRIX/rint(Euclidean*1e6)",
+  "integer_scale": 1000000,
+  "invoke_mode": "wsl",
+  "metric": "EXPLICIT_EUCLIDEAN_RINT_SCALE_1000000",
+  "timeout_seconds": 3600.0,
+  "wsl_distro": "Ubuntu"
+}

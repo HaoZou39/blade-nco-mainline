@@ -1,0 +1,8 @@
+{
+  "arm": "E4_5_UNION_FULL",
+  "cycle": "C05",
+  "latest_checkpoint": "D:\\NCO\\BLADE-NCO-mainline\\runs\\blade_v2_corrected_union_sanity_seed2026_v1\\C04\\09_bq_training\\M5_E256.tsp.best",
+  "latest_error": "ValueError('generated checkpoints must be written under runs/')",
+  "phase": "BQ_E256",
+  "pid": 45952,
+  "recovery_state": "M

@@ -1,0 +1,17 @@
+{
+  "artifact": {
+    "bytes": 394879,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\cycle0_initialization_validation_v1\\02_gp0_calibration_design\\cycle0_gp_dev.parquet",
+    "sha256": "91482ab7ec8f8d3c5c92a7d2606309f610f6f08cfea45b66acaa0a1a147076af"
+  },
+  "development_only": true,
+  "difficulty_blind": true,
+  "excludes_CAL_D5": true,
+  "frozen_before_oracle_labeling": true,
+  "name": "CYCLE0_GP_DEV",
+  "occupied_niches_represented": 301,
+  "ordered_membership_sha256": "f97d1820b974c09e7f023fad606ca6732f27c9275bc075a31bbd6144f0ed3877",
+  "shortage_niches": 56,
+  "target_per_niche": 10,
+  "total_n": 2666
+}

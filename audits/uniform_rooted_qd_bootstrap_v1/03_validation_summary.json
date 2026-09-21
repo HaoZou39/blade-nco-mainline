@@ -1,0 +1,11 @@
+{
+  "children_duplicating_roots": 4,
+  "children_with_repair": 38093,
+  "duplicate_children": 0,
+  "invalid_children": 215,
+  "nominal_children": 110000,
+  "raw_invalid_children": 38093,
+  "unexpected_implementation_errors": 0,
+  "valid_children": 109785,
+  "valid_unique_children": 109785
+}

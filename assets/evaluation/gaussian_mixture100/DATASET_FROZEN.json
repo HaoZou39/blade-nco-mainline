@@ -1,0 +1,9 @@
+{
+  "dataset_id": "gaussian_cluster100_v1",
+  "frozen": true,
+  "instance_count": 10000,
+  "dimension": 100,
+  "training_allowed": false,
+  "coordinate_sha256": "c4d751a794263a5425794612787681b390e0fdb24e45e9f933b010c3d0624a02"
+}
+

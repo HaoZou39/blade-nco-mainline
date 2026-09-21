@@ -1,0 +1,7 @@
+{
+  "UNIFORM_VS_ORIGINAL70_VERDICT": "CLEAR_STRUCTURAL_DIFFERENCE",
+  "ORIGINAL70_HETEROGENEITY": "HIGH",
+  "diff_flags": "[True, True, True, True]",
+  "het_flags": "[True, True, True]",
+  "energy_distance": "1.0536"
+}

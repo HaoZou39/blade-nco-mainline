@@ -1,0 +1,14 @@
+lr: 7.5e-5
+epochs: 256
+hard_unique_budget: 10000
+uniform_anchor_budget: 10000
+ratio: "1:1"
+optimizer: Adam
+fresh_optimizer_each_cycle: true
+scheduler: none
+weight_decay: 0
+grad_clip: none
+amp: false
+early_stopping: false
+formal_checkpoint_epoch: 256
+
