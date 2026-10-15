@@ -1,0 +1,2 @@
+configuration,cycles,unique_hard_per_cycle,uniform_instances,occurrences_per_epoch,epochs_per_cycle,optimizer_steps_per_cycle,total_optimizer_steps,BQ_GPU_training_s,end_to_end_wall_s,selected_slots,globally_unique_selected,reused_selected_slots
+HardOnly_X1,10,10000,0,10000,256,10240,102400,25472.514024000615,90330.0954760001,100000,88767,11233

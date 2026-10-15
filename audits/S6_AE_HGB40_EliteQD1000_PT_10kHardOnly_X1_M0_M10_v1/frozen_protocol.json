@@ -1,0 +1,145 @@
+{
+  "QD": {
+    "K": 1000,
+    "adaptive_quota": false,
+    "centroid_distance": "diagnostic_only",
+    "descriptors": [
+      "spn_sum_of_lowest_edge_values",
+      "spn_distance_varcoeff",
+      "spn_mst_depth_mean",
+      "spn_mst_dists_median"
+    ],
+    "lambda": null,
+    "normalization": "frozen_P1P99_clip",
+    "representative_rule": "maximum_current_HGB_prediction_within_occupied_niche",
+    "representatives_per_occupied_niche": 1
+  },
+  "automatic_S5B_launch": false,
+  "automatic_followup": false,
+  "automatic_training_only_2x2_launch": false,
+  "candidate": {
+    "C00": "exact_corrected_unique_U0_union_O0",
+    "later": "unique_previous_P_union_current_O"
+  },
+  "created_utc": "2026-10-14T02:47:31.248287+00:00",
+  "cycles": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "evaluation": {
+    "Atlas_B": false,
+    "GAP7_secondary": true,
+    "GAP8_primary": true,
+    "datasets": [
+      "Uniform100",
+      "GaussianMixture100",
+      "TSPLIB100",
+      "EvoReal_S1_100",
+      "EvoReal_S2_100",
+      "EvoReal_S3_100",
+      "GaussianMixture500",
+      "OriginalTSPLIB70"
+    ],
+    "passive_only": true
+  },
+  "extended_endpoint": "M10_GAP8",
+  "final_model": "M10",
+  "matched_control": "D:\\NCO\\BLADE-NCO-mainline\\runs\\S5_B_HGB40_quality_QD_parent_and_training_10cycle_M0_v1",
+  "mutation": {
+    "family": "FOGA11",
+    "nominal_offspring": 110000,
+    "operators": [
+      "uniform_mutation",
+      "normal_mutation",
+      "rotation_mutation",
+      "implosion_mutation",
+      "explosion_mutation",
+      "cluster_mutation",
+      "expansion_mutation",
+      "compression_mutation",
+      "axis_projection_mutation",
+      "linear_projection_mutation",
+      "grid_mutation"
+    ]
+  },
+  "primary_external_endpoint": "M5_GAP8",
+  "protocol_sha256": "3f60a0442200b24eaaf0231fed3d4a0a3fb16c8fda6809b347ab648118fd4679",
+  "run_id": "S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1",
+  "schedule_override": {
+    "effective_stop": "M10",
+    "no_M11": true,
+    "only_protocol_change_beyond_x1": "extend_C00_C04_to_C00_C09",
+    "original_stop": "M5",
+    "source": "explicit_user_instruction_2026-10-14"
+  },
+  "schema_version": "S6_AE_HGB40_ELITEQD1000_PT_10K_HARD_ONLY_X1_M0_M10_V1",
+  "secondary_read_only_context": [
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\S4_C_HGB40_union_only_10cycle_M0_v1",
+    "D:\\NCO\\BLADE-NCO-mainline\\runs\\S4_B_HGB40_union_QD_10cycle_M0_v1"
+  ],
+  "selection": {
+    "P": "identical_to_T",
+    "T": "one_within_niche_HGB_elite_plus_global_HGB_fill",
+    "budget": 10000,
+    "global_fill_tie_break": "instance_hash_ascending",
+    "training_acquisition_QD_quota": 1000,
+    "within_niche_tie_break": "instance_hash_ascending"
+  },
+  "source_fingerprint_digest": "96bb32a38891d65cd3b5d782089a4f619a0194ce9cc5f330a2b4f0bca314b975",
+  "start_model": "M0",
+  "surrogate": {
+    "aggregate": "median",
+    "calibration_target_n": 10000,
+    "early_stopping": false,
+    "estimator": "HistGradientBoostingRegressor",
+    "features": "F40",
+    "l2_regularization": 0.0001,
+    "learning_rate": 0.05,
+    "max_depth": null,
+    "max_iter": 500,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "target": "log1p_LBQ"
+  },
+  "training": {
+    "AMP": false,
+    "additional_replay_n": 0,
+    "checkpoint": "E256",
+    "diagnostic_checkpoints": [
+      0,
+      64,
+      128,
+      192,
+      256
+    ],
+    "effective_batch_size": 256,
+    "epochs": 256,
+    "gradient_clipping": null,
+    "hard_n": 10000,
+    "hard_occurrences_per_epoch": 10000,
+    "learning_rate": 3.75e-05,
+    "optimizer": "fresh_Adam",
+    "optimizer_steps_per_cycle": 10240,
+    "optimizer_steps_per_epoch": 40,
+    "sampling": "one_independent_permutation_of_same_10k_hard_per_epoch",
+    "scheduler": null,
+    "seed": 2026,
+    "uniform_anchor_n": 0,
+    "weight_decay": 0
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "M10_checkpoint": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1\\cycles\\C09\\09_bq_training\\M10_E256.tsp.best",
+  "M10_sha256": "fe5bd8586a5637196201d1ed9ae786376aeecd97bbd52f12230fd3ca980707df",
+  "checkpoint_weights_changed": false,
+  "cycle_evidence": [
+    {
+      "P_equals_T": true,
+      "Q_n": 435,
+      "cycle": "C00",
+      "cycle_complete": true,
+      "occupied_niches": 435,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 831,
+      "cycle": "C01",
+      "cycle_complete": true,
+      "occupied_niches": 831,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 991,
+      "cycle": "C02",
+      "cycle_complete": true,
+      "occupied_niches": 991,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C03",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C04",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C05",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C06",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C07",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C08",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    },
+    {
+      "P_equals_T": true,
+      "Q_n": 1000,
+      "cycle": "C09",
+      "cycle_complete": true,
+      "occupied_niches": 1000,
+      "one_per_occupied_niche": true,
+      "within_CVT_K1000_cap": true
+    }
+  ],
+  "evaluation_results_changed": false,
+  "new_check": "21_elite_one_per_occupied_niche_capped_at_1000",
+  "old_STRICT_VERIFICATION_sha256": "f9a8bd1de94407e5e152e005f17280657737a206eed32e05ede0470d8a0f35a4",
+  "old_failed_check": "21_elite_floor_1000",
+  "old_final_flags_sha256": "32fcc76fbb227035716094c7aa5ca6c61ac32c9c0221f7bd162d19c7b4ee8464",
+  "old_final_report_sha256": "5b6b3e2b5b2316ec58d52516a087065d1f10265db784b49abf90c484f4b58f6a",
+  "reason": "strict check used Q_n == 1000 instead of one elite per occupied niche capped at CVT K=1000",
+  "recovery_id": "S6_AE_REPORTING_RECOVERY_001_ELITE_QD_OCCUPIED_NICHE_SEMANTICS",
+  "scope": "REPORTING_ONLY",
+  "selection_membership_changed": false,
+  "timestamp": "2026-10-15T07:07:39.693240+00:00",
+  "training_curves_changed": false
+}

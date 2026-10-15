@@ -1,0 +1,18 @@
+{
+  "Anchor_M5_GAP8": 1.9483377579813739,
+  "DELTA_X1_VS_ANCHOR_M5_GAP7": 0.0196169620009794,
+  "DELTA_X1_VS_ANCHOR_M5_GAP8": 0.02205243526485945,
+  "DELTA_X1_VS_X2_M5_GAP7": 0.009864550913537773,
+  "DELTA_X1_VS_X2_M5_GAP8": 0.005771434267381581,
+  "FINAL_VERDICT": "HARD_ONLY_X1_NEAR_TIE",
+  "X1_M10_GAP8": 1.999115592334324,
+  "X1_M5_GAP8": 1.9703901932462333,
+  "X2_M5_GAP8": 1.9646187589788517,
+  "automatic_followup_launched": false,
+  "globally_unique_selected_hard": 88767,
+  "optimizer_step_reduction_vs_x2_percent": 49.36708860759494,
+  "reporting_recovery": "S6_AE_REPORTING_RECOVERY_001_ELITE_QD_OCCUPIED_NICHE_SEMANTICS",
+  "single_seed": true,
+  "strict": "PASS",
+  "total_elapsed_s": 90330.0954760001
+}
