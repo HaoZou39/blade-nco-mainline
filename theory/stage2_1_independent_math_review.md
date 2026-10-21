@@ -37,9 +37,11 @@ For the operator-specific bridge theorem, this weaker condition is **not suffici
 The original `D_k^gen` and `D_k^acq` mean the true-hard region is represented in the candidate union or selected population. These events may occur with no new valid offspring. The updated `definitions.tex` distinguishes:
 - **New valid hard offspring:** a valid, newly generated phenotype not in previous candidate pools that exceeds current true BQ hardness threshold;
 - **New acquisition:** a true-hard phenotype absent from previous acquisition pools that is selected now;
-- **Fresh hard offspring acquired now:** intersection of these sets with current selected offspring;
+- **Fresh hard offspring acquired now:** selected, valid, currently true-hard offspring excluded from both the prior candidate-pool ledger and current parent population;
 - **Hardness reactivation:** an old phenotype crosses the threshold under a changed BQ checkpoint, without instance novelty;
 - **New QD niche occupancy:** novelty in the fixed structural partition, which can saturate while new within-niche phenotypes continue appearing.
+
+**Stage 2.1 boundary correction (PR #1):** a valid offspring identical to a current parent (including a C00 Uniform root) is not a new phenotype, even if it did not occur in any earlier candidate-pool ledger. Thus `D_k^{new,gen}` and `D_k^{new,gen∩acq}` explicitly subtract `P_k` as well as `V_{k-1}^{gen}`. `D_k^{new,acq}` keeps its separate acquisition-ledger definition; a first acquisition is not necessarily a newly generated phenotype.
 
 The conditional bridge-chain theorem remains a **presence** guarantee. It must not be cited as a new-hard-instance discovery guarantee without adding the appropriate exclusion/certification assumptions.
 
