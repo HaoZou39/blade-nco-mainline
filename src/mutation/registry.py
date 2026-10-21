@@ -91,8 +91,9 @@ def sample_operator_parameters(
     name: str,
     coordinates: np.ndarray,
     rng: np.random.Generator,
+    config: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    return get_operator(name).sample_parameters(coordinates, rng, None)
+    return get_operator(name).sample_parameters(coordinates, rng, config)
 
 
 def apply_operator(
@@ -102,3 +103,22 @@ def apply_operator(
     params: Mapping[str, Any] | None = None,
 ) -> MutationResult:
     return get_operator(name).apply(coordinates, rng, params)
+
+
+def apply_operator_with_config(
+    name: str,
+    coordinates: np.ndarray,
+    rng: np.random.Generator,
+    config: Mapping[str, Any],
+) -> MutationResult:
+    """Sample from a resolved profile, then use the unchanged operator path.
+
+    Repair settings in named production profiles are required to match the
+    canonical Base repair contract.  Sampling is explicit here so the exact
+    materialized parameters remain part of ``MutationResult`` and can be
+    reconstructed from the deterministic invocation seed.
+    """
+
+    spec = get_operator(name)
+    params = spec.sample_parameters(coordinates, rng, config)
+    return spec.apply(coordinates, rng, params)

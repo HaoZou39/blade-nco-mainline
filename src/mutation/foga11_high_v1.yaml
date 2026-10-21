@@ -1,0 +1,137 @@
+schema_version: 1
+profile_name: FOGA11_HIGH_V1
+design_freeze: BLADE_FOGA11_MUTATION_DESIGN_FROZEN_V1
+base_configuration: foga2019_operators.yaml
+sampling_policy:
+  timing: sample_on_each_operator_application
+  learned_by_gp: false
+  updated_by_evolution: false
+  explicit_parameters_are_replayable: true
+repair:
+  min_pair_distance: 1.0e-5
+  max_passes: 20
+  max_repair_fraction: 0.20
+operators:
+  uniform_mutation:
+    affected_fraction:
+      distribution: choice
+      values: [0.03, 0.05, 0.10]
+  normal_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.05
+      high: 0.20
+    sigma:
+      distribution: log_uniform
+      low: 0.005
+      high: 0.05
+  rotation_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.10
+      high: 0.35
+    angle_degrees:
+      distribution: uniform
+      low: -60.0
+      high: 60.0
+  implosion_mutation:
+    radius:
+      distribution: uniform
+      low: 0.20
+      high: 0.45
+    strength:
+      distribution: uniform
+      low: 0.60
+      high: 0.95
+  explosion_mutation:
+    radius:
+      distribution: uniform
+      low: 0.10
+      high: 0.25
+    extra_shift:
+      distribution: exponential
+      scale: 0.03
+      maximum: 0.15
+  cluster_mutation:
+    affected_count:
+      distribution: integer_uniform
+      low: 5
+      high: 25
+    sigma:
+      distribution: log_uniform
+      low: 0.005
+      high: 0.08
+  expansion_mutation:
+    line_angle_degrees:
+      distribution: uniform
+      low: -80.0
+      high: 80.0
+    tube_width:
+      distribution: uniform
+      low: 0.08
+      high: 0.22
+    extra_distance:
+      distribution: exponential
+      scale: 0.03
+      maximum: 0.12
+  compression_mutation:
+    line_angle_degrees:
+      distribution: uniform
+      low: -80.0
+      high: 80.0
+    tube_width:
+      distribution: uniform
+      low: 0.08
+      high: 0.22
+    strength:
+      distribution: uniform
+      low: 0.30
+      high: 0.85
+  axis_projection_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.30
+      high: 0.60
+    axis:
+      distribution: choice
+      values: [x, y]
+    target:
+      distribution: uniform
+      low: 0.10
+      high: 0.90
+    jitter:
+      distribution: uniform
+      low: 0.0005
+      high: 0.01
+  linear_projection_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.10
+      high: 0.40
+    line_angle_degrees:
+      distribution: uniform
+      low: -80.0
+      high: 80.0
+    jitter:
+      distribution: uniform
+      low: 0.002
+      high: 0.03
+  grid_mutation:
+    box_width:
+      distribution: uniform
+      low: 0.25
+      high: 0.50
+    box_height:
+      distribution: uniform
+      low: 0.25
+      high: 0.50
+    minimum_affected_nodes: 4
+    rotation_probability: 0.50
+    angle_degrees:
+      distribution: uniform
+      low: -45.0
+      high: 45.0
+    jitter:
+      distribution: uniform
+      low: 0.001
+      high: 0.02

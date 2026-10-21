@@ -10,6 +10,12 @@ from typing import Any, Mapping
 import numpy as np
 import yaml
 
+
+NAMED_PROFILES = {
+    "FOGA11_BASE_V1": "foga2019_operators.yaml",
+    "FOGA11_HIGH_V1": "foga11_high_v1.yaml",
+}
+
 @lru_cache(maxsize=1)
 def load_operator_config(path: str | Path | None = None) -> dict[str, Any]:
     """Load the single formal FOGA 2019 operator configuration."""
@@ -23,6 +29,20 @@ def load_operator_config(path: str | Path | None = None) -> dict[str, Any]:
         payload = yaml.safe_load(handle)
     if not isinstance(payload, dict) or not isinstance(payload.get("operators"), dict):
         raise ValueError(f"invalid operator configuration: {config_path}")
+    return payload
+
+
+def load_named_profile(name: str) -> dict[str, Any]:
+    """Load a versioned production mutation profile by its frozen name."""
+
+    try:
+        filename = NAMED_PROFILES[name]
+    except KeyError as exc:
+        raise KeyError(f"unknown mutation profile {name!r}; expected one of {sorted(NAMED_PROFILES)}") from exc
+    payload = load_operator_config(Path(__file__).with_name(filename))
+    declared = payload.get("profile_name")
+    if declared is not None and declared != name:
+        raise ValueError(f"mutation profile identity mismatch: requested {name}, file declares {declared}")
     return payload
 
 
