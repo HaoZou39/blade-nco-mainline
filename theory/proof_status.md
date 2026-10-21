@@ -1,4 +1,4 @@
-# Proof status — Stage 1.5
+# Proof status — Stages 1.5–2
 
 Mathematical validity, implementation applicability, and scientific novelty are separate judgments. `PROVED` in the second column never implies `VERIFIED` or `NOVEL` in the next columns.
 
@@ -16,9 +16,25 @@ Mathematical validity, implementation applicability, and scientific novelty are 
 | Structural mutation universally beats HAC-style adaptation | **DISPROVED** | **NOT APPLICABLE as a universal claim** | **NOT CLAIMED** | Exact path example with deterministic gradient progress and rare structural progress. |
 | Perfect current-hardness prediction guarantees preservation of future mutation reachability | **DISPROVED** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Equal-hardness candidates may have different mutation futures; a deterministic tie-break can discard the only bridge even when prediction is perfect. |
 | Generation-level true-hardness discovery implies acquisition-level discovery | **OPEN without a retention condition** | **OPEN** | **NOT CLAIMED** | HGB/QD selection can omit generated true-hard candidates; exact hardness is measured only after `T_k` is frozen. |
+| Rejection-aware extended mutation kernel with no resampling | **PROVED modeling construction** | **VERIFIED** | **NOT CLAIMED** | `∂` carries invalid/rejected mass; each scheduled call occurs once. Accepted duplicates are removed by a deterministic first-occurrence map. |
+| Per-niche floor `Q_k` equals the full selected population `T_k` | **DISPROVED except when no fill is needed** | **FALSE in S6-AE** | **NOT CLAIMED** | `Q_k` has one member per occupied niche; `T_k` adds global HGB fill to reach 10,000. |
+| Fixed-partition occupied-niche persistence, `S(P_k) ⊆ S(P_(k+1))` | **PROVED** | **VERIFIED** | **NOT CLAIMED / STANDARD ARCHIVE CONSEQUENCE** | Parent-inclusive union plus a complete per-niche floor and `P=T` give `S(P_(k+1))=S(C_k)`. |
+| Preservation of individual parent hashes from niche persistence | **DISPROVED as an implication** | **NOT GUARANTEED** | **NOT CLAIMED** | A parent can lose both the within-niche elite test and global-fill rank while another candidate preserves its niche. |
+| Monotone niche occupancy preserves future hard-region reachability | **DISPROVED** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Exact capacity-aware counterexample progressively replaces all bridge representatives while preserving every occupied niche. |
+| Exact elite/global-fill membership criterion | **PROVED** | **VERIFIED** | **NOT CLAIMED** | Direct characterization of the deterministic selector. |
+| Multistep bridge-chain finite-budget bound (Proposition 3) | **PROVED under explicit transition and retention premises** | **PARTIAL/OPEN** | **NOT CLAIMED; STANDARD PROBABILITY ARGUMENT** | Ordered conditional products give generation/acquisition bounds without independence. Schedule and selector match S6-AE; positive kernel and bridge-retention certificates are absent. |
+| Repeated-window expected-cost bound `E[C_tau] ≤ C/p` | **PROVED under regeneration** | **OPEN** | **NOT CLAIMED** | Geometric block survival is valid only if every no-hit block restores the initial bridge condition and the same conditional bounds. |
+| Current-HGB elite quality implies future-reachability value | **DISPROVED without alignment assumptions** | **OPEN for any restricted S6-AE claim** | **NOT CLAIMED** | Perfect current-hardness ranking can prefer structurally dead decoys over lower-current-hardness bridges. |
+| Structural comparison with reset evolution/stationary generation/HAC | **CONDITIONAL framework only** | **OPEN** | **OPEN** | Requires method-specific kernels, restart laws, target events, and charged compute; step counts are not interchangeable. |
 | BLADE-NCO beats a fixed generator or HAC under normalized compute | **OPEN** | **OPEN** | **OPEN** | Requires exact target, ensemble, transition/hazard bounds, and matched compute accounting. |
 | Novelty of a BLADE-specific mechanistic reachability theorem | **NOT A PROOF-STATUS QUESTION** | **NOT APPLICABLE** | **OPEN** | No comprehensive literature-priority search or completed BLADE-specific theorem exists here. |
 
 ## Preserved Stage 1 conclusion
 
-The strongest surviving result remains a conditional hazard certificate. The corrected model does not establish a BLADE advantage, and no theorem statement was weakened after proof work to manufacture one. The universal memory/diversity/structural-mutation claims remain disproved; the BLADE-vs-fixed-generator/HAC claim remains open.
+Stage 2 adds one unconditional implementation-level structural invariant:
+fixed-partition niche occupancy is monotone under the verified union/floor/`P=T`
+mechanism. It does not establish structural-representative or true-hardness
+persistence. The strongest mechanistic result is the conditional multistep
+bridge-chain bound. Its proof is valid, but its BLADE-specific transition and
+retention premises remain open, and no BLADE-vs-fixed-generator/HAC advantage
+or theorem novelty is claimed.

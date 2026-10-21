@@ -17,13 +17,20 @@ measurable.
 The instance space is not made finite by a finite search budget. A realized
 finite-budget run contains finitely many attempted instances, but the support
 of a continuous-coordinate mutation kernel can remain uncountable. For each
-BQ cycle $k$ and FOGA operator $o$, let
-$K_{k,o}(x,A\mid s)$ be a Markov kernel from a parent $x$ and full
-pre-mutation state $s$ into measurable $A\in\mathcal{B}_{\mathcal X}$. It includes
-stochastic operator parameters, repair, and canonicalization. Dependence on
-$k$ or $s$ permits solver-, archive-, or history-dependent behavior. The
-corresponding encoding process need not remain Markov after projection through
-$\phi$.
+BQ cycle $k$ and FOGA operator $o$, adjoin an isolated rejection symbol
+$\partial$ and write
+$\overline{\mathcal X}=\mathcal X\mathbin{\dot\cup}\{\partial\}$ with the
+natural extended sigma-algebra. Let
+\[
+ \widetilde K_{k,o}(x,\cdot\mid s)
+\]
+be a Markov kernel from a parent $x$ and full pre-mutation state $s$ into
+$\overline{\mathcal X}$. An outcome in $\mathcal X$ is the valid repaired
+phenotype of an accepted proposal; $\partial$ records a rejected or invalid
+proposal. The kernel includes stochastic operator parameters, repair, and
+canonicalization. Dependence on $k$ or $s$ permits solver-, archive-, or
+history-dependent behavior. The corresponding encoding process need not
+remain Markov after projection through $\phi$.
 
 Let $d:\mathcal{X}\to\mathbb{R}^4$ be the measurable QD descriptor map,
 including the frozen normalization, and let
@@ -37,20 +44,27 @@ $\mathcal{X}$.
 Use $k$ only for the BQ adaptation cycle. At the start of cycle $k$, the BQ
 solver state $q_k$ and the parent population
 $P_k=(X_{k,1},\ldots,X_{k,m})$ are fixed, with $m=10{,}000$ in S6-AE. Let
+$P_k$ also denote its membership set when used inside $\subseteq$, $\cap$, or
+$\mathsf S(\cdot)$; the ordered tuple is used for scheduling. Let
 $\mathcal{O}$ be the ordered list of the 11 FOGA operators. The within-cycle
 mutation attempts are indexed by $(i,o)\in\{1,\ldots,m\}\times\mathcal{O}$:
 \[
- Z_{k,i,o}\sim K_{k,o}(X_{k,i},\cdot\mid S_k).
+ Z_{k,i,o}\sim \widetilde K_{k,o}(X_{k,i},\cdot\mid S_k).
 \]
 This notation denotes a conditional law, not random parent or operator
 selection. The inspected implementation uses the deterministic Cartesian
 schedule ``parents in stored order, then operators in registry order,'' so
 each parent--operator pair is attempted exactly once. A content-derived seed
 from $(k,\operatorname{hash}(X_{k,i}),o)$ drives the stochastic operator
-parameters and repair. Invalid and duplicate outputs are recorded and are not
-separate resampling opportunities.
+parameters and repair. If $Z_{k,i,o}=\partial$, that scheduled attempt produces
+no child and is not repeated. Conditioning the kernel on acceptance would
+instead describe an implicit-resampling algorithm and is not used here.
 
-Let $O_k$ be the accepted, deduplicated children and let
+Let $\operatorname{FU}$ retain first occurrences in a finite ordered list by
+instance hash. Apply it to the subsequence of
+$(Z_{k,i,o})_{i,o}$ lying in $\mathcal X$ to obtain the accepted,
+child-deduplicated list $O_k$. An accepted duplicate is removed by this
+deterministic map; it is not redrawn. Let
 $C_k=\operatorname{unique}(P_k\cup O_k)$ be the candidate union, retaining
 the first occurrence under the declared order. At C00 S6-AE reuses the
 hash-locked corrected union; later cycles construct this union directly. The
@@ -79,13 +93,67 @@ permutations, or nondeterministic numerical execution. The full process may
 be time-inhomogeneous Markovian in a sufficiently rich
 $(M_k,\theta_k,q_k)$; a niche label or count vector alone need not be.
 
-In verified S6-AE, one maximum-current-HGB candidate is retained from each
-occupied niche, and the remaining slots are filled by global descending HGB
-score, with ascending instance hash breaking ties. The result has 10,000
-unique members and is used both as the BQ acquisition set $T_k$ and next
-parent population $P_{k+1}$: $P_{k+1}=T_k$. ``Elite-QD1000'' refers to at
-most one representative in each of the $K=1000$ measurable niche cells; it
-does not make the instance space finite.
+For a finite candidate set $A$, define its occupied-niche set by
+\[
+ \mathsf S(A)=\{g(x):x\in A\}.
+\]
+For a finite unique candidate union $C$ and score $\widehat h$, let
+$e_j(C)$ be the maximum-score member of $C\cap\mathcal N_j$, using ascending
+instance hash to break ties, and define the per-niche floor
+\[
+ Q(C)=\{e_j(C):j\in\mathsf S(C)\}.
+\]
+This set has $|\mathsf S(C)|$ members, not 10,000 members in general. If the
+population capacity is $m$, $|\mathsf S(C)|\leq m\leq|C|$, let $F_m(C)$ be the
+first $m-|Q(C)|$ candidates of $C\setminus Q(C)$ under global descending
+$\widehat h$ and ascending-hash tie order. The complete selected population is
+\[
+ T_m(C)=Q(C)\cup F_m(C).
+\]
+The notation denotes the membership set; the implementation also records a
+deterministic order.
+
+In verified S6-AE, $m=10{,}000$, $K=1000$, $Q_k=Q(C_k)$, and
+$T_k=T_m(C_k)$. The result has 10,000 unique members and is used both as the
+BQ acquisition set and next parent population: $P_{k+1}=T_k$.
+``Elite-QD1000'' therefore names the occupied-niche floor $Q_k$, not the full
+$T_k$. The score can change at every cycle without changing the fixed
+partition $g$.
+
+For any $x\in C$, the deterministic membership criterion is
+\[
+ x\in T_m(C)\quad\Longleftrightarrow\quad
+ x=e_{g(x)}(C)\ \text{or}\
+ \bigl[x\notin Q(C)\ \text{and}\
+ \operatorname{rank}_{C\setminus Q(C)}(x)\leq m-|Q(C)|\bigr].
+\]
+Consequently, retaining a niche does not imply retaining any particular
+parent hash in that niche.
+
+\subsection{Time-indexed bridge sets}
+For a prospective path starting at cycle $k$, let
+$B_0,\ldots,B_L\in\mathcal B_{\mathcal X}$ be measurable bridge sets, where
+$B_\ell$ is intended to be represented in $P_{k+\ell}$ and
+$B_L\subseteq\HARD_{k+L-1}$ is a final true-hard set generated during cycle
+$k+L-1$. Define
+\[
+ E_\ell=\{P_{k+\ell}\cap B_\ell\neq\varnothing\},\qquad
+ G_\ell=\{C_{k+\ell}\cap B_{\ell+1}\neq\varnothing\}.
+\]
+The sets may occupy different niches and may depend on the declared future
+solver-state sequence. They are structural certificates, not HGB threshold
+sets.
+
+For a population context and horizon, a future-reachability value may be
+written
+\[
+ V_{k,L}(x)=\Prb(\text{a declared future true-hard set is hit within $L$
+ cycles}\mid x\text{ is retained at cycle }k,\ \mathcal F_k).
+\]
+This quantity generally depends on the other population members, future
+selection, and solver states. It is not a function of current true hardness
+$h_k^{\rm BQ}(x)$ or current score $\widehat h_k(x)$ unless an additional
+alignment assumption is proved.
 
 \subsection{Probability space and frozen executions}
 Let $(\Omega,\mathcal{F},\Prb)$ carry exactly the random inputs declared for
@@ -168,7 +236,7 @@ history-based definition does not require Markovianity.
 \toprule
 Supplied component & Representation here & Unspecified for a BLADE-specific proof \\
 \midrule
-FOGA-11 mutation & Eleven kernels $K_{k,o}$ on $(\mathcal{X},\mathcal{B}_{\mathcal X})$ & Exact kernel laws over stochastic parameters and support bounds \\
+FOGA-11 mutation & Eleven extended kernels $\widetilde K_{k,o}$ on $\overline{\mathcal X}$ & Exact kernel laws over stochastic parameters, rejection, and support bounds \\
 Inherited parents; Elite-QD1000 (P=T) & $P_k$, measurable partition $g$, deterministic HGB/QD selection, $P_{k+1}=T_k$ & Distributional survival/reachability bounds under a declared ensemble \\
 HGB40 and BQ co-adaptation & Prediction $\widehat h_k$, true BQ hardness $h_k^{\rm BQ}$, solver state $q_k$ & Scientific threshold, calibration/retention bridge, and matched validation cost \\
 Fixed generator and HAC & Comparator proposal kernels & Exact proposal laws, gradient access, stopping rules, and per-opportunity compute \\

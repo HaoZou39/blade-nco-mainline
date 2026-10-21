@@ -1,4 +1,4 @@
-# Assumption register — Stage 1.5
+# Assumption register — Stages 1.5–2
 
 The three status axes are intentionally separate:
 
@@ -29,6 +29,19 @@ The three status axes are intentionally separate:
 | A19 | The target remains fixed for `W` declared comparison opportunities. | CONDITIONAL | PARTIAL | It is fixed within a cycle while `q_k` is frozen; it need not be fixed across BQ adaptations. |
 | A20 | Per-opportunity hit events are conditionally independent. | PROVED unnecessary for the survival proof | NOT APPLICABLE | History-conditional hazard bounds suffice. |
 | A21 | Population memory universally improves discovery over fixed generators or HAC. | DISPROVED | NOT APPLICABLE | Preserved stale-memory and path/gradient counterexamples reverse the claimed ordering. |
+| A22 | Rejected or invalid operator proposals are represented by an outcome `∂` and are not implicitly resampled. Accepted duplicates are removed deterministically without redraw. | PROVED modeling correction | VERIFIED | `generate_offspring` performs each parent–operator call once, records status/validity/duplicate fields, and appends only accepted first-occurrence children. |
+| A23 | `Q_k` is the one-per-occupied-niche HGB elite floor, whereas `T_k=P_(k+1)` is the complete 10,000-member floor-plus-global-fill selection. | PROVED definitional distinction | VERIFIED | S5-B/S6-AC selection code constructs `q`, then `fill`, concatenates them to `selected_t`, and copies it to `selected_p`. |
+| A24 | Every previous parent remains in the candidate union before selection. | Deterministic premise | VERIFIED | C00 is the frozen corrected unique `U0 ∪ O0`; later cycles concatenate previous parents before offspring and keep first instance-hash occurrences. |
+| A25 | The QD niche map is fixed across the cycles to which niche persistence is applied. | Deterministic premise | VERIFIED | Frozen QD4 feature definitions, normalization, CVT centroids, and assignment policy are reused by S6-AE. |
+| A26 | The complete per-niche floor fits in the population: `|S(C_k)| ≤ K=1000 ≤ m=10000`. | Deterministic premise | VERIFIED | Selection checks `Q_n = occupied_niches ≤ 1000`; population capacity is 10,000. |
+| A27 | Under A23–A26 and `P=T`, occupied niches satisfy `S(P_k) ⊆ S(P_(k+1))`, indeed `S(P_(k+1)) = S(C_k)`. | PROVED | VERIFIED for the inspected S6-AE path | Proposition 2 follows by two set inclusions. It does not preserve hashes or within-niche transition laws. |
+| A28 | Niche persistence implies survival of a future-reachability bridge representative. | DISPROVED | NOT APPLICABLE as a guarantee | The progressive bridge-loss counterexample keeps every niche occupied while HGB elites and global fill remove all future-useful representatives. |
+| A29 | A per-niche HGB elite is a viable bridge whenever any viable bridge is present in that niche. | CONDITIONAL score–reachability alignment premise | OPEN | It holds if the exact tie-broken niche argmax lies in the bridge set, or under a stronger within-niche transition-equivalence/monotone viability condition. Current-hardness accuracy alone does not imply it. |
+| A30 | Each certified bridge step has an operator-specific accepted-transition lower bound `a_l>0` under a declared ensemble. | CONDITIONAL | OPEN | All 11 operators are scheduled, but no history-uniform lower bounds for the extended kernels `K~_(k,o)` have been derived. Rejection mass must remain included. |
+| A31 | A generated bridge survives selection with conditional probability at least `rho_l`, or deterministically by the elite/global-fill membership test. | CONDITIONAL | OPEN | The selector is verified, but no bridge sets with a proved retention certificate have been identified. |
+| A32 | A time-indexed bridge chain ends in the declared true BQ hard region under the entering checkpoint of its final cycle. | CONDITIONAL | OPEN | Requires a scientific threshold and bridge sets tied to the changing solver states, not HGB score thresholds. |
+| A33 | Failed `L`-cycle blocks regenerate the initial bridge condition, permitting a geometric expected-cost bound. | CONDITIONAL | OPEN | S6-AE does not reset or guarantee regeneration after bridge loss. Without this premise only the one-block finite-budget product bound is valid. |
+| A34 | Reset evolution, a stationary generator, and HAC with restarts can be compared using a shared count of steps. | DISPROVED as a methodological shortcut | NOT APPLICABLE | Their proposal, gradient, restart, scoring, and evaluation costs differ. Each needs a full transition and charged-compute model. |
 
 ## Verified S6-AE implementation facts
 
@@ -38,6 +51,9 @@ The three status axes are intentionally separate:
 - HGB40 is a five-seed median HistGradientBoostingRegressor on the frozen ordered F40 list, targeting `log1p(LBQ)` from a current-solver archive calibration set.
 - Selection is deterministic: one maximum-current-HGB candidate per occupied niche, then global descending HGB fill to 10,000, with ascending instance hash as tie-break.
 - `P_(k+1) = T_k` exactly. C00, C05, and C09 artifacts (and strict checks across all cycles) confirm equal membership hashes.
+- The per-niche elite floor `Q_k` and full selected population `T_k` are distinct: `|Q_k|` equals occupied niches (at most 1,000), while `|T_k|=10,000` after global HGB fill.
+- Every occupied candidate niche is represented in `T_k`, so the fixed-partition occupied-niche set is deterministically monotone across S6-AE cycles.
+- Rejected/invalid attempts and accepted duplicates are recorded once and do not trigger replacement draws.
 - Exact current-hardness labeling occurs after `T_k` is frozen. BQ training then produces the next solver checkpoint.
 - BQ training randomness (per-epoch hard-set permutation and suffix sampling) is separate from acquisition and parent/operator scheduling.
 
@@ -48,3 +64,6 @@ The three status axes are intentionally separate:
 - History-uniform generation/acquisition reachability bounds and a bridge from HGB/QD selection to true-hardness retention.
 - A compute-matched fixed-generator or HAC kernel and its hazard bound.
 - Strong or weak lumpability of any proposed niche-only population state.
+- Positive operator-specific bridge-transition bounds and score/global-rank conditions that retain those bridges.
+- Regeneration of an initial bridge after a failed multicycle window.
+- Any implication from monotone niche occupancy to parent-hash or future-reachability persistence.

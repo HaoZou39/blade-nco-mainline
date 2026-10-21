@@ -1,4 +1,142 @@
-\section{Candidate propositions}
+\section{Candidate propositions and Stage 2 results}
+
+\subsection{Stage 2 Proposition: deterministic niche persistence}
+\mstatus{PROVED} \istatus{VERIFIED for S6-AE} \nstatus{NOT CLAIMED}
+
+\begin{proposition}[Occupied-niche persistence under the verified selector]
+\label{prop:niche-persistence}
+Fix a niche map $g$. At cycle $k$, suppose (i) every member of $P_k$ is in
+$C_k$; (ii) $C_k$ is finite and unique by instance hash; (iii)
+$|\mathsf S(C_k)|\leq m\leq|C_k|$; (iv) $T_k=T_m(C_k)$ contains the complete
+per-niche floor $Q(C_k)$; and (v) $P_{k+1}=T_k$. Then
+\[
+ \mathsf S(P_{k+1})=\mathsf S(C_k)\supseteq\mathsf S(P_k).
+\]
+If $C_k=\operatorname{unique}(P_k\cup O_k)$ under the same fixed map, then
+more precisely
+\[
+ \mathsf S(P_{k+1})=
+ \mathsf S(P_k)\cup\mathsf S(O_k).
+\]
+The statement remains true when some or all scheduled mutation attempts are
+rejected, because rejection contributes no child and causes no resampling.
+\end{proposition}
+
+The assumptions match the inspected S6-AE selection path: the corrected C00
+union and later parent--child unions contain all old parents; QD4,
+normalization, centroids, and tie rules are fixed; at most 1,000 niches are
+occupied while $m=10{,}000$; selection contains exactly one current-HGB elite
+from every occupied candidate niche; and $P=T$. The completed run's strict
+checks verify these operational invariants. This proves a niche-set invariant,
+not parent-hash survival, within-niche structural equivalence, or future
+reachability.
+
+\begin{lemma}[Exact membership test for a candidate]
+\label{lem:membership}
+Under the deterministic selector in the formal model, a candidate survives
+if and only if it is its niche's score elite (including the declared hash tie
+rule), or it lies within the first $m-|Q(C)|$ positions of the global order on
+$C\setminus Q(C)$. Hence neither membership in $P_k$ nor occupancy of its
+niche is sufficient for that candidate to survive.
+\end{lemma}
+
+\subsection{Stage 2 theorem candidate: a certified bridge chain}
+\mstatus{PROVED under explicit premises} \istatus{PARTIAL/OPEN}
+\nstatus{NOT CLAIMED}
+
+\begin{proposition}[Finite-budget multistep bridge-chain bound]
+\label{prop:bridge-chain}
+Fix a starting cycle $k$, bridge sets $B_0,\ldots,B_L$, and the complete
+history filtration at the pre-generation and post-generation/pre-selection
+points of each cycle. Suppose $E_0$ holds surely. For
+$\ell=0,\ldots,L-1$, on every admissible history on which the bridge chain has
+survived through $E_\ell$, assume
+\[
+ \Prb(G_\ell\mid\mathcal F_{k+\ell}^{\rm pre})\geq a_\ell.
+\]
+For $\ell=0,\ldots,L-1$, after a generated bridge is present, assume
+\[
+ \Prb(E_{\ell+1}\mid
+        \mathcal F_{k+\ell}^{\rm gen},G_\ell)\geq\rho_\ell,
+\]
+where $E_{\ell+1}$ means that selection retains a member of
+$B_{\ell+1}$; for the final cycle this condition is needed only for
+acquisition-level discovery. Then
+\begin{align*}
+ \Prb(D_{k+L-1}^{\rm gen}\text{ by the certified chain})
+ &\geq \prod_{\ell=0}^{L-1}a_\ell
+          \prod_{\ell=0}^{L-2}\rho_\ell,\\
+ \Prb(D_{k+L-1}^{\rm acq}\text{ by the certified chain})
+ &\geq \prod_{\ell=0}^{L-1}a_\ell\rho_\ell.
+\end{align*}
+No independence is required. If the deterministic cycle costs
+$c_k,\ldots,c_{k+L-1}$ sum to at most $B$, these are finite-budget discovery
+bounds.
+
+A sufficient operator-specific source for $a_\ell$ is a designated
+$o_\ell\in\mathcal O$ such that every admissible retained
+$x\in B_\ell$ satisfies
+\[
+ \widetilde K_{k+\ell,o_\ell}
+ (x,B_{\ell+1}\mid S_{k+\ell})\geq a_\ell.
+\]
+Because all 11 operators are scheduled once for every parent, no random
+parent/operator-selection factor appears. Rejection mass at $\partial$ is
+already included in the kernel and is not conditioned away.
+\end{proposition}
+
+The selection premise is identifiable rather than an unexplained hit-hazard
+advantage. For example, $\rho_\ell=1$ follows if, for every admissible
+candidate union containing $B_{\ell+1}$, either the deterministic score elite
+of a designated occupied niche belongs to $B_{\ell+1}$, or a bridge member
+passes the exact global-fill rank test in Lemma~\ref{lem:membership}. A
+stronger but easier sufficient condition is within-niche transition
+equivalence: every possible score elite in that niche has the same certified
+next-bridge lower bound. None of these score--reachability alignment
+conditions follows from current-hardness accuracy alone.
+
+For S6-AE, the all-operator schedule, rejection handling, capacity inequality,
+selector form, and $P=T$ map are verified. Positive, history-uniform
+$a_\ell$ values, scientifically meaningful bridge sets, and deterministic or
+probabilistic $\rho_\ell$ bounds are OPEN. Changing BQ checkpoints are allowed
+because the bridge sets and kernels are cycle-indexed, but their alignment
+must be proved separately at every step.
+
+\paragraph{Repeated certified windows.}
+\mstatus{PROVED under regeneration} \istatus{OPEN}
+\nstatus{NOT CLAIMED}
+If after every no-hit $L$-cycle block the next block again starts with $E_0$
+and satisfies the same conditional premises, set
+$p=\prod a_\ell\prod\rho_\ell$ for the desired discovery level and let
+$C$ bound a block's charged compute. The standard survival argument gives
+$\Prb(C_\tau\leq rC)\geq1-(1-p)^r$ and
+$\Ex[C_\tau]\leq C/p$. The regeneration premise is not verified for S6-AE;
+without it, the one-block finite-budget bound is the strongest conclusion.
+
+\subsection{Mechanism-level comparator boundary}
+\mstatus{CONDITIONAL FRAMEWORK} \istatus{OPEN} \nstatus{OPEN}
+The bridge theorem permits a fair structural comparison only after each
+method receives its own transition and cost model.
+
+\begin{itemize}
+\item A reset evolution strategy can erase intermediate bridge sets between
+rounds, so a long path certificate may fail, but a reset distribution can
+still have larger direct mass on the true-hard region.
+\item A stationary generator has no inherited structural chain; its discovery
+law is determined by its sampling mass on the cycle-specific hard region and
+its per-sample cost. It can beat BLADE when that mass is sufficiently large.
+\item A HAC-style method with random restarts requires a kernel on its full
+gradient state, a restart law, stopping rules, and charged forward/backward
+costs. One gradient step is not equated with one FOGA attempt or one full
+110,000-attempt generation. The Stage 1 path counterexample shows only that a
+useful gradient can win in a toy model; it is not a HAC superiority theorem.
+\end{itemize}
+
+Proposition~\ref{prop:niche-persistence} is a structural-coverage statement.
+Proposition~\ref{prop:bridge-chain} concerns true-hardness generation or
+acquisition only when its final bridge set lies in the declared true BQ hard
+region and, for acquisition, survives selection. Neither QD occupancy nor HGB
+score alone supplies that implication.
 
 \subsection{Candidate 1: finite-window reachability comparison}
 \mstatus{CONDITIONAL} \istatus{PARTIAL} \nstatus{NOT CLAIMED} The following

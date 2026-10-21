@@ -62,6 +62,50 @@ perfect current-hardness prediction alone need not do so. This is not a claim
 that the observed S6-AE hash tie-break selected such a pair; it is an exact
 obstruction to the proposed bridge.
 
+\subsection{Monotone niche occupancy with progressive bridge loss}
+\label{sec:progressive-bridge-loss}
+\mstatus{PROVED counterexample} to the claim that monotone niche occupancy
+preserves future hard-region reachability. Fix population capacity $m$ and an
+integer $2\leq L\leq\min\{K-1,m-1\}$. Use occupied niches
+$0,1,\ldots,L$. Initially $P_0$ contains a bridge $a_i$ in niche $i$ for
+each $1\leq i\leq L$, together with $m-L$ distinct fillers
+$f_1,\ldots,f_{m-L}$ in niche $0$.
+
+At cycle $i-1$, one designated operator applied to $a_i$ produces a valid
+decoy $d_i$ in the same niche $i$ with probability one. Every other scheduled
+attempt returns the rejection symbol $\partial$; no attempt is resampled. Set
+the current true hardness and a perfect current predictor so that
+\[
+ h(a_i)=\widehat h(a_i)=1,\qquad
+ h(d_i)=\widehat h(d_i)=2,\qquad
+ h(f_j)=\widehat h(f_j)=3,
+\]
+with deterministic distinct hash order where needed. Choose the current hard
+threshold above $3$, so none of these candidates is a current hit.
+
+In niche $i$, $d_i$ replaces $a_i$ as the score elite. Niche $0$ contributes
+one filler to the elite floor, and the remaining $m-L-1$ fillers occupy all
+global-fill slots. Thus $a_i$ fails both tests in
+Lemma~\ref{lem:membership} and is discarded. All as-yet-unprocessed $a_j$
+remain the sole candidates in their niches and therefore survive. Inductively,
+after cycle $t$ the selected population still occupies exactly
+$\{0,1,\ldots,L\}$, while the number of retained bridges has fallen from $L$
+to $L-t$.
+
+After cycle $L-1$, let the future true-hard region be $\{g\}$. A future
+designated operator reaches $g$ surely from any $a_i$ and cannot reach it from
+any $d_i$ or $f_j$. The selected population now contains no $a_i$, so its
+future hit probability is zero, even though its niche occupancy never
+decreased. A population retaining any discarded $a_i$ would hit surely. The
+failure is not surrogate error: the predictor is perfect for current hardness.
+It is a mismatch between current-hardness quality and future-reachability
+value.
+
+This construction includes the complete elite floor and global score fill,
+not merely a one-slot archive. Taking, for example, $m=10{,}000$ and
+$L\leq999$ respects the S6-AE capacity ratio. It is a formal counterexample,
+not evidence that these states or score relations occurred in S6-AE.
+
 \subsection{Niche aggregation can destroy the Markov property}
 \mstatus{DISPROVED} for the assertion that a niche label alone is a Markov
 state. Let full states $x_1,x_2$ both map to niche $A$, while $z,w$ map to

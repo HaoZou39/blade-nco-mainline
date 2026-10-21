@@ -83,6 +83,67 @@ Proposition~\ref{prop:window}. At $n=1$ both policies pay the first opportunity
 cost in the truncated-cost convention, so only the success-probability
 comparison is strict there.
 
+\subsection{Stage 2 proof of deterministic niche persistence}
+\begin{proof}[Proof of Proposition~\ref{prop:niche-persistence}]
+For every $j\in\mathsf S(C_k)$, the intersection
+$C_k\cap\mathcal N_j$ is nonempty, so $e_j(C_k)$ exists. By construction,
+$e_j(C_k)\in Q(C_k)\subseteq T_k=P_{k+1}$. Hence
+$\mathsf S(C_k)\subseteq\mathsf S(P_{k+1})$. Conversely $T_k\subseteq C_k$,
+so $\mathsf S(P_{k+1})\subseteq\mathsf S(C_k)$ and equality holds. Since
+$P_k\subseteq C_k$, monotonicity follows. If $C_k$ is the unique union of
+$P_k$ and $O_k$, applying $g$ gives
+$\mathsf S(C_k)=\mathsf S(P_k)\cup\mathsf S(O_k)$. A rejected outcome is
+$\partial\notin\mathcal X$ and is absent from $O_k$, so it changes none of
+these inclusions. No claim about which member realizes a niche is used.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:membership}]
+The two components $Q(C)$ and $F_m(C)$ are disjoint. The first contains exactly
+the declared score-and-hash winner in each occupied niche. The second is, by
+definition, exactly the prefix of length $m-|Q(C)|$ of the global order on the
+remaining candidates. Their union therefore yields the stated necessary and
+sufficient condition. A previous parent that loses both tests is absent from
+$T_m(C)$ even though another member of its niche is present.
+\end{proof}
+
+\subsection{Stage 2 proof of the bridge-chain bound}
+\begin{proof}[Proof of Proposition~\ref{prop:bridge-chain}]
+Let $H_0=E_0$. For $\ell<L-1$, let $H_{\ell+1}$ be the event that $H_\ell$
+holds, cycle $k+\ell$ generates a member of $B_{\ell+1}$, and selection
+retains such a member into $P_{k+\ell+1}$. The two ordered conditional bounds
+and the tower property give
+\[
+ \Prb(H_{\ell+1}\mid H_\ell)\geq a_\ell\rho_\ell.
+\]
+Iterating does not require independence and yields
+\[
+ \Prb(H_{L-1})\geq
+ \prod_{\ell=0}^{L-2}a_\ell\rho_\ell.
+\]
+Conditional on $H_{L-1}$, the last generation contains a member of
+$B_L\subseteq\HARD_{k+L-1}$ with probability at least $a_{L-1}$. This proves
+the generation-level product. Applying the final retention bound
+$\rho_{L-1}$ proves the acquisition-level product because
+$P_{k+L}=T_{k+L-1}$. If the charged cycle costs sum to at most $B$, completion
+of the certified chain occurs within that budget.
+
+For the operator-specific sufficient condition, choose a retained bridge
+parent by any fixed measurable rule, for example ascending hash. The
+designated operator $o_\ell$ is certainly attempted because the schedule is
+the full parent--operator Cartesian product. Its kernel mass on
+$B_{\ell+1}$ is at least $a_\ell$ and already excludes rejection at
+$\partial$. If its accepted output duplicates an earlier child or parent in
+$B_{\ell+1}$, first-occurrence deduplication still leaves that phenotype in
+$C_{k+\ell}$; otherwise the new output is added. Thus the operator bound
+implies the stated generation bound.
+\end{proof}
+
+For repeated blocks, condition on each no-hit block boundary. The assumed
+regeneration property restores the same lower bound $p$ irrespective of the
+earlier failure history. Applying the history-based survival lemma to blocks
+gives survival at most $(1-p)^r$ after $r$ blocks and expected charged cost at
+most $C\sum_{r\geq0}(1-p)^r=C/p$.
+
 \subsection{Dependency audit}
 \begin{itemize}
 \item \textbf{Conditional independence:} not used. The proof requires
@@ -95,6 +156,9 @@ hazards. A niche aggregation is valid for that purpose only under lumpability.
 on reaching the true current hard region conditional on the useful parent
 being selected. A graph path's existence alone is insufficient; its
 probability and compute cost matter.
+The Stage 2 bridge bound instead exposes operator-specific accepted-output
+mass in $\widetilde K_{k,o}$; rejection probability remains in the denominator
+and no accepted-only renormalization is permitted.
 \item \textbf{Parent retention and scheduling:} a lower bound $r$ must concern
 availability of a genuinely useful parent at the declared opportunity.
 Historical presence before a target shift does not establish continued
@@ -109,6 +173,14 @@ rule to true $h_k^{\rm BQ}$ and future reachability is essential. Perfect
 current-hardness prediction alone is insufficient when tied candidates have
 different mutation futures. Without such a bridge, the implementation-level
 step is OPEN.
+\item \textbf{Capacity and selection:} niche persistence uses
+$|\mathsf S(C_k)|\leq m$ and inclusion of the complete floor $Q(C_k)$. It does
+not imply bridge persistence. The latter requires the exact elite/global-fill
+membership condition or another proved retention certificate.
+\item \textbf{Changing hardness:} the bridge theorem allows cycle-indexed
+kernels and sets, but $B_L\subseteq\HARD_{k+L-1}$ must refer to true hardness
+under the entering checkpoint for the final acquisition cycle. Current HGB
+quality cannot silently replace that condition.
 \item \textbf{Cost normalization:} the comparison assumes equal deterministic
 cost $c$ per opportunity. If BLADE archive updates, HGB40 inference, or BQ
 validation change cost, opportunity-count dominance does not imply compute-cost

@@ -36,3 +36,24 @@
 - The stale-memory, gradient, and diversity counterexamples are unchanged in substance.
 - The former “surrogate error” counterexample is corrected: surrogate error is unnecessary; an equal-hardness tie under perfect prediction already blocks a universal future-reachability guarantee.
 - No new theorem, empirical claim, or novelty claim is introduced.
+
+## Stage 2 addendum
+
+19. **Separate the elite floor from the complete population.** `Q_k` contains one tie-broken HGB maximum per occupied candidate niche. `T_k=P_(k+1)` additionally contains the global HGB fill to 10,000.
+20. **Prove only the invariant supported by that mechanism.** With a fixed partition, parent-inclusive union, sufficient capacity, the complete niche floor, and `P=T`, occupied niches are monotone. Parent hashes and within-niche transition structure are not.
+21. **Represent rejection as probability mass, not resampling.** Each scheduled operator has an extended kernel on `X ∪ {∂}`. Invalid/rejected proposals produce `∂`; accepted duplicates are removed by deterministic first occurrence.
+22. **Treat bridge viability as a separate quantity.** Current true BQ hardness, HGB prediction, and future-reachability value can order candidates differently. A per-niche HGB elite preserves a bridge only under an explicit score/rank-to-viability condition.
+23. **Use a path certificate rather than an assumed aggregate hazard.** The multistep result factors discovery into operator-specific accepted-transition bounds and explicit selection-retention bounds along time-indexed bridge sets.
+24. **Allow solver drift explicitly.** Bridge sets, kernels, HGB scores, and the terminal true-hard region are cycle-indexed. The terminal set is defined under the entering BQ checkpoint of the final acquisition cycle.
+25. **Keep finite-population effects in the selector.** The exact survival test is niche-elite membership or rank within the remaining global-fill capacity. Niche occupancy alone is insufficient.
+26. **Compare mechanisms in their own cost units.** Reset evolution, stationary generation, and HAC with random restarts require separate kernels, restart laws, and charged compute. Mutation attempts, generations, and gradient steps are not equated.
+27. **Classify the proved mathematics conservatively.** Niche persistence is an elementary archive consequence; the bridge-chain product is a standard conditional-probability argument. A potentially publishable contribution would require non-vacuous BLADE-specific bounds or a verified separation, neither of which is supplied here.
+28. **Stop after the focused Stage 2 investigation.** No experiment, true-hardness evaluation, HGB/BQ training, evolutionary run, or algorithm modification is authorized or performed.
+
+## Stage 2 statement-change log
+
+- Proposition 1 and every Stage 1/1.5 counterexample remain intact.
+- A new deterministic niche-persistence proposition is proved under assumptions that are verified for the inspected S6-AE path.
+- An exact counterexample blocks the stronger inference from niche persistence to future reachability, even with perfect current-hardness prediction and the complete global-fill mechanism.
+- A multistep bridge-chain proposition is proved conditionally. It is not relabeled as a BLADE advantage because its positive transition and retention constants remain unverified.
+- The novelty audit now includes MAP-Elites/QD runtime theory, but remains limited rather than claiming exhaustive literature priority.

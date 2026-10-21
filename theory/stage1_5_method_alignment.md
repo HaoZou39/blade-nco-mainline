@@ -8,17 +8,18 @@ This document maps the verified current HGB40 + Elite-QD1000 (`P=T`) S6-AE path 
 |---|---|---|---|
 | BQ checkpoint entering cycle C`k` | `q_k` | M0 enters C00; the prior cycle’s E256 checkpoint enters later cycles. | VERIFIED |
 | Fixed parent bundle | ordered `P_k = (X_(k,1),…,X_(k,10000))` | C00 uses the frozen U0 bundle; later cycles load the previous `P_next.npz`. | VERIFIED |
-| FOGA mutation batch | `Z_(k,i,o) ~ K_(k,o)(X_(k,i),· | S_k)` | Deterministic nested schedule: every one of 10,000 parents receives every one of 11 operators once. | VERIFIED; this is not random parent/operator selection. |
+| FOGA mutation batch | `Z_(k,i,o) ~ K~_(k,o)(X_(k,i),· | S_k)` on `X ∪ {∂}` | Deterministic nested schedule: every one of 10,000 parents receives every one of 11 operators once. Rejected/invalid outcomes are `∂` and are not resampled. | VERIFIED; this is not random parent/operator selection. |
 | Operator/repair randomness | coordinate `ξ_(k,i,o)` on `Ω` | Seed is derived from cycle, parent hash, operator, and frozen master material; sampled parameters and repair follow that seed. | VERIFIED as implementation mechanism; the theorem’s repeated-run ensemble is OPEN. |
-| Accepted offspring | `O_k` | Invalid outputs are rejected; accepted outputs are deduplicated by child hash in schedule order. | VERIFIED |
+| Accepted offspring | `O_k = FirstUnique({Z_(k,i,o) ∈ X})` | Invalid/rejected outputs contribute no child; accepted outputs are deduplicated by child hash in schedule order; neither case triggers redraw. | VERIFIED |
 | Candidate pool | `C_k = unique(P_k ∪ O_k)` | C00 reuses the exact corrected frozen union; later cycles concatenate parents then children and keep first hash occurrence. | VERIFIED |
 | Current-hardness calibration archive sample | `B_k ⊂ A_k` with labels under `q_k` | Branch-local archive; all rows if ≤10,000, otherwise canonical-sort then seeded sample; current LBQ is refreshed under the entering solver. | VERIFIED |
 | HGB40 fit and score | `ĥ_k : X → R` | Five seeded HistGradientBoostingRegressors, frozen ordered F40, target `log1p(LBQ)`, median prediction; no operator feature. | VERIFIED; predictive retention guarantees are OPEN. |
 | QD niche assignment | `g(x) ∈ {1,…,1000}` | Frozen QD4 descriptors, frozen normalization, nearest CVT centroid. | VERIFIED operationally; niche-only Markov/lumpability is OPEN. |
-| Per-niche quality elite | `Q_k` | Maximum current HGB prediction within every occupied niche; ascending instance hash breaks score ties. | VERIFIED |
+| Per-niche quality elite | `Q_k` | Maximum current HGB prediction within every occupied niche; ascending instance hash breaks score ties. `|Q_k|` equals occupied niches, not 10,000. | VERIFIED |
 | Global HGB fill | `F_k` | Descending HGB then ascending hash among candidates not already in `Q_k`, filling to 10,000. | VERIFIED |
 | Acquisition set | `T_k = Q_k ∪ F_k` | Exactly 10,000 unique candidates. It is frozen before exact labeling. | VERIFIED |
 | Next parent population | `P_(k+1)` | Exact membership and order copy of `T_k`; `P=T`. | VERIFIED |
+| Occupied-niche set | `S(P_k) = {g(x): x ∈ P_k}` | Parent-inclusive union plus the complete `Q_k` floor and `P=T` imply `S(P_(k+1)) = S(C_k) ⊇ S(P_k)`. | PROVED and VERIFIED; does not imply hash or bridge survival. |
 | True current BQ hardness | `h_k^BQ(x)` | Current LBQ under entering checkpoint `q_k`; exact labels are obtained for frozen `T_k`, not every member of `C_k`. | PARTIAL: the theorem’s threshold `κ` is OPEN. |
 | Branch archive update | `A_(k+1)` | Newly labeled selected instances are merged into the branch-local archive after selection. | VERIFIED |
 | BQ adaptation | `q_k → q_(k+1)` | Hard-only x1 training on `T_k`, 256 epochs, seeded per-epoch permutation and suffix sampling, then E256 checkpoint. | VERIFIED; training randomness is separate from acquisition scheduling. |
