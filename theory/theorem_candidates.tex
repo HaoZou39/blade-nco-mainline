@@ -73,12 +73,18 @@ $\rho_\ell=1$.
 Assume the final, causally chosen bridge set satisfies
 $B_L\subseteq\HARD_{k+L-1}$ almost surely for the entering checkpoint
 $q_{k+L-1}$, without looking ahead to future solver states or the final
-random mutation batch. Then
+random mutation batch. Define the exact certified-chain success events
+\[
+ D^{\rm chain,gen}=H_{L-1}\cap G_{L-1},\qquad
+ D^{\rm chain,acq}=H_{L-1}\cap G_{L-1}\cap R_{L-1}.
+\]
+These are subsets of the ordinary final-cycle presence events
+$D_{k+L-1}^{\rm gen}$ and $D_{k+L-1}^{\rm acq}$ respectively. Then
 \begin{align*}
- \Prb(D_{k+L-1}^{\rm gen}\text{ by the certified chain})
+ \Prb(D^{\rm chain,gen})
  &\geq \prod_{\ell=0}^{L-1}a_\ell
            \prod_{\ell=0}^{L-2}\rho_\ell,\\
- \Prb(D_{k+L-1}^{\rm acq}\text{ by the certified chain})
+ \Prb(D^{\rm chain,acq})
  &\geq \prod_{\ell=0}^{L-1}a_\ell\rho_\ell.
 \end{align*}
 No independence is required. If the declared deterministic charged costs
