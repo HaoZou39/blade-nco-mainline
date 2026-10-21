@@ -57,3 +57,11 @@
 - An exact counterexample blocks the stronger inference from niche persistence to future reachability, even with perfect current-hardness prediction and the complete global-fill mechanism.
 - A multistep bridge-chain proposition is proved conditionally. It is not relabeled as a BLADE advantage because its positive transition and retention constants remain unverified.
 - The novelty audit now includes MAP-Elites/QD runtime theory, but remains limited rather than claiming exhaustive literature priority.
+
+## Stage 2.1 independent mathematical review addendum
+
+29. **Repair the retention filtration.** Conditional on the complete scored candidate union, Elite-QD is deterministic and bridge retention is 0/1. A nontrivial fractional retention certificate must condition on the pre-generation information and the bridge-generation event; alternatively use a pathwise selector certificate with rho=1.
+30. **Prohibit look-ahead in bridge selection.** Select each next bridge set before the batch meant to reach it. The final target can depend on the currently available BQ checkpoint, not future checkpoints or already observed offspring. Bridge/kernel lower bounds must hold over the admissible resulting histories.
+31. **State hash compatibility by target property.** Niche persistence only needs deduplication to preserve niche labels, while the bridge theorem needs the stronger preservation of bridge-set membership. True phenotype uniqueness on the realized pool is sufficient for both.
+32. **Separate presence from new discovery.** The bridge-chain theorem remains a presence guarantee. New hard offspring, new acquisition, hardness reactivation, and novel occupied QD niches have distinct event definitions.
+33. **Preserve Stage 2's conservative status.** The revised theorem is a correct conditional certificate. No numerical a_l/rho_l, BLADE-over-HAC bound, or publishable novelty has been established, and no algorithm, training, or Oracle calls have been changed.

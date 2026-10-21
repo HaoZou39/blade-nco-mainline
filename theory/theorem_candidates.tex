@@ -6,7 +6,8 @@
 \begin{proposition}[Occupied-niche persistence under the verified selector]
 \label{prop:niche-persistence}
 Fix a niche map $g$. At cycle $k$, suppose (i) every member of $P_k$ is in
-$C_k$; (ii) $C_k$ is finite and unique by instance hash; (iii)
+$C_k$; (ii) $C_k$ is finite and unique by instance hash, with equal-hash
+candidates niche-compatible under the declared union semantics; (iii)
 $|\mathsf S(C_k)|\leq m\leq|C_k|$; (iv) $T_k=T_m(C_k)$ contains the complete
 per-niche floor $Q(C_k)$; and (v) $P_{k+1}=T_k$. Then
 \[
@@ -44,63 +45,90 @@ niche is sufficient for that candidate to survive.
 \mstatus{PROVED under explicit premises} \istatus{PARTIAL/OPEN}
 \nstatus{NOT CLAIMED}
 
-\begin{proposition}[Finite-budget multistep bridge-chain bound]
+\begin{proposition}[Finite-budget causal bridge-chain bound]
 \label{prop:bridge-chain}
-Fix a starting cycle $k$, bridge sets $B_0,\ldots,B_L$, and the complete
-history filtration at the pre-generation and post-generation/pre-selection
-points of each cycle. Suppose $E_0$ holds surely. For
-$\ell=0,\ldots,L-1$, on every admissible history on which the bridge chain has
-survived through $E_\ell$, assume
+Fix a starting cycle $k$ and an integer $L\geq1$. Let the bridge sets
+$B_0,\ldots,B_L$ be selected by the predictable, non-anticipating rule in
+the formal model. Suppose $E_0$ holds almost surely. Let
+$H_0=E_0$ and $H_{\ell+1}=H_\ell\cap G_\ell\cap R_\ell$.
+For every $\ell=0,\ldots,L-1$ and every positive-probability
+pre-generation history in $H_\ell$, assume
 \[
  \Prb(G_\ell\mid\mathcal F_{k+\ell}^{\rm pre})\geq a_\ell.
 \]
-For $\ell=0,\ldots,L-1$, after a generated bridge is present, assume
+On the same histories for which the conditional generation probability is
+positive, assume the \emph{pre-generation-conditioned} retention bound
 \[
- \Prb(E_{\ell+1}\mid
-        \mathcal F_{k+\ell}^{\rm gen},G_\ell)\geq\rho_\ell,
+ \Prb(R_\ell\mid
+       \mathcal F_{k+\ell}^{\rm pre},G_\ell)\geq\rho_\ell.
 \]
-where $E_{\ell+1}$ means that selection retains a member of
-$B_{\ell+1}$; for the final cycle this condition is needed only for
-acquisition-level discovery. Then
+Here the second conditional probability averages over the still-unresolved
+mutation batch and any other explicitly modeled random inputs; it does not
+condition on the fully realized scored candidate pool.
+Alternatively, one may assume the stronger deterministic certificate:
+for every admissible generated union containing a bridge member, the
+selector retains a member of the designated bridge set, giving
+$\rho_\ell=1$.
+
+Assume the final, causally chosen bridge set satisfies
+$B_L\subseteq\HARD_{k+L-1}$ almost surely for the entering checkpoint
+$q_{k+L-1}$, without looking ahead to future solver states or the final
+random mutation batch. Define the exact certified-chain success events
+\[
+ D^{\rm chain,gen}=H_{L-1}\cap G_{L-1},\qquad
+ D^{\rm chain,acq}=H_{L-1}\cap G_{L-1}\cap R_{L-1}.
+\]
+These are subsets of the ordinary final-cycle presence events
+$D_{k+L-1}^{\rm gen}$ and $D_{k+L-1}^{\rm acq}$ respectively. Then
 \begin{align*}
- \Prb(D_{k+L-1}^{\rm gen}\text{ by the certified chain})
+ \Prb(D^{\rm chain,gen})
  &\geq \prod_{\ell=0}^{L-1}a_\ell
-          \prod_{\ell=0}^{L-2}\rho_\ell,\\
- \Prb(D_{k+L-1}^{\rm acq}\text{ by the certified chain})
+           \prod_{\ell=0}^{L-2}\rho_\ell,\\
+ \Prb(D^{\rm chain,acq})
  &\geq \prod_{\ell=0}^{L-1}a_\ell\rho_\ell.
 \end{align*}
-No independence is required. If the deterministic cycle costs
-$c_k,\ldots,c_{k+L-1}$ sum to at most $B$, these are finite-budget discovery
-bounds.
+No independence is required. If the declared deterministic charged costs
+$c_k,\ldots,c_{k+L-1}$ sum to at most budget $B$, these are finite-budget
+\emph{presence} bounds, not new-instance discovery bounds.
 
-A sufficient operator-specific source for $a_\ell$ is a designated
-$o_\ell\in\mathcal O$ such that every admissible retained
-$x\in B_\ell$ satisfies
+One sufficient operator-specific source for $a_\ell$ is a
+pre-generation-measurable choice of a retained parent $x\in B_\ell$ and a
+designated operator $o_\ell\in\mathcal O$ such that
 \[
  \widetilde K_{k+\ell,o_\ell}
- (x,B_{\ell+1}\mid S_{k+\ell})\geq a_\ell.
+ (x,B_{\ell+1}\mid S_{k+\ell})\geq a_\ell
 \]
-Because all 11 operators are scheduled once for every parent, no random
-parent/operator-selection factor appears. Rejection mass at $\partial$ is
-already included in the kernel and is not conditioned away.
+on every admissible history, where the conditional kernel is defined under
+the declared non-frozen random ensemble and includes rejection at
+$\partial$. The all-operator deterministic batch attempts the designated
+operator without any random parent/operator-selection factor.
+To infer $G_\ell$ from the accepted operator output, equal hashes must
+identify the same phenotype on that pool or at least preserve membership
+in $B_{\ell+1}$; niche-label compatibility alone does not suffice for
+the bridge theorem.
 \end{proposition}
 
-The selection premise is identifiable rather than an unexplained hit-hazard
-advantage. For example, $\rho_\ell=1$ follows if, for every admissible
-candidate union containing $B_{\ell+1}$, either the deterministic score elite
-of a designated occupied niche belongs to $B_{\ell+1}$, or a bridge member
-passes the exact global-fill rank test in Lemma~\ref{lem:membership}. A
-stronger but easier sufficient condition is within-niche transition
-equivalence: every possible score elite in that niche has the same certified
-next-bridge lower bound. None of these score--reachability alignment
-conditions follows from current-hardness accuracy alone.
+The deterministic retention certificate is directly testable using the
+actual HGB/QD rank rule. Specifically, $\rho_\ell=1$ follows if every
+admissible realized scored candidate union containing $B_{\ell+1}$ retains
+a bridge member either as the tie-broken per-niche score elite or through
+global fill (Lemma~\ref{lem:membership}). After the complete scored union is
+known, the retention probability is the indicator
+$\mathbf 1_{R_\ell}$, not an unexplained fractional probability.
+A fractional $0<\rho_\ell<1$ requires a clearly declared ensemble and
+a lower bound on retention conditioned only on pre-batch information and
+the event $G_\ell$. Within-niche transition equivalence of possible elites
+would be one \emph{additional} way to certify future reachability, not a
+property guaranteed by QD occupancy or hardness prediction accuracy.
 
 For S6-AE, the all-operator schedule, rejection handling, capacity inequality,
 selector form, and $P=T$ map are verified. Positive, history-uniform
-$a_\ell$ values, scientifically meaningful bridge sets, and deterministic or
-probabilistic $\rho_\ell$ bounds are OPEN. Changing BQ checkpoints are allowed
-because the bridge sets and kernels are cycle-indexed, but their alignment
-must be proved separately at every step.
+$a_\ell$ values, scientifically meaningful \emph{causally chosen} bridge
+sets, and deterministic or probabilistic $\rho_\ell$ bounds are OPEN.
+Changing BQ checkpoints are allowed, but terminal set inclusion must be
+verified against the checkpoint already available before the final batch.
+Freezing every bridge set at cycle $k$ would require the stronger uniform
+terminal-inclusion guarantee over the possible future solver trajectories.
 
 \paragraph{Repeated certified windows.}
 \mstatus{PROVED under regeneration} \istatus{OPEN}

@@ -66,8 +66,22 @@ $(Z_{k,i,o})_{i,o}$ lying in $\mathcal X$ to obtain the accepted,
 child-deduplicated list $O_k$. An accepted duplicate is removed by this
 deterministic map; it is not redrawn. Let
 $C_k=\operatorname{unique}(P_k\cup O_k)$ be the candidate union, retaining
-the first occurrence under the declared order. At C00 S6-AE reuses the
-hash-locked corrected union; later cycles construct this union directly. The
+the first occurrence under the declared order. In statements that treat
+hash-based deduplication as mathematical set union, assume that equal hashes
+identify the same solver-visible phenotype on the realized finite pool.
+For the weaker occupied-niche equality alone, it is sufficient that
+equal-hash candidates have the same niche label:
+\[
+ \operatorname{hash}(x)=\operatorname{hash}(y)
+ \ \Longrightarrow\ g(x)=g(y)
+ \qquad (x,y\text{ in the pre-deduplication pool}).
+\]
+Without this compatibility assumption, first-occurrence deduplication could
+erase a genuinely different offspring niche. The implementation checks
+content-derived hashes operationally; cryptographic collision resistance is
+not a literal mathematical injectivity theorem.
+At C00 S6-AE reuses the hash-locked corrected union; later cycles construct
+this union directly. The
 cycle then fits/scores with HGB40, selects the acquisition/next-parent set,
 obtains exact labels for that selected set, and only then adapts the BQ solver
 from $q_k$ to $q_{k+1}$. Thus within-cycle mutation attempts and solver cycles
@@ -130,30 +144,68 @@ For any $x\in C$, the deterministic membership criterion is
 Consequently, retaining a niche does not imply retaining any particular
 parent hash in that niche.
 
-\subsection{Time-indexed bridge sets}
-For a prospective path starting at cycle $k$, let
-$B_0,\ldots,B_L\in\mathcal B_{\mathcal X}$ be measurable bridge sets, where
-$B_\ell$ is intended to be represented in $P_{k+\ell}$ and
-$B_L\subseteq\HARD_{k+L-1}$ is a final true-hard set generated during cycle
-$k+L-1$. Define
+\subsection{Causal information structure and time-indexed bridge sets}
+For each cycle $t$, let $\mathcal F_t^{\mathrm{pre}}$ represent all information
+available immediately before resolving the designated mutation batch: the
+entering solver state $q_t$, available parents and archive, and any previously
+realized random inputs and scores. It must exclude randomness of the batch
+still to be drawn under the probability ensemble. Let
+$\mathcal F_t^{\mathrm{batch}}$ add the realized accepted/rejected outputs and
+candidate union, and let $\mathcal F_t^{\mathrm{score}}$ additionally contain
+all scores, niche assignments, and tie-break data necessary for selection.
+With the verified deterministic Elite-QD rule, the event that a particular
+bridge is retained is measurable with respect to
+$\mathcal F_t^{\mathrm{score}}$, and its conditional probability given that
+complete information is its indicator (zero or one).
+The probabilistic retention premise below is therefore conditioned on the
+\emph{pre-batch} information, not the fully resolved selection state.
+
+For a prospective chain starting at cycle $k$, choose measurable bridge sets
+$B_0,\ldots,B_L$ causally. The initial set $B_0$ is known at
+$\mathcal F_k^{\mathrm{pre}}$. For $\ell=0,\ldots,L-1$, choose the next
+set $B_{\ell+1}$ using only $\mathcal F_{k+\ell}^{\mathrm{pre}}$,
+\emph{before} drawing that cycle's batch, and keep its identity fixed until
+the next retention step. A measurable random-set formulation is allowed if
+its membership event is jointly measurable. Thus $B_\ell$ is already fixed
+when it is used as a parent-availability certificate at cycle $k+\ell$.
+No bridge set may be chosen retroactively to fit a successful offspring.
+
+Let
 \[
  E_\ell=\{P_{k+\ell}\cap B_\ell\neq\varnothing\},\qquad
- G_\ell=\{C_{k+\ell}\cap B_{\ell+1}\neq\varnothing\}.
+ G_\ell=\{C_{k+\ell}\cap B_{\ell+1}\neq\varnothing\},
 \]
-The sets may occupy different niches and may depend on the declared future
-solver-state sequence. They are structural certificates, not HGB threshold
-sets.
+and write
+\[
+ R_\ell=\{T_{k+\ell}\cap B_{\ell+1}\neq\varnothing\}.
+\]
+Since $P_{k+\ell+1}=T_{k+\ell}$, $R_\ell=E_{\ell+1}$.
+$E_\ell$ is measurable before cycle $k+\ell$'s generation, whereas
+$G_\ell$ and $R_\ell$ become measurable after generation and selection.
+The bridge-success prefix is $H_0=E_0$ and
+$H_{\ell+1}=H_\ell\cap G_\ell\cap R_\ell$.
 
-For a population context and horizon, a future-reachability value may be
-written
+For terminal correctness, the final $B_L$ must be selected at or before
+$\mathcal F_{k+L-1}^{\mathrm{pre}}$, when the entering solver
+$q_{k+L-1}$ is known, and satisfy
+\[
+ B_L\subseteq\mathcal H_{k+L-1}
+ \quad\text{almost surely on admissible pre-generation histories}.
+\]
+This condition allows the final target to depend causally on the current
+solver, but forbids selection of $B_L$ using an unseen future checkpoint or
+the realized final offspring. If all bridge sets are instead frozen at
+cycle $k$, terminal inclusion must hold across the subsequently possible
+solver trajectories; this is a stronger, robust-target assumption.
+
+A prospective future-reachability value can be written
 \[
  V_{k,L}(x)=\Prb(\text{a declared future true-hard set is hit within $L$
  cycles}\mid x\text{ is retained at cycle }k,\ \mathcal F_k).
 \]
-This quantity generally depends on the other population members, future
-selection, and solver states. It is not a function of current true hardness
-$h_k^{\rm BQ}(x)$ or current score $\widehat h_k(x)$ unless an additional
-alignment assumption is proved.
+This value generally depends on other population members, future selection,
+and the adapted solver states. It need not be determined by current BQ
+hardness or current HGB prediction.
 
 \subsection{Probability space and frozen executions}
 Let $(\Omega,\mathcal{F},\Prb)$ carry exactly the random inputs declared for
@@ -200,6 +252,48 @@ verified. They are distinct from the event
 $\{\widehat h_k(x)\geq\widehat\kappa\}$ and from post-adaptation hardness
 $h_{k+1}^{\rm BQ}(x)$. Without a calibration/ranking-and-retention condition,
 none of these quantities can be substituted for another.
+
+\subsection{Presence, novelty, and reactivation}
+The events $D_k^{\rm gen}$ and $D_k^{\rm acq}$ test \emph{presence}; the
+parent-inclusive union can satisfy them using an old instance without
+creating a new one. Let $\mathcal V_{k-1}^{\rm gen}
+=\bigcup_{t<k}C_t$ and $\mathcal V_{k-1}^{\rm acq}
+=\bigcup_{t<k}T_t$ denote previously generated and acquired phenotype sets,
+interpreted under the declared hash/phenotype compatibility rule.
+For a mathematically new, valid offspring of current true hardness at least
+$\kappa$, exclude both previously generated phenotypes and the \emph{current}
+parent population (including the initial roots of cycle 0):
+\[
+ D_k^{\rm new,gen}
+ =\left\{\exists x\in
+ O_k\setminus(\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
+\]
+This exclusion is essential when a valid mutation returns the identical
+parent phenotype or when its child hash duplicates another current parent.
+It does not alter the parent-inclusive presence event $D_k^{\rm gen}$.
+A new acquisition under the cumulative acquisition ledger is
+\[
+ D_k^{\rm new,acq}
+ =\{\exists x\in T_k\setminus\mathcal V_{k-1}^{\rm acq}:
+               h_k^{\rm BQ}(x)\geq\kappa\}.
+\]
+A newly generated \emph{and} acquired hard instance satisfies
+\[
+ D_k^{\rm new,gen\cap acq}=
+ \left\{\exists x\in
+ (O_k\cap T_k)\setminus
+ (\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
+\]
+This is a stricter event than $D_k^{\rm new,acq}$: an old parent may be
+selected for the first time, but is not thereby a newly generated phenotype.
+An old instance may become hard under $q_k$ after being non-hard under an
+earlier checkpoint; this is \emph{hardness reactivation}, not instance
+novelty. A previously unvisited hard niche is a different event again.
+The baseline bridge-chain theorem below concerns \emph{presence}, not these
+stronger novelty events; it may not be cited as a novelty-discovery bound
+without additional exclusion conditions.
 
 \subsection{First hit and computational normalization}
 For the abstract survival lemma, index declared comparison opportunities by

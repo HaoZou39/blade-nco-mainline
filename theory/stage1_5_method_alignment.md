@@ -65,3 +65,12 @@ Neither bound is established in Stage 1.5. Equal current-hardness prediction acc
 - a generation-to-acquisition retention bound for HGB40 + Elite-QD1000;
 - strong or distribution-dependent lumpability of any reduced niche state;
 - compute-matched fixed-generator/HAC definitions and hazard bounds.
+
+## Stage 2.1 independent review: information and discovery semantics
+
+- The mutation/generation opportunity uses the **pre-generation** history as its conditioning information. Subsequent realization of the candidate batch and all selection scores makes the Elite-QD membership test deterministic (0/1).
+- The exact HGB/QD rank test supplies a **pathwise retention certificate** only when it is proved on every admissible scored union. A fractional `rho_l` instead refers to a lower bound over unresolved candidate/estimator randomness conditional on the pre-generation history **and** the generated-bridge event.
+- Each next bridge set is chosen before the batch intended to reach it. The terminal set may use the final cycle's **entering** checkpoint but no future checkpoint or post-generation outcome; an upfront fixed terminal set needs a stronger all-trajectories inclusion premise.
+- Hash first-occurrence deduplication needs equal-hash **niche compatibility** for exact occupied-niche set union. Bridge-set propagation additionally needs equal-hash **bridge-membership compatibility**, with collision-free realized phenotypes as a sufficient condition.
+- `D_k^gen` and `D_k^acq` describe true-hardness **presence** (possibly inherited), not discovery of new instances. The corrected LaTeX now separately defines `D_k^{new,gen}`, `D_k^{new,acq}`, hardness reactivation, and novel niche occupancy.
+- These are mathematical modeling clarifications, **not** new empirical validations or changes to S6-AE.

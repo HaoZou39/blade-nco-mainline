@@ -1,4 +1,4 @@
-# Assumption register — Stages 1.5–2
+# Assumption register — Stages 1.5–2.1
 
 The three status axes are intentionally separate:
 
@@ -38,10 +38,16 @@ The three status axes are intentionally separate:
 | A28 | Niche persistence implies survival of a future-reachability bridge representative. | DISPROVED | NOT APPLICABLE as a guarantee | The progressive bridge-loss counterexample keeps every niche occupied while HGB elites and global fill remove all future-useful representatives. |
 | A29 | A per-niche HGB elite is a viable bridge whenever any viable bridge is present in that niche. | CONDITIONAL score–reachability alignment premise | OPEN | It holds if the exact tie-broken niche argmax lies in the bridge set, or under a stronger within-niche transition-equivalence/monotone viability condition. Current-hardness accuracy alone does not imply it. |
 | A30 | Each certified bridge step has an operator-specific accepted-transition lower bound `a_l>0` under a declared ensemble. | CONDITIONAL | OPEN | All 11 operators are scheduled, but no history-uniform lower bounds for the extended kernels `K~_(k,o)` have been derived. Rejection mass must remain included. |
-| A31 | A generated bridge survives selection with conditional probability at least `rho_l`, or deterministically by the elite/global-fill membership test. | CONDITIONAL | OPEN | The selector is verified, but no bridge sets with a proved retention certificate have been identified. |
-| A32 | A time-indexed bridge chain ends in the declared true BQ hard region under the entering checkpoint of its final cycle. | CONDITIONAL | OPEN | Requires a scientific threshold and bridge sets tied to the changing solver states, not HGB score thresholds. |
+| A31 | A generated bridge survives selection with pre-generation-conditioned probability at least `rho_l`, or deterministically by the elite/global-fill membership test. | CONDITIONAL | OPEN | The selector is verified, but no bridge sets with a proved retention certificate have been identified. |
+| A32 | A causally chosen time-indexed bridge chain ends in the declared true BQ hard region under the entering checkpoint of its final cycle. | CONDITIONAL | OPEN | Requires a scientific threshold and bridge sets tied to the changing solver states, not HGB score thresholds. |
 | A33 | Failed `L`-cycle blocks regenerate the initial bridge condition, permitting a geometric expected-cost bound. | CONDITIONAL | OPEN | S6-AE does not reset or guarantee regeneration after bridge loss. Without this premise only the one-block finite-budget product bound is valid. |
 | A34 | Reset evolution, a stationary generator, and HAC with restarts can be compared using a shared count of steps. | DISPROVED as a methodological shortcut | NOT APPLICABLE | Their proposal, gradient, restart, scoring, and evaluation costs differ. Each needs a full transition and charged-compute model. |
+
+| A35 | Retention probability is evaluated conditional on the pre-generation information and generated-bridge event, rather than on the fully scored pool. | CONDITIONAL; corrected information model | OPEN for positive fractional bounds | Once the complete pool and HGB scores are revealed the deterministic selection event has conditional probability 0 or 1. A positive pathwise bound requires guaranteed elite/global-fill membership. |
+| A36 | Each next bridge set is selected before its generating batch, and the terminal bridge set is included in the hard region of the final entering solver checkpoint. | CONDITIONAL non-anticipation premise | OPEN | Permits causal dependence on the current checkpoint but forbids future-checkpoint look-ahead and post hoc bridge selection. |
+| A37 | Equal-hash deduplication preserves niche labels; bridge propagation additionally requires the represented instance to preserve bridge-set membership. | CONDITIONAL hash compatibility | PARTIAL | A collision-free finite candidate pool suffices. Hash security is not a mathematical proof of injectivity; weaker niche compatibility only certifies niche-set equalities. |
+| A38 | Presence of a previously generated true-hard parent is not novelty discovery. | PROVED definitional distinction | VERIFIED as a modeling issue | For newly generated hard offspring, exclude both the cumulative previous candidate-pool ledger and current parents (including C00 roots); new acquisition uses a separate cumulative acquisition ledger. Distinguish hardness reactivation and niche novelty. |
+| A39 | A stated finite compute budget is an upper bound for the charged opportunity or full multicycle chain, not an unverified equality of gradient steps and FOGA attempts. | CONDITIONAL | OPEN for fair HAC comparison | Record method-specific generation, scoring, evaluation, and solver update charges; existing stage bounds apply to declared deterministic costs. |
 
 ## Verified S6-AE implementation facts
 

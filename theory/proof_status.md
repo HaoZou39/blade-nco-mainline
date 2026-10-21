@@ -1,4 +1,4 @@
-# Proof status — Stages 1.5–2
+# Proof status — Stages 1.5–2.1
 
 Mathematical validity, implementation applicability, and scientific novelty are separate judgments. `PROVED` in the second column never implies `VERIFIED` or `NOVEL` in the next columns.
 
@@ -22,12 +22,17 @@ Mathematical validity, implementation applicability, and scientific novelty are 
 | Preservation of individual parent hashes from niche persistence | **DISPROVED as an implication** | **NOT GUARANTEED** | **NOT CLAIMED** | A parent can lose both the within-niche elite test and global-fill rank while another candidate preserves its niche. |
 | Monotone niche occupancy preserves future hard-region reachability | **DISPROVED** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Exact capacity-aware counterexample progressively replaces all bridge representatives while preserving every occupied niche. |
 | Exact elite/global-fill membership criterion | **PROVED** | **VERIFIED** | **NOT CLAIMED** | Direct characterization of the deterministic selector. |
-| Multistep bridge-chain finite-budget bound (Proposition 3) | **PROVED under explicit transition and retention premises** | **PARTIAL/OPEN** | **NOT CLAIMED; STANDARD PROBABILITY ARGUMENT** | Ordered conditional products give generation/acquisition bounds without independence. Schedule and selector match S6-AE; positive kernel and bridge-retention certificates are absent. |
+| Multistep bridge-chain finite-budget bound (Proposition 3) | **PROVED under explicit transition and retention premises** | **PARTIAL/OPEN** | **NOT CLAIMED; STANDARD PROBABILITY ARGUMENT** | Corrected ordered conditional products use pre-generation-conditioned retention or a pathwise deterministic rank certificate, with causally chosen terminal set. Schedule and selector match S6-AE; positive kernel and bridge-retention certificates are absent. |
 | Repeated-window expected-cost bound `E[C_tau] ≤ C/p` | **PROVED under regeneration** | **OPEN** | **NOT CLAIMED** | Geometric block survival is valid only if every no-hit block restores the initial bridge condition and the same conditional bounds. |
 | Current-HGB elite quality implies future-reachability value | **DISPROVED without alignment assumptions** | **OPEN for any restricted S6-AE claim** | **NOT CLAIMED** | Perfect current-hardness ranking can prefer structurally dead decoys over lower-current-hardness bridges. |
 | Structural comparison with reset evolution/stationary generation/HAC | **CONDITIONAL framework only** | **OPEN** | **OPEN** | Requires method-specific kernels, restart laws, target events, and charged compute; step counts are not interchangeable. |
 | BLADE-NCO beats a fixed generator or HAC under normalized compute | **OPEN** | **OPEN** | **OPEN** | Requires exact target, ensemble, transition/hazard bounds, and matched compute accounting. |
 | Novelty of a BLADE-specific mechanistic reachability theorem | **NOT A PROOF-STATUS QUESTION** | **NOT APPLICABLE** | **OPEN** | No comprehensive literature-priority search or completed BLADE-specific theorem exists here. |
+
+| Fully scored pool admits a nontrivial fractional retention probability conditioned on all selector inputs | **DISPROVED** | **VERIFIED deterministic selection** | **NOT CLAIMED** | Given complete candidates, scores, niches, and tie breaks, retention is an indicator; a fractional bound must condition on pre-generation information. |
+| Causally adapted bridge target under moving BQ solver | **PROVED conditional theorem formulation** | **PARTIAL / OPEN** | **NOT CLAIMED** | Select each next bridge set pre-batch; final bridge is included in the current entering-checkpoint true-hard region. No future-checkpoint or offspring look-ahead is allowed. |
+| Hash first-occurrence dedup guarantees exact niche/bridge set identities unconditionally | **CONDITIONAL** | **PARTIAL** | **NOT CLAIMED** | Niche equality requires equal-hash niche compatibility; bridge chaining requires preservation of bridge membership or injectivity on the realized pool. |
+| Parent-inclusive true-hardness presence implies new hard-instance discovery | **DISPROVED** | **VERIFIED modeling distinction** | **NOT CLAIMED** | Old hard parents can satisfy presence without new accepted offspring. A cycle-0 valid child identical to its current parent is not a new phenotype; new-generation events must exclude P_k as well as earlier generated pools. Acquisition novelty, reactivation, and new niches remain distinct. |
 
 ## Preserved Stage 1 conclusion
 

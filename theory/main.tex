@@ -18,7 +18,7 @@
 \newcommand{\Ex}{\mathbb{E}}
 \newcommand{\HARD}{\mathcal{H}}
 
-\title{BLADE-NCO Theory Research\\Stages 1--2: Formal Alignment and Mechanistic Reachability}
+\title{BLADE-NCO Theory Research\\Stages 1--2.1: Formal Alignment, Reachability, and Mathematical Corrections}
 \author{Research note}
 \date{October 21, 2026}
 
@@ -26,7 +26,7 @@
 \maketitle
 
 \begin{abstract}
-This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This is a Stage 1 note, not a completed theory paper.
+This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This document is a cumulative Stages 1--2.1 mathematical research note, not a completed theory paper.
 
 Stage 1.5 corrects the state space, time indices, probability space,
 aggregation language, and implementation mapping without adding a theorem or
@@ -41,6 +41,12 @@ representatives. It also gives a finite-budget multistep bridge-chain bound
 whose factors are operator-specific accepted-transition and selection-retention
 certificates. The theorem is mathematically valid under its stated premises;
 the decisive BLADE-specific kernel and bridge-retention premises remain open.
+
+Stage 2.1 independently corrects the information set for deterministic versus
+probabilistic bridge retention, imposes a non-anticipating choice of
+cycle-indexed bridge targets, makes hash-deduplication compatibility explicit,
+and separates hard-instance presence from new-instance discovery. These are
+corrections to the conditional framework, not additional superiority theorems.
 \end{abstract}
 
 \section{Scope and status}
@@ -130,10 +136,12 @@ cost models remain necessary before a BLADE-specific comparison theorem can
 be claimed.
 
 \section{Stopping point}
-Stage 1 formalization, Stage 1.5 corrections, and the focused Stage 2
-persistence/reachability investigation are recorded. No experiment,
-algorithm change, Oracle/BQ evaluation, retraining, adaptation, evolution, or
-broader Stage 3 development is included.
+Stage 1 formalization, Stage 1.5 alignment, Stage 2 persistence/reachability,
+and Stage 2.1 independent mathematical corrections are recorded. The
+revised bridge theorem is a conditional, pre-generation-information
+certificate, not an implemented or empirically verified BLADE superiority
+result. No experiment, algorithm change, Oracle/BQ evaluation, retraining,
+adaptation, evolution, or broader Stage 3 development is included.
 
 \begin{thebibliography}{9}
 \bibitem{Dang2017}
