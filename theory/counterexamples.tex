@@ -122,3 +122,14 @@ does not disprove every such weak aggregation. A proof using only niche counts
 is invalid unless it proves the relevant strong or distribution-dependent
 condition, or augments the state with the hidden structural/solver
 information.
+
+\subsection{Hard-instance presence is not novel discovery}
+\mstatus{PROVED definitional counterexample} to treating the parent-inclusive
+generation hit as new-instance discovery. Let $P_k=\{x\}$,
+$h_k^{\rm BQ}(x)\geq\kappa$, and all scheduled child attempts be rejected,
+so $O_k=\varnothing$ and $C_k=\{x\}$. Then $D_k^{\rm gen}$ holds, while
+$D_k^{\rm new,gen}$ is false whenever $x$ was previously generated.
+After every structural niche is already occupied, a later offspring can
+still be a new, distinct hard phenotype within an old niche. Therefore
+newly occupied niches, new hard phenotypes, acquired novelty, and
+hardness reactivation must not be conflated.
