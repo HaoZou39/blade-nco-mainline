@@ -1,0 +1,107 @@
+\section{Formal model and implementation boundary}
+
+\subsection{Structural states and mutation}
+Let $\mathcal{Z}$ be the set of encoded candidate instances and let
+$\phi:\mathcal{Z}\to\mathcal{X}$ map an encoding to the solver-visible
+structural phenotype. Encodings $z,z'$ are equivalent when
+$\phi(z)=\phi(z')$. A structural state is a phenotype $x\in\mathcal{X}$,
+for example a canonical graph/instance together with whichever structural
+attributes determine solver input. The exact canonicalization and attributes
+are implementation questions, not assumptions about FOGA-11.
+
+For finite-budget analysis, take $\mathcal{X}_B$ to be the set of
+phenotypes reachable within budget $B$; assume it is finite. A mutation kernel
+$K_t(x'\mid x,s)$ is the conditional distribution of the next phenotype given
+parent phenotype $x$ and full pre-mutation state $s$. It includes the selected
+structural edit, repair, and canonicalization. Dependence on $t$ or $s$ permits
+operator adaptation and history-dependent mutation. The corresponding kernel
+on encodings is not necessarily Markov after projecting through $\phi$.
+
+\subsection{Population memory and parent survival}
+At proposal epoch $t$, let $P_t$ be the parent population (a multiset of
+encodings or phenotypes) and $A_t$ any quality-diversity archive. Let $S_t$
+collect scores, lineage information, solver state, and other algorithm
+variables that affect the next transition. Thus $M_t=(P_t,A_t,S_t)$ is the
+operational memory state. Parent survival is a transition event: for parent
+$i$, its survival probability is
+\[
+ r_{t,i}=\Prb(i\in P_{t+1}\mid M_t,\text{environment at }t).
+\]
+This is distinct from its parent-selection probability
+$\pi_{t,i}=\Prb(i\text{ is selected for a proposal}\mid M_t)$.
+Retaining a parent does not imply it is selected, and selection does not
+guarantee a useful mutation. The full process may be time-inhomogeneous
+Markovian in $(M_t,\theta_t,q_t)$ if that state is sufficient; a niche label
+or niche-count vector alone need not be.
+
+\subsection{Hardness and moving target}
+Let $\theta_t$ describe the task/environment and $q_t$ the state of the
+co-adapting BQ solver. Define true hardness $h_t(x)=h(x;\theta_t,q_t)$,
+where a larger value means harder under a prespecified solver-performance
+metric. For threshold $\kappa$, the true hard region at epoch $t$ is
+\[
+ \HARD_t=\{x\in\mathcal{X}_B:h_t(x)\geq\kappa\}.
+\]
+This definition allows the target to move because either the task or solver
+state changes. The event of discovery is evaluated at a declared evaluation
+epoch: a proposal $X_t$ hits when $X_t\in\HARD_t$. For the proofs, $\HARD_t$
+must be determined before drawing/evaluating $X_t$ (it may be random but
+predictable from the pre-proposal history). Whether actual BLADE labels a
+candidate ``hard'' by HGB40 alone or by BQ verification is unspecified.
+
+HGB40 supplies an estimate $\widehat h_t(x)$, not the definition of the
+latent target. Surrogate ranking can be used by selection, but an estimate of
+reachability into $\HARD_t$ requires calibration or a direct verification
+model. Without such a condition, true-hardness hit probabilities cannot be
+inferred from HGB40 scores.
+
+\subsection{First hit and computational normalization}
+Index proposal/evaluation cycles by $i$. Let
+\[
+ \tau=\inf\{i\geq 1:X_i\in\HARD_i\},\qquad
+ C_\tau=\sum_{i=1}^{\tau}c_i,
+\]
+where $c_i>0$ is the normalized compute cost through evaluating proposal $i$.
+The budget-$B$ discovery event is $\{C_\tau\leq B\}$. The cost must include
+the work that differs between methods (structural generation, HGB40 inference,
+archive operations, and BQ evaluation/verification, as applicable). Counting
+generations alone is not computational normalization. The elementary bound
+below uses deterministic proposal costs $c_i$; random or method-dependent
+costs require a cost-aware hazard analysis and are not silently replaced by
+generation counts.
+
+For a policy $\pi$, define its conditional hit hazard
+\[
+ q_i^\pi=\Prb(X_i\in\HARD_i\mid\mathcal{F}_{i-1}^\pi),
+\]
+where $\mathcal{F}_{i-1}^\pi$ is the complete pre-proposal history. On a
+no-hit history, a lower bound on $q_i^\pi$ is a reachability certificate. A
+Markov state representation is one way to calculate this hazard, but the
+history-based definition does not require Markovianity.
+
+\subsection{Abstraction versus supplied BLADE-NCO context}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+\toprule
+Supplied component & Representation here & Unspecified for a BLADE-specific proof \\
+\midrule
+FOGA-11 mutation & Phenotype kernel $K_t$ & Edit set, operator probabilities, repairs, and transition support \\
+Inherited parents; Elite-QD1000 (P=T) & Parent population $P_t$ and archive $A_t$ & Meaning of $P=T$, archive update, parent survival, and selection probabilities \\
+HGB40 and BQ co-adaptation & Surrogate $\widehat h_t$ and true $h(x;\theta_t,q_t)$ & Hardness metric/threshold, calibration, solver update timing, and validation cost \\
+Fixed generator and HAC & Comparator proposal kernels & Exact proposal laws, gradient access, stopping rules, and per-proposal compute \\
+Finite budget & Cumulative cost $C_\tau$ & Which compute resources are charged and how variable costs are normalized \\
+\bottomrule
+\end{tabular}
+\end{center}
+Accordingly, the formal model is a deliberately explicit abstraction, not a
+claim that BLADE-NCO has exactly these transition probabilities or state
+variables. The missing implementation semantics are recorded as open
+assumptions in \texttt{assumption\_register.md}.
+
+\subsection{Niche aggregation and the Markov condition}
+Suppose $g$ maps the full state to a niche label or niche-count summary. The
+aggregated process $g(M_t)$ is Markov only if states with the same aggregate
+have equal transition probabilities into every aggregate block (strong
+lumpability). Otherwise the aggregate hides parent identity, within-niche
+structure, or solver/archive history that predicts the next transition. An
+exact failure example is given in Section~\ref{sec:counterexamples}.

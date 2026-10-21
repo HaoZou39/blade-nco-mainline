@@ -1,0 +1,112 @@
+\section{Proof attempt for the strongest candidate}
+
+\subsection{History-based survival lemma}
+\status{PROVED} The lemma below is a standard finite-horizon hitting bound,
+included as the proof engine rather than as a novelty claim.
+
+Let $Y_i=\mathbf{1}\{X_i\in\HARD_i\}$ and
+$\tau=\inf\{i\geq1:Y_i=1\}$. The event $\{\tau\geq i\}$ is determined by
+the history before proposal $i$. Assume there are deterministic numbers
+$p_i\in[0,1]$ such that, on every pre-proposal history with no previous hit,
+\[
+ \Prb(Y_i=1\mid\mathcal{F}_{i-1})\geq p_i.
+\]
+This is a history-uniform conditional hazard condition. It allows the target
+$\HARD_i$ to vary with $i$.
+
+\begin{lemma}[Non-stationary survival and cost bound]
+For every $n\geq1$,
+\[
+ \Prb(\tau>n)\leq\prod_{i=1}^{n}(1-p_i).
+\]
+If proposal costs $c_i$ are deterministic, then
+\[
+ \Ex[C_\tau]
+ \leq \sum_{i\geq1}c_i\prod_{j=1}^{i-1}(1-p_j),
+\]
+with the inequality valid also when the right side is infinite. For a budget $B$, assume
+$\sum_{i=1}^\infty c_i=\infty$ and let
+$n(B)=\max\{n\geq0: \sum_{i=1}^{n}c_i\leq B\}$, with empty sum zero.
+\[
+ \Prb(C_\tau\leq B)\geq
+ 1-\prod_{i=1}^{n(B)}(1-p_i).
+\]
+\end{lemma}
+
+\begin{proof}
+Write $S_i=\{\tau\geq i\}$ for survival to the start of proposal $i$.
+Since $S_i\in\mathcal{F}_{i-1}$,
+\begin{align*}
+ \Prb(S_{i+1})
+ &=\Ex\!\left[\mathbf{1}_{S_i}
+       \Prb(Y_i=0\mid\mathcal{F}_{i-1})\right] \\
+ &\leq (1-p_i)\Prb(S_i).
+\end{align*}
+Starting from $\Prb(S_1)=1$ and iterating gives
+$\Prb(S_{n+1})\leq\prod_{i=1}^{n}(1-p_i)$, which is the first claim.
+For the cost, use the nonnegative-sum identity
+\[
+ C_\tau=\sum_{i\geq1}c_i\mathbf{1}_{\{\tau\geq i\}},
+ \qquad
+ \Ex[C_\tau]=\sum_{i\geq1}c_i\Prb(S_i),
+\]
+and apply the survival bound termwise. Finally, completion of any of the
+first $n(B)$ proposals costs at most $B$, so budget success is at least the
+probability of a hit among those proposals. The first claim supplies the
+stated lower bound.
+\end{proof}
+
+\subsection{Deriving the window comparison}
+For Candidate~1, apply the survival lemma on the $W$-cycle stable-target
+window. The memory policy satisfies $p_i=p_M$ and the comparator satisfies
+an upper hazard bound $q_i^G\leq p_G$ on every no-hit history. The same
+induction, with the inequality reversed for $G$, yields
+\[
+ \Prb(\tau_M>j)\leq(1-p_M)^j,
+ \qquad
+ \Prb(\tau_G>j)\geq(1-p_G)^j.
+\]
+Therefore, for $k\leq W$,
+\[
+ \Prb(\tau_M\leq k)\geq1-(1-p_M)^k
+ >1-(1-p_G)^k\geq\Prb(\tau_G\leq k).
+\]
+For $2\leq k\leq W$, using
+$\Ex[\min(\tau,k)]=\sum_{j=0}^{k-1}\Prb(\tau>j)$ and multiplying by the
+common cycle cost $c$ gives the strict truncated compute-cost comparison in
+Proposition~\ref{prop:window}. At $k=1$ both policies pay the first proposal
+cost in the truncated-cost convention, so only the success-probability
+comparison is strict there.
+
+\subsection{Dependency audit}
+\begin{itemize}
+\item \textbf{Conditional independence:} not used. The proof requires
+history-conditional lower/upper hazard bounds; dependence across offspring or
+generations is allowed if those bounds remain true after every no-hit history.
+\item \textbf{Markovianity:} not used in the hitting proof. It would only be
+needed if one chooses a finite-state transition matrix to calculate the
+hazards. A niche aggregation is valid for that purpose only under lumpability.
+\item \textbf{Mutation bounds:} the quantity $\alpha$ must be a lower bound
+on reaching the true current hard region conditional on the useful parent
+being selected. A graph path's existence alone is insufficient; its
+probability and compute cost matter.
+\item \textbf{Parent retention:} a lower bound $r$ must concern availability
+of a genuinely useful parent at each no-hit proposal. Historical presence
+before a target shift does not establish continued usefulness afterward.
+\item \textbf{Surrogate accuracy:} no accuracy is needed for the abstract
+survival lemma. To infer $\alpha$ or $r$ from HGB40-driven selection, a
+calibration/error assumption connecting $\widehat h_t$ to the true
+$\HARD_t$ is essential. Without it, the implementation-level step is OPEN.
+\item \textbf{Cost normalization:} the comparison assumes equal deterministic
+cost $c$ per proposal. If BLADE archive updates, HGB40 inference, or BQ
+validation change cost, proposal-count dominance does not imply compute-cost
+dominance.
+\end{itemize}
+
+\subsection{Failure boundary}
+\status{OPEN} The proof does not establish that BLADE's conditional hazard is
+above the fixed-generator or HAC hazard. It fails to produce a BLADE result
+at the exact step where one would need verified bounds on $r,\gamma,\alpha$
+and a comparator upper bound $p_G$, all in the same compute units. The
+counterexamples show these inequalities can reverse. No unproved transition
+from a structural-memory narrative to hazard dominance is made.

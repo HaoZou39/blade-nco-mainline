@@ -1,0 +1,101 @@
+\section{Candidate propositions}
+
+\subsection{Candidate 1: finite-window reachability comparison}
+\status{CONDITIONAL} The following is the strongest surviving candidate.
+
+\begin{proposition}[Memory advantage on a stable target window]
+\label{prop:window}
+Suppose the true hard region is constant, $\HARD_i=\HARD$, for a window of
+$W$ proposal cycles and each cycle has the same deterministic compute cost
+$c>0$. On every no-hit history in that window, suppose a memory policy $M$
+has conditional hit hazard at least $p_M$, and a comparator $G$ has
+conditional hit hazard at most $p_G$, with $p_M>p_G$. Then, for
+$1\leq k\leq W$,
+\[
+ \Prb(\tau_M\leq k)\geq 1-(1-p_M)^k
+ > 1-(1-p_G)^k\geq \Prb(\tau_G\leq k),
+\]
+and, for $2\leq k\leq W$,
+\[
+ \Ex[c\min(\tau_M,k)]
+ \leq c\sum_{j=0}^{k-1}(1-p_M)^j
+ < c\sum_{j=0}^{k-1}(1-p_G)^j
+ \leq \Ex[c\min(\tau_G,k)].
+\]
+One sufficient derivation of $p_M$ is the following: on each no-hit history,
+with conditional probability at least $r$ a useful retained parent is
+available; given that event it is selected with probability at least
+$\gamma$; conditional on that selection, its mutation/evaluation reaches the
+true current hard region with probability at least $\alpha$. Then
+$p_M\geq r\gamma\alpha$. No independence among these events is assumed;
+the bounds are conditional in the stated order.
+\end{proposition}
+
+\paragraph{Importance.} It turns a structural-memory claim into a finite-budget,
+equal-cost comparison that explicitly accounts for parent access and mutation
+reachability. It also makes clear that survival alone is not a sufficient
+mechanism.
+
+\paragraph{Assumptions and realism.} A piecewise-stable target window and
+equal-cost proposals are useful first approximations, but actual BQ
+co-adaptation may move $\HARD_i$ within a window and HGB40/BQ costs may differ
+by candidate. Lower bounds $r,\gamma,\alpha$ must hold on every surviving
+history, not just on average. These quantities are measurable in principle
+from detailed traces, but no such traces or exact FOGA-11 transition rules
+were supplied. Realism for BLADE-NCO is therefore \status{OPEN}.
+
+\paragraph{Proof approach.} Induction on the no-hit survival probability,
+then the identity expressing expected truncated hitting time as the sum of
+survival probabilities. It requires no conditional independence and no
+Markov approximation. Proof details are in \texttt{proof\_attempts.tex}.
+
+\paragraph{Counterexample and HAC distinction.} If memory's conditional
+hazard is lower because its retained parents are stale, or if a gradient
+proposal has larger hazard per compute unit, the premise fails. The exact
+examples in \texttt{counterexamples.tex} show both. Thus this is a conditional
+criterion that can distinguish BLADE from fixed generation or HAC only after
+their hazards and costs are measured; it does not establish that BLADE wins.
+
+\subsection{Candidate 2: inherited memory never hurts}
+\status{DISPROVED} The proposed blanket claim is that retaining historical
+parents cannot increase first-hitting cost relative to a fixed generator.
+This is false even with two structural states and one target change. The
+stale-memory example in Section~\ref{sec:counterexamples} has expected cost
+$100$ for inherited memory versus $2$ for a fixed uniform generator. The
+failure is not a technical gap in Candidate 1: the required hazard dominance
+is reversed.
+
+\paragraph{Importance and proof approach.} A universal no-harm theorem would
+have supported the research objective directly, but the exact counterexample
+rules it out. No proof is possible without additional target-drift,
+forgetting, or reachability assumptions. These extra assumptions would need
+to be stated and independently justified; they cannot be inferred from the
+word ``memory.''
+
+\paragraph{Assumptions and realism.} The universal claim would require memory never to reduce true-hardness reachability per unit cost for any target shift or parent-selection history. That is not guaranteed by inherited populations and is contradicted by the stale-memory example; realism for BLADE-NCO is low absent explicit target-aware forgetting and verified hazard bounds.
+
+\paragraph{Strongest proof approach.} An exact finite-state counterexample proves the universal claim false. A positive restricted result would need additional drift and reachability premises, which are instead stated explicitly in Candidate 1.
+
+\paragraph{HAC distinction.} Nothing in this false claim compares BLADE to
+HAC. HAC can outperform a poorly aligned retained population, as the path
+example in Section~\ref{sec:counterexamples} demonstrates.
+
+\subsection{Candidate 3: diversity always improves discovery}
+\status{DISPROVED} The proposed blanket claim is that preserving a more
+diverse population always reduces first-hitting time. In a three-state model,
+a diverse parent selector spends half of each equal-cost proposal on an
+irrelevant niche and has expected hitting cost $2$, while a focused selector
+hits in cost $1$. The exact construction is in Section~\ref{sec:counterexamples}.
+
+\paragraph{Importance and assumptions.} Diversity can preserve useful future
+routes, but its benefit depends on niche relevance, selection allocation,
+target drift, and cost. A monotonicity proof from diversity cardinality alone
+cannot work. This counterclaim concerns a universal guarantee, not a claim
+that Elite-QD1000 behaves like the toy selector.
+
+\paragraph{Realism and strongest proof approach.} No selection-allocation or niche-relevance condition is supplied for Elite-QD1000, so the premise is not verified for BLADE-NCO. The exact three-state construction is a complete disproof of the universal claim; a positive diversity theorem would require explicit target-access conditions. This does not rank BLADE against HAC.
+
+\paragraph{HAC distinction.} It provides no general ranking against HAC.
+With equal compute, a focused or gradient-guided policy may spend more
+proposals on the current reachable hard region; the actual ranking depends
+on transition probabilities and costs, neither of which is specified here.
