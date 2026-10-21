@@ -261,20 +261,33 @@ creating a new one. Let $\mathcal V_{k-1}^{\rm gen}
 =\bigcup_{t<k}T_t$ denote previously generated and acquired phenotype sets,
 interpreted under the declared hash/phenotype compatibility rule.
 For a mathematically new, valid offspring of current true hardness at least
-$\kappa$, define
+$\kappa$, exclude both previously generated phenotypes and the \emph{current}
+parent population (including the initial roots of cycle 0):
 \[
  D_k^{\rm new,gen}
- =\{\exists x\in O_k\setminus\mathcal V_{k-1}^{\rm gen}:
-               h_k^{\rm BQ}(x)\geq\kappa\}.
+ =\left\{\exists x\in
+ O_k\setminus(\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
 \]
+This exclusion is essential when a valid mutation returns the identical
+parent phenotype or when its child hash duplicates another current parent.
+It does not alter the parent-inclusive presence event $D_k^{\rm gen}$.
 A new acquisition under the cumulative acquisition ledger is
 \[
  D_k^{\rm new,acq}
  =\{\exists x\in T_k\setminus\mathcal V_{k-1}^{\rm acq}:
                h_k^{\rm BQ}(x)\geq\kappa\}.
 \]
-A newly generated \emph{and} acquired hard instance additionally requires
-$x\in (O_k\cap T_k)\setminus\mathcal V_{k-1}^{\rm gen}$.
+A newly generated \emph{and} acquired hard instance satisfies
+\[
+ D_k^{\rm new,gen\cap acq}=
+ \left\{\exists x\in
+ (O_k\cap T_k)\setminus
+ (\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
+\]
+This is a stricter event than $D_k^{\rm new,acq}$: an old parent may be
+selected for the first time, but is not thereby a newly generated phenotype.
 An old instance may become hard under $q_k$ after being non-hard under an
 earlier checkpoint; this is \emph{hardness reactivation}, not instance
 novelty. A previously unvisited hard niche is a different event again.
