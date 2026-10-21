@@ -11,12 +11,14 @@
 
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
-\newcommand{\status}[1]{\textbf{[#1]}}
+\newcommand{\mstatus}[1]{\textbf{[Mathematical status: #1]}}
+\newcommand{\istatus}[1]{\textbf{[Implementation applicability: #1]}}
+\newcommand{\nstatus}[1]{\textbf{[Scientific novelty: #1]}}
 \newcommand{\Prb}{\mathbb{P}}
 \newcommand{\Ex}{\mathbb{E}}
 \newcommand{\HARD}{\mathcal{H}}
 
-\title{BLADE-NCO Theory Research\\Stage 1: Mathematical Exploration}
+\title{BLADE-NCO Theory Research\\Stage 1 with Stage 1.5 Formal-Model Corrections}
 \author{Research note}
 \date{October 21, 2026}
 
@@ -25,15 +27,34 @@
 
 \begin{abstract}
 This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This is a Stage 1 note, not a completed theory paper.
+
+Stage 1.5 corrects the state space, time indices, probability space,
+aggregation language, and implementation mapping without adding a theorem or
+changing that conclusion. The finite examples remain counterexamples to
+universal claims; they are not assumptions that the TSP instance space is
+finite.
 \end{abstract}
 
 \section{Scope and status}
 The scope is restricted to structural reachability, evolutionary memory, and expected first-hitting time under a non-stationary hardness landscape. The supplied BLADE-NCO context is FOGA-11 structural mutation, inherited parent populations, HGB40 hardness estimation, Elite-QD1000 (P=T), and BQ solver co-adaptation. Those names are treated as labels, not as complete algorithm specifications.
 
-Every mathematical result below carries a status tag. A proof of a conditional probability bound does not establish that its assumptions hold in BLADE-NCO. Compilation verifies only that the source typesets; it does not verify mathematical correctness.
+Statuses are reported on three separate axes. \mstatus{PROVED}, for example,
+concerns the validity of a mathematical statement under its premises;
+\istatus{VERIFIED, PARTIAL, OPEN, or NOT APPLICABLE} concerns whether those
+premises and variables match the inspected S6-AE implementation; and
+\nstatus{OPEN or NOT CLAIMED} concerns literature priority. A proof of a
+conditional probability bound does not establish implementation applicability
+or novelty. Compilation verifies only that the source typesets; it does not
+verify mathematical correctness.
+
+The Stage 1.5 implementation boundary is the verified HGB40 + Elite-QD1000
+$(P=T)$ S6-AE path. Its frozen artifacts passed 40/40 strict checks. Historical
+GP4 output is not used as the definition of the current method. Details that
+could not be established from the inspected code and artifacts are marked
+OPEN rather than inferred.
 
 \section{Prior-theory boundary}
-Related theory includes rigorous results in which populations track moving optima and in which diversity mechanisms have different effects, but those works analyze explicit dynamic-function classes and specified algorithm dynamics \cite{Dang2017,OlivetoZarges2015}. They do not establish compute-normalized discovery of solver-relative hard instances under solver co-adaptation. Thus a generic claim that ``memory/diversity helps in dynamic optimization'' is unsuitable as a novelty claim. The present abstraction differs in its target: discovering instances whose measured hardness changes as the solver co-adapts, under a compute budget and with a surrogate-based archive. Whether that narrower combination is novel remains \status{OPEN}; this note is not a literature-priority search.
+Related theory includes rigorous results in which populations track moving optima and in which diversity mechanisms have different effects, but those works analyze explicit dynamic-function classes and specified algorithm dynamics \cite{Dang2017,OlivetoZarges2015}. They do not establish compute-normalized discovery of solver-relative hard instances under solver co-adaptation. Thus a generic claim that ``memory/diversity helps in dynamic optimization'' is unsuitable as a novelty claim. The present abstraction differs in its target: discovering instances whose measured hardness changes as the solver co-adapts, under a compute budget and with a surrogate-based archive. Whether that narrower combination is novel remains \nstatus{OPEN}; this note is not a literature-priority search.
 
 \input{definitions.tex}
 \input{theorem_candidates.tex}
@@ -45,16 +66,33 @@ Related theory includes rigorous results in which populations track moving optim
 The useful candidate is the finite-window reachability comparison in Proposition~\ref{prop:window}. It gives an auditable sufficient condition for inherited memory to improve finite-budget discovery on a window where the hard region is stable: the retained lineage must be available, selected, and able to mutate into the \emph{true} current hard region often enough that its per-cost conditional hit hazard exceeds the comparator's. The proof is a survival-probability induction and needs neither independent proposals nor a Markov approximation.
 
 \paragraph{Limitations and novelty.}
-The probability argument is standard and is not itself a novel theorem. Its scientific content would have to come from deriving and validating useful lower bounds on FOGA-11 reachability and parent survival, then comparing them with the actual fixed-generator and HAC hazards at equal compute cost. The supplied context does not specify the mutation operator probabilities, population update rule, hardness threshold, score calibration, solver/evaluation costs, or HAC transition law. Thus the assumptions cannot yet be checked, and the result does not assert a BLADE advantage.
+The probability argument is standard and is not itself a novel theorem. Its scientific content would have to come from deriving and validating useful lower bounds on FOGA-11 reachability and parent survival, then comparing them with the actual fixed-generator and HAC hazards at equal compute cost. Stage 1.5 verifies the deterministic operator schedule and population update, but the operator-kernel laws under a scientific ensemble, hardness threshold, score-to-retention bridge, matched costs, and HAC transition law remain unspecified. Thus the decisive assumptions cannot yet be checked, and the result does not assert a BLADE advantage.
 
-\paragraph{Testability using existing data.}
-The result could be tested from already logged proposal-level records if they identify the parent and mutation operator, true or solver-verified hardness at proposal time, HGB40 score, BQ solver version/state, parent/archive survival, and wall-clock or accelerator cost. No such data are present in this workspace, so empirical testability is \status{OPEN}. No evaluations, training, or evolutionary runs were performed.
+Stage 1.5 verified the S6-AE batch schedule and population update rule, but not
+the required probabilistic hazard bounds, a scientific hard-region threshold,
+or a matched HAC transition/cost law. Therefore the mathematical comparison
+remains conditional, its BLADE applicability remains partial, and its novelty
+remains open.
+
+\paragraph{Testability.}
+The result could be tested from existing proposal- and generation-level
+records if they identify parent, operator, accepted child, HGB40 score,
+acquisition membership, current BQ hardness where evaluated, solver
+checkpoint, survival, and comparable cost. The inspected S6-AE artifacts do
+record much of this mechanism, but they do not by themselves establish the
+history-uniform true-hardness hazard bounds used by the proposition.
+\par\istatus{OPEN}\par
+No new evaluations, training, or evolutionary runs were performed for this
+note.
 
 \paragraph{Unresolved issues.}
 The decisive open issue is whether memory yields greater \emph{true-hardness reachability per unit cost} than the fixed generator or HAC after accounting for stale parents, surrogate ranking error, solver co-adaptation, and archive overhead. The exact BLADE transition model and the appropriate cost accounting must be supplied before a BLADE-specific theorem can be attempted.
 
 \section{Stopping point}
-Stage 1 formalization, candidate claims, first proof attempt, and adversarial checks are recorded. Further theory development or experimental design is intentionally deferred pending human approval.
+Stage 1 formalization, the Stage 1.5 corrections, candidate claims, original
+proof attempt, and adversarial checks are recorded. No Stage 2 theorem
+development, experimental design, algorithm change, Oracle/BQ evaluation, or
+new run is included.
 
 \begin{thebibliography}{9}
 \bibitem{Dang2017}

@@ -1,10 +1,13 @@
 \section{Adversarial finite-state checks}
 The examples below are exact toy models. They test universal statements and
 assumptions; none is asserted to be the BLADE-NCO implementation.
+Their tags report mathematical status; implementation applicability is
+\istatus{NOT APPLICABLE as a universal guarantee}, and novelty is
+\nstatus{NOT CLAIMED}.
 
 \subsection{Stale memory after a target shift}
 \label{sec:counterexamples}
-\status{DISPROVED} for the claim that historical memory cannot hurt.
+\mstatus{DISPROVED} for the claim that historical memory cannot hurt.
 Take $\mathcal{X}=\{a,b\}$. Before a change the hard region is
 $\HARD_0=\{a\}$; just before the first measured proposal it shifts to
 $\HARD_i=\{b\}$ for all $i\geq1$. The inherited population contains only
@@ -22,7 +25,7 @@ has undergone a single non-stationary shift; the failure is stale structural
 support, not an independence artifact.
 
 \subsection{Gradient adaptation can beat structural mutation}
-\status{DISPROVED} for any universal claim that structural mutation
+\mstatus{DISPROVED} for any universal claim that structural mutation
 outperforms HAC-style gradient adaptation. Let
 $\mathcal{X}=\{0,1,\ldots,L\}$ and $\HARD=\{L\}$. A structural mutation
 from $i<L$ advances to $i+1$ with probability $\varepsilon$ and otherwise
@@ -34,7 +37,7 @@ landscape with an informative gradient, not a model of the actual HAC
 implementation; it proves that operator labels alone imply no ranking.
 
 \subsection{Diversity can allocate effort away from the target}
-\status{DISPROVED} for the claim that increased diversity always improves
+\mstatus{DISPROVED} for the claim that increased diversity always improves
 first hitting time. Let $\mathcal{X}=\{s,u,g\}$, target $\HARD=\{g\}$,
 and one proposal cost one unit. The diverse parent set contains distinct
 niches $s$ and $u$; parent selection is uniform. Mutation from $s$ reaches
@@ -43,26 +46,35 @@ hit probability is $1/2$ and expected hitting cost is $2$. A focused policy
 that selects $s$ every time hits in cost $1$. Preserving the irrelevant
 niche does not help this target and reduces access to the useful parent.
 
-\subsection{Surrogate error can remove a useful bridge}
-\status{DISPROVED} for the claim that surrogate-based elite retention
-preserves true-hardness reachability. Consider states $\{a,b,g\}$ and
-current target $\HARD=\{g\}$; neither $a$ nor $b$ is itself a hit. From $a$,
-mutation reaches $g$ surely; from $b$, mutation stays at $b$ surely. A
-one-slot score-elite update retains whichever of $a,b$ has the larger
-surrogate score. If the true scores of $a,b$ are equal but HGB40
-systematically overestimates $b$, the update retains $b$, discards $a$, and
-makes the target unreachable. An accurate or reachability-aware selection
-would retain $a$. This is a counterexample to a universal error-robustness
-claim, not a claim about the precise Elite-QD1000 update rule.
+\subsection{Perfect current-hardness prediction need not preserve a bridge}
+\mstatus{DISPROVED} for the claim that perfect prediction of current BQ
+hardness makes score-elite retention preserve future mutation reachability.
+Consider states $\{a,b,g\}$ and current target $\HARD=\{g\}$; neither $a$
+nor $b$ is itself a hit, and their current true hardness is equal:
+$h(a)=h(b)<\kappa$. From $a$, the next scheduled mutation reaches $g$
+surely; from $b$, mutation stays at $b$ surely. Let the surrogate be perfect
+on current hardness, so $\widehat h(a)=h(a)=h(b)=\widehat h(b)$. A one-slot
+score-elite update must still break the tie. If its deterministic tie rule
+retains $b$, it discards $a$ and makes $g$ unreachable. Thus current-hardness
+accuracy, even perfection, does not identify equal-hardness candidates with
+different mutation futures. A reachability-aware rule could retain $a$, but
+perfect current-hardness prediction alone need not do so. This is not a claim
+that the observed S6-AE hash tie-break selected such a pair; it is an exact
+obstruction to the proposed bridge.
 
 \subsection{Niche aggregation can destroy the Markov property}
-\status{DISPROVED} for the assertion that a niche label alone is a Markov
+\mstatus{DISPROVED} for the assertion that a niche label alone is a Markov
 state. Let full states $x_1,x_2$ both map to niche $A$, while $z,w$ map to
 distinct niches $Z,W$. From $x_1$, the next state is $z$ with probability
 $1$; from $x_2$, the next state is $w$ with probability $1$. Both full states
 have the same current aggregate $A$, but the next aggregate is respectively
 $Z$ or $W$. The transition probability out of aggregate $A$ is therefore
-not determined by the aggregate alone (strong lumpability fails). A Markov
-proof using only niche counts would be invalid unless the update rule supplies
-the needed lumpability condition or the state is augmented with the hidden
-structural/solver information.
+not determined by the aggregate alone (strong lumpability fails). Therefore
+niche aggregation is not Markov uniformly over initial laws. For a specially
+chosen initial distribution, an averaged transition might nevertheless be
+Markov; that weaker distribution-dependent claim would require the
+conditional within-$A$ mixture to remain history-independent. The example
+does not disprove every such weak aggregation. A proof using only niche counts
+is invalid unless it proves the relevant strong or distribution-dependent
+condition, or augments the state with the hidden structural/solver
+information.

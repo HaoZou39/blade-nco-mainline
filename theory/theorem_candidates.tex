@@ -1,34 +1,47 @@
 \section{Candidate propositions}
 
 \subsection{Candidate 1: finite-window reachability comparison}
-\status{CONDITIONAL} The following is the strongest surviving candidate.
+\mstatus{CONDITIONAL} \istatus{PARTIAL} \nstatus{NOT CLAIMED} The following
+is the strongest surviving candidate.
 
 \begin{proposition}[Memory advantage on a stable target window]
 \label{prop:window}
-Suppose the true hard region is constant, $\HARD_i=\HARD$, for a window of
-$W$ proposal cycles and each cycle has the same deterministic compute cost
+Suppose the true hard region attached to the declared discovery event is
+constant, $\HARD_j=\HARD$, for a window of $W$ comparison opportunities and
+each opportunity has the same deterministic compute cost
 $c>0$. On every no-hit history in that window, suppose a memory policy $M$
 has conditional hit hazard at least $p_M$, and a comparator $G$ has
 conditional hit hazard at most $p_G$, with $p_M>p_G$. Then, for
-$1\leq k\leq W$,
+$1\leq n\leq W$,
 \[
- \Prb(\tau_M\leq k)\geq 1-(1-p_M)^k
- > 1-(1-p_G)^k\geq \Prb(\tau_G\leq k),
+ \Prb(\tau_M\leq n)\geq 1-(1-p_M)^n
+ > 1-(1-p_G)^n\geq \Prb(\tau_G\leq n),
 \]
-and, for $2\leq k\leq W$,
+and, for $2\leq n\leq W$,
 \[
- \Ex[c\min(\tau_M,k)]
- \leq c\sum_{j=0}^{k-1}(1-p_M)^j
- < c\sum_{j=0}^{k-1}(1-p_G)^j
- \leq \Ex[c\min(\tau_G,k)].
+ \Ex[c\min(\tau_M,n)]
+ \leq c\sum_{j=0}^{n-1}(1-p_M)^j
+ < c\sum_{j=0}^{n-1}(1-p_G)^j
+ \leq \Ex[c\min(\tau_G,n)].
 \]
-One sufficient derivation of $p_M$ is the following: on each no-hit history,
+For a generic policy that actually samples a parent, one sufficient
+derivation of $p_M$ is the following: on each no-hit history,
 with conditional probability at least $r$ a useful retained parent is
 available; given that event it is selected with probability at least
 $\gamma$; conditional on that selection, its mutation/evaluation reaches the
 true current hard region with probability at least $\alpha$. Then
 $p_M\geq r\gamma\alpha$. No independence among these events is assumed;
 the bounds are conditional in the stated order.
+
+That random-selection factorization is not the S6-AE schedule. For the
+verified deterministic Cartesian batch, every retained parent receives all
+11 operators. If $r$ lower-bounds availability of a useful parent and
+$\alpha_{\rm batch}$ lower-bounds, under the explicitly declared RNG
+ensemble, the conditional probability that its scheduled operator batch
+generates the declared hit, then the appropriate sufficient bound is
+$p_M\geq r\alpha_{\rm batch}$. With roots and all seeds conditioned to their
+frozen values, this is a statement about a realized batch, not an estimated
+random parent/operator-selection probability.
 \end{proposition}
 
 \paragraph{Importance.} It turns a structural-memory claim into a finite-budget,
@@ -37,12 +50,14 @@ reachability. It also makes clear that survival alone is not a sufficient
 mechanism.
 
 \paragraph{Assumptions and realism.} A piecewise-stable target window and
-equal-cost proposals are useful first approximations, but actual BQ
-co-adaptation may move $\HARD_i$ within a window and HGB40/BQ costs may differ
-by candidate. Lower bounds $r,\gamma,\alpha$ must hold on every surviving
-history, not just on average. These quantities are measurable in principle
-from detailed traces, but no such traces or exact FOGA-11 transition rules
-were supplied. Realism for BLADE-NCO is therefore \status{OPEN}.
+equal-cost opportunities are useful first approximations. In S6-AE the BQ
+checkpoint is fixed during mutation/acquisition in cycle $k$ and changes only
+after $T_k$ is frozen and labeled, but comparison windows spanning adaptations
+can still move $\HARD_k$. HGB40, archive, exact-label, and BQ-training costs
+also differ from a single mutation attempt. The deterministic 10,000-by-11
+schedule and $P=T$ update are verified; the history-uniform
+$r\alpha_{\rm batch}$ bound, scientific threshold, and matched comparator
+cost/hazard remain \istatus{OPEN}.
 
 \paragraph{Proof approach.} Induction on the no-hit survival probability,
 then the identity expressing expected truncated hitting time as the sum of
@@ -57,7 +72,8 @@ criterion that can distinguish BLADE from fixed generation or HAC only after
 their hazards and costs are measured; it does not establish that BLADE wins.
 
 \subsection{Candidate 2: inherited memory never hurts}
-\status{DISPROVED} The proposed blanket claim is that retaining historical
+\mstatus{DISPROVED} \istatus{NOT APPLICABLE} \nstatus{NOT CLAIMED} The
+proposed blanket claim is that retaining historical
 parents cannot increase first-hitting cost relative to a fixed generator.
 This is false even with two structural states and one target change. The
 stale-memory example in Section~\ref{sec:counterexamples} has expected cost
@@ -81,7 +97,8 @@ HAC. HAC can outperform a poorly aligned retained population, as the path
 example in Section~\ref{sec:counterexamples} demonstrates.
 
 \subsection{Candidate 3: diversity always improves discovery}
-\status{DISPROVED} The proposed blanket claim is that preserving a more
+\mstatus{DISPROVED} \istatus{NOT APPLICABLE} \nstatus{NOT CLAIMED} The
+proposed blanket claim is that preserving a more
 diverse population always reduces first-hitting time. In a three-state model,
 a diverse parent selector spends half of each equal-cost proposal on an
 irrelevant niche and has expected hitting cost $2$, while a focused selector
