@@ -1,4 +1,4 @@
-# Assumption register — Stages 1.5–2.1
+# Assumption register — Stages 1.5–3B
 
 The three status axes are intentionally separate:
 
@@ -58,6 +58,17 @@ The three status axes are intentionally separate:
 | A46 | Small current-hardness tracking regret implies future mutation reachability or downstream BQ training improvement. | DISPROVED without alignment premises | NOT APPLICABLE as a guarantee | Exact counterexamples separate current hardness from structural bridge value and from the effect of a selected training distribution on later evaluation. |
 | A47 | A nonaccumulating historical bound follows from a uniformly bounded historical-unavailability penalty `A_(k,j)=[sup_(U_(k-1,j)) f_k-sup_(C_(k,j)) f_k]_+`. | CONDITIONAL | OPEN | The exact decomposition `R_(k,j) <= 2 epsilon_(k,j)+A_(k,j)` is valid, but S6-AE does not certify or directly observe `A_(k,j)`. |
 
+| A48 | Descending HGB40 score plus ascending instance hash defines a strict total order on each finite candidate pool, and the per-niche floor satisfies `|Q_k| <= K <= m`. | Deterministic premise | VERIFIED | Frozen prediction, hash, niche, and selection records implement this order with `K=1000` and `m=10000`. |
+| A49 | The actual acquisition and pure-global counterfactual satisfy `T_k \ G_k = Q_k \ G_k` and equal directed-difference sizes at most `K`. | PROVED | VERIFIED in C00-C09 | Elementary protected-set/top-`m` exchange; all ten frozen cycles pass the identity. |
+| A50 | The predicted QD opportunity cost `Delta_QD = sum_G hat f - sum_T hat f` is nonnegative and exactly observable. | PROVED | VERIFIED | Pure Global Top10k maximizes the HGB score sum. This is a surrogate-score statement only. |
+| A51 | `V_k` contains only labels verified under entering checkpoint `M_k`; earlier-checkpoint labels are interchangeable with current labels. | First clause VERIFIED; second clause FALSE | VERIFIED / NOT APPLICABLE | S6-AE stores current labels for `T_k` and the current calibration sample. BQ adaptation changes the hardness function, so old labels require re-evaluation or a drift model. |
+| A52 | Selected-set labels identify unselected-candidate quality without an error, sampling, or range assumption. | DISPROVED | NOT APPLICABLE as an inference | Two finite worlds can agree on identities, descriptors, predictions, selections, and every label in `V_k` while assigning arbitrary truth to `C_k \ V_k`. |
+| A53 | A known finite range `L <= f_k <= U` yields sharp partial-identification bounds for the true `G_k`-minus-`T_k` sum. | PROVED conditional | OPEN | Nonnegative LBQ supplies a lower endpoint, but no finite scientifically justified upper endpoint is present in the inspected artifacts. |
+| A54 | A probability sample of unselected candidates with known positive inclusion probabilities supports design-based estimation of finite-pool means or tail mass. | CONDITIONAL statistical premise | NOT AVAILABLE | Archive calibration is randomized within the archive, not the current union; deterministic acquisition gives zero inclusion probability to most unselected candidates. |
+| A55 | Exact same-checkpoint comparison of true `T_k` and `G_k` requires labeling only the still-unverified members of `G_k \ T_k`, at most `K`. | PROVED | STRUCTURALLY VERIFIED; LABELS INCOMPLETE | Common members cancel and `T_k \ G_k` is already labeled as part of `T_k`. Every inspected cycle still has unverified displaced members. |
+| A56 | A small random unselected sample point-identifies niche maxima or exact elite regret. | DISPROVED in general | NOT APPLICABLE | Exact maxima need a niche census, a valid finite contender certificate, or a separately justified tail model. |
+| A57 | Acquisition hardness or a true `T_k`-versus-`G_k` comparison identifies downstream BQ training value. | DISPROVED without a causal link | NOT APPLICABLE as a guarantee | Training value is a separate intervention-dependent outcome; Stage 3B performs no training comparison. |
+
 ## Verified S6-AE implementation facts
 
 - The current grounding is `scripts/run_s6ae_hgb40_eliteqd1000_pt_10k_hard_only_x1_m0_m10.py` through the S6-AC/S5-B/S4-B implementation chain, not the historical GP4 protocol.
@@ -71,6 +82,9 @@ The three status axes are intentionally separate:
 - Rejected/invalid attempts and accepted duplicates are recorded once and do not trigger replacement draws.
 - Exact current-hardness labeling occurs after `T_k` is frozen. BQ training then produces the next solver checkpoint.
 - BQ training randomness (per-epoch hard-set permutation and suffix sampling) is separate from acquisition and parent/operator scheduling.
+- Pure-global `G_k` is frozen diagnostically before exact labeling, and the actual selector is exactly `Q_k` plus global fill outside `Q_k`.
+- All ten frozen cycles satisfy `T_k \ G_k = Q_k \ G_k`; the exchange count ranges from 41 to 876 and is always at most 1,000.
+- Every `T_k` member has a current-checkpoint label. Calibration adds some current labels outside `T_k`, but every cycle retains unverified members of `G_k \ T_k`.
 
 ## Still OPEN
 
@@ -86,3 +100,7 @@ The three status axes are intentionally separate:
 - Solver-drift bounds on the comparison domain, especially the complete latent historical candidate ledger required by the regret recurrence.
 - A bounded historical-unavailability penalty or another contraction/refresh property that prevents linear regret accumulation.
 - Any alignment theorem connecting low current-hardness regret to bridge retention or downstream BQ training value.
+- A finite scientifically justified upper range for current log1p-LBQ on each candidate pool.
+- A candidate-pool probability sample with known positive inclusion probabilities for full-pool aggregate estimation.
+- Complete same-checkpoint labels for `G_k \ T_k`, required for an exact true-hardness Elite-QD-versus-global comparison.
+- Exact full-pool niche maxima, elite regret, and hard-tail recall under the current frozen artifacts.

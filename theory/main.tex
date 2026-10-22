@@ -18,7 +18,7 @@
 \newcommand{\Ex}{\mathbb{E}}
 \newcommand{\HARD}{\mathcal{H}}
 
-\title{BLADE-NCO Theory Research\\Stages 1--3A: Formal Alignment, Reachability, and Hardness Tracking}
+\title{BLADE-NCO Theory Research\\Stages 1--3B: Reachability, Hardness Tracking, and Identifiability}
 \author{Research note}
 \date{October 22, 2026}
 
@@ -26,7 +26,7 @@
 \maketitle
 
 \begin{abstract}
-This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This document is a cumulative Stages 1--2.1 mathematical research note, not a completed theory paper.
+This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This document is a cumulative Stages 1--3B mathematical research note, not a completed theory paper.
 
 Stage 1.5 corrects the state space, time indices, probability space,
 aggregation language, and implementation mapping without adding a theorem or
@@ -55,6 +55,15 @@ the complete latent candidate history. The recurrence can accumulate linearly,
 and its complete-pool HGB-error and historical-drift premises are not verified
 for S6-AE. Exact counterexamples continue to separate current-hardness tracking
 from future reachability and downstream BQ training value.
+
+Stage 3B removes those unsupported premises and audits what is observable.
+It proves an exact exchange identity between Elite-QD acquisition and pure
+global HGB Top10k, making the surrogate-score opportunity cost computable.
+An exact finite-pool indistinguishability construction shows that selectively
+verified labels do not identify full-pool niche maxima, elite true-hardness
+regret, hard-tail recall, or the true Elite-QD-versus-global comparison.  The
+missing paired comparison can be completed with at most 1,000 same-checkpoint
+labels, but those labels are not present in the frozen artifacts.
 \end{abstract}
 
 \section{Scope and status}
@@ -96,6 +105,7 @@ present limited audit is not a comprehensive priority search.
 \input{proof_attempts.tex}
 \input{counterexamples.tex}
 \input{hardness_tracking.tex}
+\input{stage3b_identifiability.tex}
 
 \section{Research assessment}
 \paragraph{Strongest candidate.}
@@ -155,18 +165,30 @@ does not label those complete sets. Bounded per-cycle terms permit linear
 regret, not a steady-state guarantee. The Stage 3A decision is therefore
 \textbf{C -- TRACKING\_ASSUMPTIONS\_NOT\_JUSTIFIED}.
 
+\paragraph{Stage 3B identifiability assessment.}
+The verified selector satisfies
+$T_k\setminus G_k=Q_k\setminus G_k$ and exchanges at most 1,000 members with
+pure global HGB Top10k.  Its predicted-score cost is nonnegative and exactly
+observable.  True current hardness, however, is selective: all of $T_k$ is
+labeled, but most displaced members of $G_k\setminus T_k$ and most of the
+candidate union are not.  Two truth assignments can therefore agree on every
+saved observable while reversing the full-pool conclusions.  This is an
+information limit, not evidence of poor realized selection, and the Stage 3B
+decision is \textbf{B -- IDENTIFIABILITY\_LIMIT\_CONFIRMED}.
+
 \section{Stopping point}
 Stage 1 formalization, Stage 1.5 alignment, Stage 2 persistence/reachability,
-Stage 2.1 independent mathematical corrections, and Stage 3A solver-relative
-hardness-tracking analysis are recorded. The
+Stage 2.1 independent mathematical corrections, Stage 3A solver-relative
+hardness tracking, and Stage 3B observability analysis are recorded. The
 revised bridge theorem is a conditional, pre-generation-information
 certificate, not an implemented or empirically verified BLADE superiority
 result. The Stage 3A regret recurrence is likewise conditional and does not
-establish bounded long-run tracking. No experiment, algorithm change,
-Oracle/BQ evaluation, retraining, adaptation, evolution, or Stage 3B
+establish bounded long-run tracking.  Stage 3B specifies, but does not run, a
+minimal same-checkpoint verification protocol. No experiment, algorithm
+change, Oracle/BQ evaluation, retraining, adaptation, evolution, or Stage 3C
 development is included.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \bibitem{Dang2017}
 D.-C. Dang, T. Jansen, and P. K. Lehre,
 ``Populations Can Be Essential in Tracking Dynamic Optima,''
@@ -206,6 +228,33 @@ M. Zinkevich,
 ``Online Convex Programming and Generalized Infinitesimal Gradient Ascent,''
 in \emph{Proceedings of the 20th International Conference on Machine Learning},
 pp. 928--936, 2003.
+
+\bibitem{Lakkaraju2017}
+H. Lakkaraju, J. Kleinberg, J. Leskovec, J. Ludwig, and S. Mullainathan,
+``The Selective Labels Problem: Evaluating Algorithmic Predictions in the
+Presence of Unobservables,'' in \emph{Proceedings of the 23rd ACM SIGKDD
+International Conference on Knowledge Discovery and Data Mining}, 2017.
+doi: 10.1145/3097983.3098066.
+
+\bibitem{Manski2005}
+C. F. Manski,
+``Partial identification with missing data: concepts and findings,''
+\emph{International Journal of Approximate Reasoning}, vol. 39, no. 2--3,
+pp. 151--165, 2005.
+doi: 10.1016/j.ijar.2004.10.006.
+
+\bibitem{SwaminathanJoachims2015}
+A. Swaminathan and T. Joachims,
+``Counterfactual Risk Minimization: Learning from Logged Bandit Feedback,''
+in \emph{Proceedings of the 32nd International Conference on Machine
+Learning}, PMLR 37, pp. 814--823, 2015.
+
+\bibitem{Jin2011}
+Y. Jin,
+``Surrogate-assisted evolutionary computation: Recent advances and future
+challenges,'' \emph{Swarm and Evolutionary Computation}, vol. 1, no. 2,
+pp. 61--70, 2011.
+doi: 10.1016/j.swevo.\allowbreak 2011.05.001.
 \end{thebibliography}
 
 \end{document}
