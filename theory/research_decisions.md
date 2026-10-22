@@ -1,4 +1,4 @@
-# Research decisions — Stage 1
+# Research decisions — Stages 1–3B
 
 1. **Target the mathematical question narrowly.** Analyze finite-budget first discovery of a time-indexed true-hardness region, not generic optimization quality or unrelated BLADE components.
 2. **Use phenotype-level structural states.** Encodings with the same solver-visible instance map to one phenotype; lineage and archive details remain in the full memory state because they can affect transitions.
@@ -85,3 +85,27 @@
 - Historical regret is benchmarked against a latent union and is never described as an implemented archive statistic.
 - The strongest recurrence is retained with its full assumptions and is not weakened after the fact to manufacture applicability.
 - Five exact counterexamples preserve the distinctions among solver drift, surrogate error, niche coverage, reachability, and downstream training value.
+
+## Stage 3B addendum
+
+43. **Freeze Stage 3A without revision.** Commit `0ca42f81` is preserved on `theory/stage3a-hardness-tracking`. Stage 3B starts from that snapshot on `theory/stage3b-identifiability` and is not merged automatically.
+44. **Define observability by checkpoint and identity.** `V_k` contains only labels verified for the same candidate hash under entering checkpoint `M_k`. Earlier-checkpoint hardness is not silently reused as current truth.
+45. **Use the verified score/hash total order.** Pure Global Top10k is `G_k=Top_m(C_k)` and actual acquisition is `T_k=Q_k union Top_(m-|Q_k|)(C_k\Q_k)`.
+46. **Record the exact exchange, not a stronger quality claim.** `T_k\G_k=Q_k\G_k`, the two directed differences have equal size at most `K`, and the predicted-score opportunity cost is nonnegative and exactly computable.
+47. **Treat the exchange result as surrogate-only.** It does not bound true LBQ, future reachability, or downstream training value.
+48. **Use selective-label indistinguishability as the information boundary.** Candidate identities, niches, predictions, selections, and all observed labels can remain fixed while unselected truth changes full-pool maxima, regret, recall, and `T_k`-versus-`G_k` quality.
+49. **Do not extrapolate selected residuals.** Residuals on `T_k` or the archive-derived calibration intersection characterize those verified subsets only; neither is a documented probability sample of the current candidate union.
+50. **Use partial identification only with explicit support information.** A finite known hardness range gives sharp bounds, while nonnegative LBQ alone supplies no finite upper endpoint.
+51. **Exploit the symmetric difference for minimal verification.** Because all of `T_k` is labeled, exact same-checkpoint comparison with `G_k` requires only the still-unlabeled members of `G_k\T_k`, at most 1,000 per cycle.
+52. **Match validation design to the estimand.** Use known-probability stratified verification for finite-pool aggregates, but a niche census or certified contender set for exact maxima. Old-checkpoint labels and deterministic zero-probability selection do not substitute.
+53. **Keep the novelty claim conservative.** Protected top-k exchange, selective-label non-identifiability, partial identification, and propensity-based partial-feedback methods are standard. The BLADE mapping is useful supporting methodology, not a publication-core theorem.
+54. **Stop at the information limit.** The Stage 3B decision is **B -- IDENTIFIABILITY_LIMIT_CONFIRMED**. No Stage 3C, mutation, evolution, Concorde/LBQ evaluation, HGB training, BQ adaptation, HAC comparison, or algorithm modification was performed.
+
+## Stage 3B statement-change log
+
+- Stages 1–3A are unchanged in substance; Stage 3B adds an orthogonal observability layer.
+- No Stage 3A prediction-error or solver-drift assumption is revived.
+- The exact selection theorem uses only frozen score order and membership semantics.
+- The two-world construction is labeled as an identifiability obstruction, not evidence of poor realized performance.
+- Existing `training_exact_hardness_cost.csv` rows are treated as descriptive subset summaries because the Global row is not fully labeled.
+- The minimal verification protocol is specified but not executed.
