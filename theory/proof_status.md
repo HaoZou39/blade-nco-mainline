@@ -33,6 +33,12 @@ Mathematical validity, implementation applicability, and scientific novelty are 
 | Causally adapted bridge target under moving BQ solver | **PROVED conditional theorem formulation** | **PARTIAL / OPEN** | **NOT CLAIMED** | Select each next bridge set pre-batch; final bridge is included in the current entering-checkpoint true-hard region. No future-checkpoint or offspring look-ahead is allowed. |
 | Hash first-occurrence dedup guarantees exact niche/bridge set identities unconditionally | **CONDITIONAL** | **PARTIAL** | **NOT CLAIMED** | Niche equality requires equal-hash niche compatibility; bridge chaining requires preservation of bridge membership or injectivity on the realized pool. |
 | Parent-inclusive true-hardness presence implies new hard-instance discovery | **DISPROVED** | **VERIFIED modeling distinction** | **NOT CLAIMED** | Old hard parents can satisfy presence without new accepted offspring. A cycle-0 valid child identical to its current parent is not a new phenotype; new-generation events must exclude P_k as well as earlier generated pools. Acquisition novelty, reactivation, and new niches remain distinct. |
+| Per-niche current-cycle approximate argmax, `f_k(e_(k,j)) >= sup_(C_(k,j)) f_k - 2 epsilon_(k,j)` | **PROVED under uniform error** | **PARTIAL / OPEN** | **STANDARD APPROXIMATE-ARGMAX LEMMA** | The selector semantics are verified; a complete-pool per-niche uniform HGB40 error certificate is not. |
+| One-step moving-solver guarantee with loss `2 epsilon+2 delta` | **PROVED under local drift** | **PARTIAL / OPEN** | **STANDARD TRIANGLE-INEQUALITY EXTENSION** | Parent inclusion and retained-elite availability are verified. A suitable drift bound on the compared candidates is not. |
+| Historical-unavailability decomposition, `R_(k,j) <= 2 epsilon_(k,j)+A_(k,j)` | **PROVED under current-pool uniform error** | **OPEN** | **STANDARD DECOMPOSITION** | The historical benchmark and penalty are latent because complete historical pools are not re-evaluated under the current solver. |
+| Historical tracking-regret recurrence, `R_(k,j) <= R_(k-1,j)+2 epsilon_(k,j)+2 delta_(k-1,j)` | **PROVED under complete-pool error, elite availability, and full-history drift** | **OPEN** | **STANDARD DYNAMIC-REGRET-STYLE RECURRENCE** | The proof is valid; its strongest premises are not justified by current S6-AE artifacts. |
+| Bounded per-cycle error and drift imply a bounded long-run tracking-regret steady state | **DISPROVED** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | A zero-drift, one-niche, capacity-one construction realizes linear `2k epsilon` regret. A contraction, refresh, archive, or bounded-unavailability condition is additionally necessary. |
+| Low current-hardness regret implies future reachability or downstream BQ training benefit | **DISPROVED without alignment assumptions** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Separate exact examples give zero tracking regret with bridge loss and with unchanged or worse downstream evaluation. |
 
 ## Preserved Stage 1 conclusion
 
@@ -43,3 +49,10 @@ persistence. The strongest mechanistic result is the conditional multistep
 bridge-chain bound. Its proof is valid, but its BLADE-specific transition and
 retention premises remain open, and no BLADE-vs-fixed-generator/HAC advantage
 or theorem novelty is claimed.
+
+Stage 3A adds only conditional tracking statements. The one-step bounds are
+mathematically sound and the historical recurrence is sound under its stated
+premises, but complete-candidate HGB error and full-history solver-drift bounds
+are not verified for S6-AE. The recurrence can accumulate linearly, and low
+current-hardness regret does not by itself certify reachability or training
+value. The Stage 3A decision is **C -- TRACKING_ASSUMPTIONS_NOT_JUSTIFIED**.

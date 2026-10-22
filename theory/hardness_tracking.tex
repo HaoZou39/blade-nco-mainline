@@ -1,0 +1,360 @@
+\section{Stage 3A: solver-relative hardness tracking}
+\label{sec:hardness-tracking}
+
+This section studies whether the verified HGB40 plus Elite-QD1000
+$(P=T)$ mechanism tracks high current BQ hardness inside each fixed niche as
+the solver changes.  It does not identify current hardness with future
+reachability or downstream training value, and it does not compare BLADE to
+HAC.  All maxima below are over finite realized candidate sets; no finiteness
+of the ambient instance space is assumed.
+
+\subsection{Tracking objects and information order}
+Let $M_k$ be the BQ solver entering cycle $k$ and define, on the same scale as
+the fitted HGB target,
+\[
+ f_k(x)=\log(1+L_{\rm BQ}(M_k,x)).
+\]
+Let $\widehat f_k$ be the median HGB40 prediction.  For every
+$j\in\mathsf S(C_k)$ write
+\[
+ E_{k,j}=C_k\cap\mathcal N_j,
+ \qquad
+ e_{k,j}=\mathop{\arg\max}_{x\in E_{k,j}}^{\rm score/hash}
+                 \widehat f_k(x),
+\]
+where ``score/hash'' means descending prediction followed by ascending
+instance hash.  Thus $e_{k,j}$ is a single, deterministic member of the
+per-niche floor $Q_k$, and
+\[
+ e_{k,j}\in Q_k\subseteq T_k=P_{k+1}.
+\]
+The prediction and selection use $M_k$.  Exact labels on $T_k$ and adaptation
+to $M_{k+1}$ occur only after this selection.  Any inequality involving
+$f_{k+1}(e_{k,j})$ is therefore an ex post tracking statement under a declared
+drift premise, not a claim that cycle $k$ used future information.
+
+The quantities kept distinct in this section are: current true hardness
+$f_k$, current prediction $\widehat f_k$, within-niche selected quality,
+solver-induced drift $f_{k+1}-f_k$, best hardness among all historically
+generated candidates, future mutation reachability, and downstream BQ
+training value.  No implication among the last three is assumed.
+
+\subsection{One-step approximate within-niche maximization}
+\mstatus{PROVED under a finite-pool error bound}
+\istatus{PARTIAL} \nstatus{STANDARD}
+
+\begin{proposition}[Per-niche approximate argmax]
+\label{prop:tracking-argmax}
+Fix $k$ and $j\in\mathsf S(C_k)$.  Suppose $\epsilon_{k,j}\geq0$ and
+\[
+ \lvert\widehat f_k(x)-f_k(x)\rvert\leq\epsilon_{k,j}
+ \qquad\text{for every }x\in E_{k,j}.
+\]
+Then
+\[
+ f_k(e_{k,j})\geq
+ \max_{x\in E_{k,j}}f_k(x)-2\epsilon_{k,j}.
+\]
+If $P_k\cap\mathcal N_j\neq\varnothing$, parent inclusion in the candidate
+union also gives
+\[
+ f_k(e_{k,j})\geq
+ \max_{x\in P_k\cap\mathcal N_j}f_k(x)-2\epsilon_{k,j}.
+\]
+\end{proposition}
+
+\begin{proof}
+Because $E_{k,j}$ is finite and nonempty, choose
+$x^*\in\arg\max_{x\in E_{k,j}}f_k(x)$.  The selected candidate maximizes the
+prediction even when the prediction maximum is tied, so
+\begin{align*}
+ f_k(e_{k,j})
+ &\geq \widehat f_k(e_{k,j})-\epsilon_{k,j}\\
+ &\geq \widehat f_k(x^*)-\epsilon_{k,j}\\
+ &\geq f_k(x^*)-2\epsilon_{k,j}.
+\end{align*}
+The parent-relative result follows from
+$P_k\cap\mathcal N_j\subseteq E_{k,j}$.
+\end{proof}
+
+The deterministic hash rule makes the selected maximizer single-valued but
+does not change the proof.  An empty candidate niche has no elite and no
+maximum, so the statement is restricted to $j\in\mathsf S(C_k)$.  The
+parent-relative form additionally requires that the parent niche be nonempty.
+Hash deduplication must preserve the phenotype, score, and niche identity used
+by the statement on the realized pool.  The additive $2\epsilon$ guarantee is
+on the $\log(1+\mathrm{LBQ})$ scale.  On the raw scale it implies only
+\[
+ L_{\rm BQ}(M_k,e_{k,j})
+ \geq e^{-2\epsilon_{k,j}}
+       \left(1+\max_{x\in E_{k,j}}L_{\rm BQ}(M_k,x)\right)-1,
+\]
+not an additive raw-LBQ bound of the same size.
+
+This is the standard approximate-argmax inequality.  Elite-QD makes the
+chosen approximate maximizer survive into $P_{k+1}$; that implementation fact
+is useful, but it does not make the inequality itself novel.  S6-AE verifies
+the score scale, finite candidate pool, score/hash rule, and $P=T$.  It does
+not verify the uniform error premise on $E_{k,j}$, because exact current LBQ
+is not obtained for the complete candidate union.
+
+\subsection{One-step tracking across solver adaptation}
+\mstatus{PROVED under local error and drift bounds}
+\istatus{PARTIAL/OPEN} \nstatus{STANDARD}
+
+\begin{proposition}[Drift-adjusted per-niche tracking]
+\label{prop:tracking-drift}
+Under Proposition~\ref{prop:tracking-argmax}, suppose additionally that
+\[
+ \lvert f_{k+1}(x)-f_k(x)\rvert\leq\delta_{k,j}
+ \qquad\text{for every }x\in E_{k,j},
+\]
+where $\delta_{k,j}\geq0$.  Then
+\[
+ f_{k+1}(e_{k,j})\geq
+ \max_{x\in E_{k,j}}f_{k+1}(x)
+ -2\epsilon_{k,j}-2\delta_{k,j}.
+\]
+Consequently, whenever $P_k\cap\mathcal N_j$ is nonempty,
+\[
+ f_{k+1}(e_{k,j})\geq
+ \max_{x\in P_k\cap\mathcal N_j}f_{k+1}(x)
+ -2\epsilon_{k,j}-2\delta_{k,j}.
+\]
+For only the parent-relative conclusion it is sufficient that the drift bound
+hold on $(P_k\cap\mathcal N_j)\cup\{e_{k,j}\}$.
+\end{proposition}
+
+\begin{proof}
+The drift bound and Proposition~\ref{prop:tracking-argmax} give
+\begin{align*}
+ f_{k+1}(e_{k,j})
+ &\geq f_k(e_{k,j})-\delta_{k,j}\\
+ &\geq \max_{x\in E_{k,j}}f_k(x)
+           -2\epsilon_{k,j}-\delta_{k,j}\\
+ &\geq \max_{x\in E_{k,j}}f_{k+1}(x)
+           -2\epsilon_{k,j}-2\delta_{k,j}.
+\end{align*}
+Restricting the comparison set to old parents proves the second claim.  The
+same calculation uses only the smaller stated set for the parent-relative
+version.
+\end{proof}
+
+The guarantee says that an elite selected under $M_k$ remains competitive,
+after one update, with candidates that were already available in cycle $k$.
+It does not compare against new cycle-$(k+1)$ offspring, show that
+$e_{k,j}$ remains the next HGB elite, preserve its individual hash beyond
+$P_{k+1}$, or control future reachability or training value.  The drift bound
+is local to an explicitly named finite set; no global bound on the measurable
+TSP space is needed.  Even this local bound is not currently certified by
+S6-AE.
+
+\subsection{Historical benchmark and multicycle regret}
+For a finite horizon define the latent generated-candidate ledger
+\[
+ \mathcal U_k=\bigcup_{t=0}^{k}C_t.
+\]
+For $j\in\mathsf S(\mathcal U_k)$ define
+\[
+ V_{k,j}=\max_{x\in\mathcal U_k\cap\mathcal N_j}f_k(x),
+ \qquad
+ R_{k,j}=V_{k,j}-f_k(e_{k,j}).
+\]
+By deterministic niche persistence, once niche $j$ has appeared by cycle
+$k$, it is occupied in $P_{k+1}$ and hence has an elite in every later cycle.
+The benchmark $V_{k,j}$ is theoretical: S6-AE neither retains every member of
+$\mathcal U_k$ as a candidate nor evaluates every historical candidate under
+$M_k$.
+
+Define the current unavailability penalty
+\[
+ A_{k,j}=\left[
+ \max_{x\in\mathcal U_{k-1}\cap\mathcal N_j}f_k(x)
+ -\max_{x\in C_k\cap\mathcal N_j}f_k(x)
+ \right]_+,
+\]
+with $A_{k,j}=0$ if the historical set is empty.
+
+\begin{proposition}[Exact source of historical tracking loss]
+\label{prop:tracking-decomposition}
+Under the prediction-error premise of
+Proposition~\ref{prop:tracking-argmax},
+\[
+ R_{k,j}\leq2\epsilon_{k,j}+A_{k,j}.
+\]
+\end{proposition}
+
+\begin{proof}
+Write $B_{k,j}=\max_{x\in C_k\cap\mathcal N_j}f_k(x)$.  Since
+$\mathcal U_k=\mathcal U_{k-1}\cup C_k$,
+$V_{k,j}\leq B_{k,j}+A_{k,j}$.  Proposition
+~\ref{prop:tracking-argmax} gives
+$f_k(e_{k,j})\geq B_{k,j}-2\epsilon_{k,j}$, and subtraction proves the claim.
+\end{proof}
+
+This non-accumulating decomposition is informative only if $A_{k,j}$ can be
+controlled.  Parent--child union makes the immediately previous elite
+available, which yields the following recursive control under a much stronger
+historical drift premise.
+
+\mstatus{PROVED under full historical-set drift}
+\istatus{OPEN} \nstatus{STANDARD}
+
+\begin{proposition}[Historical per-niche regret recurrence]
+\label{prop:tracking-recurrence}
+Suppose niche $j$ was occupied by cycle $k-1$.  Assume:
+\begin{enumerate}
+\item the prediction-error premise holds on $C_k\cap\mathcal N_j$;
+\item $e_{k-1,j}\in P_k\subseteq C_k$; and
+\item for every $x\in\mathcal U_{k-1}\cap\mathcal N_j$,
+\[
+ \lvert f_k(x)-f_{k-1}(x)\rvert\leq\delta_{k-1,j}.
+\]
+\end{enumerate}
+Then
+\[
+ R_{k,j}\leq R_{k-1,j}
+       +2\epsilon_{k,j}+2\delta_{k-1,j}.
+\]
+If $\tau_j$ is the first cycle in which niche $j$ appears, then
+\[
+ R_{\tau_j,j}\leq2\epsilon_{\tau_j,j},
+\]
+and for every $k\geq\tau_j$,
+\[
+ R_{k,j}\leq
+ 2\sum_{s=\tau_j}^{k}\epsilon_{s,j}
+ +2\sum_{s=\tau_j}^{k-1}\delta_{s,j}.
+\]
+\end{proposition}
+
+\begin{proof}
+Let $B_{k,j}=\max_{C_k\cap\mathcal N_j}f_k$.  The retained prior elite gives
+$B_{k,j}\geq f_k(e_{k-1,j})$.  Uniform drift over the historical set gives
+\begin{align*}
+ \max_{x\in\mathcal U_{k-1}\cap\mathcal N_j}f_k(x)
+ &\leq V_{k-1,j}+\delta_{k-1,j}\\
+ &=f_{k-1}(e_{k-1,j})+R_{k-1,j}+\delta_{k-1,j}\\
+ &\leq f_k(e_{k-1,j})+R_{k-1,j}+2\delta_{k-1,j}\\
+ &\leq B_{k,j}+R_{k-1,j}+2\delta_{k-1,j}.
+\end{align*}
+New candidates in $\mathcal U_k\setminus\mathcal U_{k-1}$ lie in $C_k$, so
+their maximum is at most $B_{k,j}$.  Hence
+$V_{k,j}\leq B_{k,j}+R_{k-1,j}+2\delta_{k-1,j}$.  The approximate-argmax
+bound $f_k(e_{k,j})\geq B_{k,j}-2\epsilon_{k,j}$ proves the recurrence.
+
+At first discovery there is no older candidate in niche $j$, so
+$\mathcal U_{\tau_j}\cap\mathcal N_j=C_{\tau_j}\cap\mathcal N_j$ and the
+initial bound follows directly.  Iterating the recurrence gives the stated
+finite-horizon sum.
+\end{proof}
+
+The displayed recurrence proposed for Stage 3A is therefore valid, but only
+under drift control on the \emph{entire historical niche ledger}, including
+candidates that the algorithm discarded and never relabels.  Bounded
+per-cycle errors and drift yield a bound that grows linearly with the horizon;
+they do not give bounded long-run regret.  A steady-state statement would
+need, for example, summable error and drift, a uniform bound on
+$A_{k,j}$, or an operational archive that repeatedly reintroduces the
+historical benchmark candidates.  None is verified for S6-AE.
+
+The accumulation cannot generally be removed.  In a single niche with
+capacity one and zero solver drift, let cycle $t\geq1$ contain the retained
+$x_{t-1}$ and a new $x_t$, with $f(x_t)=-2t\epsilon$.  Give both candidates
+the tied prediction $-(2t-1)\epsilon$ by errors of magnitude $\epsilon$, and
+choose hashes so that the deterministic tie rule selects $x_t$.  Starting
+from $f(x_0)=0$, the historical regret after cycle $t$ is exactly
+$2t\epsilon$.  Thus a constant error bound alone permits linear loss even
+with parent--child union and no solver drift.
+
+\subsection{What happens after all 1,000 niches are occupied}
+Proposition~\ref{prop:niche-persistence} makes structural coverage constant
+once every niche is occupied.  Propositions
+~\ref{prop:tracking-argmax}--\ref{prop:tracking-recurrence} address a different
+quantity: which representative is selected and how close its current
+solver-relative hardness is to a declared comparator.  The per-niche floor
+continues to replace representatives after coverage saturation.  Therefore
+coverage can be saturated while within-niche hardness quality improves,
+degrades after solver adaptation, or loses future stepping stones.  Global
+HGB fill can retain additional candidates but supplies no worst-case
+historical or reachability certificate.
+
+\subsection{Adversarial boundary checks}
+The following finite constructions are exact mathematical checks, not claims
+about the realized S6-AE trajectory.
+
+\paragraph{A. Perfect prediction with severe solver drift.}
+Put $a,b$ in one niche and let $P_k=C_k=\{a,b\}$.  Set
+$f_k(a)=1$, $f_k(b)=0$, and $\widehat f_k=f_k$, so $e_{k,j}=a$.  After
+adaptation set $f_{k+1}(a)=0$ and $f_{k+1}(b)=H$ for arbitrary $H>0$.
+The post-update gap to the old-parent maximum is $H$.  Perfect current
+prediction gives no cross-checkpoint guarantee without a drift bound.
+
+\paragraph{B. Small drift with inaccurate prediction.}
+Keep the solver fixed, so $\delta=0$.  Set $f(a)=H$, $f(b)=0$ in one niche,
+but $\widehat f(a)=0$ and $\widehat f(b)=1$.  The elite is $b$ and its current
+quality gap is $H$, which can be arbitrarily large.  Small solver drift cannot
+replace a candidate-set prediction or ranking guarantee.
+
+\paragraph{C. Full coverage with deteriorating future reachability.}
+The progressive bridge-loss construction in
+Section~\ref{sec:progressive-bridge-loss} retains every occupied niche while
+successively replacing every future-useful bridge by a higher-current-
+hardness decoy.  It applies even with perfect current-hardness prediction and
+the complete global-fill mechanism.  Current-hardness tracking therefore does
+not imply future-reachability tracking.
+
+\paragraph{D. Zero tracking regret with no downstream training benefit.}
+Let every cycle have a unique current-hardness maximizer $a_k$ in its niche
+and let selection be exact, so $R_{k,j}=0$.  Define the solver adaptation map
+on the selected training set to leave the solver unchanged, or to move it to
+a state with worse loss on a separate evaluation instance $z$.  Then tracking
+regret is identically zero while downstream performance is unchanged or
+worse.  A link from selected hardness to the optimization effect of a BQ
+update is an additional assumption, not a consequence of elite tracking.
+
+\paragraph{E. A reset method can win without elite preservation.}
+Let the inherited population contain only $a$, let all scheduled mutations
+from $a$ return $a$, and let the current hard target be $\{g\}$.  A reset
+generator that returns $g$ with probability one hits in one equal-cost
+opportunity; the inherited method never hits.  Historical elite preservation
+does not dominate a reset or stationary proposal law with better direct
+target mass.
+
+\subsection{Applicability and novelty audit}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}}
+\toprule
+Statement & Mathematical validity & S6-AE applicability & Scientific novelty \\
+\midrule
+Per-niche $2\epsilon$ quality & PROVED conditional & PARTIAL & STANDARD \\
+One-step $2\epsilon+2\delta$ tracking & PROVED conditional & PARTIAL/OPEN & STANDARD \\
+Historical regret decomposition & PROVED conditional & OPEN & STANDARD \\
+Historical regret recurrence and sum & PROVED conditional & OPEN & STANDARD \\
+Bounded long-run tracking regret & OPEN; not implied & OPEN & NOT CLAIMED \\
+Tracking implies reachability/training value & DISPROVED without alignment & NOT APPLICABLE as a guarantee & NOT CLAIMED \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Approximate maximization under uniform value error is elementary.  Adding a
+bounded objective drift and telescoping the resulting regret is in the
+standard spirit of dynamic-regret and moving-optimum analyses
+\cite{Zinkevich2003,Dang2017,OlivetoZarges2015}.  Fixed-cell elite retention is
+also standard QD machinery \cite{MouretClune2015,Pugh2016}.  The only
+BLADE-specific ingredients used here are the exact current-HGB niche elite,
+parent--child union, and $P=T$, which make the previous elite available for
+one recursive step.  A potentially novel result would need a non-vacuous,
+implementation-supported error/drift certificate or a hardness--reachability--
+training-value relation specific to FOGA-11 and BQ adaptation.  This stage
+establishes none of those.
+
+\subsection{Stage 3A research decision}
+The proved inequalities are internally valid, but their decisive premises
+are not currently supported by S6-AE: exact current LBQ is unavailable on the
+complete candidate union, and the historical recurrence requires drift bounds
+for discarded candidates across the entire latent ledger.  Counterexamples
+block any replacement of those premises by coverage, perfect present-time
+ranking alone, or low tracking regret.
+
+\textbf{C -- TRACKING\_ASSUMPTIONS\_NOT\_JUSTIFIED.}

@@ -65,3 +65,23 @@
 31. **State hash compatibility by target property.** Niche persistence only needs deduplication to preserve niche labels, while the bridge theorem needs the stronger preservation of bridge-set membership. True phenotype uniqueness on the realized pool is sufficient for both.
 32. **Separate presence from new discovery.** The bridge-chain theorem remains a presence guarantee. New hard offspring, new acquisition, hardness reactivation, and novel occupied QD niches have distinct event definitions.
 33. **Preserve Stage 2's conservative status.** The revised theorem is a correct conditional certificate. No numerical a_l/rho_l, BLADE-over-HAC bound, or publishable novelty has been established, and no algorithm, training, or Oracle calls have been changed.
+
+## Stage 3A addendum
+
+34. **Track hardness on the deployed selection scale.** Define `f_k(x)=log(1+LBQ(M_k,x))` and keep raw LBQ, HGB40 prediction, true-hard-region membership, and downstream training value distinct.
+35. **Prove the local statement first.** Uniform prediction error on a candidate niche gives a `2 epsilon` current-cycle approximate-argmax guarantee for its tie-broken HGB elite; this is standard and does not establish future value.
+36. **Index solver drift by its comparison domain.** The one-step result needs drift only on the current candidates being compared. A historical regret recurrence needs drift on the complete latent historical niche ledger, a much stronger premise.
+37. **Use a latent historical oracle only as a proof benchmark.** The union of all prior candidate pools is not an S6-AE archive and is not re-evaluated under each current checkpoint.
+38. **Exploit only verified one-step availability.** Parent-inclusive union and `Q subseteq T=P` keep the previous niche elite eligible at the next cycle; they do not preserve every historical representative.
+39. **Do not convert an additive recurrence into a steady-state claim.** The bound can grow as the sum of per-cycle prediction and drift terms. An exact zero-drift construction attains linear growth from bounded prediction error.
+40. **Separate tracking quality from causal utility.** Low or zero current-hardness regret does not imply bridge retention, future hard-region reachability, or improved downstream BQ evaluation without additional alignment assumptions.
+41. **Classify novelty conservatively.** Approximate argmax and dynamic-regret-style drift accounting are standard supporting mathematics. No BLADE-specific publishable tracking theorem is claimed without non-vacuous verified premises.
+42. **Stop at the justified conclusion.** The Stage 3A decision is **C -- TRACKING_ASSUMPTIONS_NOT_JUSTIFIED**. No experiment, exact-hardness evaluation, HGB retraining, BQ adaptation, evolution, or algorithm modification was performed.
+
+## Stage 3A statement-change log
+
+- Stage 1 through Stage 2.1 proofs, counterexamples, and research decisions remain unchanged.
+- The new one-step propositions are additions on the verified S6-AE selector semantics, not replacements for the mechanistic bridge theorem.
+- Historical regret is benchmarked against a latent union and is never described as an implemented archive statistic.
+- The strongest recurrence is retained with its full assumptions and is not weakened after the fact to manufacture applicability.
+- Five exact counterexamples preserve the distinctions among solver drift, surrogate error, niche coverage, reachability, and downstream training value.

@@ -49,6 +49,15 @@ The three status axes are intentionally separate:
 | A38 | Presence of a previously generated true-hard parent is not novelty discovery. | PROVED definitional distinction | VERIFIED as a modeling issue | For newly generated hard offspring, exclude both the cumulative previous candidate-pool ledger and current parents (including C00 roots); new acquisition uses a separate cumulative acquisition ledger. Distinguish hardness reactivation and niche novelty. |
 | A39 | A stated finite compute budget is an upper bound for the charged opportunity or full multicycle chain, not an unverified equality of gradient steps and FOGA attempts. | CONDITIONAL | OPEN for fair HAC comparison | Record method-specific generation, scoring, evaluation, and solver update charges; existing stage bounds apply to declared deterministic costs. |
 
+| A40 | On each occupied candidate niche, HGB40 has a uniform current-cycle error bound `sup_x |hat f_k(x)-f_k(x)| <= epsilon_k`. | CONDITIONAL | OPEN | S6-AE predicts the complete union but exactly labels only the selected population after selection. Existing audits do not certify a complete-pool, per-niche uniform bound. |
+| A41 | Solver drift satisfies `sup_x |f_(k+1)(x)-f_k(x)| <= delta_k` on the comparison set used by a tracking statement. | CONDITIONAL | OPEN | A one-step parent comparison needs only the previous parents and retained elite; a historical regret recurrence needs the much stronger bound on the entire latent historical niche ledger. |
+| A42 | The previous per-niche elite remains available in the next candidate union. | PROVED deterministic premise | VERIFIED | Under `Q subseteq T=P`, parent-inclusive union, fixed niches, and first-occurrence deduplication compatible with niche identity, the retained elite is a next-cycle candidate. |
+| A43 | Historical niche-regret obeys the additive recurrence `R_(k,j) <= R_(k-1,j)+2 epsilon_(k,j)+2 delta_(k-1,j)`. | PROVED under A40-A42 and full-history drift | OPEN | The proof is valid, but the required complete-pool error and latent-history drift certificates are not available for S6-AE. |
+| A44 | The historical oracle value `V_(k,j)=sup_(x in union_(t<=k) C_(t,j)) f_k(x)` is operationally observed by S6-AE. | FALSE | NOT APPLICABLE | It is a mathematical benchmark. S6-AE does not retain or re-evaluate the complete historical candidate union under every current solver. |
+| A45 | Uniformly bounded per-cycle surrogate error and solver drift imply bounded long-run historical tracking regret. | DISPROVED | NOT APPLICABLE as a guarantee | An exact one-niche construction with zero drift and bounded error attains `R_k=2k epsilon`; the additive recurrence can be tight. |
+| A46 | Small current-hardness tracking regret implies future mutation reachability or downstream BQ training improvement. | DISPROVED without alignment premises | NOT APPLICABLE as a guarantee | Exact counterexamples separate current hardness from structural bridge value and from the effect of a selected training distribution on later evaluation. |
+| A47 | A nonaccumulating historical bound follows from a uniformly bounded historical-unavailability penalty `A_(k,j)=[sup_(U_(k-1,j)) f_k-sup_(C_(k,j)) f_k]_+`. | CONDITIONAL | OPEN | The exact decomposition `R_(k,j) <= 2 epsilon_(k,j)+A_(k,j)` is valid, but S6-AE does not certify or directly observe `A_(k,j)`. |
+
 ## Verified S6-AE implementation facts
 
 - The current grounding is `scripts/run_s6ae_hgb40_eliteqd1000_pt_10k_hard_only_x1_m0_m10.py` through the S6-AC/S5-B/S4-B implementation chain, not the historical GP4 protocol.
@@ -73,3 +82,7 @@ The three status axes are intentionally separate:
 - Positive operator-specific bridge-transition bounds and score/global-rank conditions that retain those bridges.
 - Regeneration of an initial bridge after a failed multicycle window.
 - Any implication from monotone niche occupancy to parent-hash or future-reachability persistence.
+- Complete-candidate, per-niche uniform HGB40 error bounds under each entering BQ checkpoint.
+- Solver-drift bounds on the comparison domain, especially the complete latent historical candidate ledger required by the regret recurrence.
+- A bounded historical-unavailability penalty or another contraction/refresh property that prevents linear regret accumulation.
+- Any alignment theorem connecting low current-hardness regret to bridge retention or downstream BQ training value.

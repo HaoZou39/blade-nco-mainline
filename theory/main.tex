@@ -18,9 +18,9 @@
 \newcommand{\Ex}{\mathbb{E}}
 \newcommand{\HARD}{\mathcal{H}}
 
-\title{BLADE-NCO Theory Research\\Stages 1--2.1: Formal Alignment, Reachability, and Mathematical Corrections}
+\title{BLADE-NCO Theory Research\\Stages 1--3A: Formal Alignment, Reachability, and Hardness Tracking}
 \author{Research note}
-\date{October 21, 2026}
+\date{October 22, 2026}
 
 \begin{document}
 \maketitle
@@ -47,6 +47,14 @@ probabilistic bridge retention, imposes a non-anticipating choice of
 cycle-indexed bridge targets, makes hash-deduplication compatibility explicit,
 and separates hard-instance presence from new-instance discovery. These are
 corrections to the conditional framework, not additional superiority theorems.
+
+Stage 3A proves a standard per-niche approximate-argmax guarantee and its
+one-step solver-drift extension. It also derives a finite-horizon historical
+tracking-regret recurrence under a substantially stronger drift bound over
+the complete latent candidate history. The recurrence can accumulate linearly,
+and its complete-pool HGB-error and historical-drift premises are not verified
+for S6-AE. Exact counterexamples continue to separate current-hardness tracking
+from future reachability and downstream BQ training value.
 \end{abstract}
 
 \section{Scope and status}
@@ -87,6 +95,7 @@ present limited audit is not a comprehensive priority search.
 \input{theorem_candidates.tex}
 \input{proof_attempts.tex}
 \input{counterexamples.tex}
+\input{hardness_tracking.tex}
 
 \section{Research assessment}
 \paragraph{Strongest candidate.}
@@ -135,13 +144,27 @@ score--bridge alignment, target sets, and matched fixed-generator/reset/HAC
 cost models remain necessary before a BLADE-specific comparison theorem can
 be claimed.
 
+\paragraph{Stage 3A tracking assessment.}
+The one-step $2\epsilon$ quality guarantee and
+$2\epsilon+2\delta$ solver-drift guarantee are mathematically valid but
+standard. Parent--child union and $P=T$ keep the immediately previous niche
+elite available, which supports a historical regret recurrence. That
+recurrence requires current-error bounds on the complete candidate niche and
+drift bounds on every candidate in the latent historical niche ledger; S6-AE
+does not label those complete sets. Bounded per-cycle terms permit linear
+regret, not a steady-state guarantee. The Stage 3A decision is therefore
+\textbf{C -- TRACKING\_ASSUMPTIONS\_NOT\_JUSTIFIED}.
+
 \section{Stopping point}
 Stage 1 formalization, Stage 1.5 alignment, Stage 2 persistence/reachability,
-and Stage 2.1 independent mathematical corrections are recorded. The
+Stage 2.1 independent mathematical corrections, and Stage 3A solver-relative
+hardness-tracking analysis are recorded. The
 revised bridge theorem is a conditional, pre-generation-information
 certificate, not an implemented or empirically verified BLADE superiority
-result. No experiment, algorithm change, Oracle/BQ evaluation, retraining,
-adaptation, evolution, or broader Stage 3 development is included.
+result. The Stage 3A regret recurrence is likewise conditional and does not
+establish bounded long-run tracking. No experiment, algorithm change,
+Oracle/BQ evaluation, retraining, adaptation, evolution, or Stage 3B
+development is included.
 
 \begin{thebibliography}{9}
 \bibitem{Dang2017}
@@ -177,6 +200,12 @@ doi: 10.1007/s00453-024-01254-z.
 C. Qian, K. Xue, and R.-J. Wang,
 ``Quality-Diversity Algorithms Can Provably Be Helpful for Optimization,''
 arXiv:2401.10539, 2024.
+
+\bibitem{Zinkevich2003}
+M. Zinkevich,
+``Online Convex Programming and Generalized Infinitesimal Gradient Ascent,''
+in \emph{Proceedings of the 20th International Conference on Machine Learning},
+pp. 928--936, 2003.
 \end{thebibliography}
 
 \end{document}
