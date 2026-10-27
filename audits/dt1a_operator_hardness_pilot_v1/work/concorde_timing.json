@@ -1,0 +1,23 @@
+{
+  "backend": {
+    "backend": "concorde_cli",
+    "binary": "D:\\NCO\\BLADE-NCO-mainline\\third_party\\concorde\\concorde",
+    "binary_hash": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+    "invoke_mode": "wsl",
+    "wsl_distro": "Ubuntu"
+  },
+  "cache_hits": 44,
+  "failures": 0,
+  "new_concorde_calls": 312,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.10.20",
+  "python_process_cpu_seconds": 8.65625,
+  "requested": 356,
+  "retries": 0,
+  "solver_runtime_seconds_mean": 0.8353542679493936,
+  "solver_runtime_seconds_median": 0.6981168501079082,
+  "solver_runtime_seconds_sum": 260.6305316002108,
+  "status": "PASS",
+  "wall_seconds": 33.70921050012112,
+  "workers": 8
+}

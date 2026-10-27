@@ -1,0 +1,79 @@
+{
+  "assertions": {
+    "checkpoint_sha256": true,
+    "eleven_per_parent": true,
+    "frozen_attempts_3300": true,
+    "frozen_failures_19": true,
+    "frozen_parent_sample_300": true,
+    "frozen_valid_unique_3281": true,
+    "full_child_missing_3044": true,
+    "full_parent_missing_214": true,
+    "one_row_per_pair": true,
+    "pilot_attempts_330": true,
+    "pilot_failures_4": true,
+    "pilot_parent_sample_30": true,
+    "pilot_valid_326": true,
+    "selected_child_labels_237": true
+  },
+  "attempt_manifest_sha256": "6543330baf04b04afbf5e9e87a86bef60e388d4a35c6d0298f89ef70768bac39",
+  "checked_a0_files": [
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/01_research_question_and_protocol.md",
+      "sha256": "0371f80952a7e54d1cfe9fc349145a19f33f206df259e622f6a103a43dff195a"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/02_frozen_artifact_integrity.md",
+      "sha256": "0fe262010e9f305c1a595414ef561f7ec7af94701ae2edf138473aecaa4bad98"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/03_parent_sampling_manifest.csv",
+      "sha256": "3070013e8d342070b9295825b22d10c91ac9503957092b06423a909696cdb99f"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/04_operator_attempt_manifest.csv",
+      "sha256": "6543330baf04b04afbf5e9e87a86bef60e388d4a35c6d0298f89ef70768bac39"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/05_current_checkpoint_label_availability.csv",
+      "sha256": "3063aee3d76d7249cc13c15a95ef4350f2d52354c26c3bfc75e5b48c57e1f147"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/06_oracle_cache_and_compute_budget.md",
+      "sha256": "fd40e33c3945b46a1eaa897c6d0cce05b3e0c4c699860e267bfa574ea9c00bc4"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/07_preregistered_statistical_analysis.md",
+      "sha256": "98b374b4a0e2ceec2b8022ff891c155189dc96a4f9469486d3d2faea66aa4fb4"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/08_lyapunov_and_hitting_time_feasibility.md",
+      "sha256": "cf28288fd590414c3fef968abd678ff9952f04e150921bc4700bd9ad61eb3557"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/09_final_decision.md",
+      "sha256": "06f95b7f252b28ae26f2823a6f28ef6a58083d27b0e1d267ffc4b2f922ca2594"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/integrity_summary.json",
+      "sha256": "7b17d06b52c529154c176d96dd157e1d79c66f93ebd994e01e423edf45900750"
+    },
+    {
+      "path": "audits/dt1a_operator_hardness_preflight_v1/build_preflight.py",
+      "sha256": "662306b9969950742288f8e37aac7566cfd57e4d9c05878d8cf87839d1854abc"
+    }
+  ],
+  "checkpoint_path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/09_bq_training/M5_E256.tsp.best",
+  "checkpoint_sha256": "ef07226bb8c3e8cd3a1404eece474df44d378316fd66509b762eb5f8bc26558c",
+  "coordinate_bundle_sha256": "8781f01f99da26a2a3ee1ad2ee73dc4335db21c0058b1c0d50dfed5bdec8552d",
+  "missing_M5_child_labels": 312,
+  "missing_M5_labels_total": 336,
+  "missing_M5_parent_labels": 24,
+  "new_concorde_required": 312,
+  "pilot_failures": 4,
+  "pilot_parents": 30,
+  "pilot_scheduled_attempts": 330,
+  "pilot_valid_unique_children": 326,
+  "sample_manifest_sha256": "3070013e8d342070b9295825b22d10c91ac9503957092b06423a909696cdb99f",
+  "sample_seed": 20261027,
+  "status": "PASS"
+}

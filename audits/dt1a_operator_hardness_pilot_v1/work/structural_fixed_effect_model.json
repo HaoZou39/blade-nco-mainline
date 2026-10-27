@@ -1,0 +1,10 @@
+{
+  "ci_high": 0.0077799314001608805,
+  "ci_low": -0.06529436139903588,
+  "cluster_robust_se": 0.018641401224284888,
+  "coefficient_delta_phi": -0.0287572149994375,
+  "model": "OLS delta_h ~ delta_phi + operator_FE + parent_FE; parent-cluster sandwich SE",
+  "n": 326,
+  "operator_levels": 11,
+  "parent_clusters": 30
+}

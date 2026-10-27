@@ -1,0 +1,12 @@
+operator_id,scheduled,valid,retained,positive,positive_not_retained,hard_hits,hard_not_retained,failures
+axis_projection_mutation,30,30,0,17,17,5,5,0
+cluster_mutation,30,30,1,21,21,7,7,0
+compression_mutation,30,30,3,17,16,7,7,0
+expansion_mutation,30,29,0,11,11,4,4,1
+explosion_mutation,30,30,2,18,17,5,5,0
+grid_mutation,30,30,1,16,15,5,5,0
+implosion_mutation,30,30,4,20,17,10,9,0
+linear_projection_mutation,30,27,0,16,16,7,7,3
+normal_mutation,30,30,2,17,15,4,3,0
+rotation_mutation,30,30,0,16,16,5,5,0
+uniform_mutation,30,30,1,16,16,3,3,0

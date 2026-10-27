@@ -1,0 +1,115 @@
+{
+  "accepted_unique_attempts": 3281,
+  "availability_counts": {
+    "child_attempt|A_M5_TRUE_LBQ_AVAILABLE": 237,
+    "child_attempt|D_NO_LABEL_NO_TOUR": 3044,
+    "child_attempt|E_INVALID_REJECTED_OR_DUPLICATE": 19,
+    "parent|A_M5_TRUE_LBQ_AVAILABLE": 86,
+    "parent|B_OTHER_CHECKPOINT_LABEL_ONLY": 214
+  },
+  "checkpoint": {
+    "identity": "M5_E256 entering C05",
+    "manifest_path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/M_next_checkpoint_manifest.json",
+    "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/09_bq_training/M5_E256.tsp.best",
+    "sha256": "ef07226bb8c3e8cd3a1404eece474df44d378316fd66509b762eb5f8bc26558c"
+  },
+  "duplicate_attempts": 0,
+  "nonempty_sampling_strata": 220,
+  "pilot_parent_count": 30,
+  "rejected_or_excluded_attempts": 19,
+  "sample_entering_components": 2,
+  "sample_origin_operators": 11,
+  "sample_parent_count": 300,
+  "sample_qd_regions": 16,
+  "sampling_seed": 20261027,
+  "scheduled_attempts": 3300,
+  "source_files": [
+    {
+      "bytes": 14154825,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/06_selection/P_next.npz",
+      "sha256": "2064462edf623af67bd40e9cca7e923af72e34ec5b3f556965d0424a2ada46c4"
+    },
+    {
+      "bytes": 1147044,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/04_qd/parent_qd.parquet",
+      "sha256": "47818038abc2df48dadde917cc1ad4f85035e6c9c983633fac2add5bc94bd7c4"
+    },
+    {
+      "bytes": 18763295,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/03_mutation/mutation_manifest.parquet",
+      "sha256": "e21fc9f4e989f14193407b6194b885ab4e5e8ab523ba300bec3550caf8bfd158"
+    },
+    {
+      "bytes": 52992648,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/03_mutation/offspring_coordinates.npz",
+      "sha256": "4382db31bac27b070fb731138b1653b3b8a36bd765c0a7d8e92f31f775b65ac6"
+    },
+    {
+      "bytes": 15078028,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/candidate_predictions.parquet",
+      "sha256": "3edf0e81c04323296c1956649889d9d06d6cabd42c33e5e8a0c6c6fbcb288ab8"
+    },
+    {
+      "bytes": 1058115,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/T_hard_top10k_membership.csv",
+      "sha256": "eef567ccfb243e81f61445cc413f23f9fbdfbf037a4b5efe731ad3c74312567c"
+    },
+    {
+      "bytes": 895848,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/B_current_hardness.parquet",
+      "sha256": "5ccba82a51d2d3b81dc08a178a5de77b87b2de60e0e923ce7865cda5ab4cc10c"
+    },
+    {
+      "bytes": 847484,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/selected_exact_hardness.parquet",
+      "sha256": "6283e01abe564dd2fc02153d267d0409dc82e801129adee375851c5e03fec2f1"
+    },
+    {
+      "bytes": 1699,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C05/03_mutation/STAGE_DONE.json",
+      "sha256": "e6bb99bbab9d7859fe3e9f9cbac856868b256043bb13586d93cd765e62fe1deb"
+    },
+    {
+      "bytes": 761,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/M_next_checkpoint_manifest.json",
+      "sha256": "8b9bd3f42bfd38c314ce8ffe96ee2c74d7faaa6213b9eeadb198ad39d17e36c4"
+    },
+    {
+      "bytes": 504,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/07_mutation_manifest.json",
+      "sha256": "f7757d82d3f3d1ffa445cc0362045a6391c2bb429152ca824b62b25dfc014245"
+    },
+    {
+      "bytes": 12470329,
+      "path": "audits/S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1/cycles/C04/09_bq_training/M5_E256.tsp.best",
+      "sha256": "ef07226bb8c3e8cd3a1404eece474df44d378316fd66509b762eb5f8bc26558c"
+    },
+    {
+      "bytes": 2913,
+      "path": "src/mutation/foga11_high_v1.yaml",
+      "sha256": "f85cbad24bfbb8c9a0cc3fd492f21ddadbcf7edfb3223e3c27aeebcce090c9f6"
+    },
+    {
+      "bytes": 6419,
+      "path": "scripts/foga11_high_v1_mutation_worker.py",
+      "sha256": "2a5e35ed429d76d1bad010539e9680fade05eb3e735be9276c270ed1e5fa7bea"
+    },
+    {
+      "bytes": 581,
+      "path": "src/mutation/__init__.py",
+      "sha256": "78ee6dce5e66637021dd8bb61896324df6bfd06f2a7c764a0d85f2e5f51bcc62"
+    },
+    {
+      "bytes": 7109,
+      "path": "src/bq/training_hardness.py",
+      "sha256": "0ee33628d24daabf345df283bad014fed09b941250bdc1dd7652a648a83089fc"
+    }
+  ],
+  "status": "PASS",
+  "unique_child_M5_labels_available": 237,
+  "unique_child_labels_missing": 3044,
+  "unique_missing_tours_for_evaluable_unlabeled": 3044,
+  "unique_parent_M5_labels_available": 86,
+  "unique_parent_labels_missing": 214,
+  "unique_valid_child_hashes": 3281
+}

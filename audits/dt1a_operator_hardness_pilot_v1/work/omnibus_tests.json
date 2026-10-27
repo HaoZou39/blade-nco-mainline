@@ -1,0 +1,23 @@
+{
+  "delta_h_complete_case": {
+    "n_parents": 26,
+    "operators": 11,
+    "p_value": 0.39316068393160686,
+    "permutations": 10000,
+    "statistic_sum_squared_operator_means": 0.0008793426269461514
+  },
+  "hard_hit_all_scheduled": {
+    "n_parents": 30,
+    "operators": 11,
+    "p_value": 0.5329467053294671,
+    "permutations": 10000,
+    "statistic_sum_squared_operator_means": 0.04282828282828282
+  },
+  "positive_yield_all_scheduled": {
+    "n_parents": 30,
+    "operators": 11,
+    "p_value": 0.36346365363463656,
+    "permutations": 10000,
+    "statistic_sum_squared_operator_means": 0.07292929292929291
+  }
+}

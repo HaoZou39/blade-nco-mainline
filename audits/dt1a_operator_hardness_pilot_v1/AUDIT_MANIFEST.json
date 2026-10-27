@@ -1,0 +1,162 @@
+{
+  "checkpoint_sha256": "ef07226bb8c3e8cd3a1404eece474df44d378316fd66509b762eb5f8bc26558c",
+  "files": [
+    {
+      "bytes": 2839,
+      "path": "01_protocol_and_integrity.md",
+      "sha256": "ff7413075adc4c421aed585a3b9d6a9eb8e9ac5687d83b4cea83cedb1d4c6cf7"
+    },
+    {
+      "bytes": 24192,
+      "path": "02_30parent_sample_manifest.csv",
+      "sha256": "4557d9a12d0aeea31a0c27b0a94da4ec31a60e0bac3068d04608eca24c6085c5"
+    },
+    {
+      "bytes": 274966,
+      "path": "03_true_lbq_evaluation_manifest.csv",
+      "sha256": "41efe855d630fdae59da5bb327823c07bedac0e4ef5a2dfee3260e640b161816"
+    },
+    {
+      "bytes": 9245,
+      "path": "04_operator_paired_results.csv",
+      "sha256": "0e2a32a971d10f3497aa67bc035f65b5c11368e7f8518b2798cbdeb7320fdc3b"
+    },
+    {
+      "bytes": 3059,
+      "path": "05_operator_comparison.md",
+      "sha256": "9c1c7b16b061768a7c7c64f1d7457e40b0bf994e9190420ace2eb5dfc0bdb270"
+    },
+    {
+      "bytes": 2110,
+      "path": "06_structural_alignment.md",
+      "sha256": "afc948931a210138a50635cb86baf5af92b4189a3f1372fab4d7b6edb5943374"
+    },
+    {
+      "bytes": 1452,
+      "path": "07_selection_retention.md",
+      "sha256": "d3bb673a5e6fcc42f345925cb450e4f9a538276a01f408938432935a0ed3a4a7"
+    },
+    {
+      "bytes": 2048,
+      "path": "08_actual_compute_audit.md",
+      "sha256": "9d613813c42ebc07b066d7d95ca94fed80db89c19461f64aece61c4c4b18a117"
+    },
+    {
+      "bytes": 2312,
+      "path": "09_theoretical_implications.md",
+      "sha256": "c8acb3b7c046c500f5ff7195c305aa6beac185e5c468b8ed744668fdb022a71b"
+    },
+    {
+      "bytes": 2267,
+      "path": "10_final_decision.md",
+      "sha256": "252f3e262209d612d4330a1fd5bbb63f3d1801f480c9c9afd9b925d5523d824c"
+    },
+    {
+      "bytes": 22824,
+      "path": "run_pilot.py",
+      "sha256": "1d1f7cd92e341defcf22f16fd213bf15de5ecce750092c3afbd761c0f3574509"
+    },
+    {
+      "bytes": 19854,
+      "path": "analyze_pilot.py",
+      "sha256": "a6beb6485060336056a3102c3abe256e84749d3b16f15f37ec50f051a7f543c1"
+    },
+    {
+      "bytes": 7137,
+      "path": "finalize_audit.py",
+      "sha256": "12121b7dd9c3612dd9e634bf4a2b9fb4f468c288e7723db4ea7b4ac9604ca521"
+    },
+    {
+      "bytes": 1163,
+      "path": "STRICT_VERIFICATION.json",
+      "sha256": "12676004e5882514da8fc588370c83d744d202d9a1189fb706197ab4577d05fd"
+    },
+    {
+      "bytes": 3495,
+      "path": "work/preflight_gate.json",
+      "sha256": "221a563578ce215c3d919a02bb5c0dfcf9af4ed4e6993e584fea26f7040ad07b"
+    },
+    {
+      "bytes": 120277,
+      "path": "work/evaluation_base.csv",
+      "sha256": "252e6bdb6d78d3ebaea9101565c296ba75635d545e439b1ae33037f56ad2283a"
+    },
+    {
+      "bytes": 202554,
+      "path": "work/pilot_evaluable_coordinates.npz",
+      "sha256": "8781f01f99da26a2a3ee1ad2ee73dc4335db21c0058b1c0d50dfed5bdec8552d"
+    },
+    {
+      "bytes": 106920,
+      "path": "work/new_concorde_ledger.parquet",
+      "sha256": "2badec402e8ade426f7228319538139142acbdb3ea859dafc54429c3cf3f972c"
+    },
+    {
+      "bytes": 108450,
+      "path": "work/pilot_tours.parquet",
+      "sha256": "2300eed799820ca2b2067c358a90125c88664fd6fabc3e5de0c0868a4356681b"
+    },
+    {
+      "bytes": 736,
+      "path": "work/concorde_timing.json",
+      "sha256": "3786844dfc09fe7f02d9e87a9914561d6035335a9d0b94fb4ddecc20b0841fb2"
+    },
+    {
+      "bytes": 35549,
+      "path": "work/new_M5_lbq_labels.parquet",
+      "sha256": "32ac09fd80421043cae62f332b85e14fc05e2f374d332a837a76f4aa97feea38"
+    },
+    {
+      "bytes": 1334,
+      "path": "work/lbq_timing.json",
+      "sha256": "9de75c9c433ca808494f3743a4e8bffa948d649ecda9959b9a5a6874ac1ad2b8"
+    },
+    {
+      "bytes": 354564,
+      "path": "work/paired_attempts.csv",
+      "sha256": "52cc4b8a5678c8dc7204b1fe10ba08274425c39eaff5414ccde7c47fdee46514"
+    },
+    {
+      "bytes": 10430,
+      "path": "work/pairwise_operator_contrasts.csv",
+      "sha256": "75d85c9d9b6787dcc89fca67e0428197538c48ba47aa7435cc9db8cbd3514974"
+    },
+    {
+      "bytes": 644,
+      "path": "work/omnibus_tests.json",
+      "sha256": "b9cada9053a03ca30c35a41b0ed0f49f610fc8759e00b4609b9f9af3bc7ef74c"
+    },
+    {
+      "bytes": 980,
+      "path": "work/structural_correlations.csv",
+      "sha256": "0c298a9015410fdc80b00cf6c7a4d2612d43dddf9d73373d5f93e4644335ce65"
+    },
+    {
+      "bytes": 330,
+      "path": "work/structural_fixed_effect_model.json",
+      "sha256": "4fb36033047e3836a7fec8ddbb15782c211504891cf5f27196b35612ebd01761"
+    },
+    {
+      "bytes": 10394,
+      "path": "work/qd_region_descriptive.csv",
+      "sha256": "e3acc41b30cd1f540960163db3e2acc18267fdf4ff23fb6f385c4045b79cab35"
+    },
+    {
+      "bytes": 550,
+      "path": "work/selection_retention_summary.csv",
+      "sha256": "857ab06c7950059b8005564985bba329484ab4c08a7fc180611491017f9c6591"
+    },
+    {
+      "bytes": 1919,
+      "path": "work/analysis_summary.json",
+      "sha256": "eda6ab8beceec1ec4dbf53024ec75fb87a353874868bc5f9fc929a7058983432"
+    },
+    {
+      "bytes": 225019,
+      "path": "work/concorde_failures.csv",
+      "sha256": "aa3c97633f85cb297c3c0b48a6dc6c58c46fb13009151168209ebbd31f1500de"
+    }
+  ],
+  "schema": "DT1A1_FIXED_M5_PAIRED_PILOT_V1",
+  "status": "PASS"
+}

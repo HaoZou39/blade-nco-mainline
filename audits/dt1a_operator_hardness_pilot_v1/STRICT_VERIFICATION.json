@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "analysis_counts": true,
+    "checkpoint_exact": true,
+    "concorde_312_verified": true,
+    "concorde_identity": true,
+    "deliverables_present": true,
+    "eleven_attempt_ids_each": true,
+    "evaluation_360_rows": true,
+    "evaluation_invalid_4": true,
+    "evaluation_roles": true,
+    "evaluation_valid_356": true,
+    "final_decision_A": true,
+    "invalid_unlabeled": true,
+    "lbq_no_failures": true,
+    "lbq_no_updates": true,
+    "new_labels_336": true,
+    "operator_rows_11": true,
+    "operator_scheduled_30": true,
+    "paired_330": true,
+    "pairwise_55": true,
+    "preflight_pass": true,
+    "raw_log_separate_exact": true,
+    "reused_labels_20": true,
+    "reused_values_exact": true,
+    "sample_30_unique": true,
+    "sample_seed_frozen": true,
+    "valid_labels_complete": true
+  },
+  "prohibited_actions": {
+    "BQ_training": false,
+    "HGB_retraining": false,
+    "Lyapunov_theorem": false,
+    "M0_or_M6_paired_eval": false,
+    "SVM_training": false,
+    "evolutionary_cycle": false,
+    "expanded_to_300": false,
+    "mutation_rerun": false
+  },
+  "status": "PASS"
+}

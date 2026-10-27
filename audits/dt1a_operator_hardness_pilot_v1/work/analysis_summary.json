@@ -1,0 +1,58 @@
+{
+  "best_mean_delta_h": 0.02155661021017467,
+  "best_mean_delta_operator": "implosion_mutation",
+  "bootstrap_replicates": 10000,
+  "failures": 4,
+  "hard_hits_not_retained": 60,
+  "holm_significant_delta_pairs": 0,
+  "holm_significant_hard_pairs": 0,
+  "holm_significant_positive_pairs": 0,
+  "material_delta_h": 0.01,
+  "omnibus": {
+    "delta_h_complete_case": {
+      "n_parents": 26,
+      "operators": 11,
+      "p_value": 0.39316068393160686,
+      "permutations": 10000,
+      "statistic_sum_squared_operator_means": 0.0008793426269461514
+    },
+    "hard_hit_all_scheduled": {
+      "n_parents": 30,
+      "operators": 11,
+      "p_value": 0.5329467053294671,
+      "permutations": 10000,
+      "statistic_sum_squared_operator_means": 0.04282828282828282
+    },
+    "positive_yield_all_scheduled": {
+      "n_parents": 30,
+      "operators": 11,
+      "p_value": 0.36346365363463656,
+      "permutations": 10000,
+      "statistic_sum_squared_operator_means": 0.07292929292929291
+    }
+  },
+  "operators_with_ci_excluding_zero_positive": 2,
+  "operators_with_positive_mean_delta_h": 9,
+  "parents": 30,
+  "positive_children_not_retained": 177,
+  "retained_children": 14,
+  "scheduled_attempts": 330,
+  "status": "PASS",
+  "structural_bootstrap_replicates": 2000,
+  "structural_fixed_effect": {
+    "ci_high": 0.0077799314001608805,
+    "ci_low": -0.06529436139903588,
+    "cluster_robust_se": 0.018641401224284888,
+    "coefficient_delta_phi": -0.0287572149994375,
+    "model": "OLS delta_h ~ delta_phi + operator_FE + parent_FE; parent-cluster sandwich SE",
+    "n": 326,
+    "operator_levels": 11,
+    "parent_clusters": 30
+  },
+  "tau": 0.12629708954782198,
+  "total_hard_hits": 62,
+  "total_positive_children": 185,
+  "valid_unique_children": 326,
+  "worst_mean_delta_h": -0.0022831309925426136,
+  "worst_mean_delta_operator": "uniform_mutation"
+}

@@ -1,0 +1,35 @@
+{
+  "batch_size": 128,
+  "checkpoint": {
+    "full_parameter": true,
+    "load_protocol": "direct_strict_load_of_checkpoint['net']",
+    "parameter_count": 3107539,
+    "path": "D:\\NCO\\BLADE-NCO-mainline\\audits\\S6_AE_HGB40_EliteQD1000_PT_10kHardOnly_X1_M0_M10_v1\\cycles\\C04\\09_bq_training\\M5_E256.tsp.best",
+    "sha256": "ef07226bb8c3e8cd3a1404eece474df44d378316fd66509b762eb5f8bc26558c"
+  },
+  "checkpoint_load_cpu_seconds": 0.28125,
+  "checkpoint_load_wall_seconds": 0.45770080015063286,
+  "cuda_device_name": "NVIDIA GeForce RTX 5060 Ti",
+  "cuda_event_seconds": 9.453666015625,
+  "cuda_runtime": "12.8",
+  "device": "cuda:0",
+  "evaluation_cpu_seconds": 8.984375,
+  "evaluation_wall_seconds": 9.454655700363219,
+  "failures": 0,
+  "new_LBQ_calls": 336,
+  "parameter_updates": 0,
+  "retries": 0,
+  "reused_M5_labels": 20,
+  "status": "PASS",
+  "teacher_forced_protocol": {
+    "conditioning": "teacher_forcing_ground_truth_previous_actions",
+    "formula": "-(1/T) * sum_t log p_theta(a_t^* | s_t^*)",
+    "greedy_rollout_used": false,
+    "minimum_suffix_length": 3,
+    "parameter_updates": 0,
+    "representation": "expert_ordered_closed_tour_suffix",
+    "target": "mean negative log probability of expert next action",
+    "target_index": 1
+  },
+  "torch_version": "2.11.0+cu128"
+}
