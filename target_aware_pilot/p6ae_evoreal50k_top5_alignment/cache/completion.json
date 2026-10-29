@@ -1,0 +1,9 @@
+{
+  "decision": "EVOREAL_TOP5_ALIGNMENT_SUPPORTED",
+  "evoreal_ot": 8.689243781522839,
+  "label": "SUPPORTED",
+  "p03_ot": 26.610825882291795,
+  "p5_archive_mean_ot": 21.19314806389809,
+  "status": "COMPLETE",
+  "uniform_ot": 13.518932199726999
+}

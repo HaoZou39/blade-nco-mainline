@@ -1,0 +1,7 @@
+replicate,generation,requested_target_n,actual_target_n,actual_frontier_n,strict_shortfall_reassigned
+Original,G1,7000,2149,7851,4851
+Original,G2,7000,4813,5187,2187
+S1,G1,7000,2176,7824,4824
+S1,G2,7000,4859,5141,2141
+S2,G1,7000,2096,7904,4904
+S2,G2,7000,4696,5304,2304

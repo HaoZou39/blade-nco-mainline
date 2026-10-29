@@ -1,0 +1,30 @@
+{
+  "all_costs_reproduced": true,
+  "all_tours_legal": true,
+  "cache_hits": 0,
+  "closed_training_shape": [
+    10000,
+    101,
+    2
+  ],
+  "concorde_sha256": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+  "distance_convention": "per-edge Euclidean rint(scale=1,000,000), EXPLICIT FULL_MATRIX",
+  "expert_tours_array_sha256": "6f38146ba101f69c0562e25ac67845476545f9b1035278e37f0695e7aa34088a",
+  "failed": 0,
+  "labeled_bundle_sha256": "259dab4e317a66e6c67506617dcbb52da52f6e3bb17f417eaac3f3d4474712f6",
+  "labeled_metadata_sha256": "734931d448065973bad9a49d2dd608ff69beecd4b2a7bd55431fe1c6d82a1d80",
+  "ledger_sha256": "f859ea708e157fc58495a4557e1ef48f72c4faee90cd566b6ac76f21f47fc21f",
+  "model_used_for_label_hardness_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "phase_invocation_wall_seconds": 475.75918440520763,
+  "physical_new_concorde_calls": 10000,
+  "pipeline_wall_seconds": 475.5273139849305,
+  "retry_count": 0,
+  "selected": 10000,
+  "status": "PASS",
+  "tour_indexing": "0-based Hamiltonian permutation; closure implicit in cost and appended only for BQ input",
+  "tour_shape": [
+    10000,
+    100
+  ],
+  "verified": 10000
+}

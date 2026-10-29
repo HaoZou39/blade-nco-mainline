@@ -1,0 +1,16 @@
+{
+  "all_dataset_and_evaluator_hashes_match": true,
+  "benchmark_csv_sha256": "77be33ec28af3663e2e8eafc86c76947edf1c8a403528aff57e8e4ee5bb6bcc8",
+  "decision": "STRUCTURE_C5_GAIN_CONFIRMED",
+  "expert_tours_array_sha256": "6f38146ba101f69c0562e25ac67845476545f9b1035278e37f0695e7aa34088a",
+  "hardness_m5_sha256": "41d189dfeb986a070bd7685f203172d1dad4376d8d0134151d7488fb079a4545",
+  "label_bundle_sha256": "259dab4e317a66e6c67506617dcbb52da52f6e3bb17f417eaac3f3d4474712f6",
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "no_extra_training_seed": true,
+  "no_sixth_cycle": true,
+  "no_tsplib22_model_selection": true,
+  "paired_csv_sha256": "5ec3bebf6a980f741264abf1e18b800595670a07ec63eb158d7d5a0626ff9c80",
+  "status": "COMPLETE",
+  "structure10k_sha256": "5287932231529e617383388bb64d607985d07944799c3d661c5a737338bdece1",
+  "structure_m5_sha256": "ace34d712ca8d20e730edeed0666362e6cc03008f9b5c0411d53c444856e3233"
+}

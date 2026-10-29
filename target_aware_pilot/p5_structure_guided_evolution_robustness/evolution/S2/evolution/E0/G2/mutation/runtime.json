@@ -1,0 +1,32 @@
+{
+  "arm": "E0",
+  "cycle_seed_namespace": 2605022,
+  "generation": 2,
+  "nominal_attempts": 20000,
+  "numpy": "2.2.6",
+  "offspring_membership_sha256": "dff77902049c811b6c02b5e257ac2e23d99f84f36ca07330827fe9a1d29bef83",
+  "operator_attempts": {
+    "axis_projection_mutation": 1818,
+    "cluster_mutation": 1818,
+    "compression_mutation": 1818,
+    "expansion_mutation": 1818,
+    "explosion_mutation": 1818,
+    "grid_mutation": 1818,
+    "implosion_mutation": 1818,
+    "linear_projection_mutation": 1818,
+    "normal_mutation": 1819,
+    "rotation_mutation": 1818,
+    "uniform_mutation": 1819
+  },
+  "operator_budget_range": [
+    1818,
+    1819
+  ],
+  "parent_membership_sha256": "73bc31bebaa14ea0d7495d4e4d56c81b03d93390f42680814d7426b1a3db5620",
+  "profile_name": "FOGA11_BASE_V1",
+  "profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "python": "3.10.12",
+  "status": "PASS",
+  "valid_unique_within_generation": 19929,
+  "wall_seconds": 49.73313507437706
+}

@@ -1,0 +1,18 @@
+{
+  "aggregate_csv_sha256": "c18f0b611471f80d7d7facbdd03e466bcee100f83eb4e4e31ded8fcf91fa1196",
+  "decision": "TARGET_AWARE_RETENTION_TRAINING_SEED_ROBUSTNESS_SUPPORTED",
+  "decision_label": "SUPPORTED",
+  "gap8_delta_mean": 0.3056008926435889,
+  "gap8_delta_sample_sd": 0.2396331216263095,
+  "no_concorde": true,
+  "no_data_resampling": true,
+  "no_extra_seed": true,
+  "p4c2_started": false,
+  "paired_seeds": [
+    2026,
+    260101,
+    260102
+  ],
+  "per_seed_csv_sha256": "8f7759e03cc21f258291fa8f731bde0b5f373908259d68968d436a0de7491bd8",
+  "status": "COMPLETE"
+}

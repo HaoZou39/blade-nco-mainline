@@ -1,0 +1,148 @@
+{
+  "actual_cell_counts": [
+    1437,
+    146,
+    0,
+    1670,
+    1538,
+    70,
+    2296,
+    1670,
+    1173
+  ],
+  "arm": "E0",
+  "available": 30000,
+  "cell_capacity": [
+    1437,
+    146,
+    0,
+    7703,
+    1538,
+    70,
+    12067,
+    5131,
+    1173
+  ],
+  "component_counts": {
+    "cell_transition_backfill": 7015,
+    "strict_cell_quota": 2985
+  },
+  "lineage_cap_initial": 50,
+  "lineage_cap_max_used": 200,
+  "quota_fulfillment": [
+    {
+      "adjusted_quota": 1437,
+      "adjusted_shortfall": 0,
+      "cell": 0,
+      "cell_capacity": 1437,
+      "original_shortfall": 855,
+      "requested_quota": 2292,
+      "selected": 1437,
+      "strict_capacity": 209
+    },
+    {
+      "adjusted_quota": 146,
+      "adjusted_shortfall": 0,
+      "cell": 1,
+      "cell_capacity": 146,
+      "original_shortfall": 896,
+      "requested_quota": 1042,
+      "selected": 146,
+      "strict_capacity": 87
+    },
+    {
+      "adjusted_quota": 0,
+      "adjusted_shortfall": 0,
+      "cell": 2,
+      "cell_capacity": 0,
+      "original_shortfall": 0,
+      "requested_quota": 0,
+      "selected": 0,
+      "strict_capacity": 0
+    },
+    {
+      "adjusted_quota": 1670,
+      "adjusted_shortfall": 0,
+      "cell": 3,
+      "cell_capacity": 7703,
+      "original_shortfall": 0,
+      "requested_quota": 208,
+      "selected": 1670,
+      "strict_capacity": 404
+    },
+    {
+      "adjusted_quota": 1538,
+      "adjusted_shortfall": 0,
+      "cell": 4,
+      "cell_capacity": 1538,
+      "original_shortfall": 545,
+      "requested_quota": 2083,
+      "selected": 1538,
+      "strict_capacity": 466
+    },
+    {
+      "adjusted_quota": 70,
+      "adjusted_shortfall": 0,
+      "cell": 5,
+      "cell_capacity": 70,
+      "original_shortfall": 972,
+      "requested_quota": 1042,
+      "selected": 70,
+      "strict_capacity": 50
+    },
+    {
+      "adjusted_quota": 2296,
+      "adjusted_shortfall": 0,
+      "cell": 6,
+      "cell_capacity": 12067,
+      "original_shortfall": 0,
+      "requested_quota": 833,
+      "selected": 2296,
+      "strict_capacity": 1118
+    },
+    {
+      "adjusted_quota": 1670,
+      "adjusted_shortfall": 0,
+      "cell": 7,
+      "cell_capacity": 5131,
+      "original_shortfall": 0,
+      "requested_quota": 208,
+      "selected": 1670,
+      "strict_capacity": 327
+    },
+    {
+      "adjusted_quota": 1173,
+      "adjusted_shortfall": 0,
+      "cell": 8,
+      "cell_capacity": 1173,
+      "original_shortfall": 1119,
+      "requested_quota": 2292,
+      "selected": 1173,
+      "strict_capacity": 324
+    }
+  ],
+  "selected": 10000,
+  "shortfall": 0,
+  "target_quotas_after_capacity_redistribution": [
+    1437,
+    146,
+    0,
+    1670,
+    1538,
+    70,
+    2296,
+    1670,
+    1173
+  ],
+  "target_quotas_requested": [
+    2292,
+    1042,
+    0,
+    208,
+    2083,
+    1042,
+    833,
+    208,
+    2292
+  ]
+}

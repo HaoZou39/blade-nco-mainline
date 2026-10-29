@@ -1,0 +1,3 @@
+feature,native_vs_aspect_max_abs,native_vs_per_axis_median_abs,native_vs_per_axis_max_abs,spearman_vs_log_n,pearson_vs_log_n
+spn_distance_varcoeff,2.2870594307278225e-14,0.533905013731061,1.9789186407064276,0.04966449681053977,0.054742097087713854
+spn_fraction_shorter_mean_distance,0.0,0.6230204000358514,2.310810356555949,-0.09514500428364894,0.02996078076589253

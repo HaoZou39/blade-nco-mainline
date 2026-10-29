@@ -1,0 +1,3 @@
+epoch,path,sha256,official
+0,/home/haozou/blade-nco-mainline/target_aware_pilot/p3_structure_finetune/training_cycle/09_bq_training/M5_E000.tsp.best,a07d9cf6d3dff2e79f97a4ccd0a9d41316dc006a8ed2b52eac870613db25f300,False
+256,/home/haozou/blade-nco-mainline/target_aware_pilot/p3_structure_finetune/training_cycle/09_bq_training/M5_E256.tsp.best,ace34d712ca8d20e730edeed0666362e6cc03008f9b5c0411d53c444856e3233,True

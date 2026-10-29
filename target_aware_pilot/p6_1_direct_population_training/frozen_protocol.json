@@ -1,0 +1,54 @@
+{
+  "arms": [
+    "E0",
+    "E1"
+  ],
+  "critical_exploratory": "TSPLIB22, repeatedly observed",
+  "decision_rule": {
+    "INCONCLUSIVE": "otherwise",
+    "NOT_SUPPORTED": "all three Original70 Delta_population < 0",
+    "SUPPORTED_PRELIMINARY": "all three Original70 Delta_population > 0 and GAP5 is not negative in all three replicates"
+  },
+  "forbidden": [
+    "mutation",
+    "survivor reselection",
+    "archive acquisition",
+    "novelty filter",
+    "hyperparameter search",
+    "extra seed"
+  ],
+  "intervention": "replace P5 Archive30k->Structure10k training membership with frozen final G2 Population10k",
+  "p5_protocol_sha256": "196fc02a8e0119fdd3cdfd56e3db76bdaaa8e5546f3fce6ffce615f313c45502",
+  "primary": "OriginalTSPLIB70 mean gap; Delta_population=E0-Pop minus E1-Pop",
+  "protocol_sha256": "00133310b2bcbad55281fa06314ba781fffad299bd98abf11100f6a941be19d4",
+  "replicates": [
+    "Original",
+    "S1",
+    "S2"
+  ],
+  "secondary": [
+    "Uniform100",
+    "GaussianMixture100",
+    "TSPLIB100",
+    "GaussianMixture500",
+    "OriginalTSPLIB70"
+  ],
+  "status": "FROZEN_BEFORE_P6_1_LABELING_AND_TRAINING",
+  "training": {
+    "augmentation": "formal NumPy permutation and suffix-length sampling",
+    "authority": "P5 frozen actual training configuration",
+    "checkpoint_rule": "fixed E256",
+    "epochs": 256,
+    "evaluation": "frozen greedy eight-benchmark evaluator",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "loss": "teacher-forced imitation",
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_sha256": "7ff017d8006ab4ace39031bf5a65c310382b32e94e98789e5c3a9a6f8c05b58d",
+    "training_seed": 2026
+  }
+}

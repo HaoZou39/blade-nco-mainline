@@ -1,0 +1,13 @@
+feature,missing_n,missing_fraction
+spn_nng_3_strong_components_varcoeff,2779,0.002726142816922686
+spn_hull_edges_skew,4,3.92391913195061e-06
+spn_nng_3_strong_components_skew,3319,0.0032558718997360184
+spn_angles_cos_max,29,2.844841370664192e-05
+spn_angles_cos_var,29,2.844841370664192e-05
+spn_angles_varcoeff,29,2.844841370664192e-05
+spn_angles_max,29,2.844841370664192e-05
+spn_angles_var,29,2.844841370664192e-05
+spn_nng_3_strong_components_sd,2779,0.002726142816922686
+spn_angles_span,29,2.844841370664192e-05
+spn_angles_cos_median,29,2.844841370664192e-05
+spn_angles_cos_varcoeff,29,2.844841370664192e-05

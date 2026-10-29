@@ -1,0 +1,16 @@
+analysis,objective_kind,feature,component_total,contribution_share,all_feature_total,mean_total_cost
+AllCandidatesNearest,nearest-reference diagnostic,spn_sum_of_lowest_edge_values,9871.613960134635,0.013325808804827286,740789.1036646597,6.19751613540249
+AllCandidatesNearest,nearest-reference diagnostic,spn_distance_min,620245.2780116192,0.8372764595797724,740789.1036646597,6.19751613540249
+AllCandidatesNearest,nearest-reference diagnostic,spn_distance_varcoeff,39010.48197057798,0.05266071244514045,740789.1036646597,6.19751613540249
+AllCandidatesNearest,nearest-reference diagnostic,spn_nng_3_strong_components_varcoeff,52555.25017340117,0.07094495574167067,740789.1036646597,6.19751613540249
+AllCandidatesNearest,nearest-reference diagnostic,spn_mst_dists_sd,19106.47954892664,0.025792063428589196,740789.1036646597,6.19751613540249
+Random10kExactOT,exact capacity-constrained OT,spn_sum_of_lowest_edge_values,59225.92636976743,0.22895779972488942,258676.16845083237,25.867616845083237
+Random10kExactOT,exact capacity-constrained OT,spn_distance_min,90332.09004962779,0.3492091698690735,258676.16845083237,25.867616845083237
+Random10kExactOT,exact capacity-constrained OT,spn_distance_varcoeff,13495.419270313863,0.052171096205482076,258676.16845083237,25.867616845083237
+Random10kExactOT,exact capacity-constrained OT,spn_nng_3_strong_components_varcoeff,4021.808646666129,0.015547658181084318,258676.16845083237,25.867616845083237
+Random10kExactOT,exact capacity-constrained OT,spn_mst_dists_sd,91600.92401721046,0.3541142756435308,258676.16845083237,25.867616845083237
+Guided10kExactOT,exact capacity-constrained OT,spn_sum_of_lowest_edge_values,37983.103634888445,0.24400502389494905,155665.2524139881,15.56652524139881
+Guided10kExactOT,exact capacity-constrained OT,spn_distance_min,40516.035178817205,0.2602766805726544,155665.2524139881,15.56652524139881
+Guided10kExactOT,exact capacity-constrained OT,spn_distance_varcoeff,8365.008918338754,0.05373716220298289,155665.2524139881,15.56652524139881
+Guided10kExactOT,exact capacity-constrained OT,spn_nng_3_strong_components_varcoeff,3577.1051445629732,0.022979470942235364,155665.2524139881,15.56652524139881
+Guided10kExactOT,exact capacity-constrained OT,spn_mst_dists_sd,65223.99958876108,0.4190016627172477,155665.2524139881,15.56652524139881

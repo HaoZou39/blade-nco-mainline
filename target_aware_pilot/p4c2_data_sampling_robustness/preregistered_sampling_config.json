@@ -1,0 +1,57 @@
+{
+  "base_training_protocol": {
+    "augmentation": "formal NumPy permutation and suffix-length sampling",
+    "checkpoint_rule": "fixed E256; no validation/test selection",
+    "epochs": 256,
+    "evaluation": "frozen greedy evaluator on the same eight benchmarks",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_source": "/home/haozou/blade-nco-mainline/scripts/run_blade_core_ablation_5c_noanchor_foga11base_v1.py",
+    "trainer_source_sha256": "7ff017d8006ab4ace39031bf5a65c310382b32e94e98789e5c3a9a6f8c05b58d",
+    "training_seed": 2026
+  },
+  "bootstrap": "10,000 paired test-instance resamples within each replicate; never pool instances across replicates",
+  "common_offspring_membership_sha256": "2565bd7088d6bdc7b6659add93c5dbabfe848725a99f175328fecda3586d6d0d",
+  "common_offspring_pool_n": 39848,
+  "delta_definition": "GAP(R2) - GAP(R0); positive favors target-aware R0",
+  "final_acquisition": "canonical-hash ordering followed by NumPy uniform sampling without replacement",
+  "gap8_definition": "unweighted arithmetic mean of the same eight frozen benchmark mean gaps",
+  "important_scope": "R0 archive membership is deterministic and fixed; new seeds vary R0 final acquisition only, while R2 varies retention and acquisition. This is not R0 retention-seed robustness.",
+  "no_third_sampling_seed": true,
+  "not_supported_rule": "S1 and S2 GAP8 Delta < 0 and R2 wins at least 5/8 benchmark means in each",
+  "otherwise": "INCONCLUSIVE",
+  "protocol_sha256": "c18d6cccbe72e913d96db607dd644406e1ceb9a0914a6222e90cf317cd92024e",
+  "r0_retention": {
+    "algorithm": "common_bounded_archive_retention",
+    "deterministic_replay_exact": true,
+    "membership_sha256": "091a229c6ab854c36d1866d24102466504fe6e77ff40ea113acadf927bf6d031",
+    "randomness": false,
+    "seed_consumed": false
+  },
+  "r2_retention": "canonical-hash ordering followed by NumPy uniform sampling without replacement",
+  "replicates": {
+    "Original": {
+      "acquisition_seed": 20261025,
+      "retention_seed": 20261026,
+      "training_seed": 2026
+    },
+    "S1": {
+      "acquisition_seed": 260301,
+      "retention_seed": 260201,
+      "training_seed": 2026
+    },
+    "S2": {
+      "acquisition_seed": 260302,
+      "retention_seed": 260202,
+      "training_seed": 2026
+    }
+  },
+  "status": "PREREGISTERED_BEFORE_NEW_DATA_GENERATION",
+  "supported_rule": "S1 and S2 GAP8 Delta > 0; R0 wins at least 5/8 benchmark means in each; and no Uniform100, GaussianMixture100, or GaussianMixture500 Delta is below -0.25 pp in either new replicate",
+  "tsplib22_role": "repeatedly observed exploratory comparability only"
+}

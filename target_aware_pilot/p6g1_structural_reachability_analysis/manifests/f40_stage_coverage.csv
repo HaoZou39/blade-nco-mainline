@@ -1,0 +1,12 @@
+stage,source,n,unique_n,cache_hits_before,newly_extracted,shards,wall_s
+P03,runs/BLADE_CORE_ABLATION_5C_NOANCHOR_FOGA11BASE_V1/A0_FULL_BASE/cycles/C03/06_selection/P_next.npz,10000,10000,276,9724,39,30.51370457559824
+Original_G1_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/Original/shared_G1/mutation/offspring_coordinates.npz,109571,109571,1690,107881,432,219.45967477560043
+Original_E0_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/Original/E0/G2/mutation/offspring_coordinates.npz,109603,109603,9848,99755,400,206.02109265327454
+Original_E1_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/Original/E1/G2/mutation/offspring_coordinates.npz,109778,109778,17414,92364,370,195.66678646206856
+S1_G1_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S1/shared_G1/mutation/offspring_coordinates.npz,109541,109541,1739,107802,432,218.85039077699184
+S1_E0_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S1/E0/G2/mutation/offspring_coordinates.npz,109574,109574,9804,99770,400,205.41499675810337
+S1_E1_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S1/E1/G2/mutation/offspring_coordinates.npz,109751,109751,16997,92754,372,195.70492333173752
+S2_G1_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S2/shared_G1/mutation/offspring_coordinates.npz,109570,109570,1670,107900,432,227.74432358890772
+S2_E0_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S2/E0/G2/mutation/offspring_coordinates.npz,109619,109619,9885,99734,399,202.71336706727743
+S2_E1_G2_RAW,target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S2/E1/G2/mutation/offspring_coordinates.npz,109762,109762,17735,92027,369,190.47751814872026
+EvoReal50k,runs/BLADE_BASE_UNIFORM_EVOREAL_5C_BENCHMARK_V2/datasets/evoreal50k_coordinates.npy,50000,50000,0,50000,200,115.66750807315111

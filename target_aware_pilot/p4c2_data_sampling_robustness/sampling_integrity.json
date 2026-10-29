@@ -1,0 +1,11 @@
+{
+  "distribution_csv_sha256": "95620358215d9be80f0138d24a797fbadd5218d5eca47805306ab081890456cd",
+  "no_bq_hardness": true,
+  "no_evolution": true,
+  "no_resampling_after_diagnostics": true,
+  "protocol_sha256": "c18d6cccbe72e913d96db607dd644406e1ceb9a0914a6222e90cf317cd92024e",
+  "sampling_manifest_sha256": "c2d9b003a65da3ace5cebbd4d5a9445b9bc4009f463a35b1dd110e91b5222ab5",
+  "sampling_wall_seconds": 47.4053735435009,
+  "source_pool_membership_sha256": "2565bd7088d6bdc7b6659add93c5dbabfe848725a99f175328fecda3586d6d0d",
+  "status": "PASS"
+}

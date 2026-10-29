@@ -1,0 +1,15 @@
+{
+  "comparison_csv_sha256": "4bdf4b356727d8f9b0702f2c0d4f40eb95483d384da7f1ac94b936fa8231f793",
+  "decision": "TARGET_AWARE_RETENTION_VALUE_PRELIMINARILY_SUPPORTED",
+  "decision_label": "PRELIMINARILY_SUPPORTED",
+  "no_evolution_rerun": true,
+  "no_extra_seed": true,
+  "no_resampling": true,
+  "paired_csv_sha256": "56062cad64dd3bee0b1bd3ee0d36ed132677ad15e4478969ba3d4606cb741ef0",
+  "r2_archive_sha256": "e01240bece112d929be4eb757bdb3d98568a40de434d6304b7ca8a9e4c08a658",
+  "r2_labels_sha256": "8ae216e71b28f8ac5b3b450ea51f651795f0bf42e6383969f2f2753152b53a79",
+  "r2_m5_sha256": "c1e569b86221af567b7414d5edc5cb71c128e0df1617063f8aa05442bce61fe4",
+  "r2_random10k_sha256": "21849ce7f7270fe95a01826ac489e2598c1d43fa2f6bedad66fa75cff6a20688",
+  "status": "COMPLETE",
+  "tsplib22_not_pristine": true
+}

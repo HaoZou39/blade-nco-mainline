@@ -1,0 +1,10 @@
+{
+  "f40_config_sha256": "5db26bc67c8cd9ecc6845eee795d23a2a057919bf9b9333342c5674f1b261fc6",
+  "membership_sha256": "16f01f952f4ba846c538e69927c7832e70b2c9054e5b14669a242cef3e50d702",
+  "n": 50000,
+  "pool": "EvoReal50k",
+  "shape": [
+    50000,
+    48
+  ]
+}

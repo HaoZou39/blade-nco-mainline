@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-28T13:45:27.150905+00:00",
+  "final_tag": "BLADE_P6G1_STRUCTURAL_REACHABILITY_ANALYSIS_COMPLETE",
+  "labels": {
+    "P6_G1_ANALYSIS_STATUS": "COMPLETE",
+    "P6_G1_CROSS_SIZE_CONFOUNDING": "PARTIAL",
+    "P6_G1_EVOREAL_STRUCTURAL_DIFFERENCE": "CONFIRMED",
+    "P6_G1_INITIAL_POPULATION_BIAS": "SUPPORTED",
+    "P6_G1_MUTATION_STRUCTURAL_EXPANSION": "LIMITED",
+    "P6_G1_OPERATOR_LIMITATION": "PARTIAL",
+    "P6_G1_PARENT_SELECTION_LIMITATION": "PARTIAL"
+  },
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "platform": "Linux-5.15.0-125-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "scipy": "1.15.3",
+  "status": "COMPLETE"
+}

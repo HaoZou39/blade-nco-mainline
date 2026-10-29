@@ -1,0 +1,17 @@
+{
+  "all_tours_valid": true,
+  "checkpoint_sha256": "72e3d4dcb4a0bc1c5562e9ab161deaffddb03e0829a01798cec078668540e8a1",
+  "datasets": [
+    "Uniform100",
+    "GaussianMixture100",
+    "TSPLIB100",
+    "EvoReal_S1_100",
+    "EvoReal_S2_100",
+    "EvoReal_S3_100",
+    "GaussianMixture500",
+    "OriginalTSPLIB70"
+  ],
+  "evaluation_wall_s": 661.4752492159605,
+  "results_sha256": "be7a4f9cf96c007ff05d9432a30dcb160d2a2aa39eb2888293cb481c19716c9c",
+  "status": "PASS"
+}

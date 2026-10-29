@@ -1,0 +1,46 @@
+{
+  "end_timestamp": "2026-10-24T17:04:20.297636+00:00",
+  "input_hashes": {
+    "T": "139ab50f468eb545f378f52372f259d150c84d4e34c94b040e090cbd146d02f7",
+    "epochs": "256",
+    "lr": "3.75e-05",
+    "model": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "sampler": "one_permutation_10k_batch256_drop_last_false"
+  },
+  "outputs": {
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/checkpoints/E0_Structure_M5_E256.tsp.best": {
+      "bytes": 12470052,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/checkpoints/E0_Structure_M5_E256.tsp.best",
+      "sha256": "d7d2ffc9ebafa5adb2bca9ccd90f6e8bd0d0487bdf1b4f68cf98dbf425cd4c58"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/M5_E000.tsp.best": {
+      "bytes": 12470052,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/M5_E000.tsp.best",
+      "sha256": "09e8c7cb3f681936f88dcb5b80ee2a0035bebad601eb3f672326bd85cb289da3"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/M5_E256.tsp.best": {
+      "bytes": 12470052,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/M5_E256.tsp.best",
+      "sha256": "d7d2ffc9ebafa5adb2bca9ccd90f6e8bd0d0487bdf1b4f68cf98dbf425cd4c58"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/bq_training_timing.json": {
+      "bytes": 728,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/bq_training_timing.json",
+      "sha256": "c9e925be6f4a6727355e414ffaed7afcc72c4b5e655d5394b4a332fb1f3775b1"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/checkpoint_hashes.csv": {
+      "bytes": 430,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/checkpoint_hashes.csv",
+      "sha256": "7d6ff0e9430379c118d4f93c014b9df4be632fcd2c66f16eb44d71534c85b46f"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/training_loss_curve.csv": {
+      "bytes": 17568,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4a_random_evolution_ablation/training_cycle/09_bq_training/training_loss_curve.csv",
+      "sha256": "aec2a88bff73aba0e7df564240a487714bc4c3f2bb49788cd0638e324ef8474f"
+    }
+  },
+  "stage": "BQ_10k_once_batch256_no_anchor_E256",
+  "start_timestamp": "2026-10-24T16:50:56.528223+00:00",
+  "status": "COMPLETE",
+  "wall_seconds": 803.7694102823734
+}

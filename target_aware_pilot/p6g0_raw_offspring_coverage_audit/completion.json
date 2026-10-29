@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETE",
+  "label": "BLADE_P6G0_RAW_OFFSPRING_COVERAGE_AUDIT_COMPLETE",
+  "raw_available": "YES",
+  "g1_expands": "YES",
+  "g1_selection_loss": "YES",
+  "g2_expands": "YES",
+  "g2_selection_loss": "YES",
+  "generation_reachability_limited": "YES",
+  "primary_bottleneck": "GENERATION",
+  "generated_then_lost_per_run": {
+    "Original_E0": [
+      "rat99",
+      "rat783"
+    ],
+    "Original_E1": [
+      "pr226"
+    ],
+    "S1_E0": [
+      "rat575",
+      "rat783"
+    ],
+    "S1_E1": [
+      "pr226"
+    ],
+    "S2_E0": [
+      "rat99",
+      "rat575"
+    ],
+    "S2_E1": [
+      "pr226"
+    ]
+  },
+  "generated_then_lost_all_six_finals": [],
+  "historical_generation_limited_global": [
+    "d198",
+    "d657",
+    "pcb1173",
+    "pr107",
+    "pr144",
+    "pr264",
+    "u574",
+    "u724",
+    "a280",
+    "eil51",
+    "pcb442",
+    "pr299",
+    "rat195",
+    "ts225",
+    "tsp225"
+  ],
+  "p6e05_reproduction_exact": true,
+  "runtime_s": 70.74479508399963,
+  "peak_rss_mib": 1038.96484375,
+  "new_evolution": false,
+  "new_training": false,
+  "new_model_inference": false
+}

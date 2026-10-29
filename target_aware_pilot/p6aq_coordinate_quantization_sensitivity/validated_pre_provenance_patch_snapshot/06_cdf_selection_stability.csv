@@ -1,0 +1,4 @@
+comparison,retained_n,retention,jaccard,objective_left_own,objective_right_own,left_membership_on_right_cost,right_membership_on_left_cost,official_phi_swd_between_memberships,official_phi_energy_between_memberships
+split_even_vs_official,9794,0.9794,0.9596315892612189,14.976022210383416,15.56652524139881,,,,
+split_odd_vs_official,9750,0.975,0.9512195121951219,14.734624790668487,15.56652524139881,,,,
+split_even_vs_split_odd,9656,0.9656,0.9334880123743233,14.976022210383416,14.734624790668487,14.743618184447289,14.985541124486923,0.00830937129342238,0.0013810571323642495

@@ -1,0 +1,12 @@
+{
+  "A_membership_sha256": "558ea278823a39275704d71e8e999efe58a56217fb23c7555cabe035c986d190",
+  "B_membership_sha256": "ae05391bf432b4008dac3c0e958351f6776ed898b84e5d3005970035f83f42ce",
+  "common_parent_membership_sha256": "9d0298fc5db96766c96d7b6e7e460a3326b9c97851d76b2148d830993d2d3e51",
+  "kept_n": 9000,
+  "p03_n": 10000,
+  "removed_index_sha256": "34f7cc3a9b1792e9599758cb0eb1d626292acbd2a3567df041104f49b3cdd6fb",
+  "removed_n": 1000,
+  "supplement_attempted": 1000,
+  "supplement_membership_sha256": "8eddcc9a006babee4409e746d3722e751df19d88ac46a4aa197c53395beaba87",
+  "supplement_n": 1000
+}

@@ -1,0 +1,25 @@
+{
+  "arm": "E0",
+  "finite": true,
+  "hashes_reproduce": true,
+  "immutable_bundle_sha256": "1e656e58d01c739b16008128e9ed436d1f45b97ac2023fa93e1cae5a95463090",
+  "immutable_manifest_sha256": "f526b8f8e28a129c2040db9b26a26ca18d4292333ad44563cd6a161c727475f0",
+  "in_bounds": true,
+  "membership_sha256": "4744aa6c165d5f66f75f7f857687f23a356f9dfccf2c05dd7bd38eedaf50ef04",
+  "provenance_complete": true,
+  "replicate": "S1",
+  "rows": 10000,
+  "shape": [
+    10000,
+    100,
+    2
+  ],
+  "source_bundle": "/home/haozou/blade-nco-mainline/target_aware_pilot/p5_structure_guided_evolution_robustness/evolution/S1/evolution/E0/G2/active_population.npz",
+  "source_bundle_sha256": "1e656e58d01c739b16008128e9ed436d1f45b97ac2023fa93e1cae5a95463090",
+  "source_manifest": "/home/haozou/blade-nco-mainline/target_aware_pilot/p5_structure_guided_evolution_robustness/evolution/S1/evolution/E0/G2/active_population.parquet",
+  "source_manifest_sha256": "f526b8f8e28a129c2040db9b26a26ca18d4292333ad44563cd6a161c727475f0",
+  "source_role": "persisted G2 active_population survivors; not offspring subset or archive",
+  "status": "PASS",
+  "unique_hashes": 10000,
+  "unique_nodes": true
+}

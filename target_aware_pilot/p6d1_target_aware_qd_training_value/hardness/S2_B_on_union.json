@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "ab1d769a1d457a97711ca09125125e0c218a895da18e8c2e8a6bcdc531860c11",
+  "gpu_peak_bytes": 2138105344,
+  "model_arm": "B",
+  "n": 19927,
+  "output_sha256": "4cb1cccb9aa8d705d0b88d9bc7c24acf20da2be12eb73793786c49303e8f57f8",
+  "replicate": "S2",
+  "status": "PASS",
+  "wall_s": 184.8293331414461
+}

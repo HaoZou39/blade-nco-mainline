@@ -1,0 +1,10 @@
+dataset,replicate,population_n,all48_coverage_count,matched_coverage_count,population_within_radius_fraction,missing_matched_reference_ids
+U_Original,Original,19929,25,14,0.09870038637161925,pr107;pr136;rat99
+B_Original,Original,10000,21,13,0.1048,pr107;pr136;rat99;kroA150
+C_Original,Original,10000,20,12,0.1035,pr107;pr136;rat99;kroA100;kroA150
+U_S1,S1,19937,23,14,0.10162010332547525,pr107;pr136;rat99
+B_S1,S1,10000,21,12,0.102,pr107;pr136;pr144;rat99;kroA150
+C_S1,S1,10000,21,13,0.1016,pr107;pr136;rat99;kroA150
+U_S2,S2,19927,25,13,0.09931249059065589,pr107;pr136;pr144;rat99
+B_S2,S2,10000,22,13,0.1029,pr107;pr136;pr144;rat99
+C_S2,S2,10000,21,13,0.1032,pr107;pr136;pr144;rat99

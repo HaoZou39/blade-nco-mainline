@@ -1,0 +1,4 @@
+replicate,historical_raw_union_coverage_n,final_E0_union_E1_coverage_n,raw_references_lost_by_final_union_n,raw_references_lost_by_final_union_ids,sets_exactly_equal
+Original,25,25,0,,True
+S1,24,24,0,,True
+S2,25,25,0,,True

@@ -1,0 +1,148 @@
+{
+  "actual_cell_counts": [
+    2640,
+    307,
+    0,
+    557,
+    2432,
+    90,
+    1182,
+    556,
+    2236
+  ],
+  "arm": "E1",
+  "available": 30000,
+  "cell_capacity": [
+    2738,
+    307,
+    1,
+    7426,
+    2470,
+    90,
+    8248,
+    6037,
+    2236
+  ],
+  "component_counts": {
+    "cell_transition_backfill": 5970,
+    "strict_cell_quota": 4030
+  },
+  "lineage_cap_initial": 50,
+  "lineage_cap_max_used": 200,
+  "quota_fulfillment": [
+    {
+      "adjusted_quota": 2640,
+      "adjusted_shortfall": 0,
+      "cell": 0,
+      "cell_capacity": 2738,
+      "original_shortfall": 0,
+      "requested_quota": 2292,
+      "selected": 2640,
+      "strict_capacity": 389
+    },
+    {
+      "adjusted_quota": 307,
+      "adjusted_shortfall": 0,
+      "cell": 1,
+      "cell_capacity": 307,
+      "original_shortfall": 735,
+      "requested_quota": 1042,
+      "selected": 307,
+      "strict_capacity": 163
+    },
+    {
+      "adjusted_quota": 0,
+      "adjusted_shortfall": 0,
+      "cell": 2,
+      "cell_capacity": 1,
+      "original_shortfall": 0,
+      "requested_quota": 0,
+      "selected": 0,
+      "strict_capacity": 0
+    },
+    {
+      "adjusted_quota": 557,
+      "adjusted_shortfall": 0,
+      "cell": 3,
+      "cell_capacity": 7426,
+      "original_shortfall": 0,
+      "requested_quota": 208,
+      "selected": 557,
+      "strict_capacity": 411
+    },
+    {
+      "adjusted_quota": 2432,
+      "adjusted_shortfall": 0,
+      "cell": 4,
+      "cell_capacity": 2470,
+      "original_shortfall": 0,
+      "requested_quota": 2083,
+      "selected": 2432,
+      "strict_capacity": 797
+    },
+    {
+      "adjusted_quota": 90,
+      "adjusted_shortfall": 0,
+      "cell": 5,
+      "cell_capacity": 90,
+      "original_shortfall": 952,
+      "requested_quota": 1042,
+      "selected": 90,
+      "strict_capacity": 52
+    },
+    {
+      "adjusted_quota": 1182,
+      "adjusted_shortfall": 0,
+      "cell": 6,
+      "cell_capacity": 8248,
+      "original_shortfall": 0,
+      "requested_quota": 833,
+      "selected": 1182,
+      "strict_capacity": 1318
+    },
+    {
+      "adjusted_quota": 556,
+      "adjusted_shortfall": 0,
+      "cell": 7,
+      "cell_capacity": 6037,
+      "original_shortfall": 0,
+      "requested_quota": 208,
+      "selected": 556,
+      "strict_capacity": 396
+    },
+    {
+      "adjusted_quota": 2236,
+      "adjusted_shortfall": 0,
+      "cell": 8,
+      "cell_capacity": 2236,
+      "original_shortfall": 56,
+      "requested_quota": 2292,
+      "selected": 2236,
+      "strict_capacity": 640
+    }
+  ],
+  "selected": 10000,
+  "shortfall": 0,
+  "target_quotas_after_capacity_redistribution": [
+    2640,
+    307,
+    0,
+    557,
+    2432,
+    90,
+    1182,
+    556,
+    2236
+  ],
+  "target_quotas_requested": [
+    2292,
+    1042,
+    0,
+    208,
+    2083,
+    1042,
+    833,
+    208,
+    2292
+  ]
+}

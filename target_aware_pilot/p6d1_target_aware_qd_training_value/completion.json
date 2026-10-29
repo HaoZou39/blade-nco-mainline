@@ -1,0 +1,13 @@
+{
+  "completed_utc": "2026-10-27T23:38:07.107270+00:00",
+  "final_label": "BLADE_P6D1_TARGET_AWARE_QD_TRAINING_VALUE_COMPLETE",
+  "final_report_sha256": "478b5a9f36a783e09f51a964291cbf43b3b64b86d379d3f08beefb7bd8f68adb",
+  "h1": "P6D1_TARGET_AWARE_GAIN_INCONCLUSIVE",
+  "h2": "P6D1_HARDNESS_GUIDED_GAIN_INCONCLUSIVE",
+  "h3": "PARTIAL",
+  "h4": "NOT_ESTABLISHED",
+  "hourly_monitoring": "COMPLETE",
+  "protocol_sha256": "86d6ebd41165c87c07de6870562583e5ff87f84d7bfc11c47397fb95d072d2dc",
+  "status": "COMPLETE",
+  "wall_s": 54.1343609392643
+}

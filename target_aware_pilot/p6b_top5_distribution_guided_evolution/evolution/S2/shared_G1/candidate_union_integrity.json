@@ -1,0 +1,13 @@
+{
+  "accepted_unique_offspring_n": 109570,
+  "bundle_sha256": "032e9a7a47943dfbdec2add6ae5cb2fc063e266cf2371e258e00bea49a4029e7",
+  "eligible_unique_offspring_n": 109553,
+  "generation": 1,
+  "manifest_sha256": "29119c44d6ea88510df3a34c85444b3b17f756eae8ca9d3a0a65d27b3cd65763",
+  "parent_child_duplicates": 17,
+  "parent_membership_sha256": "558ea278823a39275704d71e8e999efe58a56217fb23c7555cabe035c986d190",
+  "parent_n": 10000,
+  "status": "PASS",
+  "union_membership_sha256": "9edd01462eda5a90a14a7ffafc40fdc0e3a93103ca91a97a0c7fae361aaeacac",
+  "union_unique_n": 119553
+}

@@ -1,0 +1,14 @@
+{
+  "e000_weights_equal_m4": true,
+  "epochs": 256,
+  "final_loss": 0.04937415870190307,
+  "gpu_peak_allocated_bytes": 2137318912,
+  "invocation_wall_s": 801.3240734040737,
+  "label_bundle_sha256": "45161315a9ec570c0ac49bedf270dff2b3d40dc8752cd4e201f0720ba36c9580",
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "membership_sha256": "54bdb644a348dff070379cab6e1a3be316786f011b79d475139e05ed4fa5d38a",
+  "optimizer_steps": 10240,
+  "r0_m5_sha256": "72e3d4dcb4a0bc1c5562e9ab161deaffddb03e0829a01798cec078668540e8a1",
+  "status": "PASS",
+  "training_loop_wall_s": 800.072166018188
+}

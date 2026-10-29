@@ -1,0 +1,36 @@
+{
+  "coverage_preserving_same_cell_swap_n": 1,
+  "heldout_used": false,
+  "hgb_used_for_selection": false,
+  "max_lineage_cap_used": 50,
+  "max_parent_cap_used": 20,
+  "membership_sha256": "b31aa922d2ec221d2f75a0aea3445623503d2062e89b74ae3177a5f2d22f24db",
+  "selected_direct_parent_n": 5433,
+  "selected_lineage_n": 945,
+  "selection_n": 10000,
+  "selection_policy": "exact target 3x3 quota; equal reference subquota; 12 proximity anchors then hash-diverse strict/transition/boundary; lineage and direct-parent caps",
+  "selection_seed": 20261025,
+  "structure_only_manifest_sha256": "1af8954c00ad9ddcab25cfdfd40e2971501fe1338f0e94c0d6bc2315929c82dc",
+  "target_cell_counts": [
+    11,
+    5,
+    0,
+    1,
+    10,
+    5,
+    4,
+    1,
+    11
+  ],
+  "target_cell_quota": [
+    2292,
+    1042,
+    0,
+    208,
+    2083,
+    1042,
+    833,
+    208,
+    2292
+  ]
+}

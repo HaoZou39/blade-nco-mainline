@@ -1,0 +1,16 @@
+{
+  "artifact_wall_clock_span_seconds": 2491.7518742084503,
+  "baseline_bundle_sha256": "0e8ce149cd6dc93c7cae285483fc67e73bf37460b5ac7e89ab5ccb4256490bb6",
+  "baseline_union_sha256": "7d10b9436a42b6df0f6b020fa164c1a9fcb85474eb900128114e9cfc61ad12aa",
+  "decision": "GO",
+  "finalization_invocation_seconds": 6.570989370346069,
+  "mutation_profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "mutation_worker_sha256": "b4df88149c933a42f695cb2f1ad5e0048be42ca1239588f88389da23e768f621",
+  "no_bq_training": true,
+  "no_concorde": true,
+  "no_oracle": true,
+  "no_surrogate_fit": true,
+  "p1_script_sha256": "94bf7f62124ad50daac25f0642fa6040b335fb72f68efb7a9a1d17331ff4693c",
+  "runner_sha256": "b1e3b1981afd8b0746ed6735461b051ff0b2c40634e13339a260a239664b1572",
+  "status": "COMPLETE"
+}

@@ -1,0 +1,23 @@
+{
+  "checkpoint_sha256": "ace34d712ca8d20e730edeed0666362e6cc03008f9b5c0411d53c444856e3233",
+  "cumulative_optimizer_steps": 51200,
+  "data_parallel_workers": 1,
+  "drop_last": false,
+  "effective_batch_size": 256,
+  "epochs": 256,
+  "final_loss": 0.042569740319619576,
+  "final_partial_batch_size": 16,
+  "full_batches_per_epoch": 39,
+  "gpu_peak_allocated_bytes": 2137318912,
+  "gradient_accumulation_steps": 1,
+  "hard_occurrences_per_epoch": 10000,
+  "hard_unique": 10000,
+  "logical_batch_size": 256,
+  "microbatch_size": 64,
+  "microbatches_per_optimizer_update": 4,
+  "model_finite": true,
+  "optimizer_steps": 10240,
+  "optimizer_steps_per_epoch": 40,
+  "training_loop_wall_s": 799.0930499136448,
+  "uniform_anchor": 0
+}

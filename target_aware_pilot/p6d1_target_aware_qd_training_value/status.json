@@ -1,0 +1,16 @@
+{
+  "arm": "P6D1_S2_C",
+  "completed_runs": 9,
+  "current_run": "S2-C",
+  "cycle": "C04",
+  "error": "Index contains duplicate entries, cannot reshape",
+  "latest_checkpoint": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6d1_target_aware_qd_training_value/logs/S2_C/training_cycle/09_bq_training/M5_E256.tsp.best",
+  "next_run": "S2-C",
+  "phase": "complete",
+  "queue_index": 9,
+  "run_started_utc": "2026-10-27T17:33:46.298591+00:00",
+  "runner_pid": 3274518,
+  "status": "COMPLETE",
+  "total_runs": 9,
+  "updated_utc": "2026-10-27T23:38:07.107604+00:00"
+}

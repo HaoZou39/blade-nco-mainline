@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": "4ed2084bac86cb6294150f61372e08b03d405564a45dfc4d2404643de0995ddc",
+  "dataset": "Uniform100",
+  "device": "cuda:0",
+  "gpu_peak_bytes": 358830080,
+  "kind": "benchmark",
+  "model_key": "S2_E1",
+  "n": 10000,
+  "output_sha256": "675a98393e89feca804ae5b10746c1d8c0f935b44ed084427a235186f6d67338",
+  "status": "PASS",
+  "wall_s": 68.16663261502981
+}

@@ -1,0 +1,17 @@
+{
+  "case": "CASE B",
+  "decision": "STRUCTURE_ACQUISITION_DOMINANT_OR_INCONCLUSIVE",
+  "e0_bundle_sha256": "987395ae7de3e9a4118ed26ce9cf2c369a6b0498623dadd14668812a4cc3cc69",
+  "e0_labels_sha256": "3077212b6e98b5f4a860fcfb76f75781f60a638099bc700cd443d87f05bed6d2",
+  "e0_m5_sha256": "d7d2ffc9ebafa5adb2bca9ccd90f6e8bd0d0487bdf1b4f68cf98dbf425cd4c58",
+  "e1_bundle_sha256": "5287932231529e617383388bb64d607985d07944799c3d661c5a737338bdece1",
+  "e1_m5_sha256": "ace34d712ca8d20e730edeed0666362e6cc03008f9b5c0411d53c444856e3233",
+  "evaluation_protocol_hashes_match": true,
+  "four_model_csv_sha256": "1c32dd1d534c45cd13c553f52b33906c108968e18415f5753d9b6ca53b32cacd",
+  "no_e1_rerun": true,
+  "no_extra_seed": true,
+  "no_p4b_or_p4c": true,
+  "paired_csv_sha256": "a60cf40fd0abf08ddc667352d7fe500739f2d13ebf9851f6a5c38603b90741f0",
+  "status": "COMPLETE",
+  "tsplib22_not_pristine": true
+}

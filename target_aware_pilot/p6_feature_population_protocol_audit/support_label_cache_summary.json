@@ -1,0 +1,6 @@
+{
+  "verified_cache_unique": 219345,
+  "logical_missing_sum_across_six_bundles": 23572,
+  "unique_missing_union_across_six_bundles": 23468,
+  "note": "No Concorde calls made. M4 training overlap intentionally not inspected."
+}

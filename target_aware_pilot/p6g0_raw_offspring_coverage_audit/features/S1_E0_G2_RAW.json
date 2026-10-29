@@ -1,0 +1,8 @@
+{
+  "source": "target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S1/E0/G2/mutation/offspring_coordinates.npz",
+  "source_bytes": 53100659,
+  "source_sha256": "75900a62d6be471769988eed28a714ef3ce446f6b5469715372bb7f8b20dd052",
+  "n": 109574,
+  "feature_implementation": "target_aware_pilot/p6e0_evoreal_structural_representation_audit/run_p6e0_audit.py",
+  "wall_s": 72.04634428024292
+}

@@ -1,0 +1,18 @@
+{
+  "conceptual_mutation_attempts": 440000,
+  "evolution_seed": 20261024,
+  "final_population_sha256": {
+    "E0": "5e653c3318f07d3f71902bf9a890aa865c04f11944e2da76a6f3728cb55ca242",
+    "E1": "1369866d844de341426d6fbca8ce8b7ea563614fa3a91f0f8c751f27bff51fef"
+  },
+  "g1_shared_union": true,
+  "g1_union_membership_sha256": "6ade1b3c73f00e4d211504785d49fea4bbca0352ed5ae03a2f1ea1476bba45de",
+  "mutation_namespaces": {
+    "1": 5,
+    "2": 6
+  },
+  "physical_mutation_attempts": 330000,
+  "replicate": "Original",
+  "status": "COMPLETE",
+  "wall_seconds": 2713.279624722898
+}

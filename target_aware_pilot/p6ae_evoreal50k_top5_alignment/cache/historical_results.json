@@ -1,0 +1,10 @@
+{
+  "evoreal_gap5": 1.4573465562206616,
+  "evoreal_original70": 2.285487454872132,
+  "evoreal_source": "runs/BLADE_BASE_UNIFORM_EVOREAL_5C_BENCHMARK_V2/10_all_eight_gap_trajectory.csv",
+  "evoreal_source_sha256": "87f57933e41348125153852d3ce882d74b5fb929f87e0b0b761ffdb061b0508d",
+  "p3_gap5": 2.221137911149343,
+  "p3_original70": 1.9179507972479544,
+  "p3_source": "target_aware_pilot/p3_structure_finetune/04_all_benchmark_gap_comparison.csv",
+  "p3_source_sha256": "77be33ec28af3663e2e8eafc86c76947edf1c8a403528aff57e8e4ee5bb6bcc8"
+}

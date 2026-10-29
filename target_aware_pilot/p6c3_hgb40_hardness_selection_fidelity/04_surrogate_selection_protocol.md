@@ -1,0 +1,3 @@
+# Surrogate-C1 Selection Protocol
+
+The intended solve is the byte-identical P6-C1 totally-unimodular transport LP: candidate capacity ≤1, exactly 10,000 mass, exact 48 frozen reference quotas, and exact replicate-specific E0 decile quotas. The only intended substitution is candidate bin membership from frozen HGB raw predictions. Candidate true CE is hidden from selection. Before constructing the LP, necessary per-bin supply is checked. Thresholds, quota counts, objective, and `side='right'` assignment are immutable; no true-CE repair, threshold shift, greedy backfill, or quota relaxation is permitted.

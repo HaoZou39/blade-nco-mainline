@@ -1,0 +1,75 @@
+{
+  "arms": {
+    "D25": 0.25,
+    "D50": 0.5,
+    "D75": 0.75
+  },
+  "bootstrap_n": 2000,
+  "bootstrap_seed": 20261110,
+  "decision_rules": {
+    "H1": "SUPPORTED iff d_struct and exact OT are monotone non-increasing D25->D50->D75 in all 3 reps; MIXED if either is monotone in >=1 rep",
+    "H2": "SUPPORTED iff every D arm retains frozen P90 tail >= B in all reps; MIXED iff at least one fixed D arm does so in all reps",
+    "H3": "PRELIMINARILY_SUPPORTED iff one fixed D arm beats C Original70 3/3 and is not worse GAP5 3/3; MIXED iff any fixed arm beats C in 1-2 reps",
+    "H4": "SUPPORTED_PRELIMINARY iff one fixed D arm beats B Original70 3/3 and is not worse GAP5 3/3; MIXED iff any arm beats B in 1-2 reps",
+    "H5": "SUPPORTED_PRELIMINARY iff one fixed D arm beats M4 Original70 3/3; PARTIAL iff any does in 1-2 reps",
+    "H6": "SUPPORTED_EXPLORATORY iff structure ratio has consistent monotone offline tradeoff and same-direction Original70 rank in all reps; MIXED if offline tradeoff holds but gap rank differs",
+    "H7": "PROMISING only if H3 and H4 supported and H5 not NOT_SUPPORTED; otherwise NOT_ESTABLISHED unless all gain tests fail"
+  },
+  "experiment": "BLADE-NCO P6-D3",
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "monitor_interval": "60m",
+  "p6d0_completion_sha256": "71e2274c4453bff2020d6d655ef206217734e4f4bf018664419880cdd73f81d9",
+  "p6d1_completion_sha256": "90b407c38e5b6d7e18c2ce944433d28f83ace5312f7564b4d5087ccbf7c76fda",
+  "p6d2_completion_sha256": "601697e0f309cc2d097a146baca751b66f62ea2c50d167f4758287bcf2ebf818",
+  "prohibitions": [
+    "mutation",
+    "evolution",
+    "Concorde",
+    "HGB training",
+    "ratio search",
+    "lambda change",
+    "benchmark-driven selection",
+    "P6-D4"
+  ],
+  "protocol_sha256": "693d6b330fb71c2914c086c88a15b46ea1ac2238170eff16d81eb4fc3b06761d",
+  "python": "3.10.12",
+  "quota": "deterministic largest remainder; tie niche id",
+  "replicates": [
+    "Original",
+    "S1",
+    "S2"
+  ],
+  "request_sha256": "525128f8dabbe10f13228e77a399917db6db9010b17cc3c5183be84482265f31",
+  "selection_order": "STRUCTURE ascending score then HARDNESS descending frozen HGB; hash tie",
+  "structure_score": "minimum frozen P6-A squared Top5 candidate-reference cost",
+  "torch": "2.6.0+cu124",
+  "training": {
+    "authority": "P6-B actual frozen C04->M5 implementation",
+    "checkpoint_rule": "fixed E256",
+    "device": "cuda:1",
+    "epochs": 256,
+    "evaluation": "P6-B frozen greedy evaluator",
+    "formal_source": "P6-B/P6-C2 core.train via audited P6-D1 adapter",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "loss": "teacher-forced imitation",
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_sha256": "e9fc32126cf841502901e36c48a648c28e03c986cdfbe942dfe022e9925f94b5",
+    "training_order": [
+      "Original-D25",
+      "Original-D50",
+      "Original-D75",
+      "S1-D25",
+      "S1-D50",
+      "S1-D75",
+      "S2-D25",
+      "S2-D50",
+      "S2-D75"
+    ],
+    "training_seed": 2026
+  }
+}

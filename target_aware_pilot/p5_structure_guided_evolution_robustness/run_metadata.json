@@ -1,0 +1,11 @@
+{
+  "analysis_sha256": "441c298d16c5d7a696ff3bde17ce111bf8b3e23bc4fcf5f6f05768c6b312702a",
+  "decision": "STRUCTURE_GUIDED_EVOLUTION_GAIN_INCONCLUSIVE",
+  "decision_label": "INCONCLUSIVE",
+  "g2_survivor_on_training_path": false,
+  "no_followup_started": true,
+  "primary_mean_delta": 0.10491712852839698,
+  "primary_sample_sd": 0.31291406240092656,
+  "results_sha256": "a7240b740875dc29b788c6ae72a480e8e913b3ab1524aa8263d3ebe7ce12bb2b",
+  "status": "COMPLETE"
+}

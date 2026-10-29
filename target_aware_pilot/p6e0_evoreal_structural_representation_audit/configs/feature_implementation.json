@@ -1,0 +1,38 @@
+{
+  "fft": {
+    "dc_excluded": true,
+    "frequency_mask": "1 < radial_bin <= 4",
+    "grid": 32,
+    "histogram": "raw counts",
+    "statistic": "mean absolute magnitude",
+    "status": "FFT_APPROX",
+    "threshold_exploratory_only": 35.0,
+    "transform": "fft2 then fftshift"
+  },
+  "matched_subsample_seeds": [
+    20261128,
+    20261129,
+    20261130,
+    20261131,
+    20261132,
+    20261133,
+    20261134,
+    20261135,
+    20261136,
+    20261137
+  ],
+  "nn_ratio": {
+    "neighbor": "self-excluded Euclidean nearest neighbor",
+    "status": "definition_faithful",
+    "std_ddof": 0,
+    "threshold_exploratory_only": 0.5
+  },
+  "normalization": {
+    "definition": "subtract per-axis minima; divide both axes by maximum axis span",
+    "version": "evoreal_alg1_shared_max_span_v1"
+  },
+  "official_commit": "919616337105e894e06463734ec1dd71f6451309",
+  "official_repository": "https://github.com/HenryZhu1029/EvoReal",
+  "paper": "https://arxiv.org/abs/2511.10233",
+  "random_seed": 20261028
+}

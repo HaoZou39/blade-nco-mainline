@@ -1,0 +1,18 @@
+{
+  "integer_objective": "min sum_k (q_k-K*p_k)^2; exact marginal allocation; tie by niche_id",
+  "lambda05": {
+    "effective_occupied_niches": 956,
+    "empty_available_niches": 44,
+    "l2_distortion": 219.07249751386928,
+    "saturated_nonempty_niches": 487,
+    "tv_distortion": 0.18118825897787155
+  },
+  "lambda1": {
+    "effective_occupied_niches": 956,
+    "empty_available_niches": 44,
+    "l2_distortion": 598.0442495733166,
+    "saturated_nonempty_niches": 733,
+    "tv_distortion": 0.5005817699771633
+  },
+  "random_seed": 20261103
+}

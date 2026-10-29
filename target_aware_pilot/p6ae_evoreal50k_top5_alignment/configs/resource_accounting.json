@@ -1,0 +1,14 @@
+{
+  "feature_prepare_driver_wall_seconds_observed_approx": 266.83,
+  "feature_prepare_note": "Two isolated prepare sessions measured by the orchestrator; includes coordinate hashing, feature transforms, cache writes, and 120000 newly extracted instances. P03 used the formal cache and only 32 instances were re-extracted for validation.",
+  "matching_and_reporting_profile_command": "python run_p6ae_audit.py analyze --recompute-metrics (before adding the two historical-Original fixed P5 rows)",
+  "matching_and_reporting_wall_seconds": 425.13,
+  "matching_and_reporting_user_seconds": 421.18,
+  "matching_and_reporting_system_seconds": 4.39,
+  "matching_and_reporting_peak_rss_kib": 1121484,
+  "final_exact_matching_rows": 58,
+  "final_exact_solver_wall_seconds_sum": 397.604827940464,
+  "gpu_used": false,
+  "feature_workers": 8,
+  "feature_shard_instances": 500
+}

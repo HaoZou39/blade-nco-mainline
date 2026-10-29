@@ -1,0 +1,15 @@
+{
+  "candidate_n": 119530,
+  "completion_label": "BLADE_P6A_TOP5_TARGET_MATCHING_FEASIBILITY_COMPLETE",
+  "decision": "GO",
+  "label": "P6A_TARGET_MATCHING_FEASIBILITY_SUPPORTED",
+  "matching_solver": "exact_TU_LP_HiGHS_dual_simplex",
+  "no_p6b_executed": true,
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "python": "3.10.12",
+  "representation": "uniform_conditional_tail_score_v1",
+  "scipy": "1.15.3",
+  "selected_n": 10000,
+  "status": "COMPLETE"
+}

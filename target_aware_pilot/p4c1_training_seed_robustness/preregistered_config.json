@@ -1,0 +1,44 @@
+{
+  "arms": [
+    "R0",
+    "R2"
+  ],
+  "base_training_protocol": {
+    "augmentation": "one NumPy-driven random suffix length per logical batch",
+    "checkpoint_rule": "fixed E256; no validation/test selection",
+    "drop_last": false,
+    "dropout": 0.0,
+    "epochs": 256,
+    "evaluation": "frozen greedy evaluator",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates_per_epoch": 40,
+    "sampler": "one NumPy permutation of frozen 10k per epoch",
+    "scheduler": null,
+    "total_optimizer_updates": 10240,
+    "trainer_source": "/home/haozou/blade-nco-mainline/scripts/run_blade_core_ablation_5c_noanchor_foga11base_v1.py",
+    "trainer_source_sha256": "7ff017d8006ab4ace39031bf5a65c310382b32e94e98789e5c3a9a6f8c05b58d"
+  },
+  "base_training_protocol_sha256": "80852d9e42501c7d84b7c3fd19c1c3dd23e9581d7fb6815256050c68bc41e13d",
+  "concorde_calls_allowed": false,
+  "data_and_labels_frozen": true,
+  "delta_definition": "mean_gap_R2 - mean_gap_R0; positive favors R0",
+  "gap8_definition": "unweighted arithmetic mean of the same eight frozen benchmark mean gaps",
+  "new_paired_training_seeds": [
+    260101,
+    260102
+  ],
+  "new_training_run_count": 4,
+  "no_additional_seed": true,
+  "not_supported_rule": "all 3 paired seeds have GAP8 Delta < 0; R2 wins at least 5/8 benchmark means within every seed; cross-seed mean Delta < 0 on at least 5/8 benchmarks",
+  "original_common_training_seed": 2026,
+  "otherwise": "INCONCLUSIVE",
+  "status": "PREREGISTERED_BEFORE_NEW_TRAINING",
+  "supported_rule": "all 3 paired seeds have GAP8 Delta > 0; R0 wins at least 5/8 benchmark means within every seed; cross-seed mean Delta > 0 on at least 5/8 benchmarks",
+  "test_instance_uncertainty": "10,000 paired bootstrap replicates within each fixed training seed and dataset",
+  "training_seed_variability": "descriptive mean, median, sample SD, range, and direction counts across exactly three paired seeds",
+  "tsplib22_role": "repeatedly observed exploratory comparability set; never model selection"
+}

@@ -1,0 +1,59 @@
+{
+  "component_counts": {
+    "frontier_exploration": 5187,
+    "target_coverage": 4813
+  },
+  "frontier_capacity_by_target_cell": [
+    5476,
+    307,
+    0,
+    2746,
+    5708,
+    5,
+    4892,
+    2330,
+    3629
+  ],
+  "frontier_n": 5187,
+  "frontier_quota_by_target_cell": [
+    1317,
+    307,
+    0,
+    236,
+    1209,
+    5,
+    560,
+    236,
+    1317
+  ],
+  "lineage_cap_initial": 40,
+  "lineage_cap_max_used": 80,
+  "mode": "E1_G2_survivor",
+  "pool_n": 29929,
+  "requested_target_n": 7000,
+  "selected_n": 10000,
+  "strict_capacity_by_cell": [
+    473,
+    177,
+    0,
+    506,
+    858,
+    68,
+    1549,
+    562,
+    620
+  ],
+  "strict_quota_shortfall_reassigned_to_frontier": 2187,
+  "target_n": 4813,
+  "target_quota_by_cell": [
+    473,
+    177,
+    0,
+    506,
+    858,
+    68,
+    1549,
+    562,
+    620
+  ]
+}

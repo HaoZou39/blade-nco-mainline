@@ -7,7 +7,10 @@ import argparse
 import hashlib
 import json
 import os
-from concurrent.futures import ProcessPoolExecutor, as_completed
+import pickle
+import signal
+import subprocess
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 import shutil
 import socket
@@ -70,6 +73,7 @@ B0_SOURCE = CURRENT_FULL / "C00" / "07_oracle" / "B0"
 C0_SOURCE = CURRENT_FULL / "C00" / "05_scoring" / "union"
 HARD_N = 10_000
 CALIBRATION_N = 10_000
+EXPERIMENT_SEED = 2026
 LR = 3.75e-5
 EPOCHS = 256
 NORM_COLS = [f"normalized_{name}" for name in QD4_FEATURE_NAMES]
@@ -339,7 +343,7 @@ def extract_f40_shard(payload: dict[str, Any]) -> str:
                     writer.writerow([instance_hash, node, repr(float(x)), repr(float(y))])
         process = s3b2.subprocess.run(
             [payload["rscript"], str(R_SCRIPT), str(inp), str(raw), str(schema)],
-            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=900,
         )
         if process.returncode or not raw.is_file():
             raise RuntimeError(f"F40 extraction failed: {process.stderr[-1500:]}")
@@ -365,6 +369,52 @@ def extract_f40_shard(payload: dict[str, Any]) -> str:
     tmp.replace(out)
     return str(out)
 
+
+def _run_one_f40_shard(job: dict[str, Any]) -> str:
+    """Run one shard in a fresh interpreter so a wedged worker can be killed."""
+    worker = Path(__file__).resolve().parent / "f40_one_shard.py"
+    last_error = "unknown"
+    for attempt in range(3):
+        proc = subprocess.Popen(
+            [sys.executable, str(worker)],
+            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+            start_new_session=True,
+        )
+        try:
+            out, err = proc.communicate(pickle.dumps(job), timeout=900)
+        except subprocess.TimeoutExpired:
+            os.killpg(proc.pid, signal.SIGKILL)
+            proc.wait()
+            last_error = f"timed out: {job['out']}"
+            continue
+        if proc.returncode == 0:
+            return out.decode("utf-8", errors="replace").strip()
+        last_error = f"rc={proc.returncode} {job['out']}: {err.decode('utf-8', errors='replace')[-1500:]}"
+        if proc.returncode > 0:
+            break
+    raise RuntimeError(f"F40 shard failed {last_error}")
+
+
+def _run_f40_pool(jobs: list[dict[str, Any]], tag: str) -> None:
+    """Extract shards with separate processes and only four running at once.
+
+    A process-pool queue inside the training process deadlocks: after a worker
+    exits, the parent still holds both pipe ends and blocks forever in
+    pipe_write. Independent subprocesses are killed on timeout instead.
+    """
+    if not jobs:
+        return
+    total = len(jobs)
+    done = 0
+    with ThreadPoolExecutor(max_workers=min(4, total)) as executor:
+        futures = [executor.submit(_run_one_f40_shard, job) for job in jobs]
+        for future in as_completed(futures):
+            future.result()
+            done += 1
+            if done == 1 or done == total or done % 25 == 0:
+                print(f"[S4-B] F40 {tag} shards {done}/{total}", flush=True)
+
+
 def ensure_features(coordinates: np.ndarray, hashes: list[str], tag: str) -> tuple[pd.DataFrame, dict[str, Any]]:
     started = time.perf_counter(); cache = load_feature_cache(); known = set(cache.instance_hash.astype(str))
     missing_indices = [i for i, value in enumerate(hashes) if value not in known]
@@ -376,14 +426,8 @@ def ensure_features(coordinates: np.ndarray, hashes: list[str], tag: str) -> tup
             block = missing_indices[start:start + 250]
             jobs.append({"coordinates": coordinates[np.asarray(block, int)], "hashes": [hashes[i] for i in block],
                          "names": F40, "out": str(work / f"shard_{start:07d}_{start+len(block):07d}.parquet"),
-                         "rscript": s3b2.rscript(), "params": params})
-        done = 0
-        with ProcessPoolExecutor(max_workers=4) as executor:
-            futures = [executor.submit(extract_f40_shard, job) for job in jobs]
-            for future in as_completed(futures):
-                future.result(); done += 1
-                if done == 1 or done == len(futures) or done % 25 == 0:
-                    print(f"[S4-B] F40 {tag} shards {done}/{len(futures)}", flush=True)
+                         "rscript": s3b2.rscript(), "r_script": str(R_SCRIPT), "params": params})
+        _run_f40_pool(jobs, tag)
         new_frame = pd.concat([pd.read_parquet(job["out"]) for job in jobs], ignore_index=True)
         expected = [hashes[i] for i in missing_indices]
         if new_frame.instance_hash.astype(str).tolist() != expected: raise RuntimeError("F40 extraction alignment failure")
@@ -450,16 +494,17 @@ def calibration_stage(cycle: int, model: torch.nn.Module, model_hash: str, devic
                       resume: bool) -> tuple[pd.DataFrame, dict[str, Any], dict[str, Any]]:
     cdir = cycle_dir(cycle); stage = cdir / "_stages" / "01_calibration"
     archive_hashes = archive_meta.instance_hash.astype(str).tolist()
+    sample_seed = EXPERIMENT_SEED * 100 + cycle
     inputs = {"archive": membership_hash(archive_hashes), "model": model_hash,
-              "seed": str(202600 + cycle), "target_n": str(CALIBRATION_N)}
+              "seed": str(sample_seed), "target_n": str(CALIBRATION_N)}
     with atomic_stage(stage, "branch_archive_sample_and_current_hardness_refresh", inputs, resume=resume) as outputs:
         if outputs is not None:
             order = np.argsort(np.asarray(archive_hashes), kind="stable")
             if len(order) <= CALIBRATION_N: chosen = order
-            else: chosen = order[np.random.default_rng(202600 + cycle).choice(len(order), CALIBRATION_N, replace=False)]
+            else: chosen = order[np.random.default_rng(sample_seed).choice(len(order), CALIBRATION_N, replace=False)]
             hashes = [archive_hashes[int(i)] for i in chosen]
             membership = pd.DataFrame({"draw_order": np.arange(len(chosen)), "instance_hash": hashes,
-                                       "sample_seed": 202600 + cycle, "archive_n": len(archive_meta)})
+                                       "sample_seed": sample_seed, "archive_n": len(archive_meta)})
             membership.to_csv(cdir / "B_calibration_membership.csv", index=False)
             bcoords, btours = archive_coords[chosen], archive_tours[chosen]
             refresh_started = time.perf_counter(); values = hardness(model, bcoords, btours, device)
@@ -468,7 +513,7 @@ def calibration_stage(cycle: int, model: torch.nn.Module, model_hash: str, devic
             frame = membership.copy(); frame["current_LBQ"] = values; frame["y_log1p"] = np.log1p(values)
             frame.to_parquet(cdir / "B_current_hardness.parquet", index=False)
             features.to_parquet(cdir / "_state_B_features.parquet", index=False)
-            info = {"archive_n": len(archive_meta), "calibration_n": len(frame), "sample_seed": 202600 + cycle,
+            info = {"archive_n": len(archive_meta), "calibration_n": len(frame), "sample_seed": sample_seed,
                     "membership_sha256": membership_hash(hashes), "refresh_wall_seconds": refresh_s,
                     "refresh_throughput_per_s": len(frame) / max(refresh_s, 1e-12),
                     "hardness": summary_stats(values), "feature_cache": feature_info,

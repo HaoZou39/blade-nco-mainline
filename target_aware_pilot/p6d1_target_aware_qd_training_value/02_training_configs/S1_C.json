@@ -1,0 +1,40 @@
+{
+  "arm": "C",
+  "base_training_protocol": {
+    "authority": "P6-B actual frozen C04->M5 implementation",
+    "checkpoint_rule": "fixed E256",
+    "device": "cuda:1",
+    "epochs": 256,
+    "evaluation": "P6-B frozen greedy evaluator",
+    "formal_source": "P6-B/P6-C2 core.train",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "loss": "teacher-forced imitation",
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_sha256": "e9fc32126cf841502901e36c48a648c28e03c986cdfbe942dfe022e9925f94b5",
+    "training_order": [
+      "Original-A",
+      "Original-B",
+      "Original-C",
+      "S1-A",
+      "S1-B",
+      "S1-C",
+      "S2-A",
+      "S2-B",
+      "S2-C"
+    ],
+    "training_seed": 2026
+  },
+  "dataset_bundle_sha256": "bc337b731d88d9f12d27622e17a0a91b73188bf2a67bc4d52d9321e43327bb2d",
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "membership_sha256": "a37d04b0ecb9f0deda3ba37ed77e78a84d740be4c44194393250cd06858e9330",
+  "protocol_sha256": "86d6ebd41165c87c07de6870562583e5ff87f84d7bfc11c47397fb95d072d2dc",
+  "replicate": "S1",
+  "run_id": "P6D1_S1_C",
+  "training_config_sha256": "cef7f9098b54a60f09d0c362464a42246a14ed2e63c9d64589b30329283c8e17",
+  "training_seed": 2026
+}

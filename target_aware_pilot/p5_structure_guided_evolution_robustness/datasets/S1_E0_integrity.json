@@ -1,0 +1,18 @@
+{
+  "bundle_sha256": "88ce8133b87a94a203c476888bda6ed2a422730c563281dca7ce3a09dbec7257",
+  "finite": true,
+  "hashes_reproduce": true,
+  "in_bounds": true,
+  "m4_history_overlap_n": 0,
+  "manifest_sha256": "f7467503c5ae7b367ba6e5877e1cc01bb63301fa9b65586b4d40124c7a1cccfb",
+  "membership_sha256": "2b6ac8c9dd97baf52f5dc1e5b3140bf377fa0d764638e78e48153197762fa1ef",
+  "rows": 10000,
+  "shape": [
+    10000,
+    100,
+    2
+  ],
+  "status": "PASS",
+  "unique": 10000,
+  "unique_nodes": true
+}

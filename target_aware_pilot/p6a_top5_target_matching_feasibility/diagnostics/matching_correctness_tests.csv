@@ -1,0 +1,7 @@
+fixture,exact_cost,lp_cost,lp_equals_enumeration,greedy_cost,greedy_equals_exact,unique_pass,capacity_pass,objective_consistent,deterministic,used_k
+separable_optimal,2.0,2.0,True,2.0,True,True,True,True,True,2.0
+shared_best_greedy_suboptimal,0.30000000000000004,0.30000000447034836,True,0.4000000059604645,False,True,True,True,True,2.0
+exact_ties,2.0,2.0,True,2.0,True,True,True,True,True,2.0
+near_ties,0.0,0.0,True,0.0,True,True,True,True,True,2.0
+duplicate_ID_precheck,,,,,,True,True,True,True,
+insufficient_candidates,,,,,,True,True,True,True,

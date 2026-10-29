@@ -1,0 +1,20 @@
+{
+  "coordinate_distribution": "iid Uniform([0,1]^2)",
+  "extractor": "target_aware_pilot/p6a_top5_target_matching_feasibility/extract_top5_salesperson.R",
+  "extractor_sha256": "5e42291634aafd42fa3e4f95709c2642521a3defe0417532264c5646c5af4284",
+  "generator": "numpy.default_rng(PCG64).random((m,n,2), dtype=float64)",
+  "node_count_sample_plan": {
+    "50": 256,
+    "75": 256,
+    "100": 512,
+    "150": 256,
+    "225": 256,
+    "350": 192,
+    "500": 192,
+    "750": 128,
+    "1000": 128,
+    "1300": 128
+  },
+  "role": "independent nuisance-transform calibration only; not target empirical distribution",
+  "seed": 20261026
+}

@@ -1,0 +1,23 @@
+item,status,evidence
+M4 checkpoint,MATCHED,same SHA256 c749311...
+BQ architecture/trainer,MATCHED,same frozen trainer SHA256 7ff017...
+optimizer,MATCHED,fresh Adam
+learning rate,MATCHED,3.75e-5
+scheduler,MATCHED,none
+batch/microbatch,MATCHED,256/64
+epochs/updates,MATCHED,"256/10,240"
+training seed,MATCHED,2026
+checkpoint rule,MATCHED,fixed E256
+greedy evaluation,MATCHED,same stored frozen protocol
+evolution seeds,MATCHED,Original/S1/S2: 20261024/260501/260502
+initial parent population,MATCHED,same P03 hash 8ad76b...
+mutation profile/operators,MATCHED,FOGA11_BASE_V1 / 11 operators
+mutation generations,MATCHED,two
+attempts per generation,DIFFERENT,P5 20k (2/parent); P6-B 110k (11/parent)
+population path,DIFFERENT,P5 structured survivor + archive30k; P6 E0/E1 union
+feature representation,DIFFERENT,P5 two-feature target geometry; P6 Top5 OT/QD/hardness
+candidate pool,DIFFERENT,coordinate overlap ~1.3%; see table
+final selection,DIFFERENT,P5 cell quota/backfill; B random; C Top-HGB; D within-niche quota
+P5 final 70/30 claim,DIFFERENT,"70/30 is requested survivor role, not achieved final training split"
+P5 historical true/predicted M4 CE,UNKNOWN,no stored P5 inference; prohibited to generate
+P5 full F40/QD4,UNKNOWN,only historical two-feature/FFT/NN fields stored

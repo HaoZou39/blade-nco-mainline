@@ -1,0 +1,12 @@
+{
+  "all_six_trained": true,
+  "comparison_sha256": "b095cb2191cfb83d870eb78de9cdfda4813b004366c820f322a6d5d88d4e624d",
+  "decision": "DIRECT_POPULATION_STRUCTURE_GAIN_INCONCLUSIVE",
+  "new_unique_concorde_labels": 23468,
+  "no_followup_started": true,
+  "phase": "complete",
+  "results_sha256": "b996f2ea580283bb073641f7d0ca8c94bcc05b6915916eb7ace817376b327024",
+  "short_decision": "INCONCLUSIVE",
+  "status": "COMPLETE",
+  "timestamp_unix": 1793021539.3223426
+}

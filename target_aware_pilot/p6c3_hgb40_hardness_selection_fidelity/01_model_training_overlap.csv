@@ -1,0 +1,8 @@
+record_type,replicate,evaluation_n,exact_coordinate_overlap_n,exact_coordinate_overlap_fraction,training_lineage_root_overlap_n,training_lineage_root_overlap_fraction,strict_root_safe_n,postfit_validation_coordinate_overlap_n
+replicate,Original,19929.0,34,0.0017060565005770486,19644.0,0.9856992322745748,285.0,21.0
+replicate,S1,19937.0,33,0.0016552139238601596,19588.0,0.9824948588052365,349.0,15.0
+replicate,S2,19927.0,27,0.0013549455512621067,19582.0,0.9826868068449842,345.0,17.0
+global_unique,GlobalUnique,59678.0,68,0.0011394483729347499,58701.0,0.9836288079359228,977.0,39.0
+cross_replicate,Original__S1,,57,0.002860153545085052,,,,
+cross_replicate,Original__S2,,57,0.002860440608220003,,,,
+cross_replicate,S1__S2,,58,0.002910623776785266,,,,

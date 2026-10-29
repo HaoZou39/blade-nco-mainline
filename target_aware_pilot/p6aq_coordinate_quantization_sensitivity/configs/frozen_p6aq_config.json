@@ -1,0 +1,34 @@
+{
+  "amplitudes": [
+    0.05,
+    0.25,
+    0.5
+  ],
+  "candidate_n": 119530,
+  "candidate_representation_sha256": "7670dca68aa869a0ff63ee5b381932cd5af6e1744959859f01445928046bd546",
+  "coordinate_noise": "iid per x/y Uniform(-a*q,+a*q), q per-file lexical storage quantum",
+  "coordinate_noise_basis": "raw_tsplib_plus_lexical_q_then_aspect_normalize_v2",
+  "heldout22_used": false,
+  "matching_config_sha256": "77e2f8374f2547760f165cdc952436c55fc0e0eb498b3e7752db1a66e1394666",
+  "p6a_implementation_sha256": "87ebc2228d48284c79759fb51c7bf6f6f8845668bbe298e9cb4413bc5ed02f74",
+  "p6b_executed": false,
+  "perturbation_seeds": [
+    2026,
+    260101,
+    260102,
+    260103,
+    260104
+  ],
+  "scenario_n": 15,
+  "solver": "frozen exact full HiGHS dual-simplex TU LP",
+  "survivor_n": 10000,
+  "target_representation_sha256": "b55512637f35ee3bcc21e167732d4c6b56a607b612a2cf07598be9b2d60fd6ed",
+  "top5": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_min",
+    "spn_distance_varcoeff",
+    "spn_nng_3_strong_components_varcoeff",
+    "spn_mst_dists_sd"
+  ],
+  "uniform_calibration_sha256": "1dfec57fc7a28967ad6be563e4b56cf8553a8c1f0c7d7441d6a65ae3b453e614"
+}

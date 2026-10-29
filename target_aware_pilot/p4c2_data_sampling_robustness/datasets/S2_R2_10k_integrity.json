@@ -1,0 +1,21 @@
+{
+  "arm": "R2",
+  "bundle_sha256": "e4f4b7789985e8cb41e025ea3a6e5d184cc229168b57c3cb8cd6131f10dfeb7d",
+  "finite": true,
+  "hashes_reproduce": true,
+  "in_bounds": true,
+  "level": "training10k",
+  "manifest_csv_sha256": "0270e9bfbd819b94e2d49df5d9cfaf3cf71b389b0d18a85850bcfba1b475b83a",
+  "manifest_parquet_sha256": "545e5cc4247b3847f65506431431443743f95bf4b6c3fe73988306c0615a7650",
+  "membership_sha256": "68d32a0d113fbce7b69f654748af53af56227350f366bc670110c192efa2c76a",
+  "rows": 10000,
+  "sampling_replicate": "S2",
+  "shape": [
+    10000,
+    100,
+    2
+  ],
+  "status": "PASS",
+  "unique": 10000,
+  "unique_nodes": true
+}

@@ -1,0 +1,16 @@
+{
+  "bundle": "/home/haozou/blade-nco-mainline/target_aware_pilot/p2_acquisition/provisional_structure10k.npz",
+  "bundle_sha256": "d93417d90b1b91815f0124b1ee8be31e003abf07afd1c3527cc34fbbbe45e231",
+  "coordinate_dtype": "float64",
+  "coordinate_hashes_verified": true,
+  "coordinate_shape": [
+    10000,
+    100,
+    2
+  ],
+  "instance_n": 10000,
+  "instance_unique_n": 10000,
+  "known_training_overlap_n": 0,
+  "membership_sha256": "b31aa922d2ec221d2f75a0aea3445623503d2062e89b74ae3177a5f2d22f24db",
+  "oracle_labels_present": false
+}

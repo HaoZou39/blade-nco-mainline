@@ -1,0 +1,60 @@
+{
+  "K": 10000,
+  "arms": {
+    "A": "Original P03",
+    "B": "Augmented P03"
+  },
+  "bootstrap_n": 10000,
+  "bootstrap_seed": 20261031,
+  "candidate_pool": "P6-G3 valid nonidentity unique G1 RAW offspring only; no parents and no E0/E1/H1 pools",
+  "decision_rules": {
+    "hardness_preserved_PARTIAL": "one of those two conditions holds",
+    "hardness_preserved_YES": "B mean predicted CE >= A in >=2 seeds and B/A grand mean >=0.98",
+    "stable_gain_NOT_SUPPORTED": "B Original70 mean gap >= A in all 3 seeds",
+    "stable_gain_SUPPORTED": "B Original70 mean gap < A in all 3 seeds",
+    "structure_retained_PARTIAL": "B > A in >=2 seeds or median advantage >0",
+    "structure_retained_YES": "B FFT coverage > A in all 3 seeds and median advantage >=3 references"
+  },
+  "experiment": "BLADE-NCO P6-G4",
+  "g3_completion_sha256": "43eca8bb8242d11538efda5ec258e973e6c189259e21d2672a3ba0925694dbd2",
+  "lineage_cap": false,
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "prohibitions": [
+    "mutation",
+    "new evolution",
+    "HGB fitting",
+    "structure-aware survivor repair",
+    "benchmark-guided selection",
+    "extra training seed"
+  ],
+  "protocol_sha256": "483047bb37296fdb69e5c58d2482b87bb46936e7a1de0176827eac17b5a79932",
+  "python": "3.10.12",
+  "replicates": [
+    "Original",
+    "S1",
+    "S2"
+  ],
+  "request_sha256": "65f397b0b56d3aa2b4e057e21ef650ea65cf9aa069dadde0b1b86f4214d0f20d",
+  "selection": "one max M4-HGB40 per occupied frozen QD4/CVT-1000 niche, then global HGB40 fill",
+  "selection_source_sha256": "32ba1873c6f4ecb8b042f86761cf89575e32810e6a8bc08fca4389d39214d057",
+  "tie_break": "score descending then instance_hash ascending",
+  "training": {
+    "authority": "P5/P6-1 frozen actual training configuration",
+    "checkpoint_rule": "fixed E256",
+    "epochs": 256,
+    "evaluation": "frozen greedy evaluator",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "loss": "teacher-forced imitation",
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_sha256": "e9fc32126cf841502901e36c48a648c28e03c986cdfbe942dfe022e9925f94b5",
+    "training_seed": 2026
+  },
+  "training_seed": 2026
+}

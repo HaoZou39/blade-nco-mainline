@@ -1,0 +1,18 @@
+{
+  "all_costs_reproduced": true,
+  "all_tours_legal": true,
+  "cache_hits": 3321,
+  "concorde_sha256": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+  "expert_tours_array_sha256": "d62309209945603e0b5309e43c1d11d5602100e966bb5259ac1a6d21353894c7",
+  "failures": 0,
+  "invocation_wall_seconds": 339.93696142733097,
+  "labeled_bundle_sha256": "45161315a9ec570c0ac49bedf270dff2b3d40dc8752cd4e201f0720ba36c9580",
+  "labeled_metadata_sha256": "fcc406815404ffce1e147daa2932dc4c30aeb44b3f253893f0b7464ff4fe3d1c",
+  "ledger_sha256": "a41b0af46ff561caddcb82d2b89b782c97c7c175056f07ed943368899d068453",
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "physical_new_concorde_calls": 6679,
+  "pipeline_wall_seconds": 339.70407013595104,
+  "selected": 10000,
+  "status": "PASS",
+  "verified": 10000
+}

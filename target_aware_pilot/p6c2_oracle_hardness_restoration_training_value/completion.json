@@ -1,0 +1,11 @@
+{
+  "H1": "RESTORATION_CONFIRMED",
+  "H2": "PRELIMINARILY_SUPPORTED",
+  "H3": "PARTIAL",
+  "completion_label": "BLADE_P6C2_ORACLE_HARDNESS_RESTORATION_COMPLETE",
+  "no_followup_started": true,
+  "peak_rss_mb": 934.83984375,
+  "primary_c1_win_count": 3,
+  "status": "COMPLETE",
+  "wall_s_finalize": 17.75345380604267
+}

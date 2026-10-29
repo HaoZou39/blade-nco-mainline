@@ -1,0 +1,15 @@
+# Node-Size-Controlled Reachability
+
+For the frozen 75<=N<=150 subset (17 references), pools reach 14–15 references and B/C are already at those ceilings except B-S2 by one. The full48 deficit is much larger (23–24 unreachable), confirming substantial size/representation confounding.
+
+| replicate | scope | reference_total | C_pool | C_free10k | C_quota10k | C_B | C_C | Generation_Unreachable | Quota_Loss | Selection_Loss_B | Selection_Loss_C | capacity_exact |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Original | matched_75_150 | 17 | 15 | 15 | 15 | 15 | 15 | 2 | 0 | 0 | 0 | True |
+| S1 | matched_75_150 | 17 | 14 | 14 | 14 | 14 | 14 | 3 | 0 | 0 | 0 | True |
+| S2 | matched_75_150 | 17 | 15 | 15 | 15 | 14 | 15 | 2 | 0 | 1 | 0 | True |
+
+| replicate | missing_matched_references |
+|---|---|
+| Original | pr107;pr144 |
+| S1 | pr107;pr144;rat99 |
+| S2 | pr107;pr144 |

@@ -1,0 +1,10 @@
+{
+  "completed_unix": 1793078606.400862,
+  "labels": {
+    "H_A_TOO_EASY": "SUPPORTED",
+    "H_B_REDUNDANCY": "SUPPORTED_PROXY_ONLY",
+    "H_C_POOR_TRANSFER": "SUPPORTED"
+  },
+  "status": "COMPLETE",
+  "summary": "H_A is supported by consistently lower E1 M4 loss and tail mass. H_B has structural-proxy support, but learning-signal redundancy is not directly established. H_C is supported as distribution-specific poor transfer: E1 fits its own population, worsens CE on E0, and regresses on Original70 in all replicates; it is not broad negative transfer because several synthetic benchmarks improve."
+}

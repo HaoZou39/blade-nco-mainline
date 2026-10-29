@@ -1,0 +1,53 @@
+[
+  {
+    "cache_hit": true,
+    "dataset": "EvoReal50k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "Uniform_D0_10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P03_Population10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_Original_E1_ArchiveStructure10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_Original_E1_G2_Population10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_S1_E1_ArchiveStructure10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_S1_E1_G2_Population10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_S2_E1_ArchiveStructure10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": true,
+    "dataset": "P5_S2_E1_G2_Population10k",
+    "wall_seconds": 0.0
+  },
+  {
+    "cache_hit": false,
+    "dataset": "P03_cache_crosscheck_32",
+    "max_raw_abs_error": 6.106226635438361e-16,
+    "wall_seconds": 0.0
+  }
+]

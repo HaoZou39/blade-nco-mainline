@@ -1,0 +1,9 @@
+{
+  "accepted_unique_source_n": 109570,
+  "bundle_sha256": "3eba97a8019044447898fe3a6c4057d36daff9021d6752e9711049072c9023be",
+  "identity_removed_n": 17,
+  "source_historical_bundle": "target_aware_pilot/p6b_top5_distribution_guided_evolution/evolution/S2/shared_G1/mutation/offspring_coordinates.npz",
+  "source_sha256": "a596563ab357b30325ffb1be2f9ef77402c343700ded58560176f6d5181bb871",
+  "status": "PASS",
+  "valid_nonidentity_unique_n": 109553
+}

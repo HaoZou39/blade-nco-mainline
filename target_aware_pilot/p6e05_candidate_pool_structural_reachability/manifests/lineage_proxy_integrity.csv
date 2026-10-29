@@ -1,0 +1,4 @@
+replicate,n,explicit_lineage_id_available,direct_parent_available,proxy_missing_before_root_fallback,shared_parent_disagreements
+Original,19929,False,19999,1,0
+S1,19937,False,19999,1,0
+S2,19927,False,19999,1,0

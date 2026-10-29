@@ -1,0 +1,19 @@
+{
+  "created_utc": "2026-10-28T14:47:59.998205+00:00",
+  "final_tag": "BLADE_P6G2_STRUCTURAL_SIMILARITY_VALIDATION_COMPLETE",
+  "labels": {
+    "P6_G2_ANALYSIS_STATUS": "COMPLETE",
+    "P6_G2_EVOREAL_STRUCTURAL_ADVANTAGE": "PARTIAL",
+    "P6_G2_FFT_COVERAGE_REPRODUCED": "YES",
+    "P6_G2_FFT_F40_CONSISTENCY": "MIXED",
+    "P6_G2_FFT_GEOMETRY_CONSISTENCY": "MIXED",
+    "P6_G2_PR107_GEOMETRIC_MATCH": "PARTIAL",
+    "P6_G2_PR144_GEOMETRIC_MATCH": "PARTIAL"
+  },
+  "numpy": "2.2.6",
+  "pandas": "2.3.3",
+  "platform": "Linux-5.15.0-125-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "scipy": "1.15.3",
+  "status": "COMPLETE"
+}

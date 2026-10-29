@@ -1,0 +1,29 @@
+{
+  "cycle": 5,
+  "mutation_depth": 1,
+  "nominal_offspring": 110000,
+  "numpy": "2.2.6",
+  "offspring_membership_sha256": "62462a5b1757d63ea4c18a98fea91ec395aa68e4505c66d443499cfe89a3c7cf",
+  "operator_attempts": {
+    "axis_projection_mutation": 10000,
+    "cluster_mutation": 10000,
+    "compression_mutation": 10000,
+    "expansion_mutation": 10000,
+    "explosion_mutation": 10000,
+    "grid_mutation": 10000,
+    "implosion_mutation": 10000,
+    "linear_projection_mutation": 10000,
+    "normal_mutation": 10000,
+    "rotation_mutation": 10000,
+    "uniform_mutation": 10000
+  },
+  "parent_membership_sha256": "c24da1d8e9b74f4ef334ef69ed8d97f7528190bb2fa57a9e01be3a486fb5de4a",
+  "profile_name": "FOGA11_BASE_V1",
+  "profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "python": "3.10.12",
+  "python_executable": "/usr/bin/python3",
+  "seed_derivation": "existing cycle_child_seed: BLADE_FINAL_20CYCLE_V1|2026|cycle|parent_hash|operator|FOGA11",
+  "status": "PASS",
+  "valid_unique_offspring": 109611,
+  "wall_seconds": 277.7845888733864
+}

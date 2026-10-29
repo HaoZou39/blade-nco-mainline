@@ -1,0 +1,5 @@
+arm,generation,finite_fraction,in_bounds_fraction,nondegenerate_axis_fraction,node_overlap_instance_n,minimum_unique_nodes
+E0,G1,1.0,1.0,1.0,0,100
+E1,G1,1.0,1.0,1.0,0,100
+E0,G2,1.0,1.0,1.0,0,100
+E1,G2,1.0,1.0,1.0,0,100

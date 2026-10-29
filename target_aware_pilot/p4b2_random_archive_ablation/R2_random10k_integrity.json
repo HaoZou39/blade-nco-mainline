@@ -1,0 +1,20 @@
+{
+  "bundle_sha256": "21849ce7f7270fe95a01826ac489e2598c1d43fa2f6bedad66fa75cff6a20688",
+  "direct_tsplib70_overlap_n": 0,
+  "finite": true,
+  "hashes_reproduce": true,
+  "in_bounds": true,
+  "m4_history_overlap_n": 0,
+  "membership_sha256": "6f141dcc069fac3c5007af70e5d4adc5b53b3a2ad0372d6269e0eeaa00b8961d",
+  "rows": 10000,
+  "shape": [
+    10000,
+    100,
+    2
+  ],
+  "source_subset_of_random_archive": true,
+  "status": "PASS",
+  "unique_coordinates": 10000,
+  "unique_ids": 10000,
+  "unique_nodes_per_instance": true
+}

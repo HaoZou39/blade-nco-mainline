@@ -1,0 +1,190 @@
+{
+  "attempts_per_arm_seed": 110000,
+  "attempts_per_parent": 11,
+  "experiment": "BLADE-NCO P6-G3",
+  "f40_distance_config_sha256": "5db26bc67c8cd9ecc6845eee795d23a2a057919bf9b9333342c5674f1b261fc6",
+  "fft_rules_sha256": "8b93117219f58ec75683c2008f36822b2330936819a2dee6d9b1281b2ad25ee4",
+  "focus11": [
+    "d198",
+    "d657",
+    "pr107",
+    "pr144",
+    "pr264",
+    "u574",
+    "u724",
+    "eil51",
+    "rat195",
+    "ts225",
+    "tsp225"
+  ],
+  "forbidden": [
+    "survivor selection",
+    "G2",
+    "Concorde",
+    "BQ/HGB/GP inference or training",
+    "TSPLIB coordinate-derived generation"
+  ],
+  "generations": 1,
+  "generator_policy": {
+    "anisotropic_multiscale": {
+      "components": [
+        3,
+        7
+      ],
+      "filament_fraction": [
+        0.35,
+        0.7
+      ],
+      "scale_ratio": [
+        3.0,
+        12.0
+      ]
+    },
+    "global_transform": "random rotation/reflection, uniform scale, bounded translation; no per-axis rescaling",
+    "jittered_global_grid": {
+      "jitter": [
+        0.001,
+        0.018
+      ],
+      "partial_grid": true,
+      "rows": [
+        4,
+        14
+      ]
+    },
+    "parallel_lines": {
+      "jitter": [
+        0.0015,
+        0.018
+      ],
+      "lines": [
+        2,
+        9
+      ],
+      "regular_along_line": true
+    },
+    "repeated_local_motifs": {
+      "motif": [
+        "cross",
+        "L",
+        "microgrid",
+        "line"
+      ],
+      "motifs": [
+        4,
+        10
+      ],
+      "shared_template": true
+    },
+    "separated_cluster_blocks": {
+      "blocks": [
+        3,
+        8
+      ],
+      "local_mode": [
+        "grid",
+        "gaussian"
+      ],
+      "separation_rejection": 200
+    }
+  },
+  "generator_screen": "finite, [0,1], 100 unique nodes, min pair distance > 1e-5, whole-instance uniqueness only",
+  "generator_source": "new independent NumPy parameterized diagnostic generator; no EvoReal data/code and no TSPLIB coordinates",
+  "geometry_implementation_sha256": "184669cab95425edb9809c24060af97c3ce459a9a7968247a55b48b4ca715ab3",
+  "heldout22_used": false,
+  "historical15": [
+    "d198",
+    "d657",
+    "pcb1173",
+    "pr107",
+    "pr144",
+    "pr264",
+    "u574",
+    "u724",
+    "a280",
+    "eil51",
+    "pcb442",
+    "pr299",
+    "rat195",
+    "ts225",
+    "tsp225"
+  ],
+  "intervention": "fixed 10% initial structural support; P03 9000 + independent programmatic 1000",
+  "mutation_namespaces": {
+    "Original": 5,
+    "S1": 2605011,
+    "S2": 2605021
+  },
+  "operator_profile": "FOGA11_BASE_V1",
+  "operator_profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "operators": [
+    "uniform_mutation",
+    "normal_mutation",
+    "rotation_mutation",
+    "implosion_mutation",
+    "explosion_mutation",
+    "cluster_mutation",
+    "expansion_mutation",
+    "compression_mutation",
+    "axis_projection_mutation",
+    "linear_projection_mutation",
+    "grid_mutation"
+  ],
+  "p03_keep_n": 9000,
+  "p03_manifest_sha256": "f6f6a342940fcafd5bf00fd5c9c2467a88e864396f7b59d1f5d9ea07b3086297",
+  "p03_sha256": "8ad76b90c08997bba33da1be6bf3dbfa8c28ee05bbb4a5fe4d1a9ecdb699dd62",
+  "pairing": "same hash-derived RNG for 9000 common parents; exact historical A reused only after deterministic replay",
+  "population_n": 10000,
+  "protocol_sha256": "6297a8b80ef95fdcca0a67f252d5f107a4f7938672432b7510d780ccc66011d4",
+  "random10k_repeats": 30,
+  "random10k_seeds": [
+    20261201,
+    20261202,
+    20261203,
+    20261204,
+    20261205,
+    20261206,
+    20261207,
+    20261208,
+    20261209,
+    20261210,
+    20261211,
+    20261212,
+    20261213,
+    20261214,
+    20261215,
+    20261216,
+    20261217,
+    20261218,
+    20261219,
+    20261220,
+    20261221,
+    20261222,
+    20261223,
+    20261224,
+    20261225,
+    20261226,
+    20261227,
+    20261228,
+    20261229,
+    20261230
+  ],
+  "raw_filter": "accepted, valid_after_repair, non-identity; within-generation duplicates excluded from coordinate bundle",
+  "removal_seed": 20261031,
+  "replicates": [
+    "Original",
+    "S1",
+    "S2"
+  ],
+  "source_commit": "ce86c148e196398560a44b6affa4cc371dffe201",
+  "supplement_generator_types": [
+    "parallel_lines",
+    "jittered_global_grid",
+    "separated_cluster_blocks",
+    "repeated_local_motifs",
+    "anisotropic_multiscale"
+  ],
+  "supplement_n": 1000,
+  "supplement_per_type": 200,
+  "supplement_seed": 20261030
+}

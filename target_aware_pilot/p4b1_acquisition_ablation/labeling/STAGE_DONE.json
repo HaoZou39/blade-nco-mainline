@@ -1,0 +1,33 @@
+{
+  "end_timestamp": "2026-10-25T00:43:56.695688+00:00",
+  "input_hashes": {
+    "count": "10000",
+    "population": "54bdb644a348dff070379cab6e1a3be316786f011b79d475139e05ed4fa5d38a"
+  },
+  "outputs": {
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/labeled.parquet": {
+      "bytes": 7197133,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/labeled.parquet",
+      "sha256": "fcc406815404ffce1e147daa2932dc4c30aeb44b3f253893f0b7464ff4fe3d1c"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/labeled_bundle.npz": {
+      "bytes": 16748898,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/labeled_bundle.npz",
+      "sha256": "45161315a9ec570c0ac49bedf270dff2b3d40dc8752cd4e201f0720ba36c9580"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/ledger.parquet": {
+      "bytes": 3264227,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/ledger.parquet",
+      "sha256": "a41b0af46ff561caddcb82d2b89b782c97c7c175056f07ed943368899d068453"
+    },
+    "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/oracle_summary.json": {
+      "bytes": 131,
+      "path": "/home/haozou/blade-nco-mainline/target_aware_pilot/p4b1_acquisition_ablation/labeling/oracle_summary.json",
+      "sha256": "3efbe94f565b5ec251bc87fd7ea986146195634f9a824cb2f7da0950919166d9"
+    }
+  },
+  "stage": "P4B1_R0_random10k_original_A0_oracle_and_M4_hardness",
+  "start_timestamp": "2026-10-25T00:38:16.968653+00:00",
+  "status": "COMPLETE",
+  "wall_seconds": 339.7270340323448
+}

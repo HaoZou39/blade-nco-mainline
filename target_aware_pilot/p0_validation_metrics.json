@@ -1,0 +1,13 @@
+{
+  "validation_role": "C04 post-ranking selected Hard10k; labels excluded from HGB fit; acquisition-shifted",
+  "n": 10000,
+  "spearman": 0.4127009916263437,
+  "mae_log1p_hardness": 0.032484014801292566,
+  "hard_tail_definition": "top decile within the independent selected-set validation sample",
+  "hard_tail_recall_at_10pct": 0.307,
+  "hard_tail_mean_ratio_enrichment": 1.3529391438492717,
+  "hard_tail_mean_log1p_lift": 0.040842991703716,
+  "seed_prediction_max_range": 0.0,
+  "train_spearman_manifest": 0.8920595478066613,
+  "train_mae_manifest": 0.012831333949235059
+}

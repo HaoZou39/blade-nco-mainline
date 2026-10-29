@@ -1,0 +1,32 @@
+{
+  "artifact_wall_clock_span_seconds": 1085.3359761238098,
+  "decision": "GO",
+  "execution_mode": "CPU-only mutation, R/F40 extraction, and statistics; GPU not used",
+  "feature_cache_shards": 236,
+  "finalization_invocation_seconds": 52.28275728225708,
+  "finished_unix": 1792830727.5710557,
+  "mutation_cycle_namespaces": {
+    "1": 5,
+    "2": 6
+  },
+  "mutation_wall_seconds_by_arm_generation": {
+    "E0_G1": 49.71395129710436,
+    "E0_G2": 49.83205998688936,
+    "E1_G1": 49.954405046999454,
+    "E1_G2": 49.879834085702896
+  },
+  "mutation_wall_seconds_sum": 199.38025041669607,
+  "no_bq_inference_or_training": true,
+  "no_concorde": true,
+  "no_heldout_features": true,
+  "no_hgb_prediction_or_fit": true,
+  "no_oracle": true,
+  "no_third_generation": true,
+  "p03_bundle_sha256": "8ad76b90c08997bba33da1be6bf3dbfa8c28ee05bbb4a5fe4d1a9ecdb699dd62",
+  "p03_metadata_sha256": "f6f6a342940fcafd5bf00fd5c9c2467a88e864396f7b59d1f5d9ea07b3086297",
+  "profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "runner_sha256": "59291f93a0dc71c68a316971e859fddc2ee8fb5f45fe19e545a58e1fc1bfee9f",
+  "seed": 20261024,
+  "started_unix": 1792830675.288039,
+  "status": "COMPLETE"
+}

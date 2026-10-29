@@ -1,0 +1,6 @@
+feature,wasserstein_EvoReal_vs_Uniform,median_shift
+spn_distance_varcoeff,1.856976050305074,2.2980979819918046
+spn_sum_of_lowest_edge_values,1.6784478074088414,-2.149683584744828
+spn_mst_dists_sd,1.3992659817981343,1.7937374423330243
+spn_distance_min,0.5983397860186227,-0.4488088447500938
+spn_nng_3_strong_components_varcoeff,0.48641812949305474,-0.45664703967337206

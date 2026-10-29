@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "label": "BLADE_P6F0_BEST_POPULATION_MECHANISM_AUDIT_COMPLETE",
+  "h1": "PASS",
+  "h2": "MIXED",
+  "h3": "SUPPORTED",
+  "h4": "SUPPORTED",
+  "h5": "NOT_SUPPORTED",
+  "h6": "MIXED",
+  "h7": "INSUFFICIENT_DATA",
+  "h8": "PARTIAL",
+  "h9": "NEXT_TEST_MATCHED_2X2",
+  "figures": 13,
+  "output_files": 45,
+  "runtime_seconds": 19.501,
+  "forbidden_actions": [],
+  "new_training": false,
+  "new_inference": false,
+  "new_evolution": false
+}

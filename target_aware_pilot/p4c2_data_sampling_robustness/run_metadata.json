@@ -1,0 +1,12 @@
+{
+  "aggregate_csv_sha256": "41202ad1f197d942471592e4efc0c46db20e7c75914544fbf04b94868774ba3f",
+  "decision": "TARGET_AWARE_RETENTION_DATA_SEED_ROBUSTNESS_INCONCLUSIVE",
+  "decision_label": "INCONCLUSIVE",
+  "gap8_delta_mean": -0.05137974576622148,
+  "gap8_delta_sample_sd": 0.26628691815193917,
+  "no_followup_started": true,
+  "p4c2_scope": "fixed R0 archive final-acquisition plus R2 two-stage sampling within fixed E0 pool",
+  "per_seed_csv_sha256": "c5887c7accf4b53fedd5fc7c156885ad629deaf2dee0ce6bd51f9b2a7c91423e",
+  "r0_retention_random": false,
+  "status": "COMPLETE"
+}

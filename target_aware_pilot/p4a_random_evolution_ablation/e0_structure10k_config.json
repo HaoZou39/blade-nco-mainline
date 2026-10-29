@@ -1,0 +1,45 @@
+{
+  "acquisition_replay_ids_exact": true,
+  "acquisition_replay_metadata_exact": true,
+  "acquisition_runner_sha256": "59291f93a0dc71c68a316971e859fddc2ee8fb5f45fe19e545a58e1fc1bfee9f",
+  "bundle_sha256": "987395ae7de3e9a4118ed26ce9cf2c369a6b0498623dadd14668812a4cc3cc69",
+  "coordinates_exact_from_archive": true,
+  "features": [
+    "spn_distance_varcoeff",
+    "spn_fraction_shorter_mean_distance"
+  ],
+  "lineage_cap": 50,
+  "manifest_sha256": "41d72b695f4301c96d6b534043f6cdbefb7b8cdbc154066b91a2dabc19889e2e",
+  "membership_sha256": "139ab50f468eb545f378f52372f259d150c84d4e34c94b040e090cbd146d02f7",
+  "overlaps": {
+    "c04_hard10k": 0,
+    "e1_structure10k": 3406,
+    "m4_training_history": 0,
+    "shared_oracle_cache": 0
+  },
+  "seed": 20261024,
+  "source": "target_aware_pilot/p2_bounded_evolution/support_e0_provisional_structure10k.npz",
+  "status": "FROZEN",
+  "target_quotas_after_capacity_redistribution": [
+    1451,
+    136,
+    0,
+    1671,
+    1543,
+    50,
+    2296,
+    1670,
+    1183
+  ],
+  "target_quotas_requested": [
+    2292,
+    1042,
+    0,
+    208,
+    2083,
+    1042,
+    833,
+    208,
+    2292
+  ]
+}

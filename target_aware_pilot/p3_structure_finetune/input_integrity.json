@@ -1,0 +1,32 @@
+{
+  "c04_e000_weights_exactly_equal_m4": true,
+  "c04_hard10k_overlap": 0,
+  "c04_training_input_model_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "concorde_sha256": "38a647d3f04196231c725e90d23c2c883c0a23899f9bab8a257ae6f777d1dec0",
+  "duplicate_node_instances": 0,
+  "evaluation_module_sha256": "5a41cd7dd9cc73780d5b8e64f8fa993dd249f6a85065870a92f0bc2ba50729b3",
+  "finite": true,
+  "formal_runner_sha256": "7ff017d8006ab4ace39031bf5a65c310382b32e94e98789e5c3a9a6f8c05b58d",
+  "hardness_m5_sha256": "41d189dfeb986a070bd7685f203172d1dad4376d8d0134151d7488fb079a4545",
+  "in_bounds": true,
+  "m4_contains_optimizer_state": false,
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "m4_state_keys": [
+    "net",
+    "epoch",
+    "formal_scientific_checkpoint",
+    "metadata"
+  ],
+  "m4_training_overlap": 0,
+  "membership_sha256": "10382659919fbc7f0d4baf8ab681024b7424ff92ae62d3e0fd76623ab07c8a99",
+  "node_count": 100,
+  "p3_runner_sha256": "26bfc267420a783602023e7702c5b7b63ba707cfe4169fea70f39a58cb18cd9f",
+  "rows": 10000,
+  "shared_oracle_cache_overlap": 0,
+  "status": "PASS",
+  "structure_bundle_sha256": "5287932231529e617383388bb64d607985d07944799c3d661c5a737338bdece1",
+  "structure_integrity_sha256": "f9196dc06205204425693da3be250d35fbdbf5a19394dca3f66e57cdb227d46a",
+  "structure_manifest_sha256": "f7143d98d743d83b8564be647e2831175625434b2df152a65128180e2b52bda0",
+  "supervised_module_sha256": "2126bf6c5d3b10616394799a30c55f97dcca610eb0798f38e481ad0108b09069",
+  "unique": 10000
+}

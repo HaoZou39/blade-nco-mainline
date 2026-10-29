@@ -1,0 +1,60 @@
+{
+  "E0_membership_sha256": "c24da1d8e9b74f4ef334ef69ed8d97f7528190bb2fa57a9e01be3a486fb5de4a",
+  "E1_membership_sha256": "e46ac944212540a1d8117351b4e52ed6efeb4641bd0449ac9e601441d243e97c",
+  "attempts_each": 110000,
+  "coverage_parent_n": 7000,
+  "coverage_quota_by_cell": [
+    550,
+    213,
+    0,
+    656,
+    1187,
+    86,
+    2623,
+    656,
+    1029
+  ],
+  "frontier_cap_used": {
+    "d198": 24,
+    "eil51": 12,
+    "ts225": 24
+  },
+  "frontier_parent_n": 3000,
+  "frontier_pool_per_target": 5000,
+  "frontier_quota_by_target": {
+    "d198": 1000,
+    "eil51": 1000,
+    "ts225": 1000
+  },
+  "largest_lineage_count": 71,
+  "lineage_cap_initial": 12,
+  "lineage_cap_max_used": 96,
+  "mutation_cycle_seed_namespace": 5,
+  "operators": 11,
+  "parent_n_each": 10000,
+  "parent_overlap_n": 780,
+  "random_seed": 20261024,
+  "region_capacity_by_cell": [
+    550,
+    213,
+    0,
+    1113,
+    1187,
+    86,
+    3803,
+    988,
+    1029
+  ],
+  "selected_lineage_n": 1057,
+  "target_count_by_cell": [
+    11,
+    5,
+    0,
+    1,
+    10,
+    5,
+    4,
+    1,
+    11
+  ]
+}

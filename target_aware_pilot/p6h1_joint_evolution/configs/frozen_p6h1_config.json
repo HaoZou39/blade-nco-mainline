@@ -1,0 +1,60 @@
+{
+  "attempts": {
+    "1G": 220000,
+    "2G_g1": 110000,
+    "2G_g2": 110000
+  },
+  "block1_namespace": {
+    "Original": 5,
+    "S1": 2605011,
+    "S2": 2605021
+  },
+  "block2_namespace": {
+    "Original": 25,
+    "S1": 2605015,
+    "S2": 2605025
+  },
+  "candidate_pool": "valid repaired deduplicated offspring only",
+  "created_utc": "2026-10-28T16:38:27Z",
+  "experiment": "BLADE-NCO P6-H1",
+  "f40_distance_config_sha256": "5db26bc67c8cd9ecc6845eee795d23a2a057919bf9b9333342c5674f1b261fc6",
+  "f40_distance_p03_max_abs_gap": 5.9588995293680114e-08,
+  "g2_namespace": {
+    "Original": 26,
+    "S1": 2605016,
+    "S2": 2605026
+  },
+  "hgb_dir": "/home/haozou/blade-nco-mainline/runs/BLADE_CORE_ABLATION_5C_NOANCHOR_FOGA11BASE_V1/A0_FULL_BASE/cycles/C04/HGB_seed_models",
+  "hgb_sha256": {
+    "2026": "6b8553c44e592ea47417f1a8805c57f589c3ef050d1f21b7f62b582992a6ca79",
+    "2027": "fdf99bdbf450379dfa015206655545401bb74707b9f4f0f9d5775dd085d24271",
+    "2028": "0bb516ffc161eb03dd5e0d66a5987f2e675bb5795fde31dce02fdffec496aca3",
+    "2029": "24746fbf61b42e1299db7bea6271d377a4ae07b93de322d411ad0fa2dcaaa60a",
+    "2030": "07124853c8a7f2e2d186f4b4d6f9bd81343e99c1f5b9de4e271e83e50a7d9561"
+  },
+  "historical_e0_e1_used_as_pool": false,
+  "lineage_cap": false,
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "numpy": "2.2.6",
+  "p03_bundle_sha256": "8ad76b90c08997bba33da1be6bf3dbfa8c28ee05bbb4a5fe4d1a9ecdb699dd62",
+  "p03_parent_membership_sha256": "558ea278823a39275704d71e8e999efe58a56217fb23c7555cabe035c986d190",
+  "python": "3.10.12",
+  "selection": "one best Pareto candidate per occupied QD niche, then Pareto/crowding/lineage_root/hash fill to 10000",
+  "selection_source_sha256": "2f6858055cff0ec3b8df228639ea532f3ff0cd5a35cd598ad0c7e09e03d2ab67",
+  "training": {
+    "authority": "P5/P6-1 frozen actual training configuration",
+    "checkpoint_rule": "fixed E256",
+    "epochs": 256,
+    "evaluation": "frozen greedy evaluator",
+    "learning_rate": 3.75e-05,
+    "logical_batch_size": 256,
+    "loss": "teacher-forced imitation",
+    "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+    "microbatch_size": 64,
+    "optimizer": "fresh Adam",
+    "optimizer_updates": 10240,
+    "scheduler": null,
+    "trainer_sha256": "e9fc32126cf841502901e36c48a648c28e03c986cdfbe942dfe022e9925f94b5",
+    "training_seed": 2026
+  }
+}

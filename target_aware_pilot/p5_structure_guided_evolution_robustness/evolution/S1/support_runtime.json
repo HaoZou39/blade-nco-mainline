@@ -1,0 +1,13 @@
+{
+  "artifact_wall_clock_span_seconds": 600.2671689987183,
+  "execution_mode": "CPU-only mutation, R/F40 extraction, and statistics; GPU not used",
+  "feature_cache_shards": 235,
+  "finalization_invocation_seconds": 609.955589056015,
+  "mutation_wall_seconds_by_arm_generation": {
+    "E0_G1": 49.78036457300186,
+    "E0_G2": 49.80358365923166,
+    "E1_G1": 49.956403478980064,
+    "E1_G2": 49.97579903900623
+  },
+  "mutation_wall_seconds_sum": 199.51615075021982
+}

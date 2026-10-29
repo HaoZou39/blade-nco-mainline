@@ -1,0 +1,29 @@
+{
+  "candidate_order": "instance_hash ascending",
+  "capacities": "32 references x208; 16 references x209",
+  "distance": "unweighted squared Euclidean in five conditional Uniform scores",
+  "distance_matrix_dtype": "float32; solver objective promoted to float64 from stored costs",
+  "extra_capacity_rule": "16 lexicographically smallest (SHA256(instance_id), instance_id)",
+  "feature_order": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_min",
+    "spn_distance_varcoeff",
+    "spn_nng_3_strong_components_varcoeff",
+    "spn_mst_dists_sd"
+  ],
+  "matcher": "exact full 48-reference transport via scipy HiGHS dual-simplex LP; integrality follows from total unimodularity",
+  "not_objectives": [
+    "hardness",
+    "BQ loss",
+    "lineage",
+    "operator",
+    "microbin",
+    "diversity",
+    "strict region",
+    "70/30"
+  ],
+  "representation": "independent Uniform conditional empirical CDF score with continuous interpolation, IQR tail continuation, and asinh compression",
+  "scipy": "1.15.3",
+  "seed": 20261026,
+  "tie_break": "canonical hash-ascending candidate order; continuous real audit costs have no selected-edge ties"
+}

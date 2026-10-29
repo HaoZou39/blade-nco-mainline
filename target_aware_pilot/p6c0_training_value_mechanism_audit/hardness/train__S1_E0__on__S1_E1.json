@@ -1,0 +1,13 @@
+{
+  "checkpoint_sha256": "cf31333ee8249683ef661453a73fc705c906b97748980dabb915194645a5d1d9",
+  "dataset_arm": "E1",
+  "device": "cuda:1",
+  "gpu_peak_bytes": 358830080,
+  "kind": "train_population",
+  "model_key": "S1_E0",
+  "n": 10000,
+  "output_sha256": "102bb0d849bcea949062559e548170f5338fc08f160c798afe066eb9509f1e96",
+  "replicate": "S1",
+  "status": "PASS",
+  "wall_s": 68.07976674288511
+}

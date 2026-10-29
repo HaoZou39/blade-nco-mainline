@@ -1,0 +1,12 @@
+{
+  "arm": "P6G4_Original_A",
+  "current_run": "Original-A",
+  "cycle": "C04",
+  "device": "cuda:1",
+  "latest_checkpoint": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6g4_augmented_initialization_finetune/logs/Original_A/training_cycle/09_bq_training/M5_E000.tsp.best",
+  "missing_n": 30921,
+  "phase": "BQ_E64",
+  "status": "PASS",
+  "unique_n": 33596,
+  "updated_utc": "2026-10-29T05:15:20.015900+00:00"
+}

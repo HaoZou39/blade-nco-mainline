@@ -1,0 +1,57 @@
+run_id: BLADE_BQ_CVRP_PILOT_V1
+seed: 731
+problem:
+  name: CVRP
+  customers: 100
+  depot_nodes: 1
+  coordinate_domain: [0.0, 1.0]
+  demand_low_inclusive: 1
+  demand_high_inclusive: 9
+  vehicle_capacity: 50
+solver:
+  name: BQ-CVRP
+  official_commit: b7f927faf1d87dca699361312471c10ecc8dd346
+  checkpoint: third_party/bq_nco_official/pretrained_models/cvrp.best
+  checkpoint_sha256: 9a21eb23eca1fa0d2b2b37bcd3b0c93335cd79e74002b89a39aeee8dd70aab60
+  decode: greedy
+  beam_size: 1
+  knns: -1
+reference:
+  name: HGS-CVRP
+  label: HGS_REFERENCE
+  official_commit: b062d5fccb1f64864dd65a94dac35929059ab089
+  time_limit_cpu_s: 10
+  seed: 731
+  coordinate_scale: 10000
+  round_distances: true
+data:
+  calibration_train: 1600
+  calibration_validation: 400
+  sealed_probe: 400
+  candidate_bank: 20000
+  acquisition_per_arm: 2000
+  generation: independent_uniform_roots_then_one_uniform_FOGA11_BASE_V1_operator
+  mutation_depth: 1
+features:
+  model: HistGradientBoostingRegressor
+  instance_only: true
+training:
+  arms: [RANDOM_FOGA2K, HGB_TOP2K]
+  optimizer: Adam
+  learning_rate: 0.00025
+  batch_size: 128
+  optimizer_updates: 2048
+  gradient_clipping: null
+  scheduler: none_fixed_update_pilot
+  seed: 731
+evaluation:
+  synthetic_instances_per_distribution: 1000
+  distributions: [uniform, clustered, demand_heterogeneous]
+  cvrplib_set_x_instances: [X-n101-k25, X-n106-k14, X-n110-k13, X-n115-k10, X-n120-k6]
+  bootstrap_replicates: 10000
+  bootstrap_seed: 731
+protocol:
+  qd: disabled
+  cycles: 1
+  max_new_hgs_labels_excluding_external_evaluation: 6400
+  fail_closed: true

@@ -1,0 +1,12 @@
+{
+  "attempt": 1,
+  "authorization_note": "User explicitly stated G4 may preempt/share because it is critical",
+  "conflict_count": 2,
+  "conflicts": [],
+  "monitor_interval_seconds": 1800,
+  "phase": "train_Original_A",
+  "pid": 1082071,
+  "resource_overlap_authorized": true,
+  "state": "RUNNING",
+  "updated_utc": "2026-10-29T05:09:20.232473+00:00"
+}

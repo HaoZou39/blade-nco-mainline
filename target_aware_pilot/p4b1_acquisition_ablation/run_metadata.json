@@ -1,0 +1,16 @@
+{
+  "archive_retention_target_aware": true,
+  "decision": "TARGET_AWARE_ACQUISITION_VALUE_INCONCLUSIVE",
+  "decision_label": "INCONCLUSIVE",
+  "evaluation_protocol_hashes_match": true,
+  "five_model_csv_sha256": "3b130a84c84c84f27c4ca31b763c8115a25f546d44d89777be4cd32d2c28cdca",
+  "no_extra_seed": true,
+  "no_resampling": true,
+  "paired_csv_sha256": "38c894448d8fc8de06a6afd17de6c67b54309f420279429267109ff1776f4f72",
+  "r0_labels_sha256": "45161315a9ec570c0ac49bedf270dff2b3d40dc8752cd4e201f0720ba36c9580",
+  "r0_m5_sha256": "72e3d4dcb4a0bc1c5562e9ab161deaffddb03e0829a01798cec078668540e8a1",
+  "r1_m5_sha256": "d7d2ffc9ebafa5adb2bca9ccd90f6e8bd0d0487bdf1b4f68cf98dbf425cd4c58",
+  "random10k_sha256": "f4c76b2e6c8dedc459f426c8340ce25369bf591b3584e3d0974005b4a33cc974",
+  "status": "COMPLETE",
+  "tsplib22_not_pristine": true
+}

@@ -1,0 +1,14 @@
+{
+  "arm": "P6H1_S2_2G",
+  "cycle": "C04",
+  "depth": "2G",
+  "device": "cuda:1",
+  "latest_checkpoint": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6h1_joint_evolution/logs/S2_2G/training_cycle/09_bq_training/M5_E256.tsp.best",
+  "missing_n": 54709,
+  "phase": "diagnostics",
+  "replicate": "S2",
+  "selection_source_sha256": "2f6858055cff0ec3b8df228639ea532f3ff0cd5a35cd598ad0c7e09e03d2ab67",
+  "status": "PASS",
+  "timestamp_utc": "2026-10-28T20:47:32Z",
+  "unique_n": 56128
+}

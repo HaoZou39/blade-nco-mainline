@@ -1,0 +1,20 @@
+{
+  "arm": "E0",
+  "fractional_variables": 0,
+  "generation": 1,
+  "objective_mean": null,
+  "objective_total": null,
+  "peak_rss_mb": 2186.140625,
+  "quota_valid": true,
+  "replicate": "S2",
+  "selection_seed": 261503,
+  "solver": "uniform numpy choice without replacement over hash-sorted union",
+  "solver_status": 0,
+  "status": "PASS",
+  "survivor_membership_sha256": "57838af3040d908edfd310e97256307eddd0c1ce2ed5afa7efe123c375110958",
+  "survivor_n": 10000,
+  "survivor_unique_n": 10000,
+  "union_membership_sha256": "9edd01462eda5a90a14a7ffafc40fdc0e3a93103ca91a97a0c7fae361aaeacac",
+  "union_n": 119553,
+  "wall_seconds": 0.041165970265865326
+}

@@ -1,0 +1,26 @@
+{
+  "acquisition_wall_seconds_including_audit_and_diagnostics": 4.2133656442165375,
+  "algorithm": "canonical instance-hash ordering; numpy.default_rng(seed).choice(N,10000,replace=False); retain draw order",
+  "archive_bundle_sha256": "fd9bd10e5bd79f20054ea3b78dad62b541c0cae6226a661ffcea2b466c8bcb0a",
+  "archive_retention_mode": "common_bounded_archive_retention",
+  "archive_retention_used_target_structure": true,
+  "c04_hard10k_overlap_n": 0,
+  "candidate_n": 30000,
+  "direct_tsplib70_overlap_n": 0,
+  "m4_history_overlap_n": 0,
+  "membership_sha256": "54bdb644a348dff070379cab6e1a3be316786f011b79d475139e05ed4fa5d38a",
+  "provenance_js": {
+    "evolution_origin": 9.710952940883652e-05,
+    "generation_born": 9.710952940883652e-05,
+    "operator_id": 0.0016281340864592265
+  },
+  "r1_overlap_n": 3321,
+  "random10k_bundle_sha256": "f4c76b2e6c8dedc459f426c8340ce25369bf591b3584e3d0974005b4a33cc974",
+  "random10k_manifest_csv_sha256": "db530467ed6d13aa8a19b07cd4dc89987550ae1a3f4452b56f7c51231190a8ed",
+  "random10k_manifest_parquet_sha256": "747e4fbb98cc68f9539b7fc5b57962cbb455238723afc6acb305bcd6fc6a0c7e",
+  "seed": 20261025,
+  "selected_n": 10000,
+  "shared_cache_overlap_n": 0,
+  "status": "FROZEN",
+  "verified_r1_label_overlap_n": 3321
+}

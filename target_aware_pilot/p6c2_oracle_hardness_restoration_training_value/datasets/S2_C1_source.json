@@ -1,0 +1,8 @@
+{
+  "bundle_sha256": "9a263c4143f4414c95ba1ec33e680f716108500ac890d47f588af7730f7f73f6",
+  "manifest_sha256": "6018c68d9a734602dd6865d06965ab7505049e1e32f3ad4117164c87fdd36884",
+  "membership_sha256": "a027f23ff8286a763d10333dcd0da2f4342e7f3aada75a99be33f1837cb37bc0",
+  "n": 10000,
+  "source_bundle": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6c1_hardness_controlled_matching/dataset_manifests/S2_C1.npz",
+  "source_manifest": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6c1_hardness_controlled_matching/dataset_manifests/S2_C1.parquet"
+}

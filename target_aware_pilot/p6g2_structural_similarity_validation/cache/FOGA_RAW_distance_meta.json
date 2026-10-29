@@ -1,0 +1,10 @@
+{
+  "f40_config_sha256": "5db26bc67c8cd9ecc6845eee795d23a2a057919bf9b9333342c5674f1b261fc6",
+  "membership_sha256": "1f48d09de9d56337fb34b905da6251240d320bb0a8053d77a233e77e3b7c9907",
+  "n": 959453,
+  "pool": "FOGA_RAW",
+  "shape": [
+    959453,
+    48
+  ]
+}

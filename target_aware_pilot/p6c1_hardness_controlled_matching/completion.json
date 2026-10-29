@@ -1,0 +1,8 @@
+{
+  "final_label": "BLADE_P6C1_HARDNESS_CONTROLLED_MATCHING_COMPLETE",
+  "hardness_exposure": "RESTORED",
+  "joint_feasibility": "NOT_SUPPORTED",
+  "solver_transfer": "NOT_EVALUATED",
+  "status": "COMPLETE_STOPPED_AT_GATE",
+  "training_started": false
+}

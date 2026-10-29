@@ -1,0 +1,4 @@
+replicate,observed_final_E0_union_E1_coverage,p6e05_expected_union_coverage,exact_match
+Original,25,25,True
+S1,24,24,True
+S2,25,25,True

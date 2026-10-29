@@ -1,0 +1,23 @@
+{
+  "bundle_sha256": "efae60ad0b118b691ea87f60c71bc513f279ffd3890c5ec61d04adfff979e95d",
+  "common_parent_attempts_exactly_paired": true,
+  "conceptual_fresh_or_reused_attempts": 110000,
+  "cycle_seed_namespace": 2605011,
+  "identity_attempts": 17,
+  "manifest_sha256": "486a49c2852b01f76ed095934d7d5c068b22b034fd93d3a3f2b750a6eb2ee4bc",
+  "nominal_attempts": 110000,
+  "offspring_membership_sha256": "36d5237e26c36d9a103e89880ee80902046bd5be08d4c9f95c8459d3a95be890",
+  "parent_membership_sha256": "ae05391bf432b4008dac3c0e958351f6776ed898b84e5d3005970035f83f42ce",
+  "peak_rss_mb": 1696.37109375,
+  "physically_new_supplement_attempts": 11000,
+  "physically_reused_common_attempts": 99000,
+  "replicate": "S1",
+  "rng_rule": "cycle_child_seed(namespace,parent_hash,operator_id)",
+  "status": "PASS",
+  "supplement_offspring_unique_n": 10982,
+  "supplement_parent_n": 1000,
+  "valid_attempts": 109563,
+  "valid_nonidentity_unique_n": 109546,
+  "wall_seconds_incremental": 56.22646977007389,
+  "within_offspring_duplicates": 0
+}

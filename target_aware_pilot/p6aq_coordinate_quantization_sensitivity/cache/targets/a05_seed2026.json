@@ -1,0 +1,7 @@
+{
+  "amplitude_a": 0.05,
+  "lexical_q_sha256": "8070e79d961aa08e1b8161d70c5368524ab3175319b854245c18fd783ad3b995",
+  "perturbation_basis_version": "raw_tsplib_plus_lexical_q_then_aspect_normalize_v2",
+  "scenario": "a05_seed2026",
+  "seed": 2026
+}

@@ -1,0 +1,21 @@
+{
+  "bundle_sha256": "69b8109b2917943329209a73bdfb233ac7f659a68cc4dcf44720e4b12a686f4f",
+  "c04_original_hard10k_overlap_diagnostic": 0,
+  "coordinate_hashes_reproduced": true,
+  "coordinate_shape": [
+    10000,
+    100,
+    2
+  ],
+  "finite_fraction": 1.0,
+  "in_bounds_fraction": 1.0,
+  "known_m4_training_overlap": 0,
+  "manifest_sha256": "f161a721996735536921e6ca1de309815fe711279e2295e889e24eb049952165",
+  "membership_sha256": "597f4c5bf1b565d9b0d88f6c46973a88fc69b53b26cf81cabb06ee41f25e6b30",
+  "minimum_unique_nodes": 100,
+  "node_overlap_instance_n": 0,
+  "nondegenerate_axis_fraction": 1.0,
+  "rows": 10000,
+  "source": "P2.2 E1 bounded archive only",
+  "unique_ids": 10000
+}

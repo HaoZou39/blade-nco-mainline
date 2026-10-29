@@ -1,0 +1,28 @@
+{
+  "n": 22,
+  "names": [
+    "berlin52",
+    "d1655",
+    "d2103",
+    "eil76",
+    "fl1400",
+    "fl1577",
+    "fl3795",
+    "fnl4461",
+    "nrw1379",
+    "pcb3038",
+    "pr124",
+    "pr2392",
+    "pr76",
+    "rl1304",
+    "rl1323",
+    "rl1889",
+    "st70",
+    "u1432",
+    "u1817",
+    "u2152",
+    "u2319",
+    "vm1748"
+  ],
+  "policy": "identity audit only; no held-out coordinates/features used in P0/P1 design"
+}

@@ -1,0 +1,15 @@
+{
+  "decision": "NEED_TARGETED_EVOLUTION",
+  "e1_bundle_sha256": "c16a15b9d86262a24d7ab2d923358dc4b456f63de725c114d5c37e836f29f5b3",
+  "elapsed_seconds": 84.63463711738586,
+  "hgb_diagnostic_only": true,
+  "no_bq_training": true,
+  "no_concorde": true,
+  "no_mutation": true,
+  "no_oracle": true,
+  "p20_runner_sha256": "b1e3b1981afd8b0746ed6735461b051ff0b2c40634e13339a260a239664b1572",
+  "provisional_bundle_sha256": "d93417d90b1b91815f0124b1ee8be31e003abf07afd1c3527cc34fbbbe45e231",
+  "runner_sha256": "91ff0408bbf040ec4fd6dabd10a797a79c86449039d9be6c849b3cf737553f27",
+  "selection_membership_sha256": "b31aa922d2ec221d2f75a0aea3445623503d2062e89b74ae3177a5f2d22f24db",
+  "status": "COMPLETE"
+}

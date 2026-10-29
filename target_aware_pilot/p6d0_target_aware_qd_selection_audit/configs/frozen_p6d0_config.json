@@ -1,0 +1,49 @@
+{
+  "K": 10000,
+  "QD4": [
+    "spn_sum_of_lowest_edge_values",
+    "spn_distance_varcoeff",
+    "spn_mst_depth_mean",
+    "spn_mst_dists_median"
+  ],
+  "bandwidth": 0.10968373779944673,
+  "bandwidth_rule": "median frozen-centroid nearest-neighbor Euclidean distance",
+  "centroid_K": 1000,
+  "cvt_sha256": "739a00064870cda2384eafd7a98d5fa4feafbbf2a7a0e327d4fc4429c669bcc3",
+  "experiment": "BLADE-NCO P6-D0",
+  "hgb_model_manifest_sha256": "59b5265d9d61cd80044b58af29f3c27c278ff8578e7accf455ceee3268c17ba1",
+  "lambda_endpoint": 1.0,
+  "lambda_main": 0.5,
+  "m4_sha256": "c749311bd2a461084d0cbcfd383a4c0a1fc1268762b72e5f7220952f108f8190",
+  "p6a_target_sha256": "b55512637f35ee3bcc21e167732d4c6b56a607b612a2cf07598be9b2d60fd6ed",
+  "prohibitions": [
+    "mutation/evolution",
+    "Concorde",
+    "HGB/BQ fit",
+    "benchmark-guided tuning",
+    "automatic P6-D1"
+  ],
+  "qd_normalization_sha256": "b0de1323bb8315abd03f7e73668edafc279135c66661b15dff92a72352fa953f",
+  "quota_projection": "exact integer squared-L2 separable convex marginal allocation; niche-id tie",
+  "random_seeds": {
+    "Original": 20261101,
+    "S1": 20261102,
+    "S2": 20261103
+  },
+  "replicates": [
+    "Original",
+    "S1",
+    "S2"
+  ],
+  "selection_uses_true_ce": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+  },
+  "target_enriched_cutoff": 0.001,
+  "target_kernel": "Gaussian radial mean over 48 equal references",
+  "tsplib48_manifest_sha256": "974df7a019f17d4bdeb4cb29e4f981a243531d94cb056509e96f148d9fa5465e",
+  "within_niche_min_n": 20
+}

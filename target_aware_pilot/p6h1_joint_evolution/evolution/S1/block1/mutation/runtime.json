@@ -1,0 +1,31 @@
+{
+  "arm_scope": "block1",
+  "cycle_seed_namespace": 2605011,
+  "generation": 1,
+  "invalid_attempts": 459,
+  "nominal_attempts": 110000,
+  "offspring_membership_sha256": "9f05708303da3fabedbf8211dcf4cf5a7cc5ced5561b410177a5abfa8a59d28d",
+  "operator_attempts": {
+    "axis_projection_mutation": 10000,
+    "cluster_mutation": 10000,
+    "compression_mutation": 10000,
+    "expansion_mutation": 10000,
+    "explosion_mutation": 10000,
+    "grid_mutation": 10000,
+    "implosion_mutation": 10000,
+    "linear_projection_mutation": 10000,
+    "normal_mutation": 10000,
+    "rotation_mutation": 10000,
+    "uniform_mutation": 10000
+  },
+  "parent_membership_sha256": "558ea278823a39275704d71e8e999efe58a56217fb23c7555cabe035c986d190",
+  "peak_rss_mb": 4191.61328125,
+  "profile_sha256": "7108725bf6afda6be40e2e5b7a881bf7f43aea495852aa8c9a18dcdb783addee",
+  "replicate": "S1",
+  "rng_rule": "cycle_child_seed(namespace,parent_hash,operator_id)",
+  "status": "PASS",
+  "valid_attempts": 109541,
+  "valid_unique_within_generation": 109541,
+  "wall_seconds": 214.7472377344966,
+  "within_offspring_duplicates": 0
+}

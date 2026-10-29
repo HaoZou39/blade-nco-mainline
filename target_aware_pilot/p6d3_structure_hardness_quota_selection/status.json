@@ -1,0 +1,15 @@
+{
+  "arm": "P6D1_S2_D75",
+  "completed_runs": 9,
+  "current_run": "S2-D75",
+  "cycle": "C04",
+  "latest_checkpoint": "/home/haozou/blade-nco-mainline/target_aware_pilot/p6d3_structure_hardness_quota_selection/logs/S2_D75/training_cycle/09_bq_training/M5_E256.tsp.best",
+  "next_run": "S2-D75",
+  "phase": "complete",
+  "queue_index": 9,
+  "run_started_utc": "2026-10-28T04:17:17.400496+00:00",
+  "runner_pid": 3662056,
+  "status": "COMPLETE",
+  "total_runs": 9,
+  "updated_utc": "2026-10-28T06:32:14.311150+00:00"
+}

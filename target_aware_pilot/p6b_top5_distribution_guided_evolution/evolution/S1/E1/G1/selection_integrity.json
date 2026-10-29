@@ -1,0 +1,20 @@
+{
+  "arm": "E1",
+  "fractional_variables": 0,
+  "generation": 1,
+  "objective_mean": 15.647562422060966,
+  "objective_total": 156475.62422060966,
+  "peak_rss_mb": 6371.51953125,
+  "quota_valid": true,
+  "replicate": "S1",
+  "selection_seed": null,
+  "solver": "scipy.linprog HiGHS dual-simplex on full bipartite TU relaxation",
+  "solver_status": 0,
+  "status": "PASS",
+  "survivor_membership_sha256": "3113f7440d27780331c294306008972018aa8694d4e559b38e80563d189fcbfa",
+  "survivor_n": 10000,
+  "survivor_unique_n": 10000,
+  "union_membership_sha256": "8b5363f152d9cbf1f968b49a0fe3992e48e7f1c0df8326611dc6c198e4d74b38",
+  "union_n": 119523,
+  "wall_seconds": 69.54486890137196
+}

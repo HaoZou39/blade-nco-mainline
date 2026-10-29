@@ -1,0 +1,4 @@
+replicate,union_n,unique_n,reference_quota_sum,predicted_decile_quota_sum,infeasible_decile_count,total_shortage_if_bins_independent,strict_selection_feasible,lp_started,reason
+Original,19929,19929,10000,10000,5,3479,False,False,candidate supply below required predicted-decile quota
+S1,19937,19937,10000,10000,5,3542,False,False,candidate supply below required predicted-decile quota
+S2,19927,19927,10000,10000,5,3551,False,False,candidate supply below required predicted-decile quota

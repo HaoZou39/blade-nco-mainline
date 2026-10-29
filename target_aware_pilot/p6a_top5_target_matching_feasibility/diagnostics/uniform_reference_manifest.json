@@ -1,0 +1,9 @@
+{
+  "config_sha256": "d34b8f4268c041bf85917816236268ed802987a3655bc5581c8c949f7207b29a",
+  "coordinates_sha256_in_generation_order": "7bbdfc38fdb3ced18a804b465fe7fd5382edda17a2a23ac98982ce4d4d9fbbe7",
+  "extractor_wall_seconds": 497.68126451969147,
+  "numpy": "2.2.6",
+  "output_sha256": "1dfec57fc7a28967ad6be563e4b56cf8553a8c1f0c7d7441d6a65ae3b453e614",
+  "python": "3.10.12",
+  "rows": 2304
+}

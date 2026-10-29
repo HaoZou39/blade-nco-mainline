@@ -1,0 +1,1 @@
+INFEASIBLE: frozen predicted-decile candidate supply below quota; no selection created.

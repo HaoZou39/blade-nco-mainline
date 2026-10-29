@@ -1,0 +1,22 @@
+{
+  "abnormal_exit": true,
+  "checkpoint_ok": true,
+  "completed_runs": 9,
+  "current_run": "S2-C",
+  "disk_free_gib": 2345.559326171875,
+  "epochs": 256,
+  "experiment_complete": false,
+  "gpu_access": true,
+  "gpu_conflict": true,
+  "gpu_status": "0, GPU-54381a4c-32eb-fd34-0d3c-9f6f1a10b52f, 574, 24564, 0; 1, GPU-2c062968-7d9f-44fd-f1fc-4c4743004ba3, 3608, 24564, 94; foreign_gpu1=GPU-2c062968-7d9f-44fd-f1fc-4c4743004ba3, 3290578, /usr/bin/python3, 3598",
+  "initial_check": false,
+  "loss_finite": true,
+  "next_run": "S2-C",
+  "oom_seen": false,
+  "phase": "evaluate_P6D1_S2_C_M5_OriginalTSPLIB70",
+  "runner_alive": false,
+  "runner_pid": "",
+  "task_status": "BLOCKED",
+  "timestamp_utc": "2026-10-27T22:43:29.896328+00:00",
+  "updates": 10240
+}

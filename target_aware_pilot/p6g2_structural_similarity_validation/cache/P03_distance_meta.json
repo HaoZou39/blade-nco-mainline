@@ -1,0 +1,10 @@
+{
+  "f40_config_sha256": "5db26bc67c8cd9ecc6845eee795d23a2a057919bf9b9333342c5674f1b261fc6",
+  "membership_sha256": "b1e2082c621f3fcd8a90511eda87817baad6935b81eed4d8db91ad7225333590",
+  "n": 10000,
+  "pool": "P03",
+  "shape": [
+    10000,
+    48
+  ]
+}

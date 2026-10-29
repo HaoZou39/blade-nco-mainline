@@ -1,0 +1,3 @@
+item,protocol,frozen_and_official,resolution
+TSPLIB48_group_counts,"S1=27, S2=15, S3=6","S1=19, S2=12, S3=17",frozen/official grouping retained; no relabeling
+FFT_threshold_status,use only if compatible official implementation,official numerical implementation unavailable,exploratory approximation only

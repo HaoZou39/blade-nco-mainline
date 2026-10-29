@@ -1,0 +1,14 @@
+{
+  "features": [
+    "phi__spn_sum_of_lowest_edge_values",
+    "phi__spn_distance_min",
+    "phi__spn_distance_varcoeff",
+    "phi__spn_nng_3_strong_components_varcoeff",
+    "phi__spn_mst_dists_sd"
+  ],
+  "fit_data": "TSPLIB48_only",
+  "radius": 1.1435229089120353,
+  "radius_rule": "median leave-one-reference nearest-neighbor distance",
+  "status": "PREDECLARED_REFERENCE_ONLY_SENSITIVITY",
+  "warning": "not numerically comparable with FFT-NN coverage"
+}
