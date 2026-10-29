@@ -1,10 +1,13 @@
 \section{Adversarial finite-state checks}
 The examples below are exact toy models. They test universal statements and
 assumptions; none is asserted to be the BLADE-NCO implementation.
+Their tags report mathematical status; implementation applicability is
+\istatus{NOT APPLICABLE as a universal guarantee}, and novelty is
+\nstatus{NOT CLAIMED}.
 
 \subsection{Stale memory after a target shift}
 \label{sec:counterexamples}
-\status{DISPROVED} for the claim that historical memory cannot hurt.
+\mstatus{DISPROVED} for the claim that historical memory cannot hurt.
 Take $\mathcal{X}=\{a,b\}$. Before a change the hard region is
 $\HARD_0=\{a\}$; just before the first measured proposal it shifts to
 $\HARD_i=\{b\}$ for all $i\geq1$. The inherited population contains only
@@ -22,7 +25,7 @@ has undergone a single non-stationary shift; the failure is stale structural
 support, not an independence artifact.
 
 \subsection{Gradient adaptation can beat structural mutation}
-\status{DISPROVED} for any universal claim that structural mutation
+\mstatus{DISPROVED} for any universal claim that structural mutation
 outperforms HAC-style gradient adaptation. Let
 $\mathcal{X}=\{0,1,\ldots,L\}$ and $\HARD=\{L\}$. A structural mutation
 from $i<L$ advances to $i+1$ with probability $\varepsilon$ and otherwise
@@ -34,7 +37,7 @@ landscape with an informative gradient, not a model of the actual HAC
 implementation; it proves that operator labels alone imply no ranking.
 
 \subsection{Diversity can allocate effort away from the target}
-\status{DISPROVED} for the claim that increased diversity always improves
+\mstatus{DISPROVED} for the claim that increased diversity always improves
 first hitting time. Let $\mathcal{X}=\{s,u,g\}$, target $\HARD=\{g\}$,
 and one proposal cost one unit. The diverse parent set contains distinct
 niches $s$ and $u$; parent selection is uniform. Mutation from $s$ reaches
@@ -43,26 +46,96 @@ hit probability is $1/2$ and expected hitting cost is $2$. A focused policy
 that selects $s$ every time hits in cost $1$. Preserving the irrelevant
 niche does not help this target and reduces access to the useful parent.
 
-\subsection{Surrogate error can remove a useful bridge}
-\status{DISPROVED} for the claim that surrogate-based elite retention
-preserves true-hardness reachability. Consider states $\{a,b,g\}$ and
-current target $\HARD=\{g\}$; neither $a$ nor $b$ is itself a hit. From $a$,
-mutation reaches $g$ surely; from $b$, mutation stays at $b$ surely. A
-one-slot score-elite update retains whichever of $a,b$ has the larger
-surrogate score. If the true scores of $a,b$ are equal but HGB40
-systematically overestimates $b$, the update retains $b$, discards $a$, and
-makes the target unreachable. An accurate or reachability-aware selection
-would retain $a$. This is a counterexample to a universal error-robustness
-claim, not a claim about the precise Elite-QD1000 update rule.
+\subsection{Perfect current-hardness prediction need not preserve a bridge}
+\mstatus{DISPROVED} for the claim that perfect prediction of current BQ
+hardness makes score-elite retention preserve future mutation reachability.
+Consider states $\{a,b,g\}$ and current target $\HARD=\{g\}$; neither $a$
+nor $b$ is itself a hit, and their current true hardness is equal:
+$h(a)=h(b)<\kappa$. From $a$, the next scheduled mutation reaches $g$
+surely; from $b$, mutation stays at $b$ surely. Let the surrogate be perfect
+on current hardness, so $\widehat h(a)=h(a)=h(b)=\widehat h(b)$. A one-slot
+score-elite update must still break the tie. If its deterministic tie rule
+retains $b$, it discards $a$ and makes $g$ unreachable. Thus current-hardness
+accuracy, even perfection, does not identify equal-hardness candidates with
+different mutation futures. A reachability-aware rule could retain $a$, but
+perfect current-hardness prediction alone need not do so. This is not a claim
+that the observed S6-AE hash tie-break selected such a pair; it is an exact
+obstruction to the proposed bridge.
+
+\subsection{Monotone niche occupancy with progressive bridge loss}
+\label{sec:progressive-bridge-loss}
+\mstatus{PROVED counterexample} to the claim that monotone niche occupancy
+preserves future hard-region reachability. Fix population capacity $m$ and an
+integer $2\leq L\leq\min\{K-1,m-1\}$. Use occupied niches
+$0,1,\ldots,L$. Initially $P_0$ contains a bridge $a_i$ in niche $i$ for
+each $1\leq i\leq L$, together with $m-L$ distinct fillers
+$f_1,\ldots,f_{m-L}$ in niche $0$.
+
+At cycle $i-1$, one designated operator applied to $a_i$ produces a valid
+decoy $d_i$ in the same niche $i$ with probability one. Every other scheduled
+attempt returns the rejection symbol $\partial$; no attempt is resampled. Set
+the current true hardness and a perfect current predictor so that
+\[
+ h(a_i)=\widehat h(a_i)=1,\qquad
+ h(d_i)=\widehat h(d_i)=2,\qquad
+ h(f_j)=\widehat h(f_j)=3,
+\]
+with deterministic distinct hash order where needed. Choose the current hard
+threshold above $3$, so none of these candidates is a current hit.
+
+In niche $i$, $d_i$ replaces $a_i$ as the score elite. Niche $0$ contributes
+one filler to the elite floor, and the remaining $m-L-1$ fillers occupy all
+global-fill slots. Thus $a_i$ fails both tests in
+Lemma~\ref{lem:membership} and is discarded. All as-yet-unprocessed $a_j$
+remain the sole candidates in their niches and therefore survive. Inductively,
+after cycle $t$ the selected population still occupies exactly
+$\{0,1,\ldots,L\}$, while the number of retained bridges has fallen from $L$
+to $L-t$.
+
+After cycle $L-1$, let the future true-hard region be $\{g\}$. A future
+designated operator reaches $g$ surely from any $a_i$ and cannot reach it from
+any $d_i$ or $f_j$. The selected population now contains no $a_i$, so its
+future hit probability is zero, even though its niche occupancy never
+decreased. A population retaining any discarded $a_i$ would hit surely. The
+failure is not surrogate error: the predictor is perfect for current hardness.
+It is a mismatch between current-hardness quality and future-reachability
+value.
+
+This construction includes the complete elite floor and global score fill,
+not merely a one-slot archive. Taking, for example, $m=10{,}000$ and
+$L\leq999$ respects the S6-AE capacity ratio. It is a formal counterexample,
+not evidence that these states or score relations occurred in S6-AE.
 
 \subsection{Niche aggregation can destroy the Markov property}
-\status{DISPROVED} for the assertion that a niche label alone is a Markov
+\mstatus{DISPROVED} for the assertion that a niche label alone is a Markov
 state. Let full states $x_1,x_2$ both map to niche $A$, while $z,w$ map to
 distinct niches $Z,W$. From $x_1$, the next state is $z$ with probability
 $1$; from $x_2$, the next state is $w$ with probability $1$. Both full states
 have the same current aggregate $A$, but the next aggregate is respectively
 $Z$ or $W$. The transition probability out of aggregate $A$ is therefore
-not determined by the aggregate alone (strong lumpability fails). A Markov
-proof using only niche counts would be invalid unless the update rule supplies
-the needed lumpability condition or the state is augmented with the hidden
-structural/solver information.
+not determined by the aggregate alone (strong lumpability fails). Therefore
+niche aggregation is not Markov uniformly over initial laws. For a specially
+chosen initial distribution, an averaged transition might nevertheless be
+Markov; that weaker distribution-dependent claim would require the
+conditional within-$A$ mixture to remain history-independent. The example
+does not disprove every such weak aggregation. A proof using only niche counts
+is invalid unless it proves the relevant strong or distribution-dependent
+condition, or augments the state with the hidden structural/solver
+information.
+
+\subsection{Hard-instance presence is not novel discovery}
+\mstatus{PROVED definitional counterexample} to treating the parent-inclusive
+generation hit as new-instance discovery. Let $P_k=\{x\}$,
+$h_k^{\rm BQ}(x)\geq\kappa$, and all scheduled child attempts be rejected,
+so $O_k=\varnothing$ and $C_k=\{x\}$. Then $D_k^{\rm gen}$ holds, while
+$D_k^{\rm new,gen}$ is false whenever $x$ was previously generated.
+For a separate cycle-0 edge case, suppose $P_0=\{x\}$ and a
+valid, accepted mutation returns exactly $x$, so $O_0=\{x\}$ before
+parent--child union deduplication. Although
+$\mathcal V_{-1}^{\rm gen}=\varnothing$, this offspring is not a novel
+phenotype because $x\in P_0$. The corrected event
+$D_0^{\rm new,gen}$ therefore excludes it. After every structural niche
+is already occupied, a later offspring can still be a new, distinct hard
+phenotype within an old niche. Therefore newly occupied niches, new hard
+phenotypes, acquired novelty, and hardness reactivation must not be
+conflated.

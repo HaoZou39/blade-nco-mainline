@@ -11,50 +11,160 @@
 
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
-\newcommand{\status}[1]{\textbf{[#1]}}
+\newcommand{\mstatus}[1]{\textbf{[Mathematical status: #1]}}
+\newcommand{\istatus}[1]{\textbf{[Implementation applicability: #1]}}
+\newcommand{\nstatus}[1]{\textbf{[Scientific novelty: #1]}}
 \newcommand{\Prb}{\mathbb{P}}
 \newcommand{\Ex}{\mathbb{E}}
 \newcommand{\HARD}{\mathcal{H}}
 
-\title{BLADE-NCO Theory Research\\Stage 1: Mathematical Exploration}
+\title{BLADE-NCO Theory Research\\Stages 1--3A: Formal Alignment, Reachability, and Hardness Tracking}
 \author{Research note}
-\date{October 21, 2026}
+\date{October 22, 2026}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This is a Stage 1 note, not a completed theory paper.
+This note formalizes structural reachability, inherited population memory, moving hard-instance regions, and first discovery measured in computational cost. It records three candidate claims, attempts a proof of a finite-window memory comparison, and tests broad memory/diversity claims against exact finite-state examples. The strongest surviving result is conditional: retained structural memory helps only when it supplies a verified per-cost hit-hazard advantage over the comparator. No unconditional BLADE-NCO advantage is established. This document is a cumulative Stages 1--2.1 mathematical research note, not a completed theory paper.
+
+Stage 1.5 corrects the state space, time indices, probability space,
+aggregation language, and implementation mapping without adding a theorem or
+changing that conclusion. The finite examples remain counterexamples to
+universal claims; they are not assumptions that the TSP instance space is
+finite.
+
+Stage 2 proves a deterministic occupied-niche persistence invariant for the
+verified parent--child union and Elite-QD selector, while showing by exact
+counterexample that niche persistence need not preserve useful structural
+representatives. It also gives a finite-budget multistep bridge-chain bound
+whose factors are operator-specific accepted-transition and selection-retention
+certificates. The theorem is mathematically valid under its stated premises;
+the decisive BLADE-specific kernel and bridge-retention premises remain open.
+
+Stage 2.1 independently corrects the information set for deterministic versus
+probabilistic bridge retention, imposes a non-anticipating choice of
+cycle-indexed bridge targets, makes hash-deduplication compatibility explicit,
+and separates hard-instance presence from new-instance discovery. These are
+corrections to the conditional framework, not additional superiority theorems.
+
+Stage 3A proves a standard per-niche approximate-argmax guarantee and its
+one-step solver-drift extension. It also derives a finite-horizon historical
+tracking-regret recurrence under a substantially stronger drift bound over
+the complete latent candidate history. The recurrence can accumulate linearly,
+and its complete-pool HGB-error and historical-drift premises are not verified
+for S6-AE. Exact counterexamples continue to separate current-hardness tracking
+from future reachability and downstream BQ training value.
 \end{abstract}
 
 \section{Scope and status}
 The scope is restricted to structural reachability, evolutionary memory, and expected first-hitting time under a non-stationary hardness landscape. The supplied BLADE-NCO context is FOGA-11 structural mutation, inherited parent populations, HGB40 hardness estimation, Elite-QD1000 (P=T), and BQ solver co-adaptation. Those names are treated as labels, not as complete algorithm specifications.
 
-Every mathematical result below carries a status tag. A proof of a conditional probability bound does not establish that its assumptions hold in BLADE-NCO. Compilation verifies only that the source typesets; it does not verify mathematical correctness.
+Statuses are reported on three separate axes. \mstatus{PROVED}, for example,
+concerns the validity of a mathematical statement under its premises;
+\istatus{VERIFIED, PARTIAL, OPEN, or NOT APPLICABLE} concerns whether those
+premises and variables match the inspected S6-AE implementation; and
+\nstatus{OPEN or NOT CLAIMED} concerns literature priority. A proof of a
+conditional probability bound does not establish implementation applicability
+or novelty. Compilation verifies only that the source typesets; it does not
+verify mathematical correctness.
+
+The Stage 1.5--2 implementation boundary is the verified HGB40 + Elite-QD1000
+$(P=T)$ S6-AE path. Its frozen artifacts passed 40/40 strict checks. Historical
+GP4 output is not used as the definition of the current method. Details that
+could not be established from the inspected code and artifacts are marked
+OPEN rather than inferred.
 
 \section{Prior-theory boundary}
-Related theory includes rigorous results in which populations track moving optima and in which diversity mechanisms have different effects, but those works analyze explicit dynamic-function classes and specified algorithm dynamics \cite{Dang2017,OlivetoZarges2015}. They do not establish compute-normalized discovery of solver-relative hard instances under solver co-adaptation. Thus a generic claim that ``memory/diversity helps in dynamic optimization'' is unsuitable as a novelty claim. The present abstraction differs in its target: discovering instances whose measured hardness changes as the solver co-adapts, under a compute budget and with a surrogate-based archive. Whether that narrower combination is novel remains \status{OPEN}; this note is not a literature-priority search.
+Related theory includes rigorous results in which populations track moving
+optima and in which diversity mechanisms have different effects, but those
+works analyze explicit dynamic-function classes and specified algorithm
+dynamics \cite{Dang2017,OlivetoZarges2015}. MAP-Elites and QD explicitly store
+high-quality representatives in a fixed feature partition
+\cite{MouretClune2015,Pugh2016}; recent runtime analyses prove coverage and
+optimization results for particular pseudo-Boolean and combinatorial
+structures \cite{BossekSudholt2024,Qian2024}. These works make the elementary
+archive-occupancy invariant non-novel, and they show that stepping-stone
+benefits require an aligned problem/operator model. They do not establish
+compute-normalized discovery of solver-relative hard TSP instances under
+surrogate selection and solver co-adaptation. Whether a fully instantiated
+BLADE-specific bridge theorem would be novel remains \nstatus{OPEN}; the
+present limited audit is not a comprehensive priority search.
 
 \input{definitions.tex}
 \input{theorem_candidates.tex}
 \input{proof_attempts.tex}
 \input{counterexamples.tex}
+\input{hardness_tracking.tex}
 
 \section{Research assessment}
 \paragraph{Strongest candidate.}
-The useful candidate is the finite-window reachability comparison in Proposition~\ref{prop:window}. It gives an auditable sufficient condition for inherited memory to improve finite-budget discovery on a window where the hard region is stable: the retained lineage must be available, selected, and able to mutate into the \emph{true} current hard region often enough that its per-cost conditional hit hazard exceeds the comparator's. The proof is a survival-probability induction and needs neither independent proposals nor a Markov approximation.
+The strongest Stage 2 candidate is Proposition~\ref{prop:bridge-chain}. It
+turns a multicycle structural path into an auditable finite-budget bound using
+operator-specific accepted-transition masses and explicit selection-retention
+certificates. Unlike Proposition~\ref{prop:window}, it does not begin by
+assuming an unexplained overall hazard advantage. Proposition
+~\ref{prop:niche-persistence} supplies a verified structural invariant, but
+the progressive-loss counterexample shows why that invariant cannot supply
+the bridge-retention premise by itself.
 
 \paragraph{Limitations and novelty.}
-The probability argument is standard and is not itself a novel theorem. Its scientific content would have to come from deriving and validating useful lower bounds on FOGA-11 reachability and parent survival, then comparing them with the actual fixed-generator and HAC hazards at equal compute cost. The supplied context does not specify the mutation operator probabilities, population update rule, hardness threshold, score calibration, solver/evaluation costs, or HAC transition law. Thus the assumptions cannot yet be checked, and the result does not assert a BLADE advantage.
+The product/conditioning argument and archive occupancy fact are standard and
+are not claimed as new theory. Scientific content would have to come from
+deriving non-vacuous FOGA-11 kernel bounds, proving that current-HGB elites
+retain future-relevant bridges despite BQ drift, and obtaining a strict
+compute-normalized separation from specified comparators. The inspected
+implementation verifies the deterministic operator schedule, rejection
+without resampling, population update, capacity relation, and $P=T$, but not
+those probabilistic or score--reachability premises. The result therefore does
+not assert a BLADE advantage.
 
-\paragraph{Testability using existing data.}
-The result could be tested from already logged proposal-level records if they identify the parent and mutation operator, true or solver-verified hardness at proposal time, HGB40 score, BQ solver version/state, parent/archive survival, and wall-clock or accelerator cost. No such data are present in this workspace, so empirical testability is \status{OPEN}. No evaluations, training, or evolutionary runs were performed.
+Stage 2 verifies the S6-AE batch schedule and population update rule, but not
+the required probabilistic hazard bounds, a scientific hard-region threshold,
+or a matched HAC transition/cost law. Therefore the mathematical comparison
+remains conditional, its BLADE applicability remains partial, and its novelty
+remains open.
+
+\paragraph{Testability.}
+The structural persistence proposition is checkable directly from the
+selector definition and existing artifacts. The bridge theorem would require
+certified support or lower bounds for accepted operator transitions between
+declared bridge sets and proof that the selector retains those sets. The
+inspected artifacts record proposals, rejections, scores, and memberships, but
+a single frozen trajectory cannot establish history-uniform kernel bounds.
+\par\istatus{OPEN}\par
+No new evaluations, training, or evolutionary runs were performed for this
+note.
 
 \paragraph{Unresolved issues.}
-The decisive open issue is whether memory yields greater \emph{true-hardness reachability per unit cost} than the fixed generator or HAC after accounting for stale parents, surrogate ranking error, solver co-adaptation, and archive overhead. The exact BLADE transition model and the appropriate cost accounting must be supplied before a BLADE-specific theorem can be attempted.
+The decisive open issue is whether current-hardness selection preserves
+representatives with high future-reachability value often enough to complete a
+nontrivial bridge chain. Exact operator laws under a declared ensemble,
+score--bridge alignment, target sets, and matched fixed-generator/reset/HAC
+cost models remain necessary before a BLADE-specific comparison theorem can
+be claimed.
+
+\paragraph{Stage 3A tracking assessment.}
+The one-step $2\epsilon$ quality guarantee and
+$2\epsilon+2\delta$ solver-drift guarantee are mathematically valid but
+standard. Parent--child union and $P=T$ keep the immediately previous niche
+elite available, which supports a historical regret recurrence. That
+recurrence requires current-error bounds on the complete candidate niche and
+drift bounds on every candidate in the latent historical niche ledger; S6-AE
+does not label those complete sets. Bounded per-cycle terms permit linear
+regret, not a steady-state guarantee. The Stage 3A decision is therefore
+\textbf{C -- TRACKING\_ASSUMPTIONS\_NOT\_JUSTIFIED}.
 
 \section{Stopping point}
-Stage 1 formalization, candidate claims, first proof attempt, and adversarial checks are recorded. Further theory development or experimental design is intentionally deferred pending human approval.
+Stage 1 formalization, Stage 1.5 alignment, Stage 2 persistence/reachability,
+Stage 2.1 independent mathematical corrections, and Stage 3A solver-relative
+hardness-tracking analysis are recorded. The
+revised bridge theorem is a conditional, pre-generation-information
+certificate, not an implemented or empirically verified BLADE superiority
+result. The Stage 3A regret recurrence is likewise conditional and does not
+establish bounded long-run tracking. No experiment, algorithm change,
+Oracle/BQ evaluation, retraining, adaptation, evolution, or Stage 3B
+development is included.
 
 \begin{thebibliography}{9}
 \bibitem{Dang2017}
@@ -68,6 +178,34 @@ P. S. Oliveto and C. Zarges,
 ``Analysis of diversity mechanisms for optimisation in dynamic environments with low frequencies of change,''
 \emph{Theoretical Computer Science}, vol. 561, part A, pp. 37--56, 2015.
 doi: 10.1016/j.tcs.2014.10.028.
+
+\bibitem{MouretClune2015}
+J.-B. Mouret and J. Clune,
+``Illuminating Search Spaces by Mapping Elites,''
+arXiv:1504.04909, 2015.
+
+\bibitem{Pugh2016}
+J. K. Pugh, L. B. Soros, and K. O. Stanley,
+``Quality Diversity: A New Frontier for Evolutionary Computation,''
+\emph{Frontiers in Robotics and AI}, vol. 3, art. 40, 2016.
+doi: 10.3389/frobt.2016.00040.
+
+\bibitem{BossekSudholt2024}
+J. Bossek and D. Sudholt,
+``Runtime Analysis of Quality Diversity Algorithms,''
+\emph{Algorithmica}, vol. 86, pp. 3252--3283, 2024.
+doi: 10.1007/s00453-024-01254-z.
+
+\bibitem{Qian2024}
+C. Qian, K. Xue, and R.-J. Wang,
+``Quality-Diversity Algorithms Can Provably Be Helpful for Optimization,''
+arXiv:2401.10539, 2024.
+
+\bibitem{Zinkevich2003}
+M. Zinkevich,
+``Online Convex Programming and Generalized Infinitesimal Gradient Ascent,''
+in \emph{Proceedings of the 20th International Conference on Machine Learning},
+pp. 928--936, 2003.
 \end{thebibliography}
 
 \end{document}

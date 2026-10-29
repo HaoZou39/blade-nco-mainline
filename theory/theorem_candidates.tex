@@ -1,34 +1,213 @@
-\section{Candidate propositions}
+\section{Candidate propositions and Stage 2 results}
+
+\subsection{Stage 2 Proposition: deterministic niche persistence}
+\mstatus{PROVED} \istatus{VERIFIED for S6-AE} \nstatus{NOT CLAIMED}
+
+\begin{proposition}[Occupied-niche persistence under the verified selector]
+\label{prop:niche-persistence}
+Fix a niche map $g$. At cycle $k$, suppose (i) every member of $P_k$ is in
+$C_k$; (ii) $C_k$ is finite and unique by instance hash, with equal-hash
+candidates niche-compatible under the declared union semantics; (iii)
+$|\mathsf S(C_k)|\leq m\leq|C_k|$; (iv) $T_k=T_m(C_k)$ contains the complete
+per-niche floor $Q(C_k)$; and (v) $P_{k+1}=T_k$. Then
+\[
+ \mathsf S(P_{k+1})=\mathsf S(C_k)\supseteq\mathsf S(P_k).
+\]
+If $C_k=\operatorname{unique}(P_k\cup O_k)$ under the same fixed map, then
+more precisely
+\[
+ \mathsf S(P_{k+1})=
+ \mathsf S(P_k)\cup\mathsf S(O_k).
+\]
+The statement remains true when some or all scheduled mutation attempts are
+rejected, because rejection contributes no child and causes no resampling.
+\end{proposition}
+
+The assumptions match the inspected S6-AE selection path: the corrected C00
+union and later parent--child unions contain all old parents; QD4,
+normalization, centroids, and tie rules are fixed; at most 1,000 niches are
+occupied while $m=10{,}000$; selection contains exactly one current-HGB elite
+from every occupied candidate niche; and $P=T$. The completed run's strict
+checks verify these operational invariants. This proves a niche-set invariant,
+not parent-hash survival, within-niche structural equivalence, or future
+reachability.
+
+\begin{lemma}[Exact membership test for a candidate]
+\label{lem:membership}
+Under the deterministic selector in the formal model, a candidate survives
+if and only if it is its niche's score elite (including the declared hash tie
+rule), or it lies within the first $m-|Q(C)|$ positions of the global order on
+$C\setminus Q(C)$. Hence neither membership in $P_k$ nor occupancy of its
+niche is sufficient for that candidate to survive.
+\end{lemma}
+
+\subsection{Stage 2 theorem candidate: a certified bridge chain}
+\mstatus{PROVED under explicit premises} \istatus{PARTIAL/OPEN}
+\nstatus{NOT CLAIMED}
+
+\begin{proposition}[Finite-budget causal bridge-chain bound]
+\label{prop:bridge-chain}
+Fix a starting cycle $k$ and an integer $L\geq1$. Let the bridge sets
+$B_0,\ldots,B_L$ be selected by the predictable, non-anticipating rule in
+the formal model. Suppose $E_0$ holds almost surely. Let
+$H_0=E_0$ and $H_{\ell+1}=H_\ell\cap G_\ell\cap R_\ell$.
+For every $\ell=0,\ldots,L-1$ and every positive-probability
+pre-generation history in $H_\ell$, assume
+\[
+ \Prb(G_\ell\mid\mathcal F_{k+\ell}^{\rm pre})\geq a_\ell.
+\]
+On the same histories for which the conditional generation probability is
+positive, assume the \emph{pre-generation-conditioned} retention bound
+\[
+ \Prb(R_\ell\mid
+       \mathcal F_{k+\ell}^{\rm pre},G_\ell)\geq\rho_\ell.
+\]
+Here the second conditional probability averages over the still-unresolved
+mutation batch and any other explicitly modeled random inputs; it does not
+condition on the fully realized scored candidate pool.
+Alternatively, one may assume the stronger deterministic certificate:
+for every admissible generated union containing a bridge member, the
+selector retains a member of the designated bridge set, giving
+$\rho_\ell=1$.
+
+Assume the final, causally chosen bridge set satisfies
+$B_L\subseteq\HARD_{k+L-1}$ almost surely for the entering checkpoint
+$q_{k+L-1}$, without looking ahead to future solver states or the final
+random mutation batch. Define the exact certified-chain success events
+\[
+ D^{\rm chain,gen}=H_{L-1}\cap G_{L-1},\qquad
+ D^{\rm chain,acq}=H_{L-1}\cap G_{L-1}\cap R_{L-1}.
+\]
+These are subsets of the ordinary final-cycle presence events
+$D_{k+L-1}^{\rm gen}$ and $D_{k+L-1}^{\rm acq}$ respectively. Then
+\begin{align*}
+ \Prb(D^{\rm chain,gen})
+ &\geq \prod_{\ell=0}^{L-1}a_\ell
+           \prod_{\ell=0}^{L-2}\rho_\ell,\\
+ \Prb(D^{\rm chain,acq})
+ &\geq \prod_{\ell=0}^{L-1}a_\ell\rho_\ell.
+\end{align*}
+No independence is required. If the declared deterministic charged costs
+$c_k,\ldots,c_{k+L-1}$ sum to at most budget $B$, these are finite-budget
+\emph{presence} bounds, not new-instance discovery bounds.
+
+One sufficient operator-specific source for $a_\ell$ is a
+pre-generation-measurable choice of a retained parent $x\in B_\ell$ and a
+designated operator $o_\ell\in\mathcal O$ such that
+\[
+ \widetilde K_{k+\ell,o_\ell}
+ (x,B_{\ell+1}\mid S_{k+\ell})\geq a_\ell
+\]
+on every admissible history, where the conditional kernel is defined under
+the declared non-frozen random ensemble and includes rejection at
+$\partial$. The all-operator deterministic batch attempts the designated
+operator without any random parent/operator-selection factor.
+To infer $G_\ell$ from the accepted operator output, equal hashes must
+identify the same phenotype on that pool or at least preserve membership
+in $B_{\ell+1}$; niche-label compatibility alone does not suffice for
+the bridge theorem.
+\end{proposition}
+
+The deterministic retention certificate is directly testable using the
+actual HGB/QD rank rule. Specifically, $\rho_\ell=1$ follows if every
+admissible realized scored candidate union containing $B_{\ell+1}$ retains
+a bridge member either as the tie-broken per-niche score elite or through
+global fill (Lemma~\ref{lem:membership}). After the complete scored union is
+known, the retention probability is the indicator
+$\mathbf 1_{R_\ell}$, not an unexplained fractional probability.
+A fractional $0<\rho_\ell<1$ requires a clearly declared ensemble and
+a lower bound on retention conditioned only on pre-batch information and
+the event $G_\ell$. Within-niche transition equivalence of possible elites
+would be one \emph{additional} way to certify future reachability, not a
+property guaranteed by QD occupancy or hardness prediction accuracy.
+
+For S6-AE, the all-operator schedule, rejection handling, capacity inequality,
+selector form, and $P=T$ map are verified. Positive, history-uniform
+$a_\ell$ values, scientifically meaningful \emph{causally chosen} bridge
+sets, and deterministic or probabilistic $\rho_\ell$ bounds are OPEN.
+Changing BQ checkpoints are allowed, but terminal set inclusion must be
+verified against the checkpoint already available before the final batch.
+Freezing every bridge set at cycle $k$ would require the stronger uniform
+terminal-inclusion guarantee over the possible future solver trajectories.
+
+\paragraph{Repeated certified windows.}
+\mstatus{PROVED under regeneration} \istatus{OPEN}
+\nstatus{NOT CLAIMED}
+If after every no-hit $L$-cycle block the next block again starts with $E_0$
+and satisfies the same conditional premises, set
+$p=\prod a_\ell\prod\rho_\ell$ for the desired discovery level and let
+$C$ bound a block's charged compute. The standard survival argument gives
+$\Prb(C_\tau\leq rC)\geq1-(1-p)^r$ and
+$\Ex[C_\tau]\leq C/p$. The regeneration premise is not verified for S6-AE;
+without it, the one-block finite-budget bound is the strongest conclusion.
+
+\subsection{Mechanism-level comparator boundary}
+\mstatus{CONDITIONAL FRAMEWORK} \istatus{OPEN} \nstatus{OPEN}
+The bridge theorem permits a fair structural comparison only after each
+method receives its own transition and cost model.
+
+\begin{itemize}
+\item A reset evolution strategy can erase intermediate bridge sets between
+rounds, so a long path certificate may fail, but a reset distribution can
+still have larger direct mass on the true-hard region.
+\item A stationary generator has no inherited structural chain; its discovery
+law is determined by its sampling mass on the cycle-specific hard region and
+its per-sample cost. It can beat BLADE when that mass is sufficiently large.
+\item A HAC-style method with random restarts requires a kernel on its full
+gradient state, a restart law, stopping rules, and charged forward/backward
+costs. One gradient step is not equated with one FOGA attempt or one full
+110,000-attempt generation. The Stage 1 path counterexample shows only that a
+useful gradient can win in a toy model; it is not a HAC superiority theorem.
+\end{itemize}
+
+Proposition~\ref{prop:niche-persistence} is a structural-coverage statement.
+Proposition~\ref{prop:bridge-chain} concerns true-hardness generation or
+acquisition only when its final bridge set lies in the declared true BQ hard
+region and, for acquisition, survives selection. Neither QD occupancy nor HGB
+score alone supplies that implication.
 
 \subsection{Candidate 1: finite-window reachability comparison}
-\status{CONDITIONAL} The following is the strongest surviving candidate.
+\mstatus{CONDITIONAL} \istatus{PARTIAL} \nstatus{NOT CLAIMED} The following
+is the strongest surviving candidate.
 
 \begin{proposition}[Memory advantage on a stable target window]
 \label{prop:window}
-Suppose the true hard region is constant, $\HARD_i=\HARD$, for a window of
-$W$ proposal cycles and each cycle has the same deterministic compute cost
+Suppose the true hard region attached to the declared discovery event is
+constant, $\HARD_j=\HARD$, for a window of $W$ comparison opportunities and
+each opportunity has the same deterministic compute cost
 $c>0$. On every no-hit history in that window, suppose a memory policy $M$
 has conditional hit hazard at least $p_M$, and a comparator $G$ has
 conditional hit hazard at most $p_G$, with $p_M>p_G$. Then, for
-$1\leq k\leq W$,
+$1\leq n\leq W$,
 \[
- \Prb(\tau_M\leq k)\geq 1-(1-p_M)^k
- > 1-(1-p_G)^k\geq \Prb(\tau_G\leq k),
+ \Prb(\tau_M\leq n)\geq 1-(1-p_M)^n
+ > 1-(1-p_G)^n\geq \Prb(\tau_G\leq n),
 \]
-and, for $2\leq k\leq W$,
+and, for $2\leq n\leq W$,
 \[
- \Ex[c\min(\tau_M,k)]
- \leq c\sum_{j=0}^{k-1}(1-p_M)^j
- < c\sum_{j=0}^{k-1}(1-p_G)^j
- \leq \Ex[c\min(\tau_G,k)].
+ \Ex[c\min(\tau_M,n)]
+ \leq c\sum_{j=0}^{n-1}(1-p_M)^j
+ < c\sum_{j=0}^{n-1}(1-p_G)^j
+ \leq \Ex[c\min(\tau_G,n)].
 \]
-One sufficient derivation of $p_M$ is the following: on each no-hit history,
+For a generic policy that actually samples a parent, one sufficient
+derivation of $p_M$ is the following: on each no-hit history,
 with conditional probability at least $r$ a useful retained parent is
 available; given that event it is selected with probability at least
 $\gamma$; conditional on that selection, its mutation/evaluation reaches the
 true current hard region with probability at least $\alpha$. Then
 $p_M\geq r\gamma\alpha$. No independence among these events is assumed;
 the bounds are conditional in the stated order.
+
+That random-selection factorization is not the S6-AE schedule. For the
+verified deterministic Cartesian batch, every retained parent receives all
+11 operators. If $r$ lower-bounds availability of a useful parent and
+$\alpha_{\rm batch}$ lower-bounds, under the explicitly declared RNG
+ensemble, the conditional probability that its scheduled operator batch
+generates the declared hit, then the appropriate sufficient bound is
+$p_M\geq r\alpha_{\rm batch}$. With roots and all seeds conditioned to their
+frozen values, this is a statement about a realized batch, not an estimated
+random parent/operator-selection probability.
 \end{proposition}
 
 \paragraph{Importance.} It turns a structural-memory claim into a finite-budget,
@@ -37,12 +216,14 @@ reachability. It also makes clear that survival alone is not a sufficient
 mechanism.
 
 \paragraph{Assumptions and realism.} A piecewise-stable target window and
-equal-cost proposals are useful first approximations, but actual BQ
-co-adaptation may move $\HARD_i$ within a window and HGB40/BQ costs may differ
-by candidate. Lower bounds $r,\gamma,\alpha$ must hold on every surviving
-history, not just on average. These quantities are measurable in principle
-from detailed traces, but no such traces or exact FOGA-11 transition rules
-were supplied. Realism for BLADE-NCO is therefore \status{OPEN}.
+equal-cost opportunities are useful first approximations. In S6-AE the BQ
+checkpoint is fixed during mutation/acquisition in cycle $k$ and changes only
+after $T_k$ is frozen and labeled, but comparison windows spanning adaptations
+can still move $\HARD_k$. HGB40, archive, exact-label, and BQ-training costs
+also differ from a single mutation attempt. The deterministic 10,000-by-11
+schedule and $P=T$ update are verified; the history-uniform
+$r\alpha_{\rm batch}$ bound, scientific threshold, and matched comparator
+cost/hazard remain \istatus{OPEN}.
 
 \paragraph{Proof approach.} Induction on the no-hit survival probability,
 then the identity expressing expected truncated hitting time as the sum of
@@ -57,7 +238,8 @@ criterion that can distinguish BLADE from fixed generation or HAC only after
 their hazards and costs are measured; it does not establish that BLADE wins.
 
 \subsection{Candidate 2: inherited memory never hurts}
-\status{DISPROVED} The proposed blanket claim is that retaining historical
+\mstatus{DISPROVED} \istatus{NOT APPLICABLE} \nstatus{NOT CLAIMED} The
+proposed blanket claim is that retaining historical
 parents cannot increase first-hitting cost relative to a fixed generator.
 This is false even with two structural states and one target change. The
 stale-memory example in Section~\ref{sec:counterexamples} has expected cost
@@ -81,7 +263,8 @@ HAC. HAC can outperform a poorly aligned retained population, as the path
 example in Section~\ref{sec:counterexamples} demonstrates.
 
 \subsection{Candidate 3: diversity always improves discovery}
-\status{DISPROVED} The proposed blanket claim is that preserving a more
+\mstatus{DISPROVED} \istatus{NOT APPLICABLE} \nstatus{NOT CLAIMED} The
+proposed blanket claim is that preserving a more
 diverse population always reduces first-hitting time. In a three-state model,
 a diverse parent selector spends half of each equal-cost proposal on an
 irrelevant niche and has expected hitting cost $2$, while a focused selector

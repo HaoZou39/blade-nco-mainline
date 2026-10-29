@@ -1,25 +1,30 @@
 \section{Proof attempt for the strongest candidate}
 
 \subsection{History-based survival lemma}
-\status{PROVED} The lemma below is a standard finite-horizon hitting bound,
+\mstatus{PROVED} \istatus{PARTIAL} \nstatus{NOT CLAIMED} The lemma below is
+a standard finite-horizon hitting bound,
 included as the proof engine rather than as a novelty claim.
 
-Let $Y_i=\mathbf{1}\{X_i\in\HARD_i\}$ and
-$\tau=\inf\{i\geq1:Y_i=1\}$. The event $\{\tau\geq i\}$ is determined by
-the history before proposal $i$. Assume there are deterministic numbers
-$p_i\in[0,1]$ such that, on every pre-proposal history with no previous hit,
+Let $Y_j$ be the indicator of the declared discovery event at comparison
+opportunity $j$ and let $\tau=\inf\{j\geq1:Y_j=1\}$. The event
+$\{\tau\geq j\}$ is determined by the history before opportunity $j$.
+Assume there are deterministic numbers $p_j\in[0,1]$ such that, on every
+pre-opportunity history with no previous hit,
 \[
- \Prb(Y_i=1\mid\mathcal{F}_{i-1})\geq p_i.
+ \Prb(Y_j=1\mid\mathcal{F}_{j-1})\geq p_j.
 \]
 This is a history-uniform conditional hazard condition. It allows the target
-$\HARD_i$ to vary with $i$.
+attached to the event to vary with $j$. The index $j$ is deliberately not the
+BQ cycle index $k$: it may represent a serialized mutation attempt, a full
+generation event $D_k^{\rm gen}$, or an acquisition event
+$D_k^{\rm acq}$, provided the choice and filtration are fixed.
 
 \begin{lemma}[Non-stationary survival and cost bound]
 For every $n\geq1$,
 \[
  \Prb(\tau>n)\leq\prod_{i=1}^{n}(1-p_i).
 \]
-If proposal costs $c_i$ are deterministic, then
+If opportunity costs $c_i$ are deterministic, then
 \[
  \Ex[C_\tau]
  \leq \sum_{i\geq1}c_i\prod_{j=1}^{i-1}(1-p_j),
@@ -34,7 +39,7 @@ $n(B)=\max\{n\geq0: \sum_{i=1}^{n}c_i\leq B\}$, with empty sum zero.
 \end{lemma}
 
 \begin{proof}
-Write $S_i=\{\tau\geq i\}$ for survival to the start of proposal $i$.
+Write $S_i=\{\tau\geq i\}$ for survival to the start of opportunity $i$.
 Since $S_i\in\mathcal{F}_{i-1}$,
 \begin{align*}
  \Prb(S_{i+1})
@@ -51,32 +56,124 @@ For the cost, use the nonnegative-sum identity
  \Ex[C_\tau]=\sum_{i\geq1}c_i\Prb(S_i),
 \]
 and apply the survival bound termwise. Finally, completion of any of the
-first $n(B)$ proposals costs at most $B$, so budget success is at least the
-probability of a hit among those proposals. The first claim supplies the
+first $n(B)$ opportunities costs at most $B$, so budget success is at least the
+probability of a hit among those opportunities. The first claim supplies the
 stated lower bound.
 \end{proof}
 
 \subsection{Deriving the window comparison}
-For Candidate~1, apply the survival lemma on the $W$-cycle stable-target
-window. The memory policy satisfies $p_i=p_M$ and the comparator satisfies
-an upper hazard bound $q_i^G\leq p_G$ on every no-hit history. The same
+For Candidate~1, apply the survival lemma on the $W$-opportunity stable-target
+window. The memory policy satisfies $p_j=p_M$ and the comparator satisfies
+an upper hazard bound $q_j^G\leq p_G$ on every no-hit history. The same
 induction, with the inequality reversed for $G$, yields
 \[
  \Prb(\tau_M>j)\leq(1-p_M)^j,
  \qquad
  \Prb(\tau_G>j)\geq(1-p_G)^j.
 \]
-Therefore, for $k\leq W$,
+Therefore, for $n\leq W$,
 \[
- \Prb(\tau_M\leq k)\geq1-(1-p_M)^k
- >1-(1-p_G)^k\geq\Prb(\tau_G\leq k).
+ \Prb(\tau_M\leq n)\geq1-(1-p_M)^n
+ >1-(1-p_G)^n\geq\Prb(\tau_G\leq n).
 \]
-For $2\leq k\leq W$, using
-$\Ex[\min(\tau,k)]=\sum_{j=0}^{k-1}\Prb(\tau>j)$ and multiplying by the
-common cycle cost $c$ gives the strict truncated compute-cost comparison in
-Proposition~\ref{prop:window}. At $k=1$ both policies pay the first proposal
+For $2\leq n\leq W$, using
+$\Ex[\min(\tau,n)]=\sum_{j=0}^{n-1}\Prb(\tau>j)$ and multiplying by the
+common opportunity cost $c$ gives the strict truncated compute-cost comparison in
+Proposition~\ref{prop:window}. At $n=1$ both policies pay the first opportunity
 cost in the truncated-cost convention, so only the success-probability
 comparison is strict there.
+
+\subsection{Stage 2 proof of deterministic niche persistence}
+\begin{proof}[Proof of Proposition~\ref{prop:niche-persistence}]
+For every $j\in\mathsf S(C_k)$, the intersection
+$C_k\cap\mathcal N_j$ is nonempty, so $e_j(C_k)$ exists. By construction,
+$e_j(C_k)\in Q(C_k)\subseteq T_k=P_{k+1}$. Hence
+$\mathsf S(C_k)\subseteq\mathsf S(P_{k+1})$. Conversely $T_k\subseteq C_k$,
+so $\mathsf S(P_{k+1})\subseteq\mathsf S(C_k)$ and equality holds. Since
+$P_k\subseteq C_k$, monotonicity follows. If $C_k$ is the unique union of
+$P_k$ and $O_k$, applying $g$ gives
+$\mathsf S(C_k)=\mathsf S(P_k)\cup\mathsf S(O_k)$. A rejected outcome is
+$\partial\notin\mathcal X$ and is absent from $O_k$, so it changes none of
+these inclusions. No claim about which member realizes a niche is used.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:membership}]
+The two components $Q(C)$ and $F_m(C)$ are disjoint. The first contains exactly
+the declared score-and-hash winner in each occupied niche. The second is, by
+definition, exactly the prefix of length $m-|Q(C)|$ of the global order on the
+remaining candidates. Their union therefore yields the stated necessary and
+sufficient condition. A previous parent that loses both tests is absent from
+$T_m(C)$ even though another member of its niche is present.
+\end{proof}
+
+\subsection{Stage 2.1: corrected proof of the causal bridge-chain bound}
+\begin{proof}[Proof of Proposition~\ref{prop:bridge-chain}]
+By non-anticipation, $H_\ell$ and the two bridge sets used in cycle
+$k+\ell$ are known at $\mathcal F_{k+\ell}^{\rm pre}$; in particular the
+terminal set is selected before its final mutation batch. Conditional on
+any positive-probability pre-generation history in $H_\ell$, the ordered
+conditional-probability identity gives
+\begin{align*}
+ &\Prb(G_\ell\cap R_\ell\mid\mathcal F_{k+\ell}^{\rm pre})\\
+ &\quad=
+ \Prb(G_\ell\mid\mathcal F_{k+\ell}^{\rm pre})\,
+ \Prb(R_\ell\mid\mathcal F_{k+\ell}^{\rm pre},G_\ell)
+ \geq a_\ell\rho_\ell.
+\end{align*}
+The event-conditioned factor is only required on histories where the first
+factor is positive. In the degenerate case $a_\ell=0$, the desired lower
+bound is zero without any retention condition. No independence or
+random parent/operator selection is used.
+
+Since $H_\ell\in\mathcal F_{k+\ell}^{\rm pre}$, the tower property yields
+\[
+ \Prb(H_{\ell+1})
+ =\Ex\!\left[\mathbf 1_{H_\ell}
+       \Prb(G_\ell\cap R_\ell\mid
+                     \mathcal F_{k+\ell}^{\rm pre})\right]
+ \geq a_\ell\rho_\ell\Prb(H_\ell).
+\]
+Starting with $\Prb(H_0)=1$ and iterating through $\ell=L-2$
+gives
+\[
+ \Prb(H_{L-1})\geq
+       \prod_{\ell=0}^{L-2}a_\ell\rho_\ell.
+\]
+In the last cycle, pre-generation target correctness is
+$B_L\subseteq\HARD_{k+L-1}$ almost surely on admissible histories.
+Thus $H_{L-1}\cap G_{L-1}$ implies a current-solver true-hard instance
+is present in the final candidate union, and has probability at least
+$\Prb(H_{L-1})a_{L-1}$. Requiring $R_{L-1}$ as well yields the
+acquisition-level factor $\rho_{L-1}$.
+
+For the operator-specific sufficient condition, choose a bridge parent
+from $P_{k+\ell}\cap B_\ell$ by a fixed measurable rule (for example the
+least hash, assuming the hash convention distinguishes needed
+phenotypes). Because all eleven operators are scheduled, the designated
+operator is attempted on that parent. Its full, rejection-aware
+conditional kernel assigns mass at least $a_\ell$ to $B_{\ell+1}$.
+Provided that hash deduplication identifies equal solver-visible
+phenotypes on the realized pool (or at least preserves membership in
+$B_{\ell+1}$), an accepted bridge result remains represented in the
+candidate union even if it duplicates an earlier occurrence.
+This establishes the generation premise.
+
+Once the complete scored candidate union is conditioned upon, $R_\ell$
+is deterministic and $\Prb(R_\ell\mid\mathcal F_{k+\ell}^{\rm score})
+=\mathbf 1_{R_\ell}$. Therefore a pathwise elite/global-fill membership
+certificate guarantees $\rho_\ell=1$. A fractional $\rho_\ell$ can only
+be a conditional average over randomness \emph{not} already revealed by
+$\mathcal F_{k+\ell}^{\rm pre}$, and is not implied by the deterministic
+selector itself. The cost statement follows when the total charged cost
+of the completed certified chain is bounded by $B$ as assumed.
+\end{proof}
+
+For repeated certified blocks, condition on each no-hit block boundary.
+An explicit regeneration hypothesis must restore both the initial bridge
+availability and the same conditional transition/retention bounds.
+The history-based survival lemma then gives survival at most $(1-p)^r$
+after $r$ blocks and expected cost at most $C/p$ if the cost of each
+block is bounded above by $C$. No regeneration claim is made for S6-AE.
 
 \subsection{Dependency audit}
 \begin{itemize}
@@ -90,23 +187,53 @@ hazards. A niche aggregation is valid for that purpose only under lumpability.
 on reaching the true current hard region conditional on the useful parent
 being selected. A graph path's existence alone is insufficient; its
 probability and compute cost matter.
-\item \textbf{Parent retention:} a lower bound $r$ must concern availability
-of a genuinely useful parent at each no-hit proposal. Historical presence
-before a target shift does not establish continued usefulness afterward.
+The Stage 2 bridge bound instead exposes operator-specific accepted-output
+mass in $\widetilde K_{k,o}$; rejection probability remains in the denominator
+and no accepted-only renormalization is permitted.
+\item \textbf{Parent retention and scheduling:} a lower bound $r$ must concern
+availability of a genuinely useful parent at the declared opportunity.
+Historical presence before a target shift does not establish continued
+usefulness afterward. The S6-AE parent/operator schedule is deterministic:
+conditional on $P_k$, each parent receives all 11 operators. Hence no random
+parent-selection factor $\gamma$ may be inserted; a batch reachability bound
+$\alpha_{\rm batch}$ must be derived under the declared RNG ensemble.
+\item \textbf{Causal target choice and retention information:} the bridge
+sets must be fixed before their respective generation batches. The last
+target is the true hard region of the \emph{entering} solver checkpoint.
+Selection is deterministic after scoring; a nontrivial fractional
+$\rho_\ell$ must be conditioned on a coarser, pre-generation sigma-algebra,
+or replaced with a pathwise rank certificate.
+\item \textbf{Hash-quotient semantics:} niche occupancy only needs
+equal-hash candidates to share a niche, but bridge-chain propagation
+additionally needs equal hashes to identify equivalent phenotypes or
+at least to preserve membership in every chosen bridge set.
 \item \textbf{Surrogate accuracy:} no accuracy is needed for the abstract
-survival lemma. To infer $\alpha$ or $r$ from HGB40-driven selection, a
-calibration/error assumption connecting $\widehat h_t$ to the true
-$\HARD_t$ is essential. Without it, the implementation-level step is OPEN.
+survival lemma. To pass from $D_k^{\rm gen}$ to
+$D_k^{\rm acq}$, a retention condition connecting $\widehat h_k$ and the QD
+rule to true $h_k^{\rm BQ}$ and future reachability is essential. Perfect
+current-hardness prediction alone is insufficient when tied candidates have
+different mutation futures. Without such a bridge, the implementation-level
+step is OPEN.
+\item \textbf{Capacity and selection:} niche persistence uses
+$|\mathsf S(C_k)|\leq m$ and inclusion of the complete floor $Q(C_k)$. It does
+not imply bridge persistence. The latter requires the exact elite/global-fill
+membership condition or another proved retention certificate.
+\item \textbf{Changing hardness:} the bridge theorem allows cycle-indexed
+kernels and sets, but $B_L\subseteq\HARD_{k+L-1}$ must refer to true hardness
+under the entering checkpoint for the final acquisition cycle. Current HGB
+quality cannot silently replace that condition.
 \item \textbf{Cost normalization:} the comparison assumes equal deterministic
-cost $c$ per proposal. If BLADE archive updates, HGB40 inference, or BQ
-validation change cost, proposal-count dominance does not imply compute-cost
+cost $c$ per opportunity. If BLADE archive updates, HGB40 inference, or BQ
+validation change cost, opportunity-count dominance does not imply compute-cost
 dominance.
 \end{itemize}
 
 \subsection{Failure boundary}
-\status{OPEN} The proof does not establish that BLADE's conditional hazard is
+\mstatus{OPEN for a BLADE-specific dominance claim}
+\istatus{PARTIAL} \nstatus{OPEN} The proof does not establish that BLADE's conditional hazard is
 above the fixed-generator or HAC hazard. It fails to produce a BLADE result
-at the exact step where one would need verified bounds on $r,\gamma,\alpha$
-and a comparator upper bound $p_G$, all in the same compute units. The
+at the exact step where one would need verified bounds on $r$ and
+$\alpha_{\rm batch}$ (or a direct generation/acquisition hazard bound) and a
+comparator upper bound $p_G$, all in the same compute units. The
 counterexamples show these inequalities can reverse. No unproved transition
 from a structural-memory narrative to hazard dominance is made.

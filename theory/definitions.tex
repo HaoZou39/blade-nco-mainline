@@ -2,106 +2,366 @@
 
 \subsection{Structural states and mutation}
 Let $\mathcal{Z}$ be the set of encoded candidate instances and let
-$\phi:\mathcal{Z}\to\mathcal{X}$ map an encoding to the solver-visible
-structural phenotype. Encodings $z,z'$ are equivalent when
+$\phi:\mathcal{Z}\to\mathcal{X}$ be a measurable map from encodings to the
+solver-visible TSP instance. For the inspected fixed-size experiments one may
+take $\mathcal{X}$ to be the valid canonical subset of
+$[0,1]^{100\times2}$, equipped with its Borel $\sigma$-algebra
+$\mathcal{B}_{\mathcal X}$; a variable-size model may instead use a measurable disjoint
+union over instance sizes. Encodings $z,z'$ are equivalent when
 $\phi(z)=\phi(z')$. A structural state is a phenotype $x\in\mathcal{X}$,
 for example a canonical graph/instance together with whichever structural
 attributes determine solver input. The exact canonicalization and attributes
-are implementation questions, not assumptions about FOGA-11.
+are implementation questions. We assume $\phi$ and every event used below are
+measurable.
 
-For finite-budget analysis, take $\mathcal{X}_B$ to be the set of
-phenotypes reachable within budget $B$; assume it is finite. A mutation kernel
-$K_t(x'\mid x,s)$ is the conditional distribution of the next phenotype given
-parent phenotype $x$ and full pre-mutation state $s$. It includes the selected
-structural edit, repair, and canonicalization. Dependence on $t$ or $s$ permits
-operator adaptation and history-dependent mutation. The corresponding kernel
-on encodings is not necessarily Markov after projecting through $\phi$.
+The instance space is not made finite by a finite search budget. A realized
+finite-budget run contains finitely many attempted instances, but the support
+of a continuous-coordinate mutation kernel can remain uncountable. For each
+BQ cycle $k$ and FOGA operator $o$, adjoin an isolated rejection symbol
+$\partial$ and write
+$\overline{\mathcal X}=\mathcal X\mathbin{\dot\cup}\{\partial\}$ with the
+natural extended sigma-algebra. Let
+\[
+ \widetilde K_{k,o}(x,\cdot\mid s)
+\]
+be a Markov kernel from a parent $x$ and full pre-mutation state $s$ into
+$\overline{\mathcal X}$. An outcome in $\mathcal X$ is the valid repaired
+phenotype of an accepted proposal; $\partial$ records a rejected or invalid
+proposal. The kernel includes stochastic operator parameters, repair, and
+canonicalization. Dependence on $k$ or $s$ permits solver-, archive-, or
+history-dependent behavior. The corresponding encoding process need not
+remain Markov after projection through $\phi$.
+
+Let $d:\mathcal{X}\to\mathbb{R}^4$ be the measurable QD descriptor map,
+including the frozen normalization, and let
+$g:\mathcal{X}\to\{1,\ldots,K\}$ be nearest-centroid assignment with a
+declared measurable tie rule. Then
+$\mathcal{N}_j=g^{-1}(\{j\})$ gives a finite measurable partition after
+discarding any empty cells. Finiteness belongs to the niche index set, not to
+$\mathcal{X}$.
+
+\subsection{Two time scales and the S6-AE batch}
+Use $k$ only for the BQ adaptation cycle. At the start of cycle $k$, the BQ
+solver state $q_k$ and the parent population
+$P_k=(X_{k,1},\ldots,X_{k,m})$ are fixed, with $m=10{,}000$ in S6-AE. Let
+$P_k$ also denote its membership set when used inside $\subseteq$, $\cap$, or
+$\mathsf S(\cdot)$; the ordered tuple is used for scheduling. Let
+$\mathcal{O}$ be the ordered list of the 11 FOGA operators. The within-cycle
+mutation attempts are indexed by $(i,o)\in\{1,\ldots,m\}\times\mathcal{O}$:
+\[
+ Z_{k,i,o}\sim \widetilde K_{k,o}(X_{k,i},\cdot\mid S_k).
+\]
+This notation denotes a conditional law, not random parent or operator
+selection. The inspected implementation uses the deterministic Cartesian
+schedule ``parents in stored order, then operators in registry order,'' so
+each parent--operator pair is attempted exactly once. A content-derived seed
+from $(k,\operatorname{hash}(X_{k,i}),o)$ drives the stochastic operator
+parameters and repair. If $Z_{k,i,o}=\partial$, that scheduled attempt produces
+no child and is not repeated. Conditioning the kernel on acceptance would
+instead describe an implicit-resampling algorithm and is not used here.
+
+Let $\operatorname{FU}$ retain first occurrences in a finite ordered list by
+instance hash. Apply it to the subsequence of
+$(Z_{k,i,o})_{i,o}$ lying in $\mathcal X$ to obtain the accepted,
+child-deduplicated list $O_k$. An accepted duplicate is removed by this
+deterministic map; it is not redrawn. Let
+$C_k=\operatorname{unique}(P_k\cup O_k)$ be the candidate union, retaining
+the first occurrence under the declared order. In statements that treat
+hash-based deduplication as mathematical set union, assume that equal hashes
+identify the same solver-visible phenotype on the realized finite pool.
+For the weaker occupied-niche equality alone, it is sufficient that
+equal-hash candidates have the same niche label:
+\[
+ \operatorname{hash}(x)=\operatorname{hash}(y)
+ \ \Longrightarrow\ g(x)=g(y)
+ \qquad (x,y\text{ in the pre-deduplication pool}).
+\]
+Without this compatibility assumption, first-occurrence deduplication could
+erase a genuinely different offspring niche. The implementation checks
+content-derived hashes operationally; cryptographic collision resistance is
+not a literal mathematical injectivity theorem.
+At C00 S6-AE reuses the hash-locked corrected union; later cycles construct
+this union directly. The
+cycle then fits/scores with HGB40, selects the acquisition/next-parent set,
+obtains exact labels for that selected set, and only then adapts the BQ solver
+from $q_k$ to $q_{k+1}$. Thus within-cycle mutation attempts and solver cycles
+must not share one index.
 
 \subsection{Population memory and parent survival}
-At proposal epoch $t$, let $P_t$ be the parent population (a multiset of
-encodings or phenotypes) and $A_t$ any quality-diversity archive. Let $S_t$
+At BQ cycle $k$, let $P_k$ be the ordered parent population and $A_k$ the
+branch-local labeled archive. Let $S_k$
 collect scores, lineage information, solver state, and other algorithm
-variables that affect the next transition. Thus $M_t=(P_t,A_t,S_t)$ is the
+variables that affect the next transition. Thus $M_k=(P_k,A_k,S_k)$ is the
 operational memory state. Parent survival is a transition event: for parent
 $i$, its survival probability is
 \[
- r_{t,i}=\Prb(i\in P_{t+1}\mid M_t,\text{environment at }t).
+ r_{k,i}=\Prb(X_{k,i}\in P_{k+1}\mid\mathcal{F}_{k}^{\rm pre}).
 \]
-This is distinct from its parent-selection probability
-$\pi_{t,i}=\Prb(i\text{ is selected for a proposal}\mid M_t)$.
-Retaining a parent does not imply it is selected, and selection does not
-guarantee a useful mutation. The full process may be time-inhomogeneous
-Markovian in $(M_t,\theta_t,q_t)$ if that state is sufficient; a niche label
-or niche-count vector alone need not be.
+In a generic policy this may differ from a proposal-selection probability.
+For S6-AE, however, no such random parent-selection variable is present:
+every member of $P_k$ receives all 11 scheduled mutations. Population update
+is a deterministic function of the realized candidate union, HGB40 scores,
+niche assignments, and hash tie-breaks. Randomness can still enter through
+the roots, mutation parameters, calibration sample, model fitting, training
+permutations, or nondeterministic numerical execution. The full process may
+be time-inhomogeneous Markovian in a sufficiently rich
+$(M_k,\theta_k,q_k)$; a niche label or count vector alone need not be.
+
+For a finite candidate set $A$, define its occupied-niche set by
+\[
+ \mathsf S(A)=\{g(x):x\in A\}.
+\]
+For a finite unique candidate union $C$ and score $\widehat h$, let
+$e_j(C)$ be the maximum-score member of $C\cap\mathcal N_j$, using ascending
+instance hash to break ties, and define the per-niche floor
+\[
+ Q(C)=\{e_j(C):j\in\mathsf S(C)\}.
+\]
+This set has $|\mathsf S(C)|$ members, not 10,000 members in general. If the
+population capacity is $m$, $|\mathsf S(C)|\leq m\leq|C|$, let $F_m(C)$ be the
+first $m-|Q(C)|$ candidates of $C\setminus Q(C)$ under global descending
+$\widehat h$ and ascending-hash tie order. The complete selected population is
+\[
+ T_m(C)=Q(C)\cup F_m(C).
+\]
+The notation denotes the membership set; the implementation also records a
+deterministic order.
+
+In verified S6-AE, $m=10{,}000$, $K=1000$, $Q_k=Q(C_k)$, and
+$T_k=T_m(C_k)$. The result has 10,000 unique members and is used both as the
+BQ acquisition set and next parent population: $P_{k+1}=T_k$.
+``Elite-QD1000'' therefore names the occupied-niche floor $Q_k$, not the full
+$T_k$. The score can change at every cycle without changing the fixed
+partition $g$.
+
+For any $x\in C$, the deterministic membership criterion is
+\[
+ x\in T_m(C)\quad\Longleftrightarrow\quad
+ x=e_{g(x)}(C)\ \text{or}\
+ \bigl[x\notin Q(C)\ \text{and}\
+ \operatorname{rank}_{C\setminus Q(C)}(x)\leq m-|Q(C)|\bigr].
+\]
+Consequently, retaining a niche does not imply retaining any particular
+parent hash in that niche.
+
+\subsection{Causal information structure and time-indexed bridge sets}
+For each cycle $t$, let $\mathcal F_t^{\mathrm{pre}}$ represent all information
+available immediately before resolving the designated mutation batch: the
+entering solver state $q_t$, available parents and archive, and any previously
+realized random inputs and scores. It must exclude randomness of the batch
+still to be drawn under the probability ensemble. Let
+$\mathcal F_t^{\mathrm{batch}}$ add the realized accepted/rejected outputs and
+candidate union, and let $\mathcal F_t^{\mathrm{score}}$ additionally contain
+all scores, niche assignments, and tie-break data necessary for selection.
+With the verified deterministic Elite-QD rule, the event that a particular
+bridge is retained is measurable with respect to
+$\mathcal F_t^{\mathrm{score}}$, and its conditional probability given that
+complete information is its indicator (zero or one).
+The probabilistic retention premise below is therefore conditioned on the
+\emph{pre-batch} information, not the fully resolved selection state.
+
+For a prospective chain starting at cycle $k$, choose measurable bridge sets
+$B_0,\ldots,B_L$ causally. The initial set $B_0$ is known at
+$\mathcal F_k^{\mathrm{pre}}$. For $\ell=0,\ldots,L-1$, choose the next
+set $B_{\ell+1}$ using only $\mathcal F_{k+\ell}^{\mathrm{pre}}$,
+\emph{before} drawing that cycle's batch, and keep its identity fixed until
+the next retention step. A measurable random-set formulation is allowed if
+its membership event is jointly measurable. Thus $B_\ell$ is already fixed
+when it is used as a parent-availability certificate at cycle $k+\ell$.
+No bridge set may be chosen retroactively to fit a successful offspring.
+
+Let
+\[
+ E_\ell=\{P_{k+\ell}\cap B_\ell\neq\varnothing\},\qquad
+ G_\ell=\{C_{k+\ell}\cap B_{\ell+1}\neq\varnothing\},
+\]
+and write
+\[
+ R_\ell=\{T_{k+\ell}\cap B_{\ell+1}\neq\varnothing\}.
+\]
+Since $P_{k+\ell+1}=T_{k+\ell}$, $R_\ell=E_{\ell+1}$.
+$E_\ell$ is measurable before cycle $k+\ell$'s generation, whereas
+$G_\ell$ and $R_\ell$ become measurable after generation and selection.
+The bridge-success prefix is $H_0=E_0$ and
+$H_{\ell+1}=H_\ell\cap G_\ell\cap R_\ell$.
+
+For terminal correctness, the final $B_L$ must be selected at or before
+$\mathcal F_{k+L-1}^{\mathrm{pre}}$, when the entering solver
+$q_{k+L-1}$ is known, and satisfy
+\[
+ B_L\subseteq\mathcal H_{k+L-1}
+ \quad\text{almost surely on admissible pre-generation histories}.
+\]
+This condition allows the final target to depend causally on the current
+solver, but forbids selection of $B_L$ using an unseen future checkpoint or
+the realized final offspring. If all bridge sets are instead frozen at
+cycle $k$, terminal inclusion must hold across the subsequently possible
+solver trajectories; this is a stronger, robust-target assumption.
+
+A prospective future-reachability value can be written
+\[
+ V_{k,L}(x)=\Prb(\text{a declared future true-hard set is hit within $L$
+ cycles}\mid x\text{ is retained at cycle }k,\ \mathcal F_k).
+\]
+This value generally depends on other population members, future selection,
+and the adapted solver states. It need not be determined by current BQ
+hardness or current HGB prediction.
+
+\subsection{Probability space and frozen executions}
+Let $(\Omega,\mathcal{F},\Prb)$ carry exactly the random inputs declared for
+the analysis: possibly random initial roots, content-derived operator seeds
+and their stochastic parameters/repair, seeded archive calibration sampling,
+HGB estimator seeds, BQ training permutations and suffix sampling, and any
+explicit selection randomness in a comparator. Conditioning on the frozen
+S6-AE roots, source artifacts, software/runtime, and all recorded seeds gives
+a single realized trajectory $\omega_0$; many nominal ``probabilities'' then
+collapse to zero or one. A probabilistic reachability theorem must therefore
+state which inputs vary across $\Omega$. Repeatedly serializing a deterministic
+batch does not create random parent/operator selection, and unspecified
+hardware nondeterminism is not silently treated as a scientific sampling law.
 
 \subsection{Hardness and moving target}
-Let $\theta_t$ describe the task/environment and $q_t$ the state of the
-co-adapting BQ solver. Define true hardness $h_t(x)=h(x;\theta_t,q_t)$,
+Let $\theta_k$ describe the task/environment and $q_k$ the state of the
+co-adapting BQ solver before cycle-$k$ adaptation. Define true BQ hardness
+$h_k^{\rm BQ}(x)=h(x;\theta_k,q_k)$,
 where a larger value means harder under a prespecified solver-performance
-metric. For threshold $\kappa$, the true hard region at epoch $t$ is
+metric. For threshold $\kappa$, the true hard region at cycle $k$ is
 \[
- \HARD_t=\{x\in\mathcal{X}_B:h_t(x)\geq\kappa\}.
+ \HARD_k=\{x\in\mathcal{X}:h_k^{\rm BQ}(x)\geq\kappa\}.
 \]
 This definition allows the target to move because either the task or solver
-state changes. The event of discovery is evaluated at a declared evaluation
-epoch: a proposal $X_t$ hits when $X_t\in\HARD_t$. For the proofs, $\HARD_t$
-must be determined before drawing/evaluating $X_t$ (it may be random but
-predictable from the pre-proposal history). Whether actual BLADE labels a
-candidate ``hard'' by HGB40 alone or by BQ verification is unspecified.
+state changes. During the S6-AE mutation/acquisition part of cycle $k$, $q_k$
+is fixed; adaptation produces $q_{k+1}$ only after $T_k$ is frozen and labeled.
+For the proofs, the target attached to a declared opportunity must be
+predictable from its pre-opportunity history.
 
-HGB40 supplies an estimate $\widehat h_t(x)$, not the definition of the
-latent target. Surrogate ranking can be used by selection, but an estimate of
-reachability into $\HARD_t$ requires calibration or a direct verification
-model. Without such a condition, true-hardness hit probabilities cannot be
-inferred from HGB40 scores.
+HGB40 supplies a cycle-specific prediction $\widehat h_k(x)$ (in the
+implementation, predicted $\log(1+\mathrm{LBQ})$), not the definition of
+$h_k^{\rm BQ}$ or $\HARD_k$. Define the latent generation-level event
+\[
+ D_k^{\rm gen}=\{\exists x\in C_k: h_k^{\rm BQ}(x)\geq\kappa\},
+\]
+and the acquisition-level event
+\[
+ D_k^{\rm acq}=\{\exists x\in T_k: h_k^{\rm BQ}(x)\geq\kappa\}.
+\]
+The former concerns what the generation-level candidate union contains,
+including retained parents and accepted children, even when exact hardness
+was not measured; the latter concerns what survived HGB/QD acquisition and can be
+verified. They are distinct from the event
+$\{\widehat h_k(x)\geq\widehat\kappa\}$ and from post-adaptation hardness
+$h_{k+1}^{\rm BQ}(x)$. Without a calibration/ranking-and-retention condition,
+none of these quantities can be substituted for another.
+
+\subsection{Presence, novelty, and reactivation}
+The events $D_k^{\rm gen}$ and $D_k^{\rm acq}$ test \emph{presence}; the
+parent-inclusive union can satisfy them using an old instance without
+creating a new one. Let $\mathcal V_{k-1}^{\rm gen}
+=\bigcup_{t<k}C_t$ and $\mathcal V_{k-1}^{\rm acq}
+=\bigcup_{t<k}T_t$ denote previously generated and acquired phenotype sets,
+interpreted under the declared hash/phenotype compatibility rule.
+For a mathematically new, valid offspring of current true hardness at least
+$\kappa$, exclude both previously generated phenotypes and the \emph{current}
+parent population (including the initial roots of cycle 0):
+\[
+ D_k^{\rm new,gen}
+ =\left\{\exists x\in
+ O_k\setminus(\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
+\]
+This exclusion is essential when a valid mutation returns the identical
+parent phenotype or when its child hash duplicates another current parent.
+It does not alter the parent-inclusive presence event $D_k^{\rm gen}$.
+A new acquisition under the cumulative acquisition ledger is
+\[
+ D_k^{\rm new,acq}
+ =\{\exists x\in T_k\setminus\mathcal V_{k-1}^{\rm acq}:
+               h_k^{\rm BQ}(x)\geq\kappa\}.
+\]
+A newly generated \emph{and} acquired hard instance satisfies
+\[
+ D_k^{\rm new,gen\cap acq}=
+ \left\{\exists x\in
+ (O_k\cap T_k)\setminus
+ (\mathcal V_{k-1}^{\rm gen}\cup P_k):
+ h_k^{\rm BQ}(x)\geq\kappa\right\}.
+\]
+This is a stricter event than $D_k^{\rm new,acq}$: an old parent may be
+selected for the first time, but is not thereby a newly generated phenotype.
+An old instance may become hard under $q_k$ after being non-hard under an
+earlier checkpoint; this is \emph{hardness reactivation}, not instance
+novelty. A previously unvisited hard niche is a different event again.
+The baseline bridge-chain theorem below concerns \emph{presence}, not these
+stronger novelty events; it may not be cited as a novelty-discovery bound
+without additional exclusion conditions.
 
 \subsection{First hit and computational normalization}
-Index proposal/evaluation cycles by $i$. Let
+For the abstract survival lemma, index declared comparison opportunities by
+$j$; $j$ is not automatically a BQ cycle. An opportunity may be one serialized
+mutation attempt, one full generation event $D_k^{\rm gen}$, or one
+acquisition event $D_k^{\rm acq}$, but the choice must be fixed before the
+comparison. Let
 \[
- \tau=\inf\{i\geq 1:X_i\in\HARD_i\},\qquad
- C_\tau=\sum_{i=1}^{\tau}c_i,
+ \tau=\inf\{j\geq 1:Y_j=1\},\qquad
+ C_\tau=\sum_{j=1}^{\tau}c_j,
 \]
-where $c_i>0$ is the normalized compute cost through evaluating proposal $i$.
+where $Y_j$ is the declared true-hardness discovery event and $c_j>0$ is the
+normalized compute cost through resolving opportunity $j$.
 The budget-$B$ discovery event is $\{C_\tau\leq B\}$. The cost must include
 the work that differs between methods (structural generation, HGB40 inference,
 archive operations, and BQ evaluation/verification, as applicable). Counting
 generations alone is not computational normalization. The elementary bound
-below uses deterministic proposal costs $c_i$; random or method-dependent
+below uses deterministic opportunity costs $c_i$; random or method-dependent
 costs require a cost-aware hazard analysis and are not silently replaced by
 generation counts.
 
 For a policy $\pi$, define its conditional hit hazard
 \[
- q_i^\pi=\Prb(X_i\in\HARD_i\mid\mathcal{F}_{i-1}^\pi),
+ q_j^\pi=\Prb(Y_j=1\mid\mathcal{F}_{j-1}^\pi),
 \]
-where $\mathcal{F}_{i-1}^\pi$ is the complete pre-proposal history. On a
-no-hit history, a lower bound on $q_i^\pi$ is a reachability certificate. A
+where $\mathcal{F}_{j-1}^\pi$ is the complete pre-opportunity history. On a
+no-hit history, a lower bound on $q_j^\pi$ is a reachability certificate. A
 Markov state representation is one way to calculate this hazard, but the
 history-based definition does not require Markovianity.
 
-\subsection{Abstraction versus supplied BLADE-NCO context}
+\subsection{Abstraction versus verified BLADE-NCO context}
 \begin{center}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
 \toprule
 Supplied component & Representation here & Unspecified for a BLADE-specific proof \\
 \midrule
-FOGA-11 mutation & Phenotype kernel $K_t$ & Edit set, operator probabilities, repairs, and transition support \\
-Inherited parents; Elite-QD1000 (P=T) & Parent population $P_t$ and archive $A_t$ & Meaning of $P=T$, archive update, parent survival, and selection probabilities \\
-HGB40 and BQ co-adaptation & Surrogate $\widehat h_t$ and true $h(x;\theta_t,q_t)$ & Hardness metric/threshold, calibration, solver update timing, and validation cost \\
-Fixed generator and HAC & Comparator proposal kernels & Exact proposal laws, gradient access, stopping rules, and per-proposal compute \\
+FOGA-11 mutation & Eleven extended kernels $\widetilde K_{k,o}$ on $\overline{\mathcal X}$ & Exact kernel laws over stochastic parameters, rejection, and support bounds \\
+Inherited parents; Elite-QD1000 (P=T) & $P_k$, measurable partition $g$, deterministic HGB/QD selection, $P_{k+1}=T_k$ & Distributional survival/reachability bounds under a declared ensemble \\
+HGB40 and BQ co-adaptation & Prediction $\widehat h_k$, true BQ hardness $h_k^{\rm BQ}$, solver state $q_k$ & Scientific threshold, calibration/retention bridge, and matched validation cost \\
+Fixed generator and HAC & Comparator proposal kernels & Exact proposal laws, gradient access, stopping rules, and per-opportunity compute \\
 Finite budget & Cumulative cost $C_\tau$ & Which compute resources are charged and how variable costs are normalized \\
 \bottomrule
 \end{tabular}
 \end{center}
-Accordingly, the formal model is a deliberately explicit abstraction, not a
-claim that BLADE-NCO has exactly these transition probabilities or state
-variables. The missing implementation semantics are recorded as open
+Accordingly, the formal model is a deliberately explicit abstraction. The
+verified schedule and selection mapping do not assert unobserved transition
+probabilities. The remaining implementation-to-theory gaps are recorded as open
 assumptions in \texttt{assumption\_register.md}.
 
 \subsection{Niche aggregation and the Markov condition}
-Suppose $g$ maps the full state to a niche label or niche-count summary. The
-aggregated process $g(M_t)$ is Markov only if states with the same aggregate
-have equal transition probabilities into every aggregate block (strong
-lumpability). Otherwise the aggregate hides parent identity, within-niche
-structure, or solver/archive history that predicts the next transition. An
-exact failure example is given in Section~\ref{sec:counterexamples}.
+Suppose a Markov kernel $Q$ on a full state space is aggregated by a finite
+measurable partition $\{B_1,\ldots,B_L\}$. The strong-lumpability equalities
+\[
+ Q(s,B_j)=Q(s',B_j)\quad
+ \text{for every }s,s'\in B_i\text{ and every }i,j
+\]
+are sufficient for the aggregate block process to be Markov for every initial
+law. They are not necessary for a particular initial law. A weaker,
+distribution-dependent Markov aggregation may hold when the conditional
+within-block law induced by that initial distribution and history makes the
+averaged transition to each $B_j$ history-independent (possibly with a
+time-dependent aggregate kernel). Such a claim must name that law and prove
+the conditional equality; it is not obtained merely by averaging once.
+
+The counterexample in Section~\ref{sec:counterexamples} shows failure of the
+strong condition and therefore invalidates an implementation-independent
+Markov claim based on niche alone. It does not rule out a special weak
+aggregation for a specified initial distribution. In S6-AE, niche summaries
+hide parent identity, within-niche HGB order, candidate age, solver/archive
+state, and the deterministic hash tie-break, so strong lumpability is not
+established and a distribution-dependent alternative remains OPEN.
