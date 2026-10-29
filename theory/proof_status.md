@@ -1,4 +1,4 @@
-# Proof status — Stages 1.5–2.1
+# Proof status — Stages 1.5–3B
 
 Mathematical validity, implementation applicability, and scientific novelty are separate judgments. `PROVED` in the second column never implies `VERIFIED` or `NOVEL` in the next columns.
 
@@ -39,6 +39,14 @@ Mathematical validity, implementation applicability, and scientific novelty are 
 | Historical tracking-regret recurrence, `R_(k,j) <= R_(k-1,j)+2 epsilon_(k,j)+2 delta_(k-1,j)` | **PROVED under complete-pool error, elite availability, and full-history drift** | **OPEN** | **STANDARD DYNAMIC-REGRET-STYLE RECURRENCE** | The proof is valid; its strongest premises are not justified by current S6-AE artifacts. |
 | Bounded per-cycle error and drift imply a bounded long-run tracking-regret steady state | **DISPROVED** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | A zero-drift, one-niche, capacity-one construction realizes linear `2k epsilon` regret. A contraction, refresh, archive, or bounded-unavailability condition is additionally necessary. |
 | Low current-hardness regret implies future reachability or downstream BQ training benefit | **DISPROVED without alignment assumptions** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Separate exact examples give zero tracking regret with bridge loss and with unchanged or worse downstream evaluation. |
+| Exact Elite-QD/global exchange, `T_k \ G_k = Q_k \ G_k` and symmetric difference at most `2K` | **PROVED** | **VERIFIED in C00-C09** | **STANDARD CONSTRAINED TOP-K EXCHANGE** | The global-fill portion lies inside `G_k`; only floor elites outside `G_k` are forced, displacing the same number of global members. |
+| Nonnegative predicted QD opportunity cost `Delta_QD` | **PROVED** | **VERIFIED / EXACTLY COMPUTABLE** | **STANDARD** | Pure Global Top10k maximizes the HGB score sum. The result concerns surrogate scores, not true LBQ. |
+| Selected/current labels point-identify full-pool niche maxima, elite regret, or hard-tail recall | **DISPROVED** | **NOT IDENTIFIABLE FROM INSPECTED ARTIFACTS** | **STANDARD SELECTIVE-LABEL IMPOSSIBILITY** | Two finite truth completions agree on every observable and differ arbitrarily on unlabeled candidates. |
+| Existing labels point-identify the true current-checkpoint `T_k`-versus-`G_k` comparison | **DISPROVED for the frozen label pattern** | **NOT IDENTIFIABLE FROM INSPECTED ARTIFACTS** | **NOT CLAIMED** | Every cycle has unlabeled members of `G_k \ T_k`; their values can reverse the full-set comparison. |
+| Known bounded hardness range gives sharp `G_k`-minus-`T_k` sum interval | **PROVED conditional** | **OPEN** | **STANDARD PARTIAL IDENTIFICATION** | Endpoint assignment to each unlabeled displaced member attains the bounds. No finite scientific upper endpoint is verified. |
+| At-most-`K` paired-label certificate for exact true `T_k` versus `G_k` | **PROVED** | **STRUCTURAL PART VERIFIED; LABELS INCOMPLETE** | **ELEMENTARY BUT PRACTICALLY USEFUL** | Label only missing members of `G_k \ T_k` under the same checkpoint; `T_k \ G_k` is already labeled and common members cancel. |
+| Selected-population hardness distribution and threshold count | **PROVED identifiable on `T_k`** | **VERIFIED** | **DESCRIPTIVE, NOT NOVEL** | Every acquired member has a current-checkpoint label. The claim does not extend to `C_k`. |
+| Acquisition hardness identifies downstream solver-training value | **DISPROVED without a causal assumption** | **NOT APPLICABLE as a guarantee** | **NOT CLAIMED** | Training response is a distinct outcome requiring an intervention or validated causal model. |
 
 ## Preserved Stage 1 conclusion
 
@@ -56,3 +64,12 @@ premises, but complete-candidate HGB error and full-history solver-drift bounds
 are not verified for S6-AE. The recurrence can accumulate linearly, and low
 current-hardness regret does not by itself certify reachability or training
 value. The Stage 3A decision is **C -- TRACKING_ASSUMPTIONS_NOT_JUSTIFIED**.
+
+Stage 3B adds one exact implementation-level selection identity and a standard
+selective-label impossibility result. The deterministic `Q/T/G` tradeoff and
+predicted-score cost are fully observable. Key full-pool true-hardness claims
+are not point identified because most unselected candidates, including some
+members of `G_k \ T_k` in every cycle, lack current-checkpoint labels. An exact
+paired selector comparison would need at most 1,000 additional displaced-set
+labels, but Stage 3B does not obtain them. The Stage 3B decision is
+**B -- IDENTIFIABILITY_LIMIT_CONFIRMED**.

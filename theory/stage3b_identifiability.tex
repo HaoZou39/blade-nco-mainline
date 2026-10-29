@@ -1,0 +1,328 @@
+\section{Stage 3B: observable guarantees and selective-label identifiability}
+\label{sec:stage3b-identifiability}
+
+This section freezes every Stage 3A statement and asks a different question:
+what follows from the selector and the labels that S6-AE actually records,
+without a full-pool prediction-error bound, a solver-drift bound, or an
+exchangeability assumption?  The answer has two parts.  The selector admits
+an exact, deterministic exchange identity.  In contrast, key true-hardness
+quantities are not point identified from selectively acquired labels.
+
+\subsection{Objects, total order, and observability classes}
+
+Fix a cycle $k$ and suppress $k$ where no ambiguity results.  The candidate
+union $C$ is finite and hash-deduplicated.  Define the strict total order
+$\prec$ by descending HGB40 prediction $\widehat f_k$ and, for equal
+predictions, ascending instance hash.  Let $\operatorname{Top}_r(A)$ denote
+the first $r$ elements of $A$ in this order.  For S6-AE,
+\[
+  m=10{,}000,\qquad K=1{,}000,\qquad
+  G=\operatorname{Top}_m(C),
+\]
+where $G$ is the frozen, diagnostic pure-global HGB selection.  The per-niche
+floor $Q$ contains one $\prec$-best member of every occupied niche, so
+$q=|Q|\le K\le m$.  The actual acquisition and next-parent population is
+\[
+  T=P_{k+1}
+   =Q\cup \operatorname{Top}_{m-q}(C\setminus Q).
+\]
+All set statements below concern instance identities.  The stored row order of
+$T$---floor first and global fill second---is not part of those statements.
+
+True current-checkpoint hardness remains
+\[
+  f_k(x)=\log\!\bigl(1+L_{BQ}(M_k,x)\bigr).
+\]
+Let $V_k\subseteq C_k$ be the candidates for which a verified value of $f_k$
+under the entering checkpoint $M_k$ is available.  In the inspected S6-AE
+artifacts this includes every member of $T_k$ and any current-cycle calibration
+member whose hash also lies in $C_k$.  A label obtained under $M_t$, $t\ne k$,
+is not thereby a member of $V_k$.
+
+It is useful to separate four information classes.
+\begin{enumerate}
+  \item \emph{Deterministically observable:} candidate identities, hashes,
+  descriptors, niches, HGB predictions and ranks, and the sets $Q,T,G$.
+  \item \emph{Verified true-hardness:} $f_k(x)$ only for $x\in V_k$, with
+  checkpoint identity and hash alignment verified.
+  \item \emph{Latent:} any functional that depends on an unobserved
+  $f_k(x)$ for $x\in C_k\setminus V_k$, such as a full-pool niche maximum.
+  \item \emph{Hypothetical:} quantities requiring a new sampling law, error
+  model, hardness-range restriction, future mutation law, or training-value
+  relation.
+\end{enumerate}
+Write $\mathcal O_k$ for the first two classes.  A finite-pool quantity is
+\emph{point identified} from $\mathcal O_k$ if every completion of $f_k$ on
+$C_k\setminus V_k$ that agrees with $\mathcal O_k$ gives the same value.
+
+\subsection{Exact Elite-QD versus global-top-$m$ exchange}
+
+\mstatus{PROVED}\par
+\istatus{VERIFIED for the inspected S6-AE selector and artifacts}\par
+\nstatus{STANDARD CONSTRAINED TOP-$m$ EXCHANGE}\par
+
+\begin{proposition}[Exact protected-floor exchange]
+\label{prop:qd-global-exchange}
+Let $C$ have a strict total order, let $G=\operatorname{Top}_m(C)$, and let
+$Q\subseteq C$ satisfy $q=|Q|\le m$.  If
+\[
+  T=Q\cup\operatorname{Top}_{m-q}(C\setminus Q),
+\]
+then
+\[
+  T\setminus G=Q\setminus G
+\]
+and
+\[
+ |T\setminus G|=|G\setminus T|\le |Q|\le K.
+\]
+\end{proposition}
+
+\begin{proof}
+There are $m-|G\cap Q|\ge m-q$ elements of $G\setminus Q$.  Every one of
+them precedes every element of $C\setminus G$.  Hence the first $m-q$
+elements of $C\setminus Q$ all belong to $G$, so the global-fill part of $T$
+contributes nothing to $T\setminus G$.  Therefore
+$T\setminus G=Q\setminus G$.  Both $T$ and $G$ have cardinality $m$, so their
+two directed set differences have equal cardinality.  The final inequalities
+are immediate.
+\end{proof}
+
+Thus the actual population differs from pure global selection only through
+the floor elites that lie outside the pure top $m$, together with the same
+number of displaced global members.  The result does not state that all of
+$Q$ is ``forced'': $Q\cap G$ costs no global slot.
+
+Define the predicted-score opportunity cost
+\[
+  \Delta_k^{\mathrm{QD}}
+   =\sum_{x\in G_k}\widehat f_k(x)
+    -\sum_{x\in T_k}\widehat f_k(x).
+\]
+
+\begin{proposition}[Exact surrogate-score cost]
+\label{prop:qd-predicted-cost}
+Under Proposition~\ref{prop:qd-global-exchange},
+\[
+  \Delta_k^{\mathrm{QD}}
+  =\sum_{x\in G_k\setminus T_k}\widehat f_k(x)
+   -\sum_{x\in Q_k\setminus G_k}\widehat f_k(x)
+  \ge 0.
+\]
+It is exactly computable from the frozen HGB scores and membership records.
+\end{proposition}
+
+\begin{proof}
+The common members cancel.  The two remaining sets have the same size, and
+every member of $G_k$ has score at least that of every candidate outside
+$G_k$.  Equivalently, $G_k$ maximizes the sum of scores among all
+$m$-subsets of $C_k$.  Hash tie-breaking makes membership unique but permits
+$\Delta_k^{\mathrm{QD}}=0$ when boundary scores tie.
+\end{proof}
+
+This is a deterministic surrogate-score tradeoff, not true-LBQ regret.  It
+does not imply a change in future reachability or downstream training value.
+It is an elementary exchange property of a protected set plus top-$m$ fill,
+not a new QD theorem.
+
+\subsection{Read-only S6-AE artifact audit}
+
+The selection identities were replayed from the ten frozen cycles without new
+solver calls.  Let $r_k=|T_k\setminus G_k|$ and let $D_k=G_k\setminus T_k$.
+The label set used in the table is
+\[
+ V_k=T_k\cup(B_k\cap C_k),
+\]
+where $B_k$ is the current-checkpoint calibration table.  ``Unlab. $D$'' is
+$|D_k\setminus V_k|$.
+
+\begin{center}
+\small
+\begin{tabular}{crrrrrr}
+\toprule
+cycle & $|C_k|$ & $|Q_k|$ & $r_k$ & $|V_k|$ & unlab. $D_k$ & $\Delta_k^{\rm QD}$\\
+\midrule
+C00 & 119781 & 435  & 41  & 10409 & 41  & 0.574\\
+C01 & 119700 & 831  & 463 & 18530 & 421 & 4.415\\
+C02 & 119507 & 991  & 711 & 14306 & 662 & 9.928\\
+C03 & 119487 & 1000 & 800 & 12899 & 765 & 14.322\\
+C04 & 119531 & 1000 & 838 & 12231 & 803 & 22.946\\
+C05 & 119547 & 1000 & 848 & 11767 & 820 & 27.599\\
+C06 & 119667 & 1000 & 853 & 11521 & 821 & 41.746\\
+C07 & 119661 & 1000 & 873 & 11358 & 849 & 75.619\\
+C08 & 119700 & 1000 & 873 & 11143 & 860 & 70.111\\
+C09 & 119664 & 1000 & 876 & 10977 & 862 & 83.503\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The cost is the sum on the HGB log-target scale; dividing by $m$ gives the
+stored mean-score difference.  All ten cycles satisfy the exact set identity.
+Once coverage reaches 1,000 niches at C03, $|Q_k|$ remains fixed but $r_k$ and
+$\Delta_k^{\mathrm{QD}}$ continue to change.  Coverage saturation therefore
+fixes the number of protected constraints, not their overlap with global top
+$m$ or their surrogate opportunity cost.
+
+The artifacts suffice for the deterministic columns and for selected-set
+truth summaries.  They do not suffice for a true-hardness comparison of $T_k$
+and $G_k$: every cycle has unverified members of $D_k$.  In particular, the
+stored \texttt{training\_exact\_hardness\_cost.csv} gives its $G$ row only on
+naturally labeled members (9,959 at C00 and 9,124 at C09), whereas its $T$ row
+has all 10,000 members.  That descriptive difference is not a full-set
+$G$-versus-$T$ estimand.
+
+\subsection{Selective-label indistinguishability}
+
+\mstatus{PROVED IMPOSSIBILITY}\par
+\istatus{VERIFIED INFORMATION OBSTRUCTION}\par
+\nstatus{STANDARD SELECTIVE-LABEL RESULT}\par
+
+\begin{proposition}[Finite-pool non-identifiability]
+\label{prop:selective-label-impossibility}
+Suppose $C\setminus V$ is nonempty.  Without a restriction relating
+$\widehat f$ to $f$, or otherwise restricting unobserved values of $f$, there
+exist two finite worlds with identical candidate identities, descriptors,
+niches, HGB predictions, $Q,T,G$, and labels on every member of $V$, but
+different true-hardness values on $C\setminus V$.
+
+If an unverified candidate $z$ shares niche $j$ with its selected elite, the
+two worlds can have arbitrarily different niche maxima and selected-elite
+regret.  With sufficiently many unverified nonselected candidates they can
+also give top-tail recall one and zero for the same selected set.  If
+$(G\setminus T)\setminus V$ is nonempty, the sign and magnitude of the true
+hardness sum difference between $G$ and $T$ are not identified.
+\end{proposition}
+
+\begin{proof}
+Keep the finite pool and every observable fixed.  For the niche claim, set the
+verified elite value to one, set every other candidate in that niche to at
+most one in world $W_0$, and set $f(z)=H>1$ in world $W_H$.  The selector is
+unchanged because it uses $\widehat f$, but the niche regret changes from zero
+to $H-1$.  Since $H$ is unrestricted, the difference is unbounded.
+
+For top-$r$ recall, take $r$ selected candidates with fixed verified value
+one and $r$ unverified nonselected candidates.  Give the latter value zero in
+$W_0$ and value $H>1$ in $W_H$.  With deterministic truth tie-breaking, the
+top-$r$ set is entirely selected in $W_0$ and entirely unselected in $W_H$.
+
+Finally let $d\in(G\setminus T)\setminus V$.  Common members of $G$ and $T$
+cancel in their true-score sums, while every member of $T\setminus G$ is
+verified because $T\subseteq V$.  Setting $f(d)=0$ or $f(d)=H$ leaves all
+observables fixed and can reverse the comparison; increasing $H$ makes the
+difference arbitrarily large.  Multiple unverified displaced candidates only
+strengthen the construction.
+\end{proof}
+
+This is an identifiability statement, not evidence that the realized S6-AE
+selection is poor.  It says that the inspected observations are compatible
+with sharply different unseen true-hardness landscapes.
+
+\subsection{Partial identification under a known hardness range}
+
+Suppose, additionally, that a scientifically justified finite range
+$L\le f_k(x)\le U$ is known for every member of the finite candidate pool.
+Let
+\[
+ A=T\setminus G,\qquad D=G\setminus T,
+ \qquad D_V=D\cap V,\qquad D_U=D\setminus V.
+\]
+Because $A\subseteq T\subseteq V$, the following interval is observable:
+\begin{align*}
+ &\sum_{x\in D_V} f_k(x)+|D_U|L-\sum_{x\in A}f_k(x)\\
+ &\qquad\le
+ \sum_{x\in G}f_k(x)-\sum_{x\in T}f_k(x)\\
+ &\qquad\le
+ \sum_{x\in D_V} f_k(x)+|D_U|U-\sum_{x\in A}f_k(x).
+\end{align*}
+These bounds are sharp absent further restrictions: assign every unobserved
+displaced value to $L$ or to $U$.  A known range therefore yields partial,
+not point, identification.  Nonnegativity of LBQ supplies $L=0$ on the log
+scale, but no inspected artifact supplies a finite scientific $U$.  The
+resulting upper endpoint is therefore unavailable, and the read-only lower
+endpoints do not determine the sign in any inspected cycle.
+
+For a threshold $\tau$, the acquired hard count
+$|\{x\in T:f_k(x)\ge\tau\}|$ is exact.  Full-pool recall is only bounded by
+allowing every latent candidate to fall below or above $\tau$.  Exact
+full-pool maxima similarly require a census of the relevant niche or an
+additional tail/range model.
+
+\subsection{What the existing labels do and do not identify}
+
+The following selected-population quantities are exactly computable without
+new true-LBQ calls: the current $f_k$ distribution on $T_k$; the acquired
+count above a predeclared threshold; current hardness of each measured
+per-niche elite; HGB residuals on $V_k$ or on $T_k$ with the conditioning set
+stated; $T_k$--$G_k$ overlap; $r_k$; and $\Delta_k^{\mathrm{QD}}$.
+
+They characterize selected/acquired candidates only.  They do not identify a
+full-pool HGB error distribution, a full-pool hard-tail recall, a niche
+maximum over $C_k$, historical improvement under the current checkpoint,
+generalization to another checkpoint, future reachability, or downstream BQ
+training value.  The archive calibration sample is randomized within the
+archive, not within the current candidate union; after intersecting it with
+$C_k$ it is not a documented probability sample of $C_k\setminus T_k$.
+Selected-set residuals therefore cannot be extrapolated to the union without
+an explicit selection/sampling model.
+
+\subsection{Minimal additional information}
+
+Different targets require different additions.
+\begin{enumerate}
+  \item \emph{Exact current $T$ versus $G$ comparison.}  Every member of
+  $A=T\setminus G$ is already labeled.  It is enough to evaluate the missing
+  members of $D=G\setminus T$ under the same entering checkpoint.  By
+  Proposition~\ref{prop:qd-global-exchange}, this requires at most $K=1,000$
+  extra labels, and often fewer after reusing verified current labels.  This
+  is an exact paired certificate, but it has not been completed in the frozen
+  artifacts.
+  \item \emph{Finite-pool means, tail mass, or recall.}  Draw unselected
+  candidates with known, positive inclusion probabilities, preferably
+  stratified by niche and frozen HGB-score bins.  Design-based weighting can
+  then estimate declared aggregate quantities.  Deterministic selection
+  probabilities of zero cannot support inverse-propensity extrapolation.
+  \item \emph{Niche maxima or elite regret.}  Verify the entire target niche,
+  verify a declared finite contender set with a valid local error certificate,
+  or impose and validate a tail/range model.  A small random sample alone does
+  not identify an exact maximum.
+  \item \emph{Cross-cycle claims.}  Re-evaluate paired identities under the
+  same current checkpoint or posit a separately validated drift model.  Old
+  labels are not substitutes.
+  \item \emph{Training value.}  A causal training comparison is required;
+  acquisition hardness alone supplies no identification.  Stage 3B does not
+  propose or run such a comparison.
+\end{enumerate}
+
+A minimal future verification protocol, if separately authorized, would
+freeze $C,Q,T,G$ before truth evaluation; predeclare the checkpoint, estimand,
+strata, and inclusion probabilities; label all still-unlabeled $G\setminus T$
+for the exact paired selector comparison; add a probability sample from
+$C\setminus(T\cup G)$ only for full-pool aggregate estimands; preserve hash
+joins and nonresponse accounting; and report design-based uncertainty.
+This is a protocol specification, not an experiment performed here.
+
+\subsection{Novelty and Stage 3B decision}
+
+The protected-floor exchange and its $K$-label paired certificate are useful
+implementation audits, but the proof is elementary constrained top-$m$
+selection.  QD already formalizes retaining high-quality representatives
+across behavioral regions.  Selective-label non-identifiability, partial
+identification under bounded outcomes, and propensity-based learning under
+partial feedback are established themes
+\cite{Lakkaraju2017,Manski2005,SwaminathanJoachims2015}.  Surrogate-assisted
+evolutionary computation likewise treats exact-evaluation management as a
+core issue rather than equating surrogate scores with truth \cite{Jin2011}.
+
+The BLADE-specific contribution here is a precise audit map: because the
+actual $T/G$ symmetric difference is at most $K$, an exact same-checkpoint
+comparison needs labels only for the missing displaced set, not the roughly
+120,000-member union.  This is practically useful but not, by itself, a
+publication-level theorem.  Existing frozen labels do not complete that
+certificate and cannot identify the broader full-pool claims.
+
+The Stage 3B research decision is
+\[
+ \boxed{\text{B -- IDENTIFIABILITY\_LIMIT\_CONFIRMED}.}
+\]
+No Stage 3C, new true-LBQ call, mutation, evolution, HGB training, BQ update,
+or algorithm modification is initiated.
