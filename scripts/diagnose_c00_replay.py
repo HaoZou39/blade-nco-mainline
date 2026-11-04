@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from audit.uniform_bootstrap import child_seed
-from mutation import apply_operator
+from mutation import apply_foga11_operator as apply_operator
 from qd.roots import recover_uniform_roots
 
 

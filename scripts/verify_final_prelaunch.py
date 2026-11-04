@@ -23,7 +23,7 @@ from final_run.protocol import EXPECTED_DATASETS,load_and_validate
 from final_run.reporting import CYCLE_FIGURES,TIMING_FILES
 from final_run.science import GP_CFG
 from final_run.stage import atomic_json,sha256_file
-from mutation import OPERATOR_NAMES
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES
 from qd.coordinates import load_centroids,load_normalization
 from qd.roots import recover_uniform_roots
 from verify_assets import verify_all

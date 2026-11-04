@@ -42,7 +42,7 @@ from bq.checkpoint import load_canonical_checkpoint
 from features.qd4 import QD4_FEATURE_NAMES
 from final_run.science import hardness, load_anchor, membership_hash, qd_frame, select_population, summary_stats
 from final_run.stage import atomic_json, atomic_stage, sha256_file, utc_now, verify_stage
-from mutation import OPERATOR_NAMES
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES
 from surrogate_benchmark.models import HGB_CFG_CANONICAL, SEEDS, hgb_params, median_stack
 from s4b_reporting import BENCHMARKS, build_reports
 

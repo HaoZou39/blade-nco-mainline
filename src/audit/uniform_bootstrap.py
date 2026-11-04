@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 
 from features.qd4 import QD4_FEATURE_NAMES, extract_qd4_exact
-from mutation import OPERATOR_NAMES, apply_operator
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator
 from qd.coordinates import assign_nearest, load_centroids, normalize_qd4
 from qd.probes import StructuralCandidate, select_centroid_nearest_probes
 from qd.roots import coordinate_hash, recover_uniform_roots

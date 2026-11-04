@@ -46,7 +46,7 @@ sys.path[:0] = [
 import run_p6b as p6b  # noqa: E402
 import run_p6h1 as h1  # noqa: E402
 from final_run.science import membership_hash  # noqa: E402
-from mutation import OPERATOR_NAMES  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES  # noqa: E402
 from mutation.result import coordinate_hash  # noqa: E402
 
 SEEDS = ("Original", "S1", "S2")

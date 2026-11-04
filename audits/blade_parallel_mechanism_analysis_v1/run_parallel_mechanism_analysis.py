@@ -30,7 +30,7 @@ import run_blade_v2 as base
 from features.qd4 import QD4_FEATURE_NAMES
 from final_run.science import membership_hash
 from final_run.stage import sha256_file, utc_now
-from mutation import OPERATOR_NAMES
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES
 from qd.coordinates import load_centroids
 
 RUN_ID = "blade_v2_corrected_union_sanity_seed2026_v1"

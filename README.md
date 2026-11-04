@@ -2,7 +2,33 @@
 
 This workspace is the clean, frozen mainline for the final dynamic solver-relative QD hard-instance co-evolution experiment. All scientific choices are frozen in [METHOD_FROZEN.md](METHOD_FROZEN.md), [PROTOCOL_STATUS.yaml](PROTOCOL_STATUS.yaml), and [configs/final_20cycle_protocol.yaml](configs/final_20cycle_protocol.yaml).
 
-The formal run is exactly C00–C19 (M0→M20), using fixed QD4/K1000 geometry, exact Uniform10k roots, FOGA-11 once per operator and parent, one centroid-nearest coverage sample per occupied niche, global GP4 fill to hard10k, a cumulative refreshed formal Oracle archive with at most one elite per niche, and frozen 256-epoch BQ adaptation with the Uniform10k anchor.
+The formal run is exactly C00–C19 (M0→M20), using fixed QD4/K1000 geometry, exact Uniform10k roots, FOGA-11 once per operator and parent, one centroid-nearest coverage sample per occupied niche, global GP4 fill to hard10k, a cumulative refreshed formal Oracle archive with at most one elite per niche, and frozen 256-epoch BQ adaptation with the Uniform10k anchor. That runner calls `FOGA11_OPERATOR_NAMES` and `apply_foga11_operator` explicitly. It does not follow the default mutation library below.
+
+## Default mutation library
+
+The default mutation library is Unified-12: 12 frozen operators, one drawn uniformly at random on each call, with parameters resampled from `src/mutation/unified12_frozen.yaml`. Repeats of the same operator are allowed. There is no crossover, no learned operator probabilities, and no adaptive strength.
+
+| Item | Value |
+| --- | --- |
+| Operators | 12 |
+| New operators | Lattice Reorganization, Motif Assembly |
+| Removed from the default pool | `linear_projection_mutation` |
+| Configuration | `src/mutation/unified12_frozen.yaml` |
+| Reference | [docs/mutation/UNIFIED12_OPERATOR_REFERENCE.md](docs/mutation/UNIFIED12_OPERATOR_REFERENCE.md) |
+
+`src/mutation/foga2019_operators.yaml` remains the historical FOGA11 configuration. Load it with `load_named_profile("FOGA11_BASE_V1")` or `apply_foga11_operator`.
+
+```python
+import numpy as np
+from mutation import apply_operator, sample_operator_name
+
+parent = np.random.default_rng(0).random((100, 2))
+rng = np.random.default_rng(1)
+for _ in range(10):
+    result = apply_operator(sample_operator_name(rng), parent, rng)
+    if result.proposal_status == "accepted":
+        parent = result.final_coordinates
+```
 
 Validation commands:
 

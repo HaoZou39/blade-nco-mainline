@@ -69,7 +69,7 @@ from bq.checkpoint import load_canonical_checkpoint  # noqa: E402
 from bq.training_hardness import closed_expert_coordinates  # noqa: E402
 from bq.tsp_metric import integer_distance_matrix, tour_cost_int, validate_tour_0based  # noqa: E402
 from final_run.science import cycle_child_seed, membership_hash  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
 from mutation.parameters import load_named_profile  # noqa: E402
 from mutation.result import coordinate_hash  # noqa: E402
 from oracle.concorde import CANONICAL_CONCORDE_SHA256, ORACLE_LEDGER_COLUMNS, sha256_file  # noqa: E402

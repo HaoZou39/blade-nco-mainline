@@ -46,7 +46,7 @@ from bq.training_hardness import closed_expert_coordinates  # noqa: E402
 from features.qd4 import QD4_FEATURE_NAMES  # noqa: E402
 from final_run.science import hardness, membership_hash, qd_frame  # noqa: E402
 from final_run.stage import atomic_json, atomic_stage, sha256_file, utc_now  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
 from mutation.parameters import load_named_profile  # noqa: E402
 from surrogate_benchmark.models import HGB_CFG_CANONICAL, SEEDS  # noqa: E402
 

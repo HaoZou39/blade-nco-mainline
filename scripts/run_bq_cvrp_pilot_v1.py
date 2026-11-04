@@ -45,7 +45,7 @@ from sklearn.preprocessing import StandardScaler
 import torch
 from torch.nn import functional as F
 
-from mutation import OPERATOR_NAMES, apply_operator
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator
 from cvrp_pilot.core import (
     BQ_COMMIT,
     CAPACITY,

@@ -65,7 +65,7 @@ PROFILE_PATH = ROOT / "src/mutation/foga2019_operators.yaml"
 
 sys.path[:0] = [str(ROOT / "src"), str(P2)]
 from final_run.science import cycle_child_seed, membership_hash  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
 from mutation.parameters import load_named_profile  # noqa: E402
 from mutation.result import coordinate_hash  # noqa: E402
 import run_p2_bounded_evolution as p2  # noqa: E402

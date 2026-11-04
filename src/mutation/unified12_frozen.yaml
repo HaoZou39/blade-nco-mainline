@@ -1,0 +1,215 @@
+schema_version: 1
+profile_name: UNIFIED12_FROZEN_V1
+library: unified12_frozen_mutation_library
+version: UNIFIED12_FROZEN_V1
+source: Group D of the frozen Unified-12 audit. Enhanced FOGA ranges, Library A lattice, Motif V2. P2-A did not change these distributions.
+sampling_policy:
+  timing: sample_on_each_operator_application
+  operator_selection: uniform_over_registry
+  learned_by_gp: false
+  updated_by_evolution: false
+  adaptive_strength: false
+  explicit_parameters_are_replayable: true
+repair:
+  min_pair_distance: 1.0e-5
+  max_passes: 20
+  max_repair_fraction: 0.20
+operators:
+  uniform_mutation:
+    affected_fraction:
+      distribution: choice
+      values: [0.03, 0.05, 0.10]
+  normal_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.05
+      high: 0.20
+    sigma:
+      distribution: log_uniform
+      low: 0.005
+      high: 0.05
+  rotation_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.25
+      high: 0.50
+    angle_degrees:
+      distribution: uniform
+      low: -60.0
+      high: 60.0
+  implosion_mutation:
+    radius:
+      distribution: uniform
+      low: 0.20
+      high: 0.40
+    strength:
+      distribution: uniform
+      low: 0.20
+      high: 0.80
+  explosion_mutation:
+    radius:
+      distribution: uniform
+      low: 0.10
+      high: 0.25
+    extra_shift:
+      distribution: exponential
+      scale: 0.03
+      maximum: 0.15
+  cluster_mutation:
+    affected_count:
+      distribution: integer_uniform
+      low: 15
+      high: 40
+    sigma:
+      distribution: log_uniform
+      low: 0.005
+      high: 0.08
+  expansion_mutation:
+    line_angle_degrees:
+      distribution: uniform
+      low: -80.0
+      high: 80.0
+    tube_width:
+      distribution: uniform
+      low: 0.08
+      high: 0.22
+    extra_distance:
+      distribution: exponential
+      scale: 0.03
+      maximum: 0.12
+  compression_mutation:
+    line_angle_degrees:
+      distribution: uniform
+      low: -80.0
+      high: 80.0
+    tube_width:
+      distribution: uniform
+      low: 0.08
+      high: 0.22
+    strength:
+      distribution: uniform
+      low: 0.30
+      high: 0.85
+  axis_projection_mutation:
+    affected_fraction:
+      distribution: uniform
+      low: 0.10
+      high: 0.40
+    axis:
+      distribution: choice
+      values: [x, y]
+    target:
+      distribution: uniform
+      low: 0.15
+      high: 0.85
+    jitter:
+      distribution: uniform
+      low: 0.002
+      high: 0.03
+  grid_mutation:
+    box_width:
+      distribution: uniform
+      low: 0.35
+      high: 0.65
+    box_height:
+      distribution: uniform
+      low: 0.35
+      high: 0.65
+    minimum_affected_nodes: 4
+    rotation_probability: 0.50
+    angle_degrees:
+      distribution: uniform
+      low: -45.0
+      high: 45.0
+    jitter:
+      distribution: uniform
+      low: 0.001
+      high: 0.02
+  lattice_reorganization:
+    max_attempts: 3
+    node_count: 100
+    minimum_selected: 4
+    grid_half_span: 0.42
+    minimum_template_spacing: 0.015
+    min_pair_distance: 1.0e-4
+    interior: [0.02, 0.98]
+    scope:
+      distribution: choice
+      values: [local, regional, global]
+      probabilities: [0.25, 0.35, 0.40]
+    template:
+      distribution: choice
+      values: [grid, stripes]
+    angle_degrees:
+      distribution: uniform
+      low: -10.0
+      high: 10.0
+    alpha:
+      distribution: uniform
+      low: 0.35
+      high: 1.0
+    local_side:
+      distribution: uniform
+      low: 0.25
+      high: 0.45
+    regional_side:
+      distribution: uniform
+      low: 0.55
+      high: 0.85
+    stripe_axis:
+      distribution: choice
+      values: [x, y]
+    stripe_count:
+      distribution: integer_uniform
+      low: 2
+      high: 4
+  motif_assembly:
+    version: v2
+    max_attempts: 3
+    node_count: 100
+    motifs_per_call: 1
+    min_pair_distance: 1.0e-4
+    interior: [0.02, 0.98]
+    shrink_factor: 0.85
+    shrink_passes: 8
+    center_candidates: 8
+    motif:
+      distribution: choice
+      values: [arc, grid_block, cross, l_shape, star]
+    affected_count:
+      distribution: integer_uniform
+      low: 20
+      high: 40
+    scale:
+      distribution: uniform
+      low: 0.08
+      high: 0.22
+    orientation_degrees:
+      distribution: uniform
+      low: 0.0
+      high: 180.0
+    alpha:
+      distribution: uniform
+      low: 0.45
+      high: 1.0
+    center_box:
+      distribution: uniform
+      low: 0.18
+      high: 0.82
+    arc_span_degrees:
+      distribution: uniform
+      low: 70.0
+      high: 220.0
+    arc_start_degrees:
+      distribution: uniform
+      low: 0.0
+      high: 360.0
+    star_arms:
+      distribution: integer_uniform
+      low: 4
+      high: 6
+    l_shape_fraction:
+      distribution: uniform
+      low: 0.35
+      high: 0.65
+    cross_fraction: 0.5

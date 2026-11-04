@@ -30,7 +30,7 @@ from bq.training_hardness import teacher_forced_training_hardness
 from evaluation.datasets import load_fixed_n100, load_lehd_cross_size, load_original_tsplib70
 from evaluation.gap import optimality_gap_percent
 from features.qd4 import QD4_FEATURE_NAMES, extract_qd4_exact
-from mutation import OPERATOR_NAMES, apply_operator
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator
 from oracle.concorde import ORACLE_LEDGER_COLUMNS, canonical_oracle_ledger, resolve_backend, solve_batch
 from qd.acquisition import centroid_global_acquire
 from qd.archive import CurrentSurrogateScore

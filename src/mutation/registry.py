@@ -1,4 +1,8 @@
-"""The single runtime registry for the eleven formal mutation operators."""
+"""The default Unified-12 registry.
+
+linear_projection_mutation stays callable for an explicit FOGA11 replay.
+It is not part of OPERATOR_NAMES and is not drawn by sample_operator_name.
+"""
 
 from __future__ import annotations
 
@@ -15,11 +19,14 @@ from . import (
     explosion_mutation,
     grid_mutation,
     implosion_mutation,
+    lattice_reorganization,
     linear_projection_mutation,
+    motif_assembly,
     normal_mutation,
     rotation_mutation,
     uniform_mutation,
 )
+from .parameters import load_named_profile
 from .result import MutationResult
 
 
@@ -34,7 +41,7 @@ Sampler = Callable[
 
 
 class UnknownOperatorError(KeyError):
-    """Raised when a name is not one of the eleven formal operator names."""
+    """Raised when a name is not a known mutation operator."""
 
 
 @dataclass(frozen=True)
@@ -55,8 +62,9 @@ _MODULES = (
     (expansion_mutation, "Push points inside a tube away from its target line."),
     (compression_mutation, "Attract points inside a tube toward its target line."),
     (axis_projection_mutation, "Project selected points near an axis-parallel line."),
-    (linear_projection_mutation, "Project selected points near an arbitrary line."),
     (grid_mutation, "Reorganize points in a local box onto a grid."),
+    (lattice_reorganization, "Blend selected points toward a rotated grid or stripe template."),
+    (motif_assembly, "Blend a local neighborhood toward one frozen motif."),
 )
 
 
@@ -72,15 +80,55 @@ OPERATOR_REGISTRY: dict[str, OperatorSpec] = {
 
 OPERATOR_NAMES: tuple[str, ...] = tuple(OPERATOR_REGISTRY)
 
+_HISTORICAL: dict[str, OperatorSpec] = {
+    linear_projection_mutation.OPERATOR_NAME: OperatorSpec(
+        name=linear_projection_mutation.OPERATOR_NAME,
+        apply=linear_projection_mutation.apply_operator,
+        sample_parameters=linear_projection_mutation.sample_parameters,
+        description="Project selected points near an arbitrary line.",
+    )
+}
+
+FOGA11_OPERATOR_NAMES: tuple[str, ...] = (
+    "uniform_mutation",
+    "normal_mutation",
+    "rotation_mutation",
+    "implosion_mutation",
+    "explosion_mutation",
+    "cluster_mutation",
+    "expansion_mutation",
+    "compression_mutation",
+    "axis_projection_mutation",
+    "linear_projection_mutation",
+    "grid_mutation",
+)
+
 
 def get_operator(name: str) -> OperatorSpec:
-    try:
-        return OPERATOR_REGISTRY[name]
-    except KeyError as exc:
+    spec = OPERATOR_REGISTRY.get(name) or _HISTORICAL.get(name)
+    if spec is None:
         known = ", ".join(OPERATOR_NAMES)
-        raise UnknownOperatorError(
-            f"unknown operator {name!r}; expected one of: {known}"
-        ) from exc
+        raise UnknownOperatorError(f"unknown operator {name!r}; expected one of: {known}")
+    return spec
+
+
+def sample_operator_name(rng: np.random.Generator) -> str:
+    """Draw one default operator with equal probability. Repeats are allowed."""
+
+    return str(rng.choice(np.asarray(OPERATOR_NAMES)))
+
+
+def apply_foga11_operator(
+    name: str,
+    coordinates: np.ndarray,
+    rng: np.random.Generator,
+) -> MutationResult:
+    """Replay one FOGA11_BASE_V1 operator, including linear_projection."""
+
+    if name not in FOGA11_OPERATOR_NAMES:
+        raise UnknownOperatorError(f"{name!r} is not a FOGA11 operator")
+    profile = load_named_profile("FOGA11_BASE_V1")
+    return apply_operator_with_config(name, coordinates, rng, profile)
 
 
 def list_available_operators() -> list[str]:
@@ -119,6 +167,8 @@ def apply_operator_with_config(
     reconstructed from the deterministic invocation seed.
     """
 
+    if name in ("lattice_reorganization", "motif_assembly"):
+        return get_operator(name).apply(coordinates, rng, None)
     spec = get_operator(name)
     params = spec.sample_parameters(coordinates, rng, config)
     return spec.apply(coordinates, rng, params)

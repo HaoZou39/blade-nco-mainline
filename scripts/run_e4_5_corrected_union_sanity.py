@@ -43,7 +43,7 @@ from final_run.science import (bootstrap_mean_delta, hardness, membership_hash,
                                predict_gp4, qd_frame, select_population,
                                summary_stats, train_gp4)
 from final_run.stage import atomic_json, atomic_stage, sha256_file, utc_now
-from mutation import OPERATOR_NAMES
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES
 from qd.roots import recover_uniform_roots
 
 

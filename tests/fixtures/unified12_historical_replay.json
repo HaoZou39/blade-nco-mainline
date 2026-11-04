@@ -1,0 +1,170 @@
+[
+  {
+    "operator": "compression_mutation",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 1,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      1
+    ],
+    "final_hash": "308d3a27546fdd4eca6f9dc2ea3a75e789cdad39318a40cc4b4afcfc8c585e86"
+  },
+  {
+    "operator": "grid_mutation",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 2,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      2
+    ],
+    "final_hash": "69eb8a0f2fb19ea969692f343fb4857170001b59a20e3023beaef0ce4b917fa3"
+  },
+  {
+    "operator": "uniform_mutation",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 3,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      3
+    ],
+    "final_hash": "912a2613b38aa9af690c1ed6939e0f02ed704c27ac38e7b5fb288914d4984095"
+  },
+  {
+    "operator": "rotation_mutation",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 4,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      4
+    ],
+    "final_hash": "986b022dce6e6ed7aed93624c33223e07c486bb6242f6046eb8d27d3d1466b5b"
+  },
+  {
+    "operator": "implosion_mutation",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 5,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      5
+    ],
+    "final_hash": "5fb132c8ab5e5e42960e679f8626e0d3045206b0b5048f9744f1b0f3630108fc"
+  },
+  {
+    "operator": "motif_assembly",
+    "root_id": 0,
+    "chain_id": 0,
+    "depth": 7,
+    "seed": [
+      20261103,
+      2,
+      0,
+      0,
+      7
+    ],
+    "final_hash": "6e84d78085498e4be8ad601aaaf1c4cbf41282b541cba3128036b0b4d0bb0468"
+  },
+  {
+    "operator": "expansion_mutation",
+    "root_id": 0,
+    "chain_id": 1,
+    "depth": 6,
+    "seed": [
+      20261103,
+      2,
+      0,
+      1,
+      6
+    ],
+    "final_hash": "9ea3a9e00307fb1eed6128637f8f2116355b987175787ed95fdacb8da03153b0"
+  },
+  {
+    "operator": "explosion_mutation",
+    "root_id": 0,
+    "chain_id": 1,
+    "depth": 7,
+    "seed": [
+      20261103,
+      2,
+      0,
+      1,
+      7
+    ],
+    "final_hash": "52a78bb0372d953f5e238c76d566989f832b00dc513df6c12ef2eaf573356b51"
+  },
+  {
+    "operator": "lattice_reorganization",
+    "root_id": 0,
+    "chain_id": 1,
+    "depth": 9,
+    "seed": [
+      20261103,
+      2,
+      0,
+      1,
+      9
+    ],
+    "final_hash": "a2cb2b55b26425222840386493f2cb5edb659e4f67724c01c436a4529bb5a27a"
+  },
+  {
+    "operator": "cluster_mutation",
+    "root_id": 0,
+    "chain_id": 2,
+    "depth": 6,
+    "seed": [
+      20261103,
+      2,
+      0,
+      2,
+      6
+    ],
+    "final_hash": "2b17a80d4a9d3e0d6a6a145e3c1de4cc2fe7a43a37a71543e134e5100e778cba"
+  },
+  {
+    "operator": "axis_projection_mutation",
+    "root_id": 0,
+    "chain_id": 3,
+    "depth": 1,
+    "seed": [
+      20261103,
+      2,
+      0,
+      3,
+      1
+    ],
+    "final_hash": "312e818c43019c1596645205cd7a66dabcb469c07cae3c5d52fbaafa98772ce8"
+  },
+  {
+    "operator": "normal_mutation",
+    "root_id": 0,
+    "chain_id": 3,
+    "depth": 8,
+    "seed": [
+      20261103,
+      2,
+      0,
+      3,
+      8
+    ],
+    "final_hash": "dfba1915fa1784ab9b63c9685210235ac8cb4397c83bdf5544c5c575dcbb1916"
+  }
+]

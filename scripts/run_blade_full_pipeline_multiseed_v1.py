@@ -38,7 +38,7 @@ from bq.checkpoint import load_canonical_checkpoint  # noqa: E402
 from evaluation.external_v2 import coordinate_hash, coordinate_set_hash  # noqa: E402
 from final_run.science import membership_hash, qd_frame  # noqa: E402
 from final_run.stage import atomic_json, sha256_file, utc_now  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
 from mutation.parameters import load_named_profile  # noqa: E402
 from oracle.concorde import (  # noqa: E402
     CANONICAL_CONCORDE_SHA256,

@@ -19,7 +19,7 @@ from final_run.pipeline import run
 from final_run.protocol import load_and_validate
 from final_run.reporting import CYCLE_FIGURES, write_cycle_outputs
 from final_run.stage import atomic_stage, sha256_file
-from mutation import OPERATOR_NAMES, apply_operator
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator
 from qd.acquisition import centroid_global_acquire
 from qd.archive import CurrentSurrogateScore
 from qd.coordinates import load_centroids

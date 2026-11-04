@@ -27,7 +27,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from audit.uniform_bootstrap import child_seed
 from features.qd4 import QD4_FEATURE_NAMES, extract_qd4_exact
-from mutation import OPERATOR_NAMES, apply_operator
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator
 from qd.coordinates import load_centroids, normalize_qd4
 from qd.roots import recover_uniform_roots
 from oracle.concorde import resolve_backend, solve_batch

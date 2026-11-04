@@ -18,7 +18,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from final_run.science import cycle_child_seed, membership_hash  # noqa: E402
 from final_run.stage import sha256_file  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_operator_with_config  # noqa: E402
 from mutation.parameters import load_named_profile  # noqa: E402
 
 

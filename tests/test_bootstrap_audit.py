@@ -16,7 +16,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from audit.uniform_bootstrap import child_seed  # noqa: E402
 from features.qd4 import QD4_FEATURE_NAMES, extract_qd4_exact  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator  # noqa: E402
 from qd.coordinates import assign_nearest, load_centroids, load_normalization, normalize_qd4  # noqa: E402
 from qd.roots import _duckdb, recover_uniform_roots  # noqa: E402
 

@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from audit.uniform_bootstrap import MASTER_SEED, RNG_NAMESPACE, child_seed  # noqa: E402
 from features.qd4 import QD4_FEATURE_NAMES, extract_qd4_exact  # noqa: E402
-from mutation import OPERATOR_NAMES, apply_operator  # noqa: E402
+from mutation import FOGA11_OPERATOR_NAMES as OPERATOR_NAMES, apply_foga11_operator as apply_operator  # noqa: E402
 from qd.archive import MAX_ELITES_PER_NICHE  # noqa: E402
 from qd.coordinates import load_centroids, load_normalization  # noqa: E402
 from qd.roots import _duckdb, recover_uniform_roots  # noqa: E402

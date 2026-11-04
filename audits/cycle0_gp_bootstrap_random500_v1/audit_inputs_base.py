@@ -4,7 +4,7 @@ import numpy as np,pandas as pd,torch
 from audit_common import *
 from bq.checkpoint import load_canonical_checkpoint
 from bq.training_hardness import teacher_forced_training_hardness,protocol_manifest
-from mutation import apply_operator
+from mutation import apply_foga11_operator as apply_operator
 from oracle.concorde import canonical_oracle_ledger,resolve_backend,solve_batch
 from qd.coordinates import load_centroids
 from qd.roots import recover_uniform_roots

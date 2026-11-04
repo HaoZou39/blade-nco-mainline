@@ -12,18 +12,19 @@ import yaml
 
 
 NAMED_PROFILES = {
+    "UNIFIED12_FROZEN_V1": "unified12_frozen.yaml",
     "FOGA11_BASE_V1": "foga2019_operators.yaml",
     "FOGA11_HIGH_V1": "foga11_high_v1.yaml",
 }
 
 @lru_cache(maxsize=1)
 def load_operator_config(path: str | Path | None = None) -> dict[str, Any]:
-    """Load the single formal FOGA 2019 operator configuration."""
+    """Load the default Unified-12 configuration, or an explicit file."""
 
     config_path = (
         Path(path)
         if path is not None
-        else Path(__file__).with_name("foga2019_operators.yaml")
+        else Path(__file__).with_name("unified12_frozen.yaml")
     )
     with config_path.open("r", encoding="utf-8") as handle:
         payload = yaml.safe_load(handle)
