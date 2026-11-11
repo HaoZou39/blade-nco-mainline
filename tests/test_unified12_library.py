@@ -35,7 +35,7 @@ EXPECTED = (
     "compression_mutation",
     "axis_projection_mutation",
     "grid_mutation",
-    "lattice_reorganization",
+    "stripe_reorganization",
     "motif_assembly",
 )
 
@@ -74,8 +74,9 @@ def test_same_seed_and_explicit_parameters_replay() -> None:
 
 def test_default_config_is_unified12_and_ranges_match_the_frozen_manifest() -> None:
     loaded = load_operator_config()
-    named = load_named_profile("UNIFIED12_FROZEN_V1")
-    assert loaded["profile_name"] == "UNIFIED12_FROZEN_V1"
+    named = load_named_profile("UNIFIED12_DEFAULT")
+    assert loaded["profile_name"] == "UNIFIED12_DEFAULT"
+    assert loaded["predecessor_profile"] == "UNIFIED12_FROZEN_V1"
     assert named["operators"]["rotation_mutation"]["affected_fraction"] == {"distribution": "uniform", "low": 0.25, "high": 0.5}
     operators = loaded["operators"]
     assert operators["implosion_mutation"]["radius"]["low"] == 0.2
@@ -84,20 +85,39 @@ def test_default_config_is_unified12_and_ranges_match_the_frozen_manifest() -> N
     assert operators["cluster_mutation"]["affected_count"] == {"distribution": "integer_uniform", "low": 15, "high": 40}
     assert operators["grid_mutation"]["box_width"]["low"] == 0.35
     assert operators["grid_mutation"]["box_height"]["high"] == 0.65
-    assert operators["lattice_reorganization"]["alpha"] == {"distribution": "uniform", "low": 0.35, "high": 1.0}
-    assert operators["motif_assembly"]["version"] == "v2"
+    assert operators["stripe_reorganization"]["alpha"] == {"distribution": "uniform", "low": 0.35, "high": 1.0}
+    assert "template" not in operators["stripe_reorganization"]
+    assert "grid_half_span" not in operators["stripe_reorganization"]
+    assert operators["motif_assembly"]["version"] == "v3"
+    assert operators["motif_assembly"]["motif"]["values"] == ["arc", "cross", "l_shape", "star"]
+    assert operators["motif_assembly"]["star_arms"] == {"distribution": "integer_uniform", "low": 5, "high": 6}
+    assert "cross_fraction" not in operators["motif_assembly"]
     assert operators["motif_assembly"]["affected_count"] == {"distribution": "integer_uniform", "low": 20, "high": 40}
     assert operators["motif_assembly"]["alpha"]["low"] == 0.45
+    assert "lattice_reorganization" not in operators
     assert "linear_projection_mutation" not in operators
     text = (ROOT / "src/mutation/unified12_frozen.yaml").read_text()
     assert "low: 0.20" in text or "low: 0.2" in text
+
+
+# UNIFIED12_FROZEN_V1 at 0aa106ac. The fixture is kept. These two rows describe
+# the predecessor lattice and motif calls and are not replayed on the new operators.
+ARCHIVED_STRUCTURAL_HASHES = {
+    "motif_assembly": "6e84d78085498e4be8ad601aaaf1c4cbf41282b541cba3128036b0b4d0bb0468",
+    "lattice_reorganization": "a2cb2b55b26425222840386493f2cb5edb659e4f67724c01c436a4529bb5a27a",
+}
 
 
 def test_historical_unified12_examples_replay() -> None:
     fixture = json.loads((ROOT / "tests/fixtures/unified12_historical_replay.json").read_text())
     parents = np.load(ROOT / "tests/fixtures/unified12_historical_replay.npz")["parents"]
     assert len(fixture) == 12
+    archived = {row["operator"]: row["final_hash"] for row in fixture if row["operator"] in ARCHIVED_STRUCTURAL_HASHES}
+    assert archived == ARCHIVED_STRUCTURAL_HASHES
+    assert "lattice_reorganization" not in OPERATOR_NAMES
     for row, parent in zip(fixture, parents):
+        if row["operator"] in ARCHIVED_STRUCTURAL_HASHES:
+            continue
         result = apply_operator(row["operator"], parent, np.random.default_rng(np.random.SeedSequence(row["seed"])))
         assert result.proposal_status == "accepted"
         assert result.final_output_hash == row["final_hash"]

@@ -1,12 +1,12 @@
 # Unified-12 operator reference
 
-Default library: `UNIFIED12_FROZEN_V1`.
+Default library: `UNIFIED12_DEFAULT`. The predecessor `UNIFIED12_FROZEN_V1` is commit `0aa106ac48b39d9b2098805acce1985285ec688b`; its profile sha256 is `19e9548f417e46e0c1f17f7053f887645cc4e72e1778bca5e783529667a02f9e`. This tree does not load that profile.
 
 Configuration: `src/mutation/unified12_frozen.yaml`.
 
-Each call draws one of the 12 operators with equal probability, then samples that operator's parameters from the frozen distributions. The same operator may be drawn again on the next call. Strength is not scheduled. P2-A tested lower, middle, and upper thirds of implosion strength, lattice alpha, and motif alpha. None of those thirds met the pre-registered gain rule without a larger loss in another space, so the shipped distributions are the audited CURRENT distributions.
+Each call draws one of the 12 operators with equal probability, then samples that operator's parameters from the default distributions. The same operator may be drawn again on the next call. Strength is not scheduled. The first ten operators keep the audited CURRENT distributions. Stripe and motif are the structural refactor of that library: stripes only, a four-arm cross, and stars with five or six arms.
 
-FOGA operators use the existing repair: minimum spacing `1e-5`, at most 20 passes, and a repair fraction above 0.20 is a failed proposal. Lattice and motif do not use that repair. An invalid child is rejected. Each of those two operators may draw again, up to three times, on the same call.
+FOGA operators use the existing repair: minimum spacing `1e-5`, at most 20 passes, and a repair fraction above 0.20 is a failed proposal. Stripe and motif do not use that repair. An invalid child is rejected. Each of those two operators may draw again, up to three times, on the same call. A failed record replays as a failure and does not build another child.
 
 Coordinates are in the unit square. A call does not change the number of nodes and does not write into the parent array.
 
@@ -184,31 +184,31 @@ P2-A held every non-target random draw fixed and compared LOW, MID, HIGH, and CU
 10. Example: `apply_operator("grid_mutation", parent, rng)`.
 11. P1: 25.77 nodes, displacement 0.249, E2 S2 0.776. Stable exclusive R regions: 0. Lattice, not grid, carries the exclusive R probes.
 
-## 11 lattice_reorganization
+## 11 stripe_reorganization
 
-1. Operator name: `lattice_reorganization`.
-2. Geometric purpose: blend a local, regional, or global set of nodes toward a rotated grid or a set of stripes.
-3. Mathematical transformation: `x_i <- (1 - α) x_i + α m_i`, where `m_i` is the Hungarian match of the selected node to a template site. Template sites are rotated by a small angle, shrunk into `[0.02, 0.98]` around the template center, then jittered by `N(0, s^2)` with `s ~ Uniform(0, gap/4)`.
-4. Affected nodes: every node inside the chosen square. Global scope uses all N nodes and center `(0.5, 0.5)`. Local side length is `Uniform(0.25, 0.45)`. Regional side length is `Uniform(0.55, 0.85)`. Fewer than 4 nodes is an empty region.
-5. Strength: `α`. It does not choose the nodes, the scope, the template, or the jitter.
-6. Distributions: scope `{local, regional, global}` with probabilities `0.25, 0.35, 0.40`; template `{grid, stripes}` with equal probability; angle `Uniform(-10°, 10°)`; `α ~ Uniform(0.35, 1.0)`. Stripes use an axis in `{x, y}` and an integer count in `{2, 3, 4}`.
-7. Bounds: those intervals. A template whose minimum spacing is below `0.015` is rejected before the blend.
-8. Sampling order: scope, template, angle, alpha, then the scope-specific side and center, then stripe axis and count only for stripes, then spacing check, jitter scale, jitter noise. A failed draw consumes that attempt's random numbers and the call tries again, at most three times.
-9. Validation and repair: no FOGA repair. The child must have shape `(100, 2)`, lie in `[0, 1]^2`, and have pairwise spacing at least `1e-4`. Otherwise the attempt fails.
-10. Example: `apply_operator("lattice_reorganization", parent, rng)`.
-11. P1: 60.71 nodes changed, mean displacement only 0.087, R 0.391, E2 S2 0.844, 19 stable exclusive R probes. The node move is small and the structural coverage is not. P2-A did not find a better alpha third than the full `Uniform(0.35, 1)` interval.
+1. Operator name: `stripe_reorganization`. The predecessor name `lattice_reorganization` is not in this registry.
+2. Geometric purpose: blend a local, regional, or global set of nodes toward rotated stripes. The regular grid template now belongs only to `grid_mutation`.
+3. Mathematical transformation: `x_i <- (1 - α) x_i + α m_i`, where `m_i` is the Hungarian match of the selected node to a stripe site. Sites are rotated by a small angle, shrunk into `[0.02, 0.98]` around the template center, then jittered by `N(0, s^2)` with `s ~ Uniform(0, gap/4)`.
+4. Affected nodes: every node inside the chosen square. Global scope uses all N nodes and center `(0.5, 0.5)`. Local side length is `Uniform(0.25, 0.45)`. Regional side length is `Uniform(0.55, 0.85)`. Fewer than 4 nodes is an empty region and is recorded as a failed result.
+5. Strength: `α`. It does not choose the nodes, the scope, or the jitter.
+6. Distributions: scope `{local, regional, global}` with probabilities `0.25, 0.35, 0.40`; angle `Uniform(-10°, 10°)`; `α ~ Uniform(0.35, 1.0)`. Stripes use an axis in `{x, y}` and an integer count in `{2, 3, 4}`.
+7. Bounds: global stripe coordinates are placed in `[0.02, 0.98]` on both axes before rotation. Local and regional stripes use the chosen window on both axes. A template whose minimum spacing is below `0.015` is rejected before the blend.
+8. Sampling order: scope, angle, alpha, then the scope-specific side and center, then stripe axis and count, then spacing check, jitter scale, jitter noise. A failed draw consumes that attempt's random numbers and the call tries again, at most three times.
+9. Validation and repair: no FOGA repair. The child must have shape `(100, 2)`, lie in `[0, 1]^2`, and have pairwise spacing at least `1e-4`. Otherwise the attempt fails. Replaying a failed record keeps the failure and returns the parent coordinates.
+10. Example: `apply_operator("stripe_reorganization", parent, rng)`.
+11. The predecessor lattice measurements are historical only. At commit `0aa106ac` the P1 lattice call changed 60.71 nodes, with mean displacement 0.087. Those figures are not measurements of this stripes-only operator.
 
 ## 12 motif_assembly
 
 1. Operator name: `motif_assembly`.
 2. Geometric purpose: blend one local neighborhood toward one motif.
-3. Mathematical transformation: the same blend as lattice, `x_i <- (1 - α) x_i + α m_i`, with `m_i` the Hungarian match onto the motif sites.
+3. Mathematical transformation: the same blend as stripe, `x_i <- (1 - α) x_i + α m_i`, with `m_i` the Hungarian match onto the motif sites.
 4. Affected nodes: the `k` nearest nodes to the best of 8 candidate centers. The center maximizes the mean distance of those `k` nodes, which places the motif away from an already tight cluster. `k` is one integer. One motif is built per attempt.
 5. Strength: `α`.
-6. Distributions, version `v2`: motif uniform over `{arc, grid_block, cross, l_shape, star}`; `k` integer-uniform on `[20, 40]`; scale `Uniform(0.08, 0.22)`; orientation `Uniform(0°, 180°)`; `α ~ Uniform(0.45, 1.0)`; centers uniform in `[0.18, 0.82]^2`. Arc span is `Uniform(70°, 220°)` and the arc start is `Uniform(0°, 360°)`, drawn only when the motif is an arc. Star arm count is an integer in `{4, 5, 6}`, drawn only for a star. An L uses a fraction `Uniform(0.35, 0.65)`; a cross uses the constant fraction `0.5`.
+6. Distributions, version `v3`: motif uniform over `{arc, cross, l_shape, star}`; `k` integer-uniform on `[20, 40]`; scale `Uniform(0.08, 0.22)`; orientation `Uniform(0°, 180°)`; `α ~ Uniform(0.45, 1.0)`; centers uniform in `[0.18, 0.82]^2`. Arc span is `Uniform(70°, 220°)` and the arc start is `Uniform(0°, 360°)`, drawn only when the motif is an arc. Star arm count is an integer in `{5, 6}`. An L uses a fraction `Uniform(0.35, 0.65)` and keeps two arms. A cross is one center plus four rays separated by 90 degrees; it does not use `cross_fraction`. `grid_block` is not a motif.
 7. Bounds: those values. The v1 motif used `k` in `[8, 24]`. The default library is v2.
 8. Sampling order: motif type, `k`, scale, orientation, alpha, eight centers, then only the random numbers of the chosen motif, then up to eight shrink steps that do not draw random numbers, then jitter scale and jitter noise. Up to three attempts.
-9. Validation and repair: same closed check as lattice. No FOGA repair. Sites are shrunk toward the motif center until they lie in `[0.02, 0.98]`.
+9. Validation and repair: same closed check as stripe. No FOGA repair. Sites are shrunk toward the motif center until they lie in `[0.02, 0.98]`. A motif that cannot be built, including a cross with fewer than five nodes, returns a failed result instead of raising.
 10. Example: `apply_operator("motif_assembly", parent, rng)`.
 11. P1: 29.95 nodes, displacement 0.150, E2 S1 0.336, retention 0.078. In P2-A, the high third of alpha moved E2 S1 from 0.314 to 0.356 and combined coverage from 0.491 to 0.3115. That trade was not adopted.
 

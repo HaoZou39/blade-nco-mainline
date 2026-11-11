@@ -62,6 +62,16 @@ def rotate(sites: np.ndarray, center: np.ndarray, degrees: float) -> np.ndarray:
     return (sites - center) @ matrix.T + center
 
 
+def _rays(center: np.ndarray, scale: float, theta: float, counts: np.ndarray, turn: float) -> np.ndarray:
+    sites = [np.asarray(center, dtype=np.float64)]
+    for arm, arm_count in enumerate(counts):
+        direction = theta + arm * turn
+        vector = np.array([np.cos(direction), np.sin(direction)], dtype=np.float64)
+        for step in range(1, int(arm_count) + 1):
+            sites.append(center + vector * scale * step / max(int(arm_count), 1))
+    return np.asarray(sites, dtype=np.float64)
+
+
 def motif_sites(
     kind: str,
     count: int,
@@ -77,38 +87,27 @@ def motif_sites(
         start = np.deg2rad(float(rng.uniform(settings["arc_start_degrees"]["low"], settings["arc_start_degrees"]["high"])))
         angles = np.linspace(start, start + span, count)
         return center + scale * np.column_stack((np.cos(angles), np.sin(angles)))
-    if kind == "grid_block":
-        columns = max(1, int(np.ceil(np.sqrt(count))))
-        rows = int(np.ceil(count / columns))
-        xs = np.linspace(-scale / 2.0, scale / 2.0, columns)
-        ys = np.linspace(-scale / 2.0, scale / 2.0, rows)
-        sites = np.asarray([(x, y) for y in ys for x in xs], dtype=np.float64)[:count]
-        return rotate(sites, np.zeros(2), orientation) + center
     if kind == "star":
-        arms = int(rng.integers(int(settings["star_arms"]["low"]), int(settings["star_arms"]["high"]) + 1))
+        low = int(settings["star_arms"]["low"])
+        high = int(settings["star_arms"]["high"])
+        if low < 5 or high > 6 or low > high:
+            raise ValueError("star arms must be chosen from {5, 6}")
+        arms = int(rng.integers(low, high + 1))
         per_arm = np.full(arms, (count - 1) // arms, dtype=int)
         per_arm[: (count - 1) % arms] += 1
-        sites = [center]
-        for arm, arm_count in enumerate(per_arm):
-            direction = theta + arm * (2.0 * np.pi / arms)
-            vector = np.array([np.cos(direction), np.sin(direction)])
-            for step in range(1, arm_count + 1):
-                sites.append(center + vector * scale * step / max(arm_count, 1))
-        return np.asarray(sites[:count], dtype=np.float64)
-    fraction = (
-        float(rng.uniform(settings["l_shape_fraction"]["low"], settings["l_shape_fraction"]["high"]))
-        if kind == "l_shape"
-        else float(settings["cross_fraction"])
-    )
-    first = max(1, min(count - 2, int(round((count - 1) * fraction))))
-    second = count - 1 - first
-    sites = [center]
-    for arm, arm_count in enumerate((first, second)):
-        direction = theta + arm * (np.pi / 2.0)
-        vector = np.array([np.cos(direction), np.sin(direction)])
-        for step in range(1, arm_count + 1):
-            sites.append(center + vector * scale * step / max(arm_count, 1))
-    return np.asarray(sites[:count], dtype=np.float64)
+        return _rays(center, scale, theta, per_arm, 2.0 * np.pi / arms)
+    if kind == "l_shape":
+        fraction = float(rng.uniform(settings["l_shape_fraction"]["low"], settings["l_shape_fraction"]["high"]))
+        first = max(1, min(count - 2, int(round((count - 1) * fraction))))
+        second = count - 1 - first
+        return _rays(center, scale, theta, np.asarray((first, second), dtype=int), np.pi / 2.0)
+    if kind == "cross":
+        if count < 5:
+            raise ValueError("cross requires >=5 nodes")
+        per_arm = np.full(4, (count - 1) // 4, dtype=int)
+        per_arm[: (count - 1) % 4] += 1
+        return _rays(center, scale, theta, per_arm, np.pi / 2.0)
+    raise ValueError(f"unsupported motif: {kind}")
 
 
 def structural_result(

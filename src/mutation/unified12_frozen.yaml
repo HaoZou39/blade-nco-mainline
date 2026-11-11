@@ -1,8 +1,11 @@
 schema_version: 1
-profile_name: UNIFIED12_FROZEN_V1
-library: unified12_frozen_mutation_library
-version: UNIFIED12_FROZEN_V1
-source: Group D of the frozen Unified-12 audit. Enhanced FOGA ranges, Library A lattice, Motif V2. P2-A did not change these distributions.
+profile_name: UNIFIED12_DEFAULT
+library: unified12_default_mutation_library
+version: UNIFIED12_DEFAULT
+predecessor_profile: UNIFIED12_FROZEN_V1
+predecessor_commit: 0aa106ac48b39d9b2098805acce1985285ec688b
+predecessor_profile_sha256: 19e9548f417e46e0c1f17f7053f887645cc4e72e1778bca5e783529667a02f9e
+source: Default Unified-12 after the structural refactor. Stripes replace lattice grid, cross is four arms, and star has five or six arms. This file is not the frozen V1 artifact.
 sampling_policy:
   timing: sample_on_each_operator_application
   operator_selection: uniform_over_registry
@@ -125,11 +128,10 @@ operators:
       distribution: uniform
       low: 0.001
       high: 0.02
-  lattice_reorganization:
+  stripe_reorganization:
     max_attempts: 3
     node_count: 100
     minimum_selected: 4
-    grid_half_span: 0.42
     minimum_template_spacing: 0.015
     min_pair_distance: 1.0e-4
     interior: [0.02, 0.98]
@@ -137,9 +139,6 @@ operators:
       distribution: choice
       values: [local, regional, global]
       probabilities: [0.25, 0.35, 0.40]
-    template:
-      distribution: choice
-      values: [grid, stripes]
     angle_degrees:
       distribution: uniform
       low: -10.0
@@ -164,7 +163,7 @@ operators:
       low: 2
       high: 4
   motif_assembly:
-    version: v2
+    version: v3
     max_attempts: 3
     node_count: 100
     motifs_per_call: 1
@@ -175,7 +174,7 @@ operators:
     center_candidates: 8
     motif:
       distribution: choice
-      values: [arc, grid_block, cross, l_shape, star]
+      values: [arc, cross, l_shape, star]
     affected_count:
       distribution: integer_uniform
       low: 20
@@ -206,10 +205,9 @@ operators:
       high: 360.0
     star_arms:
       distribution: integer_uniform
-      low: 4
+      low: 5
       high: 6
     l_shape_fraction:
       distribution: uniform
       low: 0.35
       high: 0.65
-    cross_fraction: 0.5

@@ -19,7 +19,7 @@ from . import (
     explosion_mutation,
     grid_mutation,
     implosion_mutation,
-    lattice_reorganization,
+    stripe_reorganization,
     linear_projection_mutation,
     motif_assembly,
     normal_mutation,
@@ -63,8 +63,8 @@ _MODULES = (
     (compression_mutation, "Attract points inside a tube toward its target line."),
     (axis_projection_mutation, "Project selected points near an axis-parallel line."),
     (grid_mutation, "Reorganize points in a local box onto a grid."),
-    (lattice_reorganization, "Blend selected points toward a rotated grid or stripe template."),
-    (motif_assembly, "Blend a local neighborhood toward one frozen motif."),
+    (stripe_reorganization, "Blend selected points toward a rotated stripe template."),
+    (motif_assembly, "Blend a local neighborhood toward one motif."),
 )
 
 
@@ -167,8 +167,8 @@ def apply_operator_with_config(
     reconstructed from the deterministic invocation seed.
     """
 
-    if name in ("lattice_reorganization", "motif_assembly"):
-        return get_operator(name).apply(coordinates, rng, None)
+    if name in ("stripe_reorganization", "motif_assembly"):
+        return get_operator(name).apply(coordinates, rng, None, config)
     spec = get_operator(name)
     params = spec.sample_parameters(coordinates, rng, config)
     return spec.apply(coordinates, rng, params)

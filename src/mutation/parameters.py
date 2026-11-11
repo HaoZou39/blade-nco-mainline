@@ -12,7 +12,7 @@ import yaml
 
 
 NAMED_PROFILES = {
-    "UNIFIED12_FROZEN_V1": "unified12_frozen.yaml",
+    "UNIFIED12_DEFAULT": "unified12_frozen.yaml",
     "FOGA11_BASE_V1": "foga2019_operators.yaml",
     "FOGA11_HIGH_V1": "foga11_high_v1.yaml",
 }
