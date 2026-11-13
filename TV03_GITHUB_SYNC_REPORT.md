@@ -10,8 +10,9 @@ This sync only published existing code and the frozen D3-CVT-256 map package. It
 - Remote: `origin` fetch and push both point at that URL. The remote was not modified.
 - Branch: `sync/tv03-acquisition-code-20261113`
 - Base: `main` at `bf3304b0` (`Refactor default Unified-12 structural mutations: stripes and distinct motifs`)
-- Commit: `2be4915f59b04ddb86e761963aa20dc6b7a579c8`
+- Code commit: `2be4915f59b04ddb86e761963aa20dc6b7a579c8`
 - Message: `Sync BLADE-NCO TV03 acquisition and evolution code`
+- This inventory is the next commit on the same branch. Use `git rev-parse HEAD` after pull for the branch tip.
 - `main` was not updated. No force push. No history rewrite.
 
 ## 2. Files in this commit
