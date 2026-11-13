@@ -1,0 +1,23 @@
+{
+  "assignments": [
+    {
+      "raw_d3_features": [
+        1.16048128754925,
+        0.369149562407211,
+        1.41241148798579
+      ],
+      "scaled_d3_features": [
+        1.4531865121801795,
+        -1.3118216745968436,
+        -0.37716293531903844
+      ],
+      "niche_id": 46,
+      "nearest_centroid_distance": 0.19071291428124065,
+      "second_nearest_centroid_distance": 0.1947507798178402,
+      "assignment_margin": 0.004037865536599544,
+      "reference_support_status": "normal",
+      "map_version": "d3-cvt256-v1",
+      "map_manifest_hash": "36854f7bc06f4c10facf7415f7cf11e91e9268e695487a23460bf0160ea63348"
+    }
+  ]
+}

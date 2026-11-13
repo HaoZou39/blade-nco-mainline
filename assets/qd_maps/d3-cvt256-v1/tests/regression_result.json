@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "tolerance": 1e-05,
+  "max_abs_difference": 0.0,
+  "cases": [
+    "historical_short_depth",
+    "deep_mutation_depth_1000",
+    "stage2c_historical"
+  ],
+  "niche_ids": [
+    46,
+    227,
+    202
+  ],
+  "single_niche_id": 46,
+  "batch_count": 3,
+  "invalid_rejected": true,
+  "nonfinite_rejected": true
+}

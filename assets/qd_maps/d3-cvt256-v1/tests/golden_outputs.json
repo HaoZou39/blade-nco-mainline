@@ -1,0 +1,63 @@
+{
+  "tolerance_max_abs": 1e-05,
+  "source": "Stage 2B-D mapping_tool/tests assignments, first row of each verified file",
+  "cases": [
+    {
+      "name": "historical_short_depth",
+      "note": "Stage 2B probe root 0, depth 10",
+      "raw_d3": [
+        1.16048128754925,
+        0.369149562407211,
+        1.41241148798579
+      ],
+      "scaled_d3": [
+        1.4531865121801795,
+        -1.3118216745968436,
+        -0.37716293531903844
+      ],
+      "niche_id": 46,
+      "nearest_centroid_distance": 0.19071291428124065,
+      "second_nearest_centroid_distance": 0.1947507798178402,
+      "assignment_margin": 0.004037865536599544,
+      "reference_support_status": "normal"
+    },
+    {
+      "name": "deep_mutation_depth_1000",
+      "note": "E_DEEP root 0, depth 1000",
+      "raw_d3": [
+        0.40114248161641,
+        0.481073508063954,
+        1.71957678851606
+      ],
+      "scaled_d3": [
+        -0.3794098777032048,
+        -0.3092810788013827,
+        0.39001584986312604
+      ],
+      "niche_id": 227,
+      "nearest_centroid_distance": 0.0778337489594115,
+      "second_nearest_centroid_distance": 0.16286803570294556,
+      "assignment_margin": 0.08503428674353405,
+      "reference_support_status": "normal"
+    },
+    {
+      "name": "stage2c_historical",
+      "note": "First finite Stage 2C pool instance used in the Stage 2B-D remap",
+      "raw_d3": [
+        0.641724453164598,
+        0.526536557749348,
+        1.55637704567606
+      ],
+      "scaled_d3": [
+        0.3667175278297582,
+        0.2547477183727567,
+        -0.017707587166621797
+      ],
+      "niche_id": 202,
+      "nearest_centroid_distance": 0.13721332864457175,
+      "second_nearest_centroid_distance": 0.14278294503867703,
+      "assignment_margin": 0.005569616394105276,
+      "reference_support_status": "normal"
+    }
+  ]
+}

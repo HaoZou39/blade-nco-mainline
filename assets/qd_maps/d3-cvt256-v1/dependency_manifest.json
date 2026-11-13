@@ -1,0 +1,12 @@
+{
+  "python": "3.11.17",
+  "python_executable": "/home/haozou/miniconda3/envs/bq-nco/bin/python",
+  "numpy": "2.4.6",
+  "pandas": "3.1.0",
+  "scipy": "1.17.1",
+  "R": "4.5.3",
+  "rscript": "/home/haozou/micromamba/envs/blade-r/bin/Rscript",
+  "salesperson": "1.0.0",
+  "data.table": "1.18.6.1",
+  "software_commit": "0aa106ac48b39d9b2098805acce1985285ec688b"
+}

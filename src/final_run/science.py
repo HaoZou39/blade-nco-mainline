@@ -345,10 +345,16 @@ def evaluation_references(name: str) -> tuple[np.ndarray, np.ndarray, list[str]]
         coordinates = load_fixed_n100(name)
         directory = {"Uniform100":"uniform100", "GaussianMixture100":"gaussian_mixture100", "TSPLIB100":"tsplib100"}[name]
         file = {"TSPLIB100":"concorde/concorde_results.parquet"}.get(name, "concorde/oracle_results.parquet")
-        path = (ROOT / "assets/evaluation" / directory / file).as_posix().replace("'", "''")
-        rows = _duckdb().sql(f"SELECT instance_id, optimal_cost_int FROM read_parquet('{path}') ORDER BY instance_id").fetchall()
-        identifiers = [str(row[0]) for row in rows]
-        optimum = np.asarray([row[1] for row in rows], dtype=np.int64)
+        manifest = pd.read_parquet(ROOT / "assets/evaluation" / directory / "manifest.parquet")
+        oracle = pd.read_parquet(ROOT / "assets/evaluation" / directory / file)
+        identifiers = manifest["instance_id"].astype(str).tolist()
+        if len(identifiers) != len(coordinates):
+            raise RuntimeError(f"{name} manifest rows {len(identifiers)} != coordinates {len(coordinates)}")
+        costs = oracle.set_index(oracle["instance_id"].astype(str))["optimal_cost_int"]
+        if costs.index.has_duplicates:
+            raise RuntimeError(f"{name} oracle instance_id is not unique")
+        # NPZ row i is manifest row i. Lexicographic instance_id order is a different sequence for GaussianMixture100.
+        optimum = costs.loc[identifiers].to_numpy(dtype=np.int64)
         return coordinates, optimum, identifiers
     if name == "OriginalTSPLIB70":
         records = list(load_original_tsplib70())
@@ -375,8 +381,11 @@ def evaluate_checkpoint(model: torch.nn.Module, device: torch.device, output: Pa
         inference_started = time.perf_counter(); predicted_parts=[]; valid=0
         if coordinates.dtype == object:
             for points in coordinates:
-                original=np.asarray(points,dtype=np.float64); minima=original.min(axis=0); span=original.max(axis=0)-minima
-                model_input=(original-minima)/np.where(span>0,span,1.)
+                original=np.asarray(points,dtype=np.float64)
+                shifted=original-original.min(axis=0)
+                # Divide by the longer axis so TSPLIB aspect ratio is preserved. Per-axis min-max stretches the shorter axis.
+                scale=float(np.ptp(shifted,axis=0).max())
+                model_input=shifted/scale if scale>0 else shifted
                 _, tours = greedy_tour_costs(model, model_input[None, ...], device)
                 tour=tours[0]; cost=sum(int(np.rint(np.linalg.norm(original[tour[i]]-original[tour[(i+1)%len(tour)]]))) for i in range(len(tour)))
                 predicted_parts.append(np.asarray([cost],dtype=np.int64)); valid += 1

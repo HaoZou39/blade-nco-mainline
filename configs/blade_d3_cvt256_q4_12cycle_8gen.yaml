@@ -1,0 +1,48 @@
+experiment_id: BLADE_UNIFIED12_D3CVT256_Q4_12CYCLE_8GEN
+outer_cycles: 12
+inner_generations: 8
+active_parents: 2000
+offspring_per_parent: 25
+offspring_attempts_per_generation: 50000
+fresh_uniform_roots_per_cycle: 2000
+tsp_n: 100
+mutation_profile: UNIFIED12_FROZEN_V1
+operator_sampling: uniform
+mutation_steps_per_offspring: 1
+qd_map_version: d3-cvt256-v1
+qd_niches: 256
+qd_elites_per_niche: 4
+parent_selection: D3_CVT256_Q4_ELITE_GLOBAL_CE_FILL_V1
+training_acquisition: GLOBAL_TOP10000_TRUE_CE
+hard_training_per_cycle: 10000
+cross_cycle_population_inheritance: false
+uniform_anchor: 0
+historical_replay: 0
+gp_surrogate: disabled
+hgb_surrogate: disabled
+crossover: disabled
+training_epochs: 256
+training_lr: 3.75e-5
+training_batch_size: 256
+training_microbatch_size: 64
+optimizer: Adam
+weight_decay: 0
+lr_scheduler: none
+gradient_clipping: none
+initial_checkpoint: canonical_m0
+primary_benchmarks:
+  - OriginalTSPLIB70
+  - GaussianMixture100
+passive_benchmarks:
+  - Uniform100
+selection_by_test_gap: disabled
+early_stop_by_test_gap: disabled
+legacy_concorde_budget_cap: null
+root_seed_base: 12000000
+name_seed: [20261113, 1]
+parameter_seed: [20261113, 2]
+training_seed: [20261113, 3]
+concorde_workers: 32
+feature_workers: 8
+hardness_batch_size: 64
+device: cuda:0
